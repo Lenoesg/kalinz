@@ -24,20 +24,6 @@
 <b:tag cond='data:blog.googleProfileUrl' expr:href='data:blog.googleProfileUrl' name='link' rel='publisher'/>
 <b:tag cond='data:view.featuredImage' expr:href='data:view.featuredImage' name='link' rel='image_src'/>
 
-<b:if cond='data:view.isSearch and data:view.search.label in [&quot;Produk&quot;,&quot;Products&quot;,&quot;Jasa&quot;,&quot;Services&quot;]'>
-    <b:if cond='data:blog.metaDescription'>
-        <meta expr:content='data:blog.pageName + &quot; - &quot; + data:blog.title + &quot; - &quot; + data:blog.metaDescription' name='description'/> 
-    </b:if>
-<b:elseif cond='data:view.isHomepage'/>
-    <b:if cond='data:blog.metaDescription'>
-        <meta expr:content='data:blog.metaDescription' name='description'/>
-    </b:if>
-<b:elseif cond='data:view.isSingleItem'/>
-    <b:if cond='data:blog.metaDescription'>
-        <meta expr:content='data:blog.metaDescription' name='description'/>
-    </b:if> 
-</b:if>
-
 <b:include name='openGraphMetaData'/>
 
 <b:comment><!-- all-head-content end --></b:comment>
@@ -64,12 +50,6 @@
     <title><data:blog.pageName/></title> <b:comment><!-- default title --></b:comment>
 </b:if>
 <b:comment><!-- Title end --></b:comment>
-
-<b:comment><!-- Meta Robots start --></b:comment>
-<b:if cond='data:view.isSearch and data:view.search.label not in [&quot;Produk&quot;,&quot;Products&quot;,&quot;Jasa&quot;,&quot;Services&quot;] or data:view.isArchive or data:view.search.query'>
-    <meta content='noindex, noarchive' name='robots'/>
-</b:if>
-<b:comment><!-- Meta Robots end --></b:comment>
 
 <b:comment><!-- Meta tag Twitter Cards --></b:comment>
 <b:if cond='data:view.isHomepage'>
