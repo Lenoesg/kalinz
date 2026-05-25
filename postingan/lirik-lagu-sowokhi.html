@@ -1,0 +1,449 @@
+<style>
+.post-kalinz {
+  max-width: 740px;
+  margin: 0 auto;
+  padding: 0;
+  color: inherit;
+  line-height: 1.8;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+  font-family: inherit;
+}
+
+.post-kalinz,
+.post-kalinz * {
+  box-sizing: border-box;
+}
+
+.post-kalinz p {
+  font-size: 1rem;
+  margin: 0 0 1.2em;
+}
+
+.post-kalinz strong,
+.post-kalinz em,
+.post-kalinz a,
+.post-kalinz td,
+.post-kalinz span,
+.post-kalinz div {
+  font-family: inherit;
+}
+
+.post-kalinz h2 {
+  font-family: inherit !important;
+  font-size: 1.15rem !important;
+  font-weight: 700 !important;
+  margin: 1.4em 0 0.85em !important;
+  padding: 0 0 10px !important;
+  color: inherit !important;
+  border: 0 !important;
+  line-height: 1.4 !important;
+  position: relative;
+}
+
+.post-kalinz h2::after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 3px;
+  margin-top: 8px;
+  border-radius: 999px;
+  background: #0090d4;
+}
+
+.post-kalinz .post-featured-image {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 8px;
+  margin: 0 auto 1.5em;
+  display: block;
+}
+
+.post-kalinz .post-box {
+  background: #f5f9ff;
+  border: 1px solid #d0e4f7;
+  border-radius: 8px;
+  padding: 16px 20px;
+  margin: 1.5em 0;
+  font-size: 0.875rem;
+  color: inherit;
+}
+
+.post-kalinz .post-box table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.post-kalinz .post-box td {
+  padding: 6px 0;
+  vertical-align: top;
+  overflow-wrap: anywhere;
+}
+
+.post-kalinz .post-box td:first-child {
+  color: #666;
+  width: 130px;
+  font-size: 0.8125rem;
+  white-space: nowrap;
+  padding-right: 12px;
+}
+
+.post-kalinz .post-box td:last-child {
+  font-weight: 600;
+  color: inherit;
+}
+
+.post-kalinz .post-lyric-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2em;
+  margin: 1.2em 0;
+}
+
+.post-kalinz .post-lyric-box {
+  background: #fafafa;
+  border: 1px solid #e8e8e8;
+  border-radius: 8px;
+  padding: 24px 28px;
+  font-family: inherit;
+  font-size: 1rem;
+  line-height: 2;
+  white-space: pre-line;
+}
+
+.post-kalinz .post-lyric-translation {
+  background: #fffdf5;
+  border: 1px solid #f2e6c5;
+  border-radius: 8px;
+  padding: 20px 24px;
+  font-family: inherit;
+  font-size: 0.9375rem;
+  line-height: 1.9;
+  color: inherit;
+  white-space: pre-line;
+}
+
+.post-kalinz .post-divider {
+  border: none;
+  border-top: 1px solid #eee;
+  margin: 1em 0 !important;
+}
+
+.post-kalinz .post-tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.post-kalinz .post-tag {
+  font-family: inherit;
+  font-size: 0.75rem;
+  background: #f0f0f0;
+  border-radius: 4px;
+  padding: 4px 12px;
+  color: inherit;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.post-kalinz .post-tag:hover {
+  background: #e7e7e7;
+  color: inherit;
+}
+
+.post-kalinz .dictionary-table th {
+  text-align: left;
+  padding: 6px 0 10px;
+  font-size: 0.8125rem;
+  color: #666;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+@media (max-width: 480px) {
+  .post-kalinz p {
+    font-size: 0.96875rem;
+  }
+
+  .post-kalinz h2 {
+    font-size: 1.05rem !important;
+  }
+
+  .post-kalinz .post-box {
+    padding: 14px 16px;
+  }
+
+  .post-kalinz .post-box td {
+    display: block;
+    padding: 2px 0;
+  }
+
+  .post-kalinz .post-box td:first-child {
+    width: auto;
+    white-space: normal;
+    padding-right: 0;
+    margin-top: 8px;
+  }
+
+  .post-kalinz .post-box tr:first-child td:first-child {
+    margin-top: 0;
+  }
+
+  .post-kalinz .post-lyric-box {
+    padding: 18px 16px;
+    font-size: 0.96875rem;
+  }
+
+  .post-kalinz .post-lyric-translation {
+    padding: 18px 16px;
+    font-size: 0.90625rem;
+  }
+}
+
+body.darkmode .post-kalinz {
+  color: #e9e9e9;
+}
+
+body.darkmode .post-kalinz h2 {
+  color: #f5f5f5 !important;
+}
+
+body.darkmode .post-kalinz h2::after {
+  background: #7cc8ff;
+}
+
+body.darkmode .post-kalinz .post-box {
+  background: #2d2d2d;
+  border-color: #444;
+}
+  
+body.darkmode .post-kalinz .post-box td:first-child {
+  color: #bdbdbd;
+}
+
+body.darkmode .post-kalinz .post-lyric-box {
+  background: #2a2a2a;
+  border-color: #3e3e3e;
+}
+
+body.darkmode .post-kalinz .post-lyric-translation {
+  background: #2b2518;
+  border-color: #4a422c;
+}
+
+body.darkmode .post-kalinz .post-divider {
+  border-top-color: #3d3d3d;
+}
+
+body.darkmode .post-kalinz .post-tag {
+  background: #3a3a3a;
+  color: #ededed;
+}
+
+body.darkmode .post-kalinz .post-tag:hover {
+  background: #474747;
+}
+
+body.darkmode .post-kalinz .dictionary-table th {
+  color: #bdbdbd;
+  border-bottom-color: #444;
+}
+  
+</style>
+
+<article class="post-kalinz">
+
+  <img
+    class="post-featured-image"
+    src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi4C-2B8naEk0IHxPog9AW2ZtshHkq1dMIuozEvFyUvBJiSlCShOB5YlNmm8GaSLx397XjDAX1hqy4muOAtr7aQNGl1udkP_wnSjrbRNqeBtGnyIULDSXW2QabbFA03aGj_YWzNs1LzCTFBctdVrd22Njy3xJcvBV1Xqepmsewp4o3SCA9HGbBxSCi-vlo/w400-h400/Sowokhi%20-%20Erick_Ijo.png"
+    alt="Lagu Sowökhi karya Erick Ijö"
+    title="Sowökhi - Erick Ijö"
+  />
+
+  <p><strong>Sowökhi</strong> adalah lagu Nias yang dinyanyikan oleh <strong>Erick Ijö</strong>. Lagu ini bercerita tentang perjuangan cinta yang kandas karena keadaan hidup dan rasa sakit hati ketika orang yang dicintai memilih orang lain.</p>
+
+  <div class="post-box song-meta">
+    <table>
+      <tr><td>Judul Lagu</td><td>Sowökhi</td></tr>
+      <tr><td>Penyanyi</td><td>Erick Ijö</td></tr>
+      <tr><td>Tahun Rilis</td><td>2014</td></tr>
+    </table>
+  </div>
+
+  <hr class="post-divider" />
+
+  <h2>Lirik Lagu Sowökhi — Erick Ijö</h2>
+
+  <div class="post-lyric-container">
+    <div class="post-lyric-box">No u'era-era faomasigu khömö
+Möido faböbö ba madomö
+U'ötö nasi sebolo wogamö zi so ya'ugö
+Oi tokea bakha dödö No'ö tehe niha bö'ö
+
+Fa'omasigu khöu nakhi 
+Ba no'ara ba no mondröfi
+Lö taya ba dödögu nakhi
+Me'urongo duriau no so dambali
+
+Asöndru bakha dödögu nakhi
+Alai ndra'o me lö harazaki
+Fefu wa'omasigu khöu nakhi
+No humombo no i'ohe angi
+
+Hatö mbewe gawu nasi nahagu wetöngöni
+Agafökhö na u'angeraigö
+Ya'ugö fofo khöu ufatunö
+Enaö ö'ila tödögu sowökhi
+
+Fa'omasigu khöu nakhi 
+Ba no'ara ba no mondröfi
+Lö taya ba dödögu nakhi
+Me'urongo duriau no so dambali
+
+Asöndru bakha dödögu nakhi
+Alai ndra'o me lö harazaki
+Fefu wa'omasigu khöu nakhi
+No humombo no i'ohe angi
+
+Sowökhi... sowökhi...
+Sowökhi... sowökhi...</div>
+  </div>
+
+  <hr class="post-divider" />
+
+  <h2>Makna dan Terjemahan Lagu</h2>
+
+  <p>Judul <em>Sowökhi</em> berarti <strong>“Sakit”</strong>. Dalam lagu ini, rasa sakit tersebut menggambarkan luka hati seseorang yang telah lama mencintai dan berjuang demi orang yang dicintainya, tetapi akhirnya harus menerima kenyataan pahit karena sang kekasih telah memilih pasangan lain.</p>
+
+  <p>Nuansa lagu semakin mendalam lewat simbol alam seperti laut, angin, pantai, dan burung yang digunakan untuk menggambarkan kesedihan dan pesan hati yang tak tersampaikan secara langsung. Berikut adalah terjemahan liriknya ke dalam bahasa Indonesia:</p>
+
+  <div class="post-lyric-translation"><em>Telah kupikirkan cintaku kepadamu
+Aku ingin datang melamarmu
+Kulewati lautan luas demi menuju tempatmu
+Terkejut hatiku, ternyata kau telah menerima orang lain
+
+Kasih sayangku kepadamu, kasih
+Sudah lama dan telah bertahun-tahun
+Takkan hilang dari dalam hatiku, kasih
+Saat kudengar kabar engkau telah memiliki pasangan
+
+Sedih hatiku, kasih
+Apalah dayaku karena tak memiliki rezeki
+Seluruh cintaku kepadamu
+Telah terbang dan hilang dibawa angin
+
+Tinggallah pasir pantai tempatku meratapi nasib
+Sakit rasanya bila kuingat kembali
+Kepadamu, wahai burung, kusampaikan pesan ini
+Agar dia tahu bahwa hatiku sedang terluka dan sakit</em></div>
+
+  <hr class="post-divider" />
+  
+  <h2>Kamus Kosakata Bahasa Nias</h2>
+
+<p>Berikut beberapa kata dalam bahasa Nias (Li Niha) yang muncul dalam lagu ini beserta artinya:</p>
+
+<div class="post-box dictionary-table">
+  <table>
+    <thead>
+    <tr>
+      <th scope="col">Kosakata</th>
+      <th scope="col">Arti</th>
+    </tr>
+  </thead>
+    <tbody>
+    <tr><td>fa'omasigu</td><td>cintaku, kasih sayangku</td></tr>
+    <tr><td>dambali</td><td>pasangan, teman hidup</td></tr>
+    <tr><td>sowökhi</td><td>sakit</td></tr>
+    <tr><td>harazaki</td><td>rezeki, keberuntungan hidup</td></tr>
+    <tr><td>asöndru</td><td>sedih</td></tr>
+    <tr><td>wogamö</td><td>mencapai</td></tr>
+    <tr><td>tokea</td><td>kaget</td></tr>
+    <tr><td>angi</td><td>angin</td></tr>
+    <tr><td>gawu</td><td>pasir</td></tr>
+    <tr><td>ufatu­nö</td><td>kukatakan</td></tr>
+      </tbody>
+  </table>
+</div>
+
+  <h2>Tentang Erick Ijö</h2>
+
+  <p>Erick Ijö adalah salah satu penyanyi pop Nias yang dikenal memiliki karakter vokal khas dan sering membawakan lagu-lagu bertema kerinduan, cinta, serta keindahan tanah kelahiran. Lewat lagu <em>Sowökhi</em>, ia berhasil menyuarakan isi hati banyak perantau asal Kepulauan Nias.</p>
+
+  <hr class="post-divider" />
+
+  <p>Itulah lirik lagu Nias <strong>Sowökhi</strong> dari <strong>Erick Ijö</strong> lengkap dengan makna dan terjemahannya. Jika ada koreksi lirik atau tambahan informasi tentang lagu ini, silakan sampaikan melalui halaman <a href="https://kalinz.blogspot.com/p/hubungi-kam.html" target="_blank" rel="noopener noreferrer">Kontak</a>.</p>
+
+  <div class="post-tag-list">
+    <a class="post-tag" href="https://kalinz.blogspot.com/search/label/Lagu%20Nias" rel="tag">Lagu Nias</a>
+    <a class="post-tag" href="https://kalinz.blogspot.com/search/label/Erick%20Ijo" rel="tag">Erick Ijö</a>
+  </div>
+  
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Lirik Lagu Nias Sowökhi - Erick Ijö Lengkap dengan Terjemahan Indonesia",
+  "description": "Lirik lagu Nias Sowökhi oleh Erick Ijö lengkap dengan arti, makna, dan terjemahan bahasa Indonesia. Sowökhi sebagai simbol cinta tulus yang tidak berhasil dimiliki.",
+  "image": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi4C-2B8naEk0IHxPog9AW2ZtshHkq1dMIuozEvFyUvBJiSlCShOB5YlNmm8GaSLx397XjDAX1hqy4muOAtr7aQNGl1udkP_wnSjrbRNqeBtGnyIULDSXW2QabbFA03aGj_YWzNs1LzCTFBctdVrd22Njy3xJcvBV1Xqepmsewp4o3SCA9HGbBxSCi-vlo/w400-h400/Sowokhi%20-%20Erick_Ijo.png",
+
+  "author": {
+    "@type": "Person",
+    "name": "KALINZ",
+    "url": "https://kalinz.blogspot.com"
+  },
+
+  "publisher": {
+    "@type": "Organization",
+    "name": "KALINZ",
+    "url": "https://kalinz.blogspot.com",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://blogger.googleusercontent.com/img/a/AVvXsEhXlK6nk2PxMK2QyRXKcemz_zG4Lbulhgml6qnH7l0D75dDTAs9YYXbFt500s9nN13AQIc3h3JM5-EOhZM8KOvkW1STDf3qRg3jw3c--wDIk2dj771u46Bx2AwJjEMm-15ul059NveeJMTLivXG8-88m_XJnmdOpREA3EM6d1KWMluertVcbu4dhIFMV-g=w400"
+    }
+  },
+
+  "datePublished": "2016-05-07T11:20:00+07:00",
+  "dateModified": "2026-05-23T11:04:00+07:00",
+
+  "inLanguage": "id",
+
+  "keywords": [
+    "Lagu Nias",
+    "Erick Ijö",
+    "Sowökhi",
+    "Lirik Lagu Nias",
+    "Terjemahan Bahasa Indonesia",
+    "Li Niha",
+    "Kamus Bahasa Nias"
+  ],
+
+  "articleSection": [
+    "Lagu Nias",
+    "Terjemahan Lagu",
+    "Budaya Nias"
+  ],
+
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://kalinz.blogspot.com/2016/05/lirik-lagu-nias-sowokhi-erick-ijo.html"
+  },
+
+  "about": {
+    "@type": "MusicRecording",
+    "name": "Sowökhi",
+    "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Erick Ijö"
+    },
+    "inLanguage": "nia",
+    "genre": "Pop Nias",
+    "description": "Lagu Nias bertema ungkapan cinta tulus yang tidak berhasil dimiliki.",
+    "datePublished": "2014"
+  }
+}
+</script>
+
+</article>

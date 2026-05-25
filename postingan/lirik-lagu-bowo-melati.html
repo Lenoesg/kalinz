@@ -1,0 +1,462 @@
+<style>
+.post-kalinz {
+  max-width: 740px;
+  margin: 0 auto;
+  padding: 0;
+  color: inherit;
+  line-height: 1.8;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+  font-family: inherit;
+}
+
+.post-kalinz,
+.post-kalinz * {
+  box-sizing: border-box;
+}
+
+.post-kalinz p {
+  font-size: 1rem;
+  margin: 0 0 1.2em;
+}
+
+.post-kalinz strong,
+.post-kalinz em,
+.post-kalinz a,
+.post-kalinz td,
+.post-kalinz span,
+.post-kalinz div {
+  font-family: inherit;
+}
+
+.post-kalinz h2 {
+  font-family: inherit !important;
+  font-size: 1.15rem !important;
+  font-weight: 700 !important;
+  margin: 1.4em 0 0.85em !important;
+  padding: 0 0 10px !important;
+  color: inherit !important;
+  border: 0 !important;
+  line-height: 1.4 !important;
+  position: relative;
+}
+
+.post-kalinz h2::after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 3px;
+  margin-top: 8px;
+  border-radius: 999px;
+  background: #0090d4;
+}
+
+.post-kalinz .post-featured-image {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 8px;
+  margin: 0 auto 1.5em;
+  display: block;
+}
+
+.post-kalinz .post-box {
+  background: #f5f9ff;
+  border: 1px solid #d0e4f7;
+  border-radius: 8px;
+  padding: 16px 20px;
+  margin: 1.5em 0;
+  font-size: 0.875rem;
+  color: inherit;
+}
+
+.post-kalinz .post-box table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.post-kalinz .post-box td {
+  padding: 6px 0;
+  vertical-align: top;
+  overflow-wrap: anywhere;
+}
+
+.post-kalinz .post-box td:first-child {
+  color: #666;
+  width: 130px;
+  font-size: 0.8125rem;
+  white-space: nowrap;
+  padding-right: 12px;
+}
+
+.post-kalinz .post-box td:last-child {
+  font-weight: 600;
+  color: inherit;
+}
+
+.post-kalinz .post-lyric-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2em;
+  margin: 1.2em 0;
+}
+
+.post-kalinz .post-lyric-box {
+  background: #fafafa;
+  border: 1px solid #e8e8e8;
+  border-radius: 8px;
+  padding: 24px 28px;
+  font-family: inherit;
+  font-size: 1rem;
+  line-height: 2;
+  white-space: pre-line;
+}
+
+.post-kalinz .post-lyric-translation {
+  background: #fffdf5;
+  border: 1px solid #f2e6c5;
+  border-radius: 8px;
+  padding: 20px 24px;
+  font-family: inherit;
+  font-size: 0.9375rem;
+  line-height: 1.9;
+  color: inherit;
+  white-space: pre-line;
+}
+
+.post-kalinz .post-divider {
+  border: none;
+  border-top: 1px solid #eee;
+  margin: 1em 0 !important;
+}
+
+.post-kalinz .post-tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.post-kalinz .post-tag {
+  font-family: inherit;
+  font-size: 0.75rem;
+  background: #f0f0f0;
+  border-radius: 4px;
+  padding: 4px 12px;
+  color: inherit;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.post-kalinz .post-tag:hover {
+  background: #e7e7e7;
+  color: inherit;
+}
+
+.post-kalinz .dictionary-table th {
+  text-align: left;
+  padding: 6px 0 10px;
+  font-size: 0.8125rem;
+  color: #666;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+@media (max-width: 480px) {
+  .post-kalinz p {
+    font-size: 0.96875rem;
+  }
+
+  .post-kalinz h2 {
+    font-size: 1.05rem !important;
+  }
+
+  .post-kalinz .post-box {
+    padding: 14px 16px;
+  }
+
+  .post-kalinz .post-box td {
+    display: block;
+    padding: 2px 0;
+  }
+
+  .post-kalinz .post-box td:first-child {
+    width: auto;
+    white-space: normal;
+    padding-right: 0;
+    margin-top: 8px;
+  }
+
+  .post-kalinz .post-box tr:first-child td:first-child {
+    margin-top: 0;
+  }
+
+  .post-kalinz .post-lyric-box {
+    padding: 18px 16px;
+    font-size: 0.96875rem;
+  }
+
+  .post-kalinz .post-lyric-translation {
+    padding: 18px 16px;
+    font-size: 0.90625rem;
+  }
+}
+
+body.darkmode .post-kalinz {
+  color: #e9e9e9;
+}
+
+body.darkmode .post-kalinz h2 {
+  color: #f5f5f5 !important;
+}
+
+body.darkmode .post-kalinz h2::after {
+  background: #7cc8ff;
+}
+
+body.darkmode .post-kalinz .post-box {
+  background: #2d2d2d;
+  border-color: #444;
+}
+  
+body.darkmode .post-kalinz .post-box td:first-child {
+  color: #bdbdbd;
+}
+
+body.darkmode .post-kalinz .post-lyric-box {
+  background: #2a2a2a;
+  border-color: #3e3e3e;
+}
+
+body.darkmode .post-kalinz .post-lyric-translation {
+  background: #2b2518;
+  border-color: #4a422c;
+}
+
+body.darkmode .post-kalinz .post-divider {
+  border-top-color: #3d3d3d;
+}
+
+body.darkmode .post-kalinz .post-tag {
+  background: #3a3a3a;
+  color: #ededed;
+}
+
+body.darkmode .post-kalinz .post-tag:hover {
+  background: #474747;
+}
+
+body.darkmode .post-kalinz .dictionary-table th {
+  color: #bdbdbd;
+  border-bottom-color: #444;
+}
+  
+</style>
+
+<article class="post-kalinz">
+
+  <img
+    class="post-featured-image"
+    src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiByIVU1d1aruWRdgrfwc_w0-movRsXO9aEowfzAKwVNaturnEqSSJZ9UNlQ_hyBJeTpghUmC4Yhyco_KQKLK3oKZXHM3yV96ufo_L-kEx2NmKPCuHgomQMYsUchSklGJjIwNpGndK6pvShDfbXXxQdrlXfGey2nC4OAWB0nnutdtLAxRB-2_vMm24dLx4/w400-h400/2.png"
+    alt="Lagu Bowo Melati karya Erick Ijö"
+    title="Bowo Melati - Erick Ijö"
+  />
+
+  <p><strong>Bowo Melati</strong> adalah lagu Nias yang dinyanyikan oleh <strong>Erick Ijö</strong>. Lagu ini menggunakan bunga melati sebagai simbol cinta dan kerinduan yang tulus kepada seseorang yang sangat dicintai. Dengan lirik puitis dan nuansa emosional yang kuat, lagu ini menjadi salah satu lagu pop Nias yang mudah diingat oleh para pendengarnya.</p>
+
+  <div class="post-box song-meta">
+    <table>
+      <tr><td>Judul Lagu</td><td>Bowo Melati</td></tr>
+      <tr><td>Penyanyi</td><td>Erick Ijö</td></tr>
+      <tr><td>Tahun Rilis</td><td>2014</td></tr>
+    </table>
+  </div>
+
+  <hr class="post-divider" />
+
+  <h2>Lirik Lagu Bowo Melati — Erick Ijö</h2>
+
+  <div class="post-lyric-container">
+    <div class="post-lyric-box">Falukhasada tenga sifazazi
+Fabali tenga faomasi
+Me inötö Zamabali
+ölau mofanö möi'ö bakhömi
+Nakhi yaita fabali
+
+Lö'alua uwaö khöu nakhi
+zi sobakha badödögu nakhi
+Khöu bowo safusi
+Yaugö bunga melati
+Nakhi hana alio fabali
+
+Bunga melati lökhögu fa'aföli
+Ba wamaigi bowomö safusi
+Bowo melati so dödögu wangai
+U'irö'ö yawa ba naha sisökhi
+
+Bawemörögu bazibongi 
+U andrö ndraugö so bawangifi
+Tohugö wefao khöu nakhi
+He hatö ba wangifi
+Nakhi Na so wa'omasi...
+
+Bunga melati lökhögu fa'aföli
+Ba wamaigi bowomö safusi
+Bowo melati so dödögu wangai
+U'irö'ö yawa ba naha sisökhi
+
+Bunga melati lökhögu fa'aföli
+Ba wamaigi bowomö safusi
+Bowo melati so dödögu wangai
+U'irö'ö yawa ba naha sisökhi</div>
+  </div>
+
+  <hr class="post-divider" />
+
+  <h2>Makna dan Terjemahan Lagu</h2>
+
+  <p>Judul <em>Bowo Melati</em> berarti <strong>“Bunga Melati”</strong>. Dalam lagu ini, bunga melati menjadi simbol cinta yang tulus, indah, dan suci. <strong>Erick Ijö</strong> menggambarkan kisah dua orang yang saling mencintai, tetapi harus berpisah bukan karena keinginan mereka sendiri, melainkan karena keadaan dan jarak yang memisahkan.</p>
+
+  <p>Liriknya dipenuhi rasa rindu, penyesalan, dan harapan agar cinta mereka tetap hidup meskipun tidak bisa selalu bersama. Sosok “bunga melati” diibaratkan sebagai seseorang yang sangat dicintai dan selalu tersimpan di dalam hati. Lagu ini juga menggambarkan bagaimana kenangan dan perasaan cinta tetap hadir bahkan hingga terbawa ke dalam mimpi. Berikut adalah terjemahan liriknya ke dalam bahasa Indonesia:</p>
+
+  <div class="post-lyric-translation"><em>Pertemuan kita bukan janji
+Perpisahan bukan keinginan
+Namun waktu yang memisahkan kita
+Engkau pergi ke tempat yang jauh 
+Kasih kita pun harus berpisah
+
+Tidak sempat kukatakan padamu
+Apa yang tersimpan di dalam hatiku
+Untukmu bunga putih
+Engkaulah bunga melati
+Kasih, mengapa begitu cepat kita berpisah
+
+Bunga melati, aku takkan menyerah
+Untuk melihat bunga putihmu
+Bunga melati, ada keinginanku memetikmu
+Dan menyimpannya di tempat yang suci
+
+Dalam tidurku di malam hari
+Aku berharap engkau hadir dalam mimpi
+Melanjutkan kisah bersama dirimu kasih
+Walaupun hanya di dalam mimpi
+Kasih, karena cinta masih bersemi...
+
+Bunga melati, aku takkan menyerah
+Untuk melihat bunga putihmu
+Bunga melati, ada keinginanku memetikmu
+Dan menyimpannya di tempat yang suci
+
+Bunga melati, aku takkan menyerah
+Untuk melihat bunga putihmu
+Bunga melati, ada keinginanku memetikmu
+Dan menyimpannya di tempat yang suci</em></div>
+
+  <hr class="post-divider" />
+  
+  <h2>Kamus Kosakata Bahasa Nias</h2>
+
+<p>Berikut beberapa kata dalam bahasa Nias (Li Niha) yang muncul dalam lagu ini beserta artinya:</p>
+
+<div class="post-box dictionary-table">
+  <table>
+    <thead>
+    <tr>
+      <th scope="col">Kosakata</th>
+      <th scope="col">Arti</th>
+    </tr>
+  </thead>
+    <tbody>
+    <tr><td>falukhasada</td><td>pertemuan</td></tr>
+	<tr><td>fabali</td><td>berpisah, perpisahan</td></tr>
+	<tr><td>faomasi</td><td>kasih sayang, cinta</td></tr>
+	<tr><td>bakhömi</td><td>tempat yang jauh</td></tr>
+	<tr><td>bowo</td><td>bunga</td></tr>
+	<tr><td>wangifi</td><td>dalam mimpi</td></tr>
+	<tr><td>dödögu</td><td>hatiku, perasaanku</td></tr>
+	<tr><td>wangai</td><td>mengambil, memperoleh, memiliki</td></tr>
+	<tr><td>sisökhi</td><td>yang baik, yang suci, yang bersih</td></tr>
+	<tr><td>wa'omasi</td><td>saling mencintai</td></tr>
+      </tbody>
+  </table>
+</div>
+
+  <h2>Tentang Erick Ijö</h2>
+
+  <p>Erick Ijö adalah salah satu penyanyi pop Nias yang dikenal memiliki karakter vokal khas dan sering membawakan lagu-lagu bertema kerinduan, cinta, serta keindahan tanah kelahiran. Lewat lagu <em>Bowo Melati</em>, ia berhasil menyuarakan isi hati banyak perantau asal Kepulauan Nias.</p>
+
+  <hr class="post-divider" />
+
+  <p>Itulah lirik lagu Nias <strong>Bowo Melati</strong> dari <strong>Erick Ijö</strong> lengkap dengan makna dan terjemahannya. Jika ada koreksi lirik atau tambahan informasi tentang lagu ini, silakan sampaikan melalui halaman <a href="https://kalinz.blogspot.com/p/hubungi-kam.html" target="_blank" rel="noopener noreferrer">Kontak</a>.</p>
+
+  <div class="post-tag-list">
+    <a class="post-tag" href="https://kalinz.blogspot.com/search/label/Lagu%20Nias" rel="tag">Lagu Nias</a>
+    <a class="post-tag" href="https://kalinz.blogspot.com/search/label/Erick%20Ijo" rel="tag">Erick Ijö</a>
+  </div>
+  
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Lirik Lagu Nias Bowo Melati - Erick Ijö Lengkap dengan Terjemahan Indonesia",
+  "description": "Lirik lagu Nias Bowo Melati oleh Erick Ijö lengkap dengan arti, makna, dan terjemahan bahasa Indonesia. Bunga melati sebagai simbol cinta dan kerinduan yang tulus kepada seseorang yang sangat dicintai.",
+  "image": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiByIVU1d1aruWRdgrfwc_w0-movRsXO9aEowfzAKwVNaturnEqSSJZ9UNlQ_hyBJeTpghUmC4Yhyco_KQKLK3oKZXHM3yV96ufo_L-kEx2NmKPCuHgomQMYsUchSklGJjIwNpGndK6pvShDfbXXxQdrlXfGey2nC4OAWB0nnutdtLAxRB-2_vMm24dLx4/w1200-h630-p-k-no-nu/2.png",
+
+  "author": {
+    "@type": "Person",
+    "name": "KALINZ",
+    "url": "https://kalinz.blogspot.com"
+  },
+
+  "publisher": {
+    "@type": "Organization",
+    "name": "KALINZ",
+    "url": "https://kalinz.blogspot.com",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://blogger.googleusercontent.com/img/a/AVvXsEhXlK6nk2PxMK2QyRXKcemz_zG4Lbulhgml6qnH7l0D75dDTAs9YYXbFt500s9nN13AQIc3h3JM5-EOhZM8KOvkW1STDf3qRg3jw3c--wDIk2dj771u46Bx2AwJjEMm-15ul059NveeJMTLivXG8-88m_XJnmdOpREA3EM6d1KWMluertVcbu4dhIFMV-g=w400"
+    }
+  },
+
+  "datePublished": "2016-05-13T12:36:00+07:00",
+  "dateModified": "2026-05-23T09:43:00+07:00",
+
+  "inLanguage": "id",
+
+  "keywords": [
+    "Lagu Nias",
+    "Erick Ijö",
+    "Bowo Melati",
+    "Lirik Lagu Nias",
+    "Terjemahan Bahasa Indonesia",
+    "Li Niha",
+    "Kamus Bahasa Nias"
+  ],
+
+  "articleSection": [
+    "Lagu Nias",
+    "Terjemahan Lagu",
+    "Budaya Nias"
+  ],
+
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://kalinz.blogspot.com/2016/05/lirik-lagu-nias-bowo-melati-erick-ijo.html"
+  },
+
+  "about": {
+    "@type": "MusicRecording",
+    "name": "Bowo Melati",
+    "byArtist": {
+      "@type": "MusicGroup",
+      "name": "Erick Ijö"
+    },
+    "inLanguage": "nia",
+    "genre": "Pop Nias",
+    "description": "Lagu Nias bertema ungkapan cinta dan kerinduan kepada seseorang yang sangat dicintai.",
+    "datePublished": "2014"
+  }
+}
+</script>
+
+</article>
