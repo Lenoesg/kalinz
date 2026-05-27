@@ -511,3 +511,37 @@ body#layout #banner-jasa h4,body#layout #banner-produk h4,
 body#layout #html-jasa h4,body#layout #html-produk h4,
 body#layout #banner-jasa div.widget .widget-content,body#layout #banner-produk div.widget .widget-content,body#layout #html-jasa div.widget .widget-content,body#layout #html-produk div.widget .widget-content{background:#ecf8ff;padding:6px 12px}body#layout #banner-jasa div.widget .widget-content .editlink.icon,body#layout #banner-produk div.widget .widget-content .editlink.icon,body#layout #html-jasa div.widget .widget-content .editlink.icon,body#layout #html-produk div.widget .widget-content .editlink.icon{top:5px}
 ```
+
+### Icon soscial media header
+
+```xml
+<b:comment><!-- widget icon media sosial --></b:comment>
+        <b:section class='social-button' id='social-button' maxwidgets='1' showaddelement='no'>
+          <b:widget id='HTML71' locked='true' title='Kode Icon Media Sosial' type='HTML' version='2' visible='false'>
+            <b:widget-settings>
+              <b:widget-setting name='content'/>
+            </b:widget-settings>
+            <b:includable id='main'>
+                <div class='widget-content'>
+                <data:content/>
+                </div>
+            </b:includable>
+          </b:widget>
+        </b:section>
+```
+
+```xml
+<Group description="Icon Media Sosial" selector="#social-button">
+    <Variable name="sosmed.color" description="Warna" type="color" default="#FFFFFF" value="#FFFFFF"/>
+</Group>
+...
+
+    --sosmed-color: $(sosmed.color);
+...
+body#layout #social-button h4,
+body#layout #social-button{float:right;width:48%}
+...
+body.darkmode #social-button .social-icon i{color:#eee}body.darkmode #social-button .social-icon i:hover{color:#fff}
+#social-button{-webkit-box-flex:1;-ms-flex:1 1 50%;flex:1 1 50%;max-width:50%;min-width:0;text-align:right}#social-button .widget{color:var(--blog-title-text-color)}#social-button a{display:inline-block;margin:3px 0 3px 13px;padding:2px}#social-button .social-icon{font-size:1.5rem;display:inline-block;-webkit-transition:.2s;transition:.2s}#social-button .social-icon i{-webkit-transition:.2s;transition:.2s;color:var(--sosmed-color);font-style:normal;display:inline-block;opacity:.7}#social-button .social-icon i:hover{opacity:1}#social-button .social-icon i::before{font-family:linkmagzfont;font-weight:400;display:inline-block}#social-button .facebook-icon i::before{content:"\e90d"}#social-button .twitter-icon i::before{content:"\e903"}#social-button .youtube-icon i::before{content:"\e904"}#social-button .instagram-icon i::before{content:"\e905"}#social-button .linkedin-icon i::before{content:"\e908"}#social-button .telegram-icon i::before{content:"\e906"}#social-button .whatsapp-icon i::before{content:"\e909"}#social-button .googlemaps-icon i::before{content:"\e900"}#social-button .pinterest-icon i::before{content:"\e90b"}#social-button .tiktok-icon i::before{content:"\e90e"}#social-button .github-icon i::before{content:"\e90c"}#social-button .dribbble-icon i::before{content:"\e90a"}#social-button .behance-icon i::before{content:"\e907"}
+#social-button{-webkit-box-flex:1;-ms-flex:1 1 100%;flex:1 1 100%;max-width:100%;text-align:center}#social-button a{margin:3px 7px}
+```
