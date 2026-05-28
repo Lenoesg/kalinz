@@ -50,6 +50,148 @@ itu tetap boleh dibersihkan, tetapi **bukan lagi langkah pertama** kalau di temp
 
 ---
 
+## 1.5) Bagian yang harus diimprove supaya audit benar-benar tercapai
+
+Ini bagian yang paling penting dan paling jujur:  
+**guide ini tidak boleh hanya berisi daftar aman-dihapus.** Kalau tujuan audit adalah menaikkan trust, topical authority, dan kesan arsip budaya serius, maka ada beberapa area yang **harus diimprove**, bukan sekadar “dirapikan”.
+
+### 1. Homepage harus berubah dari feed biasa menjadi hub budaya
+**Masalah saat ini:**
+- Live site masih terasa seperti homepage blog posting standar.
+- `LATEST POSTS` ada, tapi itu belum cukup untuk membangun authority.
+- Jika homepage hanya feed, blog tetap terasa seperti blog lirik yang rapi, bukan arsip budaya yang terkurasi.
+
+**Yang perlu diimprove:**
+- section hub kategori utama:
+  - Lagu Nias
+  - Kamus Bahasa Nias
+  - Budaya Nias
+  - Istilah Adat
+  - Penyanyi Nias
+- section artikel pilar / unggulan
+- section indeks atau daftar referensi
+- intro editorial singkat yang menjelaskan misi situs
+
+**Target hasil:**
+Homepage harus langsung menjawab:  
+“ini situs dokumentasi budaya Nias, bukan blog posting acak.”
+
+---
+
+### 2. Struktur label harus jadi taxonomy, bukan sekadar label tag
+**Masalah saat ini:**
+- Label ada, tapi belum tentu membentuk klaster authority.
+- Kalau label hanya dipakai untuk dekorasi atau filtering biasa, audit topical authority belum tercapai.
+
+**Yang perlu diimprove:**
+- tetapkan label inti yang benar-benar dipakai sebagai hub:
+  - Lagu Nias
+  - Penyanyi Nias
+  - Budaya Nias
+  - Kamus Bahasa Nias
+  - Istilah Adat
+  - Terjemahan
+- pastikan setiap posting baru masuk ke struktur yang konsisten
+- gunakan label untuk internal linking yang jelas, bukan acak
+
+**Target hasil:**
+Google dan pembaca bisa melihat hubungan antar konten dengan cepat.
+
+---
+
+### 3. Artikel lagu harus distandardisasi
+**Masalah saat ini:**
+- Beberapa artikel sudah rapi, tetapi tidak semua punya struktur yang sama.
+- Jika format campur, audit “arsip budaya serius” tidak akan terasa konsisten.
+
+**Yang perlu diimprove per artikel:**
+1. konteks lagu
+2. metadata lagu
+3. lirik
+4. terjemahan
+5. makna
+6. kosakata penting
+7. catatan budaya / dialek / istilah
+8. sumber atau koreksi
+
+**Target hasil:**
+Setiap artikel tidak hanya menampilkan lirik, tetapi memberi nilai tambah dokumenter.
+
+---
+
+### 4. Trust pages harus seragam dan terasa editorial
+**Masalah saat ini:**
+- About, Kontak, Disclaimer, Privacy sudah ada.
+- Tapi audit akan tetap terasa lemah kalau halaman trust tidak seragam isi dan tujuannya.
+
+**Yang perlu diimprove:**
+- About: misi editorial, siapa yang mengelola, cara verifikasi
+- Kontak: satu jalur utama yang jelas
+- Disclaimer: ringkas dan formal
+- Privacy: tegas soal data, layanan Google, dan penggunaan cookies
+
+**Target hasil:**
+Pengunjung dan Google melihat situs ini dikelola serius, bukan sekadar blog personal.
+
+---
+
+### 5. Related post dan “Baca Juga” harus relevan, bukan random
+**Masalah saat ini:**
+- Related post berbasis label/random bisa membantu, tapi juga bisa merusak konteks.
+- Kalau artikel yang ditampilkan tidak relevan, trust turun.
+
+**Yang perlu diimprove:**
+- prioritaskan related manual atau semi-manual untuk konten penting
+- jika masih pakai otomatis, batasi ke klaster yang benar-benar satu tema
+- “Baca Juga” harus mengarah ke:
+  - artis yang sama
+  - lagu dalam tema yang sama
+  - kosakata terkait
+  - artikel budaya terkait
+
+**Target hasil:**
+Internal link memperkuat authority, bukan mengacaukan fokus baca.
+
+---
+
+### 6. Featured post dan popular post harus jadi pendukung, bukan pusat
+**Masalah saat ini:**
+- Kalau featured post atau popular post terlalu dominan, homepage tetap terasa seperti blog template lama.
+
+**Yang perlu diimprove:**
+- featured post hanya untuk artikel pilar
+- popular post hanya jika isinya benar-benar topikal
+- jika tidak mendukung tujuan authority, lebih baik diperkecil
+
+**Target hasil:**
+Homepage memandu pembaca ke inti topik, bukan ke konten yang cuma populer.
+
+---
+
+### 7. Iklan harus menyesuaikan ritme baca, bukan memaksa slot
+**Masalah saat ini:**
+- Slot iklan yang terlalu banyak bisa mengganggu flow.
+- Untuk artikel pendek, terlalu banyak placement akan terasa agresif.
+
+**Yang perlu diimprove:**
+- evaluasi slot satu per satu
+- kurangi placement yang tidak punya dampak nyata
+- prioritaskan pengalaman baca dulu, monetisasi kemudian
+
+**Target hasil:**
+AdSense tetap ada, tetapi tidak merusak pengalaman editorial.
+
+---
+
+### 8. Kesimpulan brutal untuk guide ini
+Kalau dokumen ini hanya menyuruh menghapus yang aman, tapi tidak menyuruh memperbaiki yang strategis, maka dokumen ini **belum cukup untuk mengeksekusi hasil audit**.
+
+**Jadi fokusnya harus dua arah:**
+- hapus / kurangi yang tidak relevan
+- tingkatkan / bangun ulang yang menentukan authority
+
+---
+
 ## 2) Urutan pembersihan yang paling aman sekarang
 
 Urutan di bawah ini dibuat dari yang paling aman, paling lokal, dan paling mudah diuji, ke yang lebih menyentuh alur konten.
