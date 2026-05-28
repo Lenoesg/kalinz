@@ -2488,7 +2488,7 @@ var linkMagzSetting = {
                     <b:section class='header' id='header' maxwidgets='1' showaddelement='no'>
                         <b:widget id='Header1' locked='true'
                             title='KALINZ | Lirik Lagu Nias &amp;amp; Budaya Nias (Header)'
-                            type='Header' visible='true'>
+                            type='Header' version='2' visible='true'>
                             <b:widget-settings>
                                 <b:widget-setting name='displayUrl'>
                                     https://blogger.googleusercontent.com/img/a/AVvXsEhXlK6nk2PxMK2QyRXKcemz_zG4Lbulhgml6qnH7l0D75dDTAs9YYXbFt500s9nN13AQIc3h3JM5-EOhZM8KOvkW1STDf3qRg3jw3c--wDIk2dj771u46Bx2AwJjEMm-15ul059NveeJMTLivXG8-88m_XJnmdOpREA3EM6d1KWMluertVcbu4dhIFMV-g=s260</b:widget-setting>
@@ -2621,7 +2621,7 @@ var linkMagzSetting = {
 
                 <b:section class='top-widget' id='top-widget' maxwidgets='1' showaddelement='no'>
                     <b:widget id='HTML73' locked='true' title='Widget HTML #1' type='HTML'
-                        visible='false'>
+                        version='2' visible='false'>
                         <b:widget-settings>
                             <b:widget-setting name='content' />
                         </b:widget-settings>
@@ -3782,6 +3782,10 @@ var linkMagzSetting = {
                                 <data:messages.home />
                             </a>
                         </b:includable>
+                        <b:includable id='iframeComments' var='post'>
+                            <!-- G+ comments, no longer available. The includable is retained for
+                            backwards-compatibility. -->
+                        </b:includable>
                         <b:includable id='inlineAd' var='post'>
                             <b:if cond='!data:view.isPreview'>
                                 <b:if
@@ -4395,131 +4399,6 @@ var linkMagzSetting = {
                         <b:comment><!-- widget sidebar -->
                         </b:comment>
                         <b:section class='sidebar' id='sidebar'>
-                            <b:widget id='Label1' locked='false' title='Lirik Lagu' type='Label'
-                                visible='true'>
-                                <b:widget-settings>
-                                    <b:widget-setting name='sorting'>FREQUENCY</b:widget-setting>
-                                    <b:widget-setting name='display'>CLOUD</b:widget-setting>
-                                    <b:widget-setting name='selectedLabelsList'>DJ Nias,Lagu
-                                        Batak,Lagu Nias Top,Lagu Rohani,Lainnya,Maena Nias,Rohani
-                                        Nias</b:widget-setting>
-                                    <b:widget-setting name='showType'>USER_SELECTED</b:widget-setting>
-                                    <b:widget-setting name='showFreqNumbers'>false</b:widget-setting>
-                                </b:widget-settings>
-                                <b:includable id='main' var='this'>
-                                    <b:if cond='data:title'>
-                                        <div class='normalwidget-title'>
-                                            <b:include name='widget-title' />
-                                        </div>
-                                    </b:if>
-                                    <b:include name='content' />
-                                </b:includable>
-                                <b:includable id='cloud'>
-                                    <b:loop values='data:labels' var='label'>
-                                        <span class='label-size'>
-                                            <b:class
-                                                expr:name='&quot;label-size-&quot; + data:label.cssSize' />
-                                            <a class='label-name'
-                                                expr:href='data:label.url + &quot;?&amp;max-results=6&quot;'>
-                                                <data:label.name />
-                                                <b:if cond='data:this.showFreqNumbers'>
-                                                    <span class='label-count'>(<data:label.count />)</span>
-                                                </b:if>
-                                            </a>
-                                        </span>
-                                    </b:loop>
-                                </b:includable>
-                                <b:includable id='content'>
-                                    <div class='widget-content'>
-                                        <b:class
-                                            expr:name='data:this.display + &quot;-label-widget-content&quot;' />
-                                        <b:include cond='data:this.display == &quot;list&quot;'
-                                            name='list' />
-                                        <b:include cond='data:this.display == &quot;cloud&quot;'
-                                            name='cloud' />
-                                    </div>
-                                </b:includable>
-                                <b:includable id='list'>
-                                    <ul>
-                                        <b:loop values='data:labels' var='label'>
-                                            <li>
-                                                <a class='label-name'
-                                                    expr:href='data:label.url + &quot;?&amp;max-results=6&quot;'>
-                                                    <data:label.name />
-                                                    <b:if cond='data:this.showFreqNumbers'>
-                                                        <span class='label-count'>(<data:label.count />
-                                                            )</span>
-                                                    </b:if>
-                                                </a>
-                                            </li>
-                                        </b:loop>
-                                    </ul>
-                                </b:includable>
-                            </b:widget>
-                            <b:widget id='Label2' locked='false' title='Daftar Penyanyi'
-                                type='Label' visible='true'>
-                                <b:widget-settings>
-                                    <b:widget-setting name='sorting'>ALPHA</b:widget-setting>
-                                    <b:widget-setting name='display'>CLOUD</b:widget-setting>
-                                    <b:widget-setting name='selectedLabelsList'>Alim Y Hulu,Constant
-                                        Giawa,Daniel Folala,Erick Ijo,Fati Zebua,Frans
-                                        Buluaro,Havino,Ratosa,Repetisi Hia,Rocky BE Duha,Tice
-                                        Halawa,Vivid Gulo,Wira Laoli,Yas Zalukhu,Yusman Lase</b:widget-setting>
-                                    <b:widget-setting name='showType'>USER_SELECTED</b:widget-setting>
-                                    <b:widget-setting name='showFreqNumbers'>false</b:widget-setting>
-                                </b:widget-settings>
-                                <b:includable id='main' var='this'>
-                                    <b:if cond='data:title'>
-                                        <div class='normalwidget-title'>
-                                            <h2 class='title'>
-                                                <data:title />
-                                            </h2>
-                                        </div>
-                                    </b:if>
-                                    <b:include name='content' />
-                                </b:includable>
-                                <b:includable id='cloud'>
-                                    <b:loop values='data:labels' var='label'>
-                                        <span class='label-size'>
-                                            <b:class
-                                                expr:name='&quot;label-size-&quot; + data:label.cssSize' />
-                                            <a class='label-name'
-                                                expr:href='data:label.url + &quot;?&amp;max-results=6&quot;'>
-                                                <data:label.name />
-                                                <b:if cond='data:this.showFreqNumbers'>
-                                                    <span class='label-count'>(<data:label.count />)</span>
-                                                </b:if>
-                                            </a>
-                                        </span>
-                                    </b:loop>
-                                </b:includable>
-                                <b:includable id='content'>
-                                    <div class='widget-content'>
-                                        <b:class
-                                            expr:name='data:this.display + &quot;-label-widget-content&quot;' />
-                                        <b:include cond='data:this.display == &quot;list&quot;'
-                                            name='list' />
-                                        <b:include cond='data:this.display == &quot;cloud&quot;'
-                                            name='cloud' />
-                                    </div>
-                                </b:includable>
-                                <b:includable id='list'>
-                                    <ul>
-                                        <b:loop values='data:labels' var='label'>
-                                            <li>
-                                                <a class='label-name'
-                                                    expr:href='data:label.url + &quot;?&amp;max-results=6&quot;'>
-                                                    <data:label.name />
-                                                    <b:if cond='data:this.showFreqNumbers'>
-                                                        <span class='label-count'>(<data:label.count />
-                                                            )</span>
-                                                    </b:if>
-                                                </a>
-                                            </li>
-                                        </b:loop>
-                                    </ul>
-                                </b:includable>
-                            </b:widget>
                             <b:widget id='PopularPosts1' locked='false' title='Populer'
                                 type='PopularPosts' version='2' visible='true'>
                                 <b:widget-settings>
@@ -5018,16 +4897,13 @@ var linkMagzSetting = {
         <div id='footer-widget-html-wrap'>
             <b:section class='footer-widget-html' id='footer-widget-html' maxwidgets='1'
                 showaddelement='no'>
-                <b:widget id='HTML831' locked='true' title='Widget HTML #3' type='HTML'
+                <b:widget id='HTML831' locked='true' title='Widget HTML #3' type='HTML' version='2'
                     visible='true'>
                     <b:widget-settings>
-                        <b:widget-setting name='content'><![CDATA[<!-- Ikon Sosial Footer -->
+                        <b:widget-setting name='content'><![CDATA[<!-- Ikon Sosial Footer (FB, YouTube, TikTok, WA Channel) -->
 <div class="footer-sosmed-wrap">
   <a href="https://facebook.com/lenoess" aria-label="Facebook" rel="noopener noreferrer" target="_blank">
     <i class="icon-facebook"></i>
-  </a>
-  <a href="https://instagram.com/enoes___" aria-label="Instagram" rel="noopener noreferrer" target="_blank">
-    <i class="icon-instagram"></i>
   </a>
   <a href="https://youtube.com/@kalinz-id" aria-label="YouTube" rel="noopener noreferrer" target="_blank">
     <i class="icon-youtube"></i>
@@ -5035,13 +4911,9 @@ var linkMagzSetting = {
   <a href="https://tiktok.com/@lenoes" aria-label="TikTok" rel="noopener noreferrer" target="_blank">
     <i class="icon-tiktok"></i>
   </a>
-<a href="https://github.com/Lenoesg" aria-label="GitHub" rel="noopener noreferrer" target="_blank">
-    <i class="icon-github"></i>
+  <a href="https://whatsapp.com/channel/0029VbAh79s1t90dxLWm8T1o" aria-label="WhatsApp" rel="noopener noreferrer" target="_blank">
+    <i class="icon-whatsapp"></i>
   </a>
-<a href="https://linkedin.com/melinus-gulo" aria-label="LinkedIn" rel="noopener noreferrer" target="_blank">
-    <i class="icon-linkedin"></i>
-  </a>
-
 </div>]]></b:widget-setting>
                     </b:widget-settings>
                     <b:includable id='main'>
@@ -5067,9 +4939,9 @@ var linkMagzSetting = {
 
                 <b:section class='page-navmenu' id='page-navmenu' maxwidgets='1' showaddelement='no'>
                     <b:widget id='PageList1' locked='true' title='Menu Halaman Statis'
-                        type='PageList' visible='true'>
+                        type='PageList' version='2' visible='true'>
                         <b:widget-settings>
-                            <b:widget-setting name='pageListJson'><![CDATA[{"3106317128406358487":{"href":"https://kalinz.blogspot.com/p/privacy-policy.html","position":0,"title":"Kebijakan Privasi"},"5026083009044766414":{"href":"https://kalinz.blogspot.com/p/hubungi-kam.html","position":3,"title":"Kontak"},"2817569514580233880":{"href":"https://kalinz.blogspot.com/p/disclaimer.html","position":1,"title":"Disclaimer"},"1314075802457389835":{"href":"https://kalinz.blogspot.com/p/about.html","position":2,"title":"Tentang"}}]]></b:widget-setting>
+                            <b:widget-setting name='pageListJson'><![CDATA[{"5026083009044766414":{"href":"https://kalinz.blogspot.com/p/hubungi-kam.html","position":1,"title":"Kontak"},"3106317128406358487":{"href":"https://kalinz.blogspot.com/p/privacy-policy.html","position":2,"title":"Kebijakan Privasi"},"2817569514580233880":{"href":"https://kalinz.blogspot.com/p/disclaimer.html","position":3,"title":"Disclaimer"},"1314075802457389835":{"href":"https://kalinz.blogspot.com/p/about.html","position":0,"title":"Tentang"}}]]></b:widget-setting>
                             <b:widget-setting name='homeTitle'>Home</b:widget-setting>
                         </b:widget-settings>
                         <b:includable id='main'>
@@ -5148,7 +5020,7 @@ var linkMagzSetting = {
                 </b:section>
 
                 <b:section class='navbarrr' id='navbarrr' maxwidgets='1' showaddelement='no'>
-                    <b:widget id='Navbar1' locked='true' title='Navbar' type='Navbar'
+                    <b:widget id='Navbar1' locked='true' title='Navbar' type='Navbar' version='2'
                         visible='false'>
                         <b:includable id='main'>&lt;script type=&quot;text/javascript&quot;&gt;
                             function setAttributeOnload(object, attribute, val) {
