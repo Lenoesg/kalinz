@@ -545,3 +545,63 @@ body.darkmode #social-button .social-icon i{color:#eee}body.darkmode #social-but
 #social-button{-webkit-box-flex:1;-ms-flex:1 1 50%;flex:1 1 50%;max-width:50%;min-width:0;text-align:right}#social-button .widget{color:var(--blog-title-text-color)}#social-button a{display:inline-block;margin:3px 0 3px 13px;padding:2px}#social-button .social-icon{font-size:1.5rem;display:inline-block;-webkit-transition:.2s;transition:.2s}#social-button .social-icon i{-webkit-transition:.2s;transition:.2s;color:var(--sosmed-color);font-style:normal;display:inline-block;opacity:.7}#social-button .social-icon i:hover{opacity:1}#social-button .social-icon i::before{font-family:linkmagzfont;font-weight:400;display:inline-block}#social-button .facebook-icon i::before{content:"\e90d"}#social-button .twitter-icon i::before{content:"\e903"}#social-button .youtube-icon i::before{content:"\e904"}#social-button .instagram-icon i::before{content:"\e905"}#social-button .linkedin-icon i::before{content:"\e908"}#social-button .telegram-icon i::before{content:"\e906"}#social-button .whatsapp-icon i::before{content:"\e909"}#social-button .googlemaps-icon i::before{content:"\e900"}#social-button .pinterest-icon i::before{content:"\e90b"}#social-button .tiktok-icon i::before{content:"\e90e"}#social-button .github-icon i::before{content:"\e90c"}#social-button .dribbble-icon i::before{content:"\e90a"}#social-button .behance-icon i::before{content:"\e907"}
 #social-button{-webkit-box-flex:1;-ms-flex:1 1 100%;flex:1 1 100%;max-width:100%;text-align:center}#social-button a{margin:3px 7px}
 ```
+
+### Blok advertorial
+```xml
+
+                <b:includable id='defaultPostAdPage'>
+                    <b:include name='blogPostTitle' />
+                    <b:include name='postInfoAdvertorial' />
+                    <b:include name='blogPostBody' />
+                    <b:include name='postShareButton' />
+                    <b:include name='relatedPost' />
+                    <b:include name='relatedPostScript' />
+                </b:includable>
+
+                
+                <b:includable id='postInfoAdvertorial'>
+                    <div class='post-info'>
+                        <span class='advertorial-label'>Sponsored Post </span>
+                        <b:loop
+                            values='data:widgets.Blog.first.allBylineItems where (i =&gt; i.name == &quot;timestamp&quot;)'
+                            var='byline'>
+                            <b:include name='postInfoPostDate' />
+                        </b:loop>
+                    </div>
+                </b:includable>
+
+                <b:if
+                            cond='data:post.labels any (label =&gt; label.name in [&quot;Advertorial&quot;,&quot;Iklan&quot;,&quot;Sponsor&quot;])'>
+                            <b:include name='postInfoAdvertorial' />
+                            <b:else />
+                            <b:include name='postInfo' />
+                        </b:if>
+
+                <b:if
+                            cond='data:posts any (p =&gt; p.labels any (l =&gt; l.name in [&quot;Advertorial&quot;,&quot;Iklan&quot;,&quot;Sponsor&quot;]))'>
+                            <b:include name='defaultPostAdPage' />
+                            <b:else />
+                            <b:include name='defaultPostPage' />
+                        </b:if>
+
+                <b:if
+                            cond='data:posts any (p =&gt; p.labels any (l =&gt; l.name in [&quot;Advertorial&quot;,&quot;Iklan&quot;,&quot;Sponsor&quot;]))'>
+                            <b:include name='defaultPostAdPage' />
+                            <b:else />
+                            <b:include name='defaultPostPage' />
+                        </b:if>
+
+                <b:if cond='data:view.isPost'>
+                        <b:if
+                            cond='not(data:post.labels any (l =&gt; l.name in [&quot;Advertorial&quot;,&quot;Iklan&quot;,&quot;Sponsor&quot;]))'>
+                            <b:include data='post' name='commentPicker' />
+                        </b:if>
+                    </b:if>
+
+                <b:if cond='data:view.isPost'>
+                                    <b:if
+                                        cond='not(data:post.labels any (l =&gt; l.name in [&quot;Advertorial&quot;,&quot;Iklan&quot;,&quot;Sponsor&quot;]))'>
+                                        <b:include data='post' name='commentPicker' />
+                                    </b:if>
+                                </b:if>
+```

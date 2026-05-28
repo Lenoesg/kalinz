@@ -469,12 +469,7 @@ Variable end */
                     <div class='post-summary-wrap'>
                         <b:include name='blogPostTitle' />
 
-                        <b:if
-                            cond='data:post.labels any (label =&gt; label.name in [&quot;Advertorial&quot;,&quot;Iklan&quot;,&quot;Sponsor&quot;])'>
-                            <b:include name='postInfoAdvertorial' />
-                            <b:else />
-                            <b:include name='postInfo' />
-                        </b:if>
+                        <b:include name='postInfo' />
 
                         <b:include name='blogPostSnippet' />
                     </div>
@@ -490,15 +485,6 @@ Variable end */
                     <b:include name='postInfo' />
                     <b:include name='blogPostBody' />
                     <b:include name='blogPostAuthorProfile' />
-                    <b:include name='postShareButton' />
-                    <b:include name='relatedPost' />
-                    <b:include name='relatedPostScript' />
-                </b:includable>
-
-                <b:includable id='defaultPostAdPage'>
-                    <b:include name='blogPostTitle' />
-                    <b:include name='postInfoAdvertorial' />
-                    <b:include name='blogPostBody' />
                     <b:include name='postShareButton' />
                     <b:include name='relatedPost' />
                     <b:include name='relatedPostScript' />
@@ -783,17 +769,6 @@ Variable end */
                             <b:include name='postInfoPostDate' />
                         </b:loop>
                         <b:include name='postInfoComment' />
-                    </div>
-                </b:includable>
-
-                <b:includable id='postInfoAdvertorial'>
-                    <div class='post-info'>
-                        <span class='advertorial-label'>Sponsored Post </span>
-                        <b:loop
-                            values='data:widgets.Blog.first.allBylineItems where (i =&gt; i.name == &quot;timestamp&quot;)'
-                            var='byline'>
-                            <b:include name='postInfoPostDate' />
-                        </b:loop>
                     </div>
                 </b:includable>
 
@@ -1214,10 +1189,7 @@ Variable end */
                         </div>
 
                         <b:if cond='data:view.isPost'>
-                            <b:if
-                                cond='not(data:post.labels any (l =&gt; l.name in [&quot;Advertorial&quot;,&quot;Iklan&quot;,&quot;Sponsor&quot;]))'>
-                                <b:include data='post' name='commentPicker' />
-                            </b:if>
+                            <b:include data='post' name='commentPicker' />
                         </b:if>
                     </article>
                 </b:includable>
@@ -1228,12 +1200,7 @@ Variable end */
                     <b:if cond='data:view.isPage'>
                         <b:include name='defaultStaticPage' />
                         <b:elseif cond='data:view.isPost' />
-                        <b:if
-                            cond='data:posts any (p =&gt; p.labels any (l =&gt; l.name in [&quot;Advertorial&quot;,&quot;Iklan&quot;,&quot;Sponsor&quot;]))'>
-                            <b:include name='defaultPostAdPage' />
-                            <b:else />
-                            <b:include name='defaultPostPage' />
-                        </b:if>
+                        <b:include name='defaultPostPage' />
                         <b:else />
                         <b:include name='defaultHomepage' />
                     </b:if>
@@ -3863,12 +3830,7 @@ var linkMagzSetting = {
                             <b:if cond='data:view.isPage'>
                                 <b:include name='defaultStaticPage' />
                                 <b:elseif cond='data:view.isPost' />
-                                <b:if
-                                    cond='data:posts any (p =&gt; p.labels any (l =&gt; l.name in [&quot;Advertorial&quot;,&quot;Iklan&quot;,&quot;Sponsor&quot;]))'>
-                                    <b:include name='defaultPostAdPage' />
-                                    <b:else />
-                                    <b:include name='defaultPostPage' />
-                                </b:if>
+                                <b:include name='defaultPostPage' />
                                 <b:else />
                                 <b:include name='defaultHomepage' />
                             </b:if>
@@ -3881,10 +3843,7 @@ var linkMagzSetting = {
                                     <b:include data='post' name='post' />
                                 </div>
                                 <b:if cond='data:view.isPost'>
-                                    <b:if
-                                        cond='not(data:post.labels any (l =&gt; l.name in [&quot;Advertorial&quot;,&quot;Iklan&quot;,&quot;Sponsor&quot;]))'>
-                                        <b:include data='post' name='commentPicker' />
-                                    </b:if>
+                                    <b:include data='post' name='commentPicker' />
                                 </b:if>
                             </article>
                         </b:includable>
