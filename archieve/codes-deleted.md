@@ -616,3 +616,24 @@ body.darkmode #social-button .social-icon i{color:#eee}body.darkmode #social-but
 ...
 body{background:var(--main-bg-color);color:var(--main-text-color);font-family:Roboto,Arial,sans-serif;font-size:1rem;line-height:1.5;padding:0;margin:0;overflow-y:scroll;position:relative}
 ```
+
+```xml
+
+                            <!-- twitter -->
+                            <a aria-label='twitter' class='twitter'
+                                expr:href='&quot;//twitter.com/intent/tweet?text=&quot; + data:post.title + &quot;&amp;url=&quot; + data:post.url'
+                                rel='nofollow noreferrer' title='x (twitter)'>
+                                <i class='icon-twitter' />
+                            </a>
+                            <!-- telegram -->
+                            <a aria-label='telegram' class='telegram'
+                                expr:href='&quot;https://t.me/share/url?url=&quot; + data:post.url + &quot;&amp;text=&quot; + data:post.title + &quot;&quot;'
+                                rel='nofollow noreferrer' target='_blank' title='telegram'>
+                                <i class='icon-telegram' />
+                            </a>
+
+                            .twitter{background:#080808}
+                            .telegram{background:#358dd1}
+
+
+```
