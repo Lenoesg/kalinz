@@ -5016,7 +5016,7 @@ var linkMagzSetting = {
         <b:section class='custom-javascript-footer' id='custom-javascript-footer' maxwidgets='1'
             showaddelement='no'>
             <b:widget id='HTML85' locked='true' title='Custom JavaScript Footer' type='HTML'
-                version='2' visible='true'>
+                version='2' visible='false'>
                 <b:widget-settings>
                     <b:widget-setting name='content' />
                 </b:widget-settings>
