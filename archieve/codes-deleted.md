@@ -635,5 +635,46 @@ body{background:var(--main-bg-color);color:var(--main-text-color);font-family:Ro
                             .twitter{background:#080808}
                             .telegram{background:#358dd1}
 
+```
 
+
+### Dark Mode Hapus
+
+```xml
+<b:includable id='darkmodeSwitch'>
+    <div class='darkmode-switch'>
+        <span class='switch-title' />
+        <label class='switch'>
+            <input aria-label='checkbox' class='checkbox' name='checkbox'
+                onclick='darkMode()' type='checkbox' />
+            <span class='slider' />
+        </label>
+    </div>
+</b:includable>
+
+<b:include name='darkmodeSwitch' />
+
+<script>
+(localStorage.getItem(&#39;mode&#39;)) === &#39;darkmode&#39; ? document.querySelector(&#39;body&#39;).classList.add(&#39;darkmode&#39;) : document.querySelector(&#39;body&#39;).classList.remove(&#39;darkmode&#39;)
+</script>
+
+function LMcheckCheckbox(){for(var e=document.querySelectorAll(".checkbox"),o="darkmode"===localStorage.getItem("mode"),c=0;c<e.length;c++)e[c].checked=o}function darkMode(){var e=document.body,o="darkmode"===localStorage.getItem("mode")?"light":"darkmode";localStorage.setItem("mode",o),"darkmode"===o?e.classList.add("darkmode"):e.classList.remove("darkmode"),LMcheckCheckbox()}LMcheckCheckbox();
+
+!function(){var e=document.querySelectorAll(".darkmode-switch"),o={tombolDarkmode:!0};if(optionLinkMagz(o),0==o.tombolDarkmode)for(var l=0;l<e.length;l++)e[l].parentNode.removeChild(e[l]);else for(l=0;l<e.length;l++)e[l].style.display="flex"}();
+
+
+tombolDarkmode : true,
+
+body.darkmode{background:#353535;color:#eee}body.darkmode .toc button,body.darkmode a:link{color:#a3daef;-webkit-transition:.2s;transition:.2s}body.darkmode a:visited{color:#a3daef}body.darkmode a:hover{color:#fff}body.darkmode #sidebar-wrap a:link,body.darkmode #sidebar-wrap a:visited{color:#eee}body.darkmode #sidebar-wrap a:hover{color:#fff}body.darkmode #header-outer #header-wrap{background:#2b2b2b}body.darkmode #header-outer #header-content,body.darkmode #navmenu-sidebar-closebtn{background:#232323}body.darkmode #navmenu-wrap,body.darkmode #navmenu-wrap-sticky{background:#2f2f2f}body.darkmode .menu-sticky,body.darkmode .navmenu{background:#2b2b2b}body.darkmode #navmenu-sidebar-body ul li a,body.darkmode .navmenu-content li li a{color:#eee}body.darkmode #navmenu-sidebar-body ul li a:hover{color:#fff}body.darkmode .ms-submenu-button::after{border-color:#eee transparent transparent}body.darkmode .ms-submenu-button.ms-submenu-shown::after{border-color:transparent transparent #eee}body.darkmode #sidebar-wrap{background:#2f2f2f}body.darkmode .PopularPosts .popular-post-widget-title h2.title,body.darkmode .PopularPosts .popular-post-widget-title h3.title{-webkit-box-shadow:0 0 0 2px #2f2f2f;box-shadow:0 0 0 2px #2f2f2f}body.darkmode .normalwidget-title h2.title,body.darkmode .normalwidget-title h3.title{background:#2f2f2f;color:#eee}body.darkmode #content-wrap,body.darkmode #ms-related-post p.ms-title,body.darkmode #navmenu-sidebar-body,body.darkmode #wrapper,body.darkmode .FeaturedPost .featured-img-bg,body.darkmode .PopularPosts .popular-post-info,body.darkmode .Profile .individual,body.darkmode .Profile .team,body.darkmode .latestposts-title h2,body.darkmode .share-this-pleaseeeee{background:#323232}body.darkmode .FeaturedPost h2.title,body.darkmode .FeaturedPost h3.title{-webkit-box-shadow:0 0 0 2px #323232;box-shadow:0 0 0 2px #323232}body.darkmode #header .widget,body.darkmode #header .widget a,body.darkmode #navmenu-sidebar-closebtn .closebtn,body.darkmode #navmenu-sidebar-closebtn .closebtn-title{color:#eee}body.darkmode #header .widget p.title-description{color:#bbb}body.darkmode .navmenu-button,body.darkmode .navmenu-content>ul>li>a{color:#eee}body.darkmode .navmenu-button span{background-color:#eee}body.darkmode .navmenu-content>ul>li>a::before{background:#eee}body.darkmode .navmenu-content>ul>li.has-sub>a::after{border-bottom:1px solid #eee;border-left:1px solid #eee}body.darkmode .navmenu-content li li.has-sub::after{border-bottom:1px solid #eee;border-right:1px solid #eee}body.darkmode .navmenu-content ul li ul{background:#4a4a4a}body.darkmode .navmenu-content>ul>li>ul:before{border-bottom-color:#4a4a4a}body.darkmode .navmenu-content li li a:before{background:#eee}body.darkmode .iconsearch-label{color:#eee}body.darkmode .iconsearch-label:hover{color:#fff}body.darkmode .darkmode-switch .switch{opacity:1}body.darkmode .darkmode-switch .switch-title{color:#bbb;opacity:1}body.darkmode .darkmode-switch .slider{border:2px solid #bbb}body.darkmode .darkmode-switch .slider:before{background:#eee}body.darkmode .darkmode-switch .switch:hover .slider:before{background:#fff}body.darkmode .normalwidget-title::after{background:#383838}body.darkmode .latestposts-title::after{background:#383838}body.darkmode .post-title,body.darkmode .post-title a{color:#eee}body.darkmode .post-title a:hover{color:#fff}body.darkmode .breadcrumbs,body.darkmode .breadcrumbs a,body.darkmode .post-info,body.darkmode .post-info a{color:#bbb}body.darkmode .breadcrumbs a:hover,body.darkmode .post-info a:hover{color:#fff}body.darkmode .FeaturedPost .post-summary,body.darkmode .FeaturedPost .post-summary .featured-info{background:#2f2f2f}@media only screen and (max-width:600px){body.darkmode .FeaturedPost .post-summary{background:#323232}}body.darkmode .FeaturedPost h2 a,body.darkmode .FeaturedPost h3 a{color:#eee}body.darkmode .FeaturedPost h2 a:hover,body.darkmode .FeaturedPost h3 a:hover{color:#fff}body.darkmode .FeaturedPost p.featured-desc{color:#eee}body.darkmode #sidebar-wrap ul li::before{border:3px solid #eee}body.darkmode #sidebar-wrap ol li::before{color:#eee}body.darkmode .PopularPosts .popular-post-snippet{color:#bbb}body.darkmode .PopularPosts .popular-post-title a{color:#eee}body.darkmode .PopularPosts .popular-post-title a:hover{color:#fff}body.darkmode .Profile{color:#eee}body.darkmode .Profile .individual .profile-link{border:1px solid #eee;color:#eee}body.darkmode .Profile .individual .profile-link:hover{border:1px solid #fff;color:#fff}body.darkmode .Profile .profile-link-author{color:#eee}body.darkmode .Profile .profile-link-author:hover{color:#fff}body.darkmode .Profile .location path{fill:#eee}body.darkmode .FollowByEmail{background:#2d2d2d;color:#bbb}body.darkmode .FollowByEmail ::-webkit-input-placeholder{color:#666;opacity:.9}body.darkmode .FollowByEmail ::-moz-placeholder{color:#666;opacity:.9}body.darkmode .FollowByEmail :-ms-input-placeholder{color:#666;opacity:.9}body.darkmode .FollowByEmail ::-ms-input-placeholder{color:#666;opacity:.9}body.darkmode .FollowByEmail ::placeholder{color:#666;opacity:.9}body.darkmode .FollowByEmail .follow-by-email-address{background:#fff}body.darkmode .label-size a.label-name{border:1px solid #eee}body.darkmode .label-size a.label-name:hover{border:1px solid #fff}body.darkmode #footer-outer{background:#313131}body.darkmode #footer-outer #footer-content{background:#282828;color:#eee}body.darkmode #footer-content a{color:#eee}body.darkmode #footer-content a:hover{color:#fff}
+
+<Group description="Tombol Darkmode" selector=".darkmode-switch">
+    <Variable name="darkmode.color" description="Warna" type="color" default="$(navmenu.color)" value="#FFFFFF"/>
+    <Variable name="darkmode.hover" description="Warna Hover" type="color" default="$(navmenu.color)" value="#FFFFFF"/>
+</Group>
+
+.darkmode-switch{display:none;-webkit-box-ordinal-group:2;-ms-flex-order:1;order:1;-webkit-box-align:center;-ms-flex-align:center;align-items:center;margin-left:15px}.darkmode-switch .switch-title{color:var(--darkmode-btn-color);font-size:.625rem;margin-right:4px;text-transform:uppercase;opacity:.7;-webkit-transition:.2s ease-in-out;transition:.2s ease-in-out}.darkmode-switch .switch-title::before{content:"Dark Mode"}.darkmode-switch .switch{position:relative;display:inline-block;width:36px;height:18px;vertical-align:middle;opacity:.7;-webkit-transition:.2s ease-in-out;transition:.2s ease-in-out}.darkmode-switch .switch:hover{opacity:1}.darkmode-switch .switch:hover .slider::before{background:var(--darkmode-btn-hover-color)}.darkmode-switch .switch input{opacity:0;width:0;height:0}.darkmode-switch .switch input:focus-visible+.slider{outline:2px solid var(--main-link-color);outline-offset:2px}.darkmode-switch .slider{border:2px solid var(--darkmode-btn-color);position:absolute;cursor:pointer;border-radius:34px;top:0;left:0;right:0;bottom:0}.darkmode-switch .slider::before{-webkit-transition:.2s ease-in-out;transition:.2s ease-in-out;background:var(--darkmode-btn-color);position:absolute;content:"";border-radius:50%;height:10px;width:10px;left:2px;bottom:2px}.darkmode-switch input:checked+.slider{background-color:#428c2f;border:2px solid #fff}.darkmode-switch input:checked+.slider::before{background:#fff;-webkit-transform:translateX(18px);transform:translateX(18px)}
+
+
+    --darkmode-btn-color: $(darkmode.color);
+    --darkmode-btn-hover-color: $(darkmode.hover);
 ```
