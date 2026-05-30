@@ -678,3 +678,13 @@ body.darkmode{background:#353535;color:#eee}body.darkmode .toc button,body.darkm
     --darkmode-btn-color: $(darkmode.color);
     --darkmode-btn-hover-color: $(darkmode.hover);
 ```
+
+
+```xml
+<a aria-label='Go To Top' href='#' id='goTop'>
+</a>
+
+#goTop{-webkit-transition:.2s ease-in-out;transition:.2s ease-in-out;color:var(--menu-text-color);background:var(--menu-bg-color1);position:fixed;z-index:8;bottom:30px;right:-30px;border:none;opacity:0;border-radius:22px;outline:0;cursor:pointer;padding:18px 16px 14px}#goTop::after{content:"";-webkit-transition:.2s ease-in-out;transition:.2s ease-in-out;border-top:2px solid var(--menu-text-color);border-right:2px solid var(--menu-text-color);display:block;width:6px;height:6px;-webkit-transform:rotate(-45deg);transform:rotate(-45deg)}#goTop:focus-visible{outline:2px solid var(--main-link-color);outline-offset:2px}#goTop.is-visible{opacity:.9;right:36px}@media only screen and (max-width:900px){#goTop.is-visible{right:30px}}@media only screen and (max-width:480px){#goTop.is-visible{right:22px}}
+
+!function(){var o,i;i={scrollToTop:!0},optionLinkMagz(i),1==i.scrollToTop&&null!=(o=document.querySelector("#goTop"))&&window.addEventListener("scroll",function(){window.pageYOffset>=300?o.classList.add("is-visible"):o.classList.remove("is-visible")})}();
+```
