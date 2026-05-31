@@ -1,0 +1,14 @@
+<b:comment><!-- PAGINATION - Navigasi halaman -->
+</b:comment>
+<div class='pagination'>
+  <b:if cond='data:view.hasPreviousPage'>
+    <a class='btn btn-prev' expr:href='data:view.previousPageUrl'>
+      ← Halaman Sebelumnya
+    </a>
+  </b:if>
+  <b:if cond='data:view.hasNextPage'>
+    <a class='btn btn-next' expr:href='data:view.nextPageUrl'>
+      Halaman Berikutnya →
+    </a>
+  </b:if>
+</div>

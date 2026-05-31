@@ -1,0 +1,20 @@
+<style>
+  <b:comment><!-- WIDGETS CSS - Styling widget-specific styles -->
+  </b:comment>
+  .featured-widget {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+  }
+  .featured-widget h3 {
+    border-bottom-color: white;
+  }
+  .blog-widget .post-list {
+    list-style: none;
+  }
+  .blog-widget .post-list li {
+    margin-bottom: var(--spacing-unit);
+  }
+  .blog-widget .post-list a {
+    color: var(--color-primary);
+  }
+</style>

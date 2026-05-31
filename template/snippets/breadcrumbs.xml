@@ -1,0 +1,11 @@
+<b:comment><!-- BREADCRUMBS - Navigasi breadcrumb untuk SEO -->
+</b:comment>
+<b:if cond='data:view.isSingleItem'>
+  <nav class='breadcrumbs' role='navigation'>
+    <a href='/' rel='home'>Home</a>
+    <b:if cond='data:blog.pageTitle'>
+      <span class='breadcrumb-separator'>/</span>
+      <span class='breadcrumb-current'><data:blog.pageTitle /></span>
+    </b:if>
+  </nav>
+</b:if>

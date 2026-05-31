@@ -1,0 +1,24 @@
+<style>
+  <b:comment><!-- RESET CSS - Normalisasi browser default -->
+  </b:comment>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  html, body {
+    width: 100%;
+    height: 100%;
+  }
+  body {
+    font-family: var(--font-family-base);
+    font-size: var(--font-size-base);
+    line-height: 1.6;
+    color: var(--color-text);
+    background-color: var(--color-background);
+  }
+  ul, ol { list-style: none; }
+  a { text-decoration: none; color: inherit; }
+  button { border: none; background: none; cursor: pointer; }
+  input, textarea, select { font-family: inherit; }
+</style>

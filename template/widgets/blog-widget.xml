@@ -1,0 +1,20 @@
+<b:comment><!-- BLOG WIDGET - Widget untuk daftar postingan blog -->
+</b:comment>
+<b:widget id='Blog1' locked='true' title='Postingan Blog' type='Blog'>
+  <b:includable id='main' var='top'>
+    <div class='widget blog-widget'>
+      <h3><data:title /></h3>
+      <div class='blog-posts'>
+        <b:loop values='data:posts' var='post'>
+          <article class='blog-item'>
+            <h4>
+              <a expr:href='data:post.url'><data:post.title /></a>
+            </h4>
+            <p class='post-snippet'><data:post.snippet /></p>
+            <a class='read-more-link' expr:href='data:post.url'>Selengkapnya →</a>
+          </article>
+        </b:loop>
+      </div>
+    </div>
+  </b:includable>
+</b:widget>

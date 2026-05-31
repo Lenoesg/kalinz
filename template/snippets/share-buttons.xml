@@ -1,0 +1,15 @@
+<b:comment><!-- SHARE BUTTONS - Tombol share ke sosial media -->
+</b:comment>
+<div class='share-buttons'>
+  <b:if cond='data:view.isSingleItem'>
+    <a class='share-btn share-facebook' data-toggle='tooltip' expr:href='&quot;https://www.facebook.com/sharer/sharer.php?u=&quot; + data:post.url' target='_blank' title='Share to Facebook'>
+      <span class='icon'>f</span>
+    </a>
+    <a class='share-btn share-twitter' data-toggle='tooltip' expr:href='&quot;https://twitter.com/intent/tweet?url=&quot; + data:post.url + &quot;&amp;text=&quot; + data:post.title' target='_blank' title='Share to Twitter'>
+      <span class='icon'>𝕏</span>
+    </a>
+    <a class='share-btn share-whatsapp' data-toggle='tooltip' expr:href='&quot;https://wa.me/?text=&quot; + data:post.title + &quot; &quot; + data:post.url' target='_blank' title='Share to WhatsApp'>
+      <span class='icon'>W</span>
+    </a>
+  </b:if>
+</div>

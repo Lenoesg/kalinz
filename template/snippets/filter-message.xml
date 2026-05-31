@@ -1,0 +1,11 @@
+<b:comment><!-- FILTER MESSAGE - Pesan ketika menggunakan filter (label, arsip, dll) -->
+</b:comment>
+<b:if cond='data:view.isLabelSearch'>
+  <div class='filter-message'>
+    <p>Menampilkan hasil untuk label: <strong><data:view.label.name /></strong></p>
+  </div>
+  <b:elseif cond='data:view.search.query' />
+  <div class='filter-message'>
+    <p>Hasil pencarian untuk: <strong><data:view.search.query /></strong></p>
+  </div>
+</b:if>

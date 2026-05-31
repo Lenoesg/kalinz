@@ -1,0 +1,86 @@
+<!--
+Template source index.
+
+File ini adalah manifest untuk struktur source template yang dipecah per bagian.
+Isi file-file di folder ini nanti akan digabung kembali menjadi template.xml final.
+
+Urutan build yang disarankan:
+1. head/*
+2. styles/*
+3. snippets/*
+4. widgets/*
+5. scripts/*
+6. config/*
+-->
+
+<template-source>
+  <head>
+    <file>meta.xml</file>
+    <file>title.xml</file>
+    <file>social.xml</file>
+    <file>preconnect.xml</file>
+    <file>analytics.xml</file>
+    <file>layout-skin.xml</file>
+  </head>
+
+  <styles>
+    <file>variables.xml</file>
+    <file>reset.css</file>
+    <file>base.css</file>
+    <file>header.css</file>
+    <file>nav.css</file>
+    <file>content.css</file>
+    <file>sidebar.css</file>
+    <file>widgets.css</file>
+    <file>comments.css</file>
+    <file>footer.css</file>
+    <file>responsive.css</file>
+  </styles>
+
+  <snippets>
+    <file>breadcrumbs.xml</file>
+    <file>post-title.xml</file>
+    <file>post-info.xml</file>
+    <file>post-snippet.xml</file>
+    <file>post-body.xml</file>
+    <file>read-more.xml</file>
+    <file>share-buttons.xml</file>
+    <file>author-profile.xml</file>
+    <file>pagination.xml</file>
+    <file>error-message.xml</file>
+    <file>filter-message.xml</file>
+  </snippets>
+
+  <widgets>
+    <file>header-widget.xml</file>
+    <file>featured-post-widget.xml</file>
+    <file>blog-widget.xml</file>
+    <file>popular-post-widget.xml</file>
+    <file>html-widget.xml</file>
+    <file>profile-widget.xml</file>
+    <file>label-widget.xml</file>
+    <file>page-list-widget.xml</file>
+    <file>image-widget.xml</file>
+    <file>contact-form-widget.xml</file>
+    <file>archive-widget.xml</file>
+    <file>subscribe-widget.xml</file>
+    <file>stats-widget.xml</file>
+  </widgets>
+
+  <scripts>
+    <file>defer.js</file>
+    <file>menu.js</file>
+    <file>search.js</file>
+    <file>toc.js</file>
+    <file>related-post.js</file>
+    <file>infinite-scroll.js</file>
+    <file>lazyload.js</file>
+    <file>ads.js</file>
+  </scripts>
+
+  <config>
+    <file>template-settings.xml</file>
+    <file>custom-css.xml</file>
+    <file>custom-js-footer.xml</file>
+  </config>
+</template-source>

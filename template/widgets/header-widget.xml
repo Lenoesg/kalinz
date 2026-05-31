@@ -1,0 +1,14 @@
+<b:comment><!-- HEADER WIDGET - Widget untuk header/masthead -->
+</b:comment>
+<header>
+  <div class='header-wrapper'>
+    <div class='blog-header'>
+      <h1 class='blog-title'>
+        <b:if cond='data:view.isHomepage'>
+          <a expr:href='data:blog.url'><data:blog.title /></a>
+        </b:if>
+      </h1>
+      <p class='blog-description'><data:blog.description /></p>
+    </div>
+  </div>
+</header>

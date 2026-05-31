@@ -1,0 +1,14 @@
+<style>
+  <b:comment><!-- CSS VARIABLES - Warna, ukuran font, spacing, dll -->
+  </b:comment>
+  :root {
+    --color-primary: #333;
+    --color-secondary: #666;
+    --color-background: #fff;
+    --color-text: #000;
+    --font-family-base: 'Segoe UI', Tahoma, sans-serif;
+    --font-size-base: 16px;
+    --spacing-unit: 8px;
+    --border-radius: 4px;
+  }
+</style>

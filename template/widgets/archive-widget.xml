@@ -1,0 +1,18 @@
+<b:comment><!-- ARCHIVE WIDGET - Widget untuk arsip postingan -->
+</b:comment>
+<b:widget id='Archive1' locked='true' title='Arsip' type='Archive'>
+  <b:includable id='main' var='top'>
+    <div class='widget archive-widget'>
+      <h3><data:title /></h3>
+      <ul class='archive-list'>
+        <b:loop values='data:archives' var='arch'>
+          <li>
+            <a expr:href='data:arch.url'>
+              <data:arch.name /> (<data:arch.count />)
+            </a>
+          </li>
+        </b:loop>
+      </ul>
+    </div>
+  </b:includable>
+</b:widget>

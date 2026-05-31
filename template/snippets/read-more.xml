@@ -1,0 +1,9 @@
+<b:comment><!-- READ MORE - Tombol baca selengkapnya -->
+</b:comment>
+<b:if cond='data:view.isMultipleItems and data:post.isExpanded == false'>
+  <div class='read-more-wrapper'>
+    <a class='read-more-btn' expr:href='data:post.url'>
+      Baca Selengkapnya
+    </a>
+  </div>
+</b:if>

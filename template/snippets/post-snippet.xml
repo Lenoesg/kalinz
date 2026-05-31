@@ -1,0 +1,14 @@
+<b:comment><!-- POST SNIPPET - Preview atau excerpt postingan -->
+</b:comment>
+<div class='post-snippet'>
+  <b:if cond='data:view.isMultipleItems'>
+    <b:if cond='data:post.featuredImage'>
+      <img alt='<data:post.title />' class='post-thumbnail' expr:src='data:post.featuredImage' />
+    </b:if>
+    <p>
+      <b:if cond='data:post.snippet'>
+        <data:post.snippet />
+      </b:if>
+    </p>
+  </b:if>
+</div>

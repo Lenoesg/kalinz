@@ -1,0 +1,24 @@
+<style>
+  <b:comment><!-- HEADER CSS - Styling header dan branding -->
+  </b:comment>
+  header {
+    background-color: var(--color-primary);
+    color: white;
+    padding: calc(var(--spacing-unit) * 2);
+  }
+  .header-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .blog-title {
+    font-size: 2rem;
+    font-weight: 700;
+  }
+  .blog-description {
+    font-size: 0.9rem;
+    opacity: 0.9;
+  }
+</style>

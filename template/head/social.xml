@@ -1,0 +1,8 @@
+<b:comment><!-- SOCIAL META - Open Graph dan Twitter Cards -->
+</b:comment>
+<link expr:href='data:view.url.canonical' rel='canonical' />
+<data:blog.feedLinks />
+<data:blog.meTag />
+<b:tag cond='data:blog.googleProfileUrl' expr:href='data:blog.googleProfileUrl' name='link' rel='publisher' />
+<b:tag cond='data:view.featuredImage' expr:href='data:view.featuredImage' name='link' rel='image_src' />
+<b:include name='openGraphMetaData' />

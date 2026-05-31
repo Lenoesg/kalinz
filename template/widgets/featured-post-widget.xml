@@ -1,0 +1,17 @@
+<b:comment><!-- FEATURED POSTS WIDGET - Widget untuk postingan pilihan/featured -->
+</b:comment>
+<div class='widget featured-widget'>
+  <h3>Postingan Pilihan</h3>
+  <div class='featured-posts'>
+    <b:loop index='i' values='data:posts' var='post'>
+      <b:if cond='i &lt; 5'>
+        <article class='featured-post'>
+          <h4>
+            <a expr:href='data:post.url'><data:post.title /></a>
+          </h4>
+          <p class='post-date'><data:post.dateHeader /></p>
+        </article>
+      </b:if>
+    </b:loop>
+  </div>
+</div>

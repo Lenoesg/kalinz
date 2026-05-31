@@ -1,0 +1,12 @@
+<b:comment><!-- CUSTOM CSS - CSS custom untuk theme -->
+</b:comment>
+<style>
+  <b:comment><!-- Tambahkan custom CSS di sini -->
+  </b:comment>
+  <b:skin>
+    <b:template-skin>
+      <b:variable-def name='body.text.color' description='Text Color' type='color' default='#333333' />
+      <b:variable-def name='body.background.color' description='Background Color' type='color' default='#ffffff' />
+    </b:template-skin>
+  </b:skin>
+</style>

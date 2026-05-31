@@ -1,0 +1,17 @@
+<b:comment><!-- POST INFO - Tanggal, author, label postingan -->
+</b:comment>
+<div class='post-info'>
+  <b:if cond='data:view.isSingleItem'>
+    <span class='post-author'>
+      By <data:post.author.name />
+    </span>
+    <span class='post-date'>
+      <data:post.dateHeader />
+    </span>
+    <b:loop values='data:post.labels' var='label'>
+      <a class='post-label' expr:href='data:label.url' rel='tag'>
+        <data:label.name />
+      </a>
+    </b:loop>
+  </b:if>
+</div>

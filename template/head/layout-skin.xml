@@ -1,0 +1,7 @@
+<b:comment><!-- LAYOUT & SKIN - Favicon, Theme Color, CSS Variables -->
+</b:comment>
+<link expr:href='data:blog.blogspotFaviconUrl' rel='icon' type='image/x-icon' />
+<b:if cond='data:widgets'>
+  <meta expr:content='data:skin.vars.body_background_color' name='theme-color' />
+  <meta expr:content='data:skin.vars.body_background_color' name='msapplication-navbutton-color' />
+</b:if>

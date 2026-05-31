@@ -1,0 +1,7 @@
+<b:comment><!-- POST BODY - Isi utama postingan -->
+</b:comment>
+<div class='post-body'>
+  <b:if cond='data:view.isSingleItem'>
+    <data:post.body />
+  </b:if>
+</div>

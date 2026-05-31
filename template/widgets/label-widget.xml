@@ -1,0 +1,19 @@
+<b:comment><!-- LABELS WIDGET - Widget untuk label/kategori -->
+</b:comment>
+<b:widget id='Label1' locked='true' title='Label' type='Label'>
+  <b:includable id='main' var='top'>
+    <div class='widget label-widget'>
+      <h3><data:title /></h3>
+      <ul class='label-list'>
+        <b:loop values='data:labels' var='label'>
+          <li>
+            <a expr:href='data:label.url' rel='tag'>
+              <data:label.name />
+              <span class='label-count'>(<data:label.count />)</span>
+            </a>
+          </li>
+        </b:loop>
+      </ul>
+    </div>
+  </b:includable>
+</b:widget>

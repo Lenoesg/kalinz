@@ -1,0 +1,15 @@
+<b:comment><!-- AUTHOR PROFILE - Profil penulis postingan -->
+</b:comment>
+<b:if cond='data:view.isSingleItem'>
+  <div class='author-profile'>
+    <img alt='<data:post.author.name />' class='author-avatar' expr:src='data:post.author.profileUrl' />
+    <div class='author-info'>
+      <h4 class='author-name'>
+        <data:post.author.name />
+      </h4>
+      <p class='author-bio'>
+        <data:post.author.aboutMe />
+      </p>
+    </div>
+  </div>
+</b:if>

@@ -1,0 +1,16 @@
+<b:comment><!-- PAGE LIST WIDGET - Widget untuk daftar halaman statis -->
+</b:comment>
+<b:widget id='PageList1' locked='true' title='Halaman' type='PageList'>
+  <b:includable id='main' var='top'>
+    <div class='widget page-list-widget'>
+      <h3><data:title /></h3>
+      <ul class='page-list'>
+        <b:loop values='data:links' var='link'>
+          <li>
+            <a expr:href='data:link.href'><data:link.title /></a>
+          </li>
+        </b:loop>
+      </ul>
+    </div>
+  </b:includable>
+</b:widget>

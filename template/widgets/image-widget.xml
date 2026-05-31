@@ -1,0 +1,15 @@
+<b:comment><!-- IMAGE WIDGET - Widget untuk gambar -->
+</b:comment>
+<b:widget id='Image1' locked='true' title='Gambar' type='Image'>
+  <b:includable id='main' var='top'>
+    <div class='widget image-widget'>
+      <b:if cond='data:image'>
+        <img alt='<data:title />' expr:src='data:image' />
+      </b:if>
+      <b:if cond='data:title'>
+        <h4><data:title /></h4>
+      </b:if>
+      <p class='image-caption'><data:caption /></p>
+    </div>
+  </b:includable>
+</b:widget>

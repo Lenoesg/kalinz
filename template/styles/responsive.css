@@ -1,0 +1,32 @@
+<style>
+  <b:comment><!-- RESPONSIVE CSS - Media queries dan responsive design -->
+  </b:comment>
+  @media screen and (max-width: 768px) {
+    .content-wrapper {
+      grid-template-columns: 1fr;
+    }
+    aside {
+      width: 100%;
+    }
+    nav ul {
+      flex-direction: column;
+    }
+    h1 { font-size: 1.8rem; }
+    h2 { font-size: 1.4rem; }
+    h3 { font-size: 1.2rem; }
+    .header-wrapper {
+      flex-direction: column;
+      text-align: center;
+    }
+    .footer-links {
+      flex-direction: column;
+    }
+  }
+  @media screen and (max-width: 480px) {
+    main {
+      padding: calc(var(--spacing-unit) * 1);
+    }
+    h1 { font-size: 1.5rem; }
+    h2 { font-size: 1.2rem; }
+  }
+</style>

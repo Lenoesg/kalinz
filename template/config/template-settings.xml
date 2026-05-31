@@ -1,0 +1,11 @@
+<b:comment><!-- TEMPLATE SETTINGS - Konfigurasi template Blogger -->
+</b:comment>
+<b:skin>
+  <b:template-skin>
+    <b:var default='#333333' description='Body Text Color' name='body.text.color' type='color' />
+    <b:var default='#ffffff' description='Body Background Color' name='body.background.color' type='color' />
+    <b:var default='#f5f5f5' description='Body Link Color' name='body.link.color' type='color' />
+    <b:var default='#0066cc' description='Widget Title Color' name='widget.title.color' type='color' />
+    <b:var default='14px' description='Body Font Size' name='body.font.size' type='string' />
+  </b:template-skin>
+</b:skin>

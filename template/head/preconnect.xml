@@ -1,0 +1,5 @@
+<b:comment><!-- PRECONNECT - DNS Prefetch dan Preconnect Links -->
+</b:comment>
+<link href='https://fonts.googleapis.com' rel='preconnect' />
+<link href='https://fonts.gstatic.com' rel='preconnect' crossorigin='crossorigin' />
+<link href='https://cdn.jsdelivr.net' rel='preconnect' crossorigin='crossorigin' />
