@@ -1,14 +1,258 @@
-<style>
-  <b:comment><!-- CSS VARIABLES - Warna, ukuran font, spacing, dll -->
-  </b:comment>
-  :root {
-    --color-primary: #333;
-    --color-secondary: #666;
-    --color-background: #fff;
-    --color-text: #000;
-    --font-family-base: 'Segoe UI', Tahoma, sans-serif;
-    --font-size-base: 16px;
-    --spacing-unit: 8px;
-    --border-radius: 4px;
-  }
-</style>
+<b:skin>
+
+/* -----------------------------------------------
+Blogger Template Style
+Name:     linkmagz
+Version:  3.8.0
+Designer: Mas Sugeng
+----------------------------------------------- */
+
+/* Variable
+<Group description="Dimensi">
+    <Variable name="theme.width" description="Lebar Template" type="length" min="800px" max="2500px" default="1200px"  value="1200px"/>
+    <Variable name="header.height" description="Tinggi Header" type="length" min="48px" max="300px" default="48px"  value="48px"/>
+    <Variable name="navmenu.height" description="Tinggi Menu" type="length" min="48px" max="300px" default="62px"  value="62px"/>
+</Group>
+
+<Group description="Background Address Bar (Mobile)" selector="body">
+    <Variable name="body.background.color" description="Background" type="color" default="$(header.background.color)" value="#1b1b1b"/>
+</Group>
+
+<Group description="Teks Halaman" selector="body">
+    <Variable name="body.font" description="Font (jenis font tidak bisa diubah)" type="font"
+        default="normal normal 16px system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Arial, sans-serif" value="normal normal 16px system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Arial, sans-serif"/>
+    <Variable name="body.text.color" description="Warna" type="color" default="#31353a" value="#31353a"/>
+</Group>
+
+<Group description="Warna Link" selector="body">
+    <Variable name="body.link.color" description="Warna Link" type="color" default="#0273b9" value="#0273b9"/>
+    <Variable name="body.link.visited.color" description="Warna Dikunjungi" type="color" default="#0273b9" value="#0273b9"/>
+    <Variable name="body.link.hover.color" description="Warna Hover" type="color" default="#31353a" value="#31353a"/>
+</Group>
+
+<Group description="Warna Link Sidebar" selector="#sidebar-wrap">
+    <Variable name="sidebar.link.color" description="Warna Link" type="color" default="$(body.link.color)" value="#0273b9"/>
+    <Variable name="sidebar.link.visited.color" description="Warna Dikunjungi" type="color" default="$(body.link.visited.color)" value="#0273b9"/>
+    <Variable name="sidebar.link.hover.color" description="Warna Hover" type="color" default="$(body.link.hover.color)" value="#31353a"/>
+</Group>
+
+<Group description="Background Halaman" selector="body">
+    <Variable name="body.background" description="Background" type="color" default="#edf1f2" value="#edf1f2"/>
+</Group>
+
+<Group description="Background Header" selector="header">
+    <Variable name="header.background.color" description="Bagian Header" type="color" default="#1b1b1b" value="#1b1b1b"/>
+    <Variable name="header2.background.color" description="Bagian Header Samping" type="color" default="#2f2f2f" value="#2f2f2f"/>
+</Group>
+
+<Group description="Background Menu" selector="header">
+    <Variable name="navmenu.background.color" description="Bagian Menu" type="color" default="#1b1b1b" value="#1b1b1b"/>
+    <Variable name="navmenu2.background.color" description="Bagian Menu Samping" type="color" default="#2f2f2f" value="#2f2f2f"/>
+</Group>
+
+<Group description="Background Konten" selector="#content-wrap">
+    <Variable name="posts.background.color" description="Bagian Post" type="color" default="#ffffff" value="#ffffff"/>
+</Group>
+
+<Group description="Background Sidebar" selector="#sidebar-wrap">
+    <Variable name="sidebar.background.color" description="Bagian Sidebar" type="color" default="#f8fafa" value="#f8fafa"/>
+</Group>
+
+<Group description="Judul Blog" selector="#header">
+    <Variable name="judul.color" description="Warna Judul" type="color" default="#FFFFFF" value="#FFFFFF"/>
+</Group>
+
+<Group description="Ukuran Logo" selector="#header">
+    <Variable name="judul.logo.height" description="Tinggi Maksimal (Lebar akan menyesuaikan)" type="length" min="10px" max="300px" default="33px"  value="33px"/>
+</Group>
+
+<Group description="Deskripsi Blog" selector="#header">
+    <Variable name="deskripsi.color" description="Warna Deskripsi" type="color" default="$(judul.color)" value="#FFFFFF"/>
+</Group>
+
+<Group description="Menu Navigasi" selector=".navmenu-content">
+    <Variable name="navmenu.color" description="Warna" type="color" default="#FFFFFF" value="#FFFFFF"/>
+</Group>
+
+<Group description="Icon Pencarian" selector=".iconsearch-label">
+    <Variable name="search.color" description="Warna" type="color" default="$(navmenu.color)" value="#FFFFFF"/>
+    <Variable name="search.bg" description="Background" type="color" default="$(navmenu.color)" value="#FFFFFF"/>
+</Group>
+
+<Group description="Judul Featured Post, Popular Post" selector=".FeaturedPost h3.title, .PopularPosts .popular-post-widget-title h3.title">
+    <Variable name="featured.color" description="Warna" type="color" default="#FFFFFF" value="#FFFFFF"/>
+    <Variable name="featured.bg" description="Background" type="color" default="#1b1b1b" value="#1b1b1b"/>
+</Group>
+
+<Group description="Judul Post Terbaru" selector=".latestposts-title">
+    <Variable name="latestpost.color" description="Warna" type="color" default="#707070" value="#707070"/>
+    <Variable name="latestpost.bg" description="Background" type="color" default="#f8fafa" value="#f8fafa"/>
+</Group>
+
+<Group description="Judul Widget di Sidebar" selector=".normalwidget-title">
+    <Variable name="widgettitle.color" description="Warna" type="color" default="#707070" value="#707070"/>
+    <Variable name="widgettitle.bg" description="Background" type="color" default="#f0f4f4" value="#f0f4f4"/>
+</Group>
+
+<Group description="Judul Post" selector=".post-title">
+    <Variable name="posts.title.color" description="Warna" type="color" default="#575a5f" value="#575a5f"/>
+    <Variable name="posts.title.hover" description="Warna Hover" type="color" default="#2675A6" value="#2675A6"/>
+</Group>
+
+<Group description="Post Footer" selector=".post-info">
+    <Variable name="posts.footer.color" description="Warna" type="color" default="#757575" value="#757575"/>
+    <Variable name="posts.footer.hover" description="Warna Hover" type="color" default="#2675A6" value="#2675A6"/>
+</Group>
+
+<Group description="Label Post" selector=".label-info a">
+    <Variable name="labelinfo.color" description="Warna" type="color" default="#FFFFFF" value="#FFFFFF"/>
+    <Variable name="labelinfo.bg" description="Background" type="color" default="#1b1b1b" value="#1b1b1b"/>
+</Group>
+
+<Group description="Pagination" selector=".blog-pager, .follow-by-email-submit">
+    <Variable name="infinite.color" description="Warna Teks" type="color" default="#FFFFFF" value="#FFFFFF"/>
+    <Variable name="infinite.bg" description="Background" type="color" default="#1b1b1b" value="#1b1b1b"/>
+    <Variable name="infinite.hover" description="Background Hover" type="color" default="#555555" value="#555555"/>
+</Group>
+
+<Group description="Widget Featured Post" selector=".FeaturedPost">
+    <Variable name="featured.bgd" description="Background" type="color" default="#f8fafa" value="#f8fafa"/>
+    <Variable name="featured.title" description="Warna Judul" type="color" default="#575a5f" value="#575a5f"/>
+    <Variable name="featured.title.hover" description="Warna Judul Hover" type="color" default="#2675A6" value="#2675A6"/>
+    <Variable name="featured.desc" description="Warna Deskripsi" type="color" default="$(body.text.color)" value="#31353a"/>
+    <Variable name="featured.readmore" description="Warna Readmore" type="color" default="#FFFFFF" value="#FFFFFF"/>
+    <Variable name="featured.readmore.bg" description="Background Readmore" type="color" default="#1b1b1b" value="#1b1b1b"/>
+    <Variable name="featured.readmore.hover" description="Background Readmore Hover" type="color" default="#555555" value="#555555"/>
+</Group>
+
+<Group description="Widget Popular Posts" selector=".PopularPosts">
+    <Variable name="popular.bg" description="Background" type="color" default="#ffffff" value="#ffffff"/>
+    <Variable name="popular.title" description="Warna Judul" type="color" default="#575a5f" value="#575a5f"/>
+    <Variable name="popular.title.hover" description="Warna Judul Hover" type="color" default="#2675A6" value="#2675A6"/>
+    <Variable name="popular.desc" description="Warna Deskripsi" type="color" default="#737373" value="#737373"/>
+</Group>
+
+<Group description="Widget Profil" selector=".Profile .widget-content">
+    <Variable name="profile.bg" description="Background" type="color" default="#ffffff" value="#ffffff"/>
+    <Variable name="profile.text" description="Warna Teks" type="color" default="#737373" value="#737373"/>
+    <Variable name="profile.link" description="Warna Link" type="color" default="#2675A6" value="#2675A6"/>
+    <Variable name="profile.link.hover" description="Warna Link Hover" type="color" default="#575a5f" value="#575a5f"/>
+</Group>
+
+<Group description="Widget HTML Footer" selector="#footer-widget-html">
+    <Variable name="footerwidget.bg" description="Background" type="color" default="#2f2f2f" value="#2f2f2f"/>
+    <Variable name="footerwidget.text" description="Warna Teks" type="color" default="#FFFFFF" value="#FFFFFF"/>
+</Group>
+
+<Group description="Footer" selector="#footer-outer">
+    <Variable name="footer.color" description="Warna" type="color" default="#FFFFFF" value="#FFFFFF"/>
+    <Variable name="footer.color.hover" description="Warna Hover" type="color" default="#dddddd" value="#dddddd"/>
+    <Variable name="footer.bg" description="Background" type="color" default="#1b1b1b" value="#1b1b1b"/>
+    <Variable name="footer.bg2" description="Background Samping" type="color" default="#2f2f2f" value="#2f2f2f"/>
+</Group>
+
+<Group description="YANG INI JANGAN DIEDIT">
+<Variable name="body.text.font" description="5" type="font" default="normal normal 14px Helvetica, Arial, sans-serif" value="normal normal 14px Helvetica, Arial, sans-serif"/>
+<Variable name="tabs.font" description="6" type="font" default="normal normal 14px Helvetica, Arial, sans-serif" value="normal normal 14px Helvetica, Arial, sans-serif"/>
+<Variable name="posts.icons.color" description="7" type="color" default="#707070" value="#707070"/>
+<Variable name="labels.background.color" description="8" type="color" default="#ffffff" value="#ffffff"/>
+<Variable name="blog.title.font" description="9" type="font" default="normal normal 14px Helvetica, Arial, sans-serif" value="normal normal 14px Helvetica, Arial, sans-serif"/>
+<Variable name="blog.title.color" description="10" type="color" default="#fff" value="#ffffff"/>
+<Variable name="tabs.color" description="11" type="color" default="#ccc" value="#cccccc"/>
+<Variable name="tabs.selected.color" description="12" type="color" default="#fff" value="#ffffff"/>
+<Variable name="tabs.overflow.background.color" description="13" type="color" default="#ffffff" value="#ffffff"/>
+<Variable name="tabs.overflow.color" description="14" type="color" default="#393939" value="#393939"/>
+<Variable name="tabs.overflow.selected.color" description="15" type="color" default="#393939" value="#393939"/>
+<Variable name="posts.title.font" description="16" type="font" default="normal normal 20px Helvetica, Arial, sans-serif" value="normal normal 20px Helvetica, Arial, sans-serif"/>
+<Variable name="posts.text.font" description="17" type="font" default="normal normal 14px Helvetica, Arial, sans-serif" value="normal normal 14px Helvetica, Arial, sans-serif"/>
+<Variable name="posts.text.color" description="18" type="color" default="#444444" value="#444444"/>
+<Variable name="header.icons.color" description="19" type="color" default="#fff" value="#ffffff"/>
+</Group>
+Variable end */
+    
+/* Variables */
+:root {
+
+    /* Theme Dimensions */
+    --theme-width: $(theme.width);
+    --header-height: $(header.height);
+    --menu-height: $(navmenu.height);
+    --logo-height: $(judul.logo.height);
+
+    /* Main Font and Color */
+    --main-bg-color: $(body.background);
+    --main-font: $(body.font);
+    --main-text-color: $(body.text.color);
+    --main-link-color: $(body.link.color);
+    --main-link-visited-color: $(body.link.visited.color);
+    --main-link-hover-color: $(body.link.hover.color);
+
+    /* Header */
+    --header-bg-color1: $(header.background.color);
+    --header-bg-color2: $(header2.background.color);
+    --blog-title-text-color: $(judul.color);
+    --blog-description-text-color: $(deskripsi.color);
+    
+    /* Posts */
+    --posts-bg-color: $(posts.background.color);
+    --latest-posts-title-color: $(latestpost.color);
+    --latest-posts-title-bg-color: $(latestpost.bg);
+    --posts-title-color: $(posts.title.color);
+    --posts-title-hover-color: $(posts.title.hover);
+    --posts-footer-text-color: $(posts.footer.color);
+    --posts-footer-hover-color: $(posts.footer.hover);
+    --labels-text-color: $(labelinfo.color);
+    --labels-bg-color: $(labelinfo.bg);
+    --pagination-bg-color: $(infinite.bg);
+    --pagination-text-color: $(infinite.color);
+    --pagination-hover-color: $(infinite.hover);
+
+    /* Sidebar */
+    --sidebar-bg-color: $(sidebar.background.color);
+    --sidebar-link-color: $(sidebar.link.color);
+    --sidebar-link-visited-color: $(sidebar.link.visited.color);
+    --sidebar-link-hover-color: $(sidebar.link.hover.color);
+    --widget-title-color: $(widgettitle.color);
+    --widget-title-bg-color: $(widgettitle.bg);
+
+    /* Nav Menu */
+    --menu-text-color: $(navmenu.color);
+    --menu-bg-color1: $(navmenu.background.color);
+    --menu-bg-color2: $(navmenu2.background.color);
+
+    /* Widget Featured Post */
+    --featured-post-text-color: $(featured.color);
+    --featured-post-bg-color: $(featured.bg);
+    --featured-post-bg-color2: $(featured.bgd);
+    --featured-post-title-color: $(featured.title);
+    --featured-post-title-hover-color: $(featured.title.hover);
+    --featured-post-desc-text-color: $(featured.desc);
+    --featured-post-readmore-text-color: $(featured.readmore);
+    --featured-post-readmore-bg-color: $(featured.readmore.bg);
+    --featured-post-readmore-hover-color: $(featured.readmore.hover);
+
+    /* Widget Popular Posts */
+    --popular-posts-bg-color: $(popular.bg);
+    --popular-posts-title-color: $(popular.title);
+    --popular-posts-title-hover-color: $(popular.title.hover);
+    --popular-posts-desc-text-color: $(popular.desc);
+
+    /* Widget Profile */
+    --profile-text-color: $(profile.text);
+    --profile-bg-color: $(profile.bg);
+    --profile-link-color: $(profile.link);
+    --profile-link-hover-color: $(profile.link.hover);
+
+    /* Footer Widget */
+    --footer-widget-bg-color: $(footerwidget.bg);
+    --footer-widget-text-color: $(footerwidget.text);
+
+    /* Footer */
+    --footer-bg-color1: $(footer.bg);
+    --footer-bg-color2: $(footer.bg2);
+    --footer-text-color: $(footer.color);
+    --footer-link-hover-color: $(footer.color.hover);
+
+    --search-btn-color: $(search.color);
+}  
+</b:skin>

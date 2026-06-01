@@ -1,0 +1,134 @@
+<!-- WIDGET PROFILE -->
+<b:defaultmarkup type='Profile'>
+
+    <b:includable id='main' var='this'>
+        <b:if cond='data:title'>
+            <div class='normalwidget-title'>
+                <h2 class='title'>
+                    <data:title />
+                </h2>
+            </div>
+        </b:if>
+        <b:include name='content' />
+    </b:includable>
+
+    <b:includable id='authorProfileImage'>
+        <b:if cond='data:authorPhoto.image.isResizable'>
+            <img class='lazyload profile-img' expr:alt='data:messages.myPhoto'
+                expr:data-src='resizeImage(data:authorPhoto.image,100,&quot;1:1&quot;)'
+                expr:height='data:authorPhoto.height'
+                expr:width='data:authorPhoto.width'
+                src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAD2AAAA9gBbkdjNQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAANSURBVAiZY2BgYGAEAAAGAAKHf+MhAAAAAElFTkSuQmCC' />
+            <div class='lazy-loading' />
+        </b:if>
+    </b:includable>
+
+    <b:includable id='content'>
+        <b:if cond='data:team'>
+            <div class='widget-content team'>
+                <b:include name='teamProfile' />
+            </div>
+            <b:else />
+            <div class='widget-content individual'>
+                <b:include name='userProfile' />
+            </div>
+        </b:if>
+    </b:includable>
+
+    <b:includable id='defaultProfileImage'>
+        <div class='default-avatar' />
+    </b:includable>
+
+    <b:includable id='profileImage'>
+        <b:if cond='data:authorPhoto.image'>
+            <b:include name='authorProfileImage' />
+            <b:else />
+            <b:include name='defaultProfileImage' />
+        </b:if>
+    </b:includable>
+
+    <b:includable id='teamProfile'>
+        <b:loop values='data:authors' var='author'>
+            <div class='team-member'>
+                <b:include data='author' name='teamProfileLink' />
+            </div>
+        </b:loop>
+    </b:includable>
+
+    <b:includable id='teamProfileLink'>
+        <a class='profile-link g-profile' expr:href='data:userUrl' rel='nofollow'>
+            <div class='tema-profil-img-wrap'>
+                <b:include name='profileImage' />
+            </div>
+            <span class='profile-name'>
+                <data:display-name />
+            </span>
+        </a>
+    </b:includable>
+
+    <b:includable id='userGoogleProfile'>
+        <div class='g-follow' data-annotation='bubble' data-height='20'
+            expr:data-href='data:userUrl' />
+    </b:includable>
+
+    <b:includable id='userLocation'>
+        <div class='profile-data location'>
+            <svg viewBox='0 0 24 24'>
+                <path
+                    d='M12,11.5A2.5,2.5 0 0,1 9.5,9A2.5,2.5 0 0,1 12,6.5A2.5,2.5 0 0,1 14.5,9A2.5,2.5 0 0,1 12,11.5M12,2A7,7 0 0,0 5,9C5,14.25 12,22 12,22C12,22 19,14.25 19,9A7,7 0 0,0 12,2Z' />
+            </svg>
+            <data:location />
+        </div>
+    </b:includable>
+
+    <b:includable id='userProfile'>
+        <b:include name='userProfileImage' />
+        <b:include name='userProfileInfo' />
+    </b:includable>
+
+    <b:includable id='userProfileData'>
+        <b:include name='userProfileLink' />
+        <b:include cond='data:hasgoogleprofile' name='userGoogleProfile' />
+    </b:includable>
+
+    <b:includable id='userProfileImage'>
+        <div class='profile-img-wrap'>
+            <a expr:href='data:userUrl' rel='nofollow'>
+                <b:include name='profileImage' />
+            </a>
+        </div>
+    </b:includable>
+
+    <b:includable id='userProfileInfo'>
+        <div class='profile-info'>
+            <b:class cond='data:showlocation and data:location != &quot;&quot;'
+                name='has-location' />
+            <b:include name='userProfileData' />
+            <b:include cond='data:showlocation and data:location != &quot;&quot;'
+                name='userLocation' />
+            <b:include cond='data:aboutme != &quot;&quot;' name='userProfileText' />
+            <b:include name='viewProfileLink' />
+        </div>
+    </b:includable>
+
+    <b:includable id='userProfileLink'>
+        <a class='profile-link-author g-profile' expr:href='data:userUrl'
+            rel='author nofollow'>
+            <data:displayname />
+        </a>
+    </b:includable>
+
+    <b:includable id='userProfileText'>
+        <div class='profile-textblock'>
+            <data:aboutme />
+        </div>
+    </b:includable>
+
+    <b:includable id='viewProfileLink'>
+        <a class='profile-link' expr:href='data:userUrl' rel='author nofollow'>
+            <data:messages.viewMyCompleteProfile />
+        </a>
+    </b:includable>
+
+</b:defaultmarkup>
+<!-- WIDGET PROFILE END -->

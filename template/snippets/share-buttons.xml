@@ -1,0 +1,21 @@
+<b:includable id='postShareButton'>
+    <div id='share-container'> <!-- social sharing button -->
+        <div class='share-title'>
+            <p class='share-this-pleaseeeee'>Bagikan</p>
+        </div>
+        <div id='share'>
+            <!-- whatsapp -->
+            <a aria-label='whatsapp' class='whatsapp'
+                expr:href='&quot;//api.whatsapp.com/send?phone=&amp;text=&quot; + data:post.title + &quot;%20%2D%20&quot; + data:post.url'
+                rel='nofollow noreferrer' title='whatsapp'>
+                <i class='icon-whatsapp' />
+            </a>
+            <!-- facebook -->
+            <a aria-label='facebook' class='facebook'
+                expr:href='&quot;//www.facebook.com/sharer.php?u=&quot; + data:blog.url'
+                rel='nofollow noreferrer' title='facebook'>
+                <i class='icon-facebook' />
+            </a>
+        </div>
+    </div> <!-- social sharing button end -->
+</b:includable>

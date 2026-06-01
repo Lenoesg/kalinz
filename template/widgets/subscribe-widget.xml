@@ -1,0 +1,38 @@
+<!-- WIDGET SUBSCRIBE -->
+<b:defaultmarkup type='Subscribe'>
+
+    <b:includable id='main'>
+        <b:if cond='data:title'>
+            <div class='title-outer'>
+                <div class='normalwidget-title'>
+                    <h2 class='title'>
+                        <data:title />
+                    </h2>
+                </div>
+            </div>
+        </b:if>
+        <b:include name='content' />
+    </b:includable>
+
+    <b:includable id='content'>
+        <div class='widget-content'>
+            <b:include data='feeds' name='feeds' />
+        </div>
+    </b:includable>
+
+    <b:includable id='feeds' var='feeds'>
+        <b:loop values='data:feeds' var='feed'>
+
+            <div class='feed-reader-links'>
+                <a class='feed-reader-link' expr:href='data:feed.url' target='_blank'>
+                    <img alt='RSS' class='feed-icon' expr:src='data:feedIconImg'
+                        height='12' width='12' />
+                    <span>RSS Feed <data:feed.title /></span>
+                </a>
+            </div>
+
+        </b:loop>
+    </b:includable>
+
+</b:defaultmarkup>
+<!-- WIDGET SUBSCRIBE END d-->

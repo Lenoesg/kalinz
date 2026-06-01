@@ -1,0 +1,32 @@
+<!-- WIDGET STATS -->
+<b:defaultmarkup type='Stats'>
+    <b:includable id='main'>
+        <b:if cond='data:title'>
+            <div class='normalwidget-title'>
+                <h2 class='title'>
+                    <data:title />
+                </h2>
+            </div>
+        </b:if>
+        <b:include name='content' />
+    </b:includable>
+    <b:includable id='content'>
+        <div class='widget-content'>
+            <!-- Content is going to be visible when data will be fetched from server. -->
+            <div expr:id='data:widget.instanceId + &quot;_content&quot;'
+                style='display: none;'>
+                <!-- Counter and image will be injected later via AJAX call. -->
+                <b:if cond='data:showSparkline'>
+                    <script src='https://www.gstatic.com/charts/loader.js' />
+                    <span expr:id='data:widget.instanceId + &quot;_sparklinespan&quot;'
+                        style='display:inline-block; width:75px; height:30px' />
+                </b:if>
+                <span
+                    expr:class='&quot;counter-wrapper &quot; + (data:showGraphicalCounter ? &quot;graph-counter-wrapper&quot; : &quot;text-counter-wrapper&quot;)'
+                    expr:id='data:widget.instanceId + &quot;_totalCount&quot;'>
+                </span>
+            </div>
+        </div>
+    </b:includable>
+</b:defaultmarkup>
+<!-- WIDGET STATS END -->

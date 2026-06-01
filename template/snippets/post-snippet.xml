@@ -1,0 +1,6 @@
+<b:includable id='blogPostSnippet'>
+    <div class='post-snippet' expr:id='&quot;post-snippet-&quot; + data:post.id'>
+        <b:eval expr='snippet(data:post.snippets.long, { length: 100 })' />
+        <b:include name='postReadMore' />
+    </div>
+</b:includable>

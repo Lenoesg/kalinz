@@ -24,14 +24,19 @@ Gabungkan dalam urutan:
 3. `head/social.xml` - Social meta dan canonical
 4. `head/preconnect.xml` - Preconnect links
 5. `head/analytics.xml` - Analytics dan tracking
-6. `head/layout-skin.xml` - Favicon dan theme color
-7. `config/template-settings.xml` - Template settings
-8. `config/custom-css.xml` - Custom CSS
+6. `head/layout-skin.xml` - CSS layout khusus Blogger mode layout
 
-Semua file ini dibungkus dalam tag `<head>...</head>`
+Semua file di atas dibungkus dalam tag `<head>...</head>`.
 
 ### 3. BODY Section
-Dalam tag `<body expr:class='data:view.bodyClass'>`
+Setelah `</head>`, lanjutkan ke `<body>` lalu tempatkan:
+
+1. `config/template-settings.xml`
+2. `config/custom-css.xml`
+
+Keduanya memang berada di area body pada struktur `template.xml` yang sekarang, bukan di head.
+
+Dalam tag `<body>`:
 
 #### a. Styles (CSS)
 Gabungkan dalam tag `<style>`

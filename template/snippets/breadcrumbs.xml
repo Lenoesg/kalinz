@@ -1,0 +1,40 @@
+<b:includable id='breadcrumb'>
+    <b:if cond='data:view.isPost or data:view.isPage'>
+        <b:loop values='data:posts' var='post'>
+            <div class='breadcrumbs' itemscope='itemscope'
+                itemtype='https://schema.org/BreadcrumbList'>
+                <b:class cond='data:view.isPage' name='breadcrumb-page' />
+                <span itemprop='itemListElement' itemscope='itemscope'
+                    itemtype='https://schema.org/ListItem'>
+                    <a expr:href='data:blog.homepageUrl' itemprop='item'
+                        title='Home'>
+                        <meta content='1' itemprop='position' />
+                        <span itemprop='name'>
+                            <data:messages.home />
+                        </span>
+                    </a>
+                </span>
+                <b:if cond='data:post.labels'>
+                    <b:loop index='nomor' values='data:post.labels' var='label'> / <span
+                            itemprop='itemListElement' itemscope='itemscope'
+                            itemtype='https://schema.org/ListItem'>
+                            <meta expr:content='data:nomor+2' itemprop='position' />
+                            <a
+                                expr:href='data:label.url + &quot;?&amp;max-results=6&quot;'
+                                expr:title='data:label.name' itemprop='item'
+                                rel='nofollow'>
+                                <span itemprop='name'>
+                                    <data:label.name />
+                                </span>
+                            </a>
+                        </span>
+                    </b:loop>
+                    <b:else />
+                    / <span itemprop='name'>
+                        <data:blog.pageName />
+                    </span>
+                </b:if>
+            </div>
+        </b:loop>
+    </b:if>
+</b:includable>

@@ -1,0 +1,32 @@
+<!-- WIDGET IMAGE -->
+<b:defaultmarkup type='Image'>
+    <b:includable id='main'>
+        <b:if cond='data:title'>
+            <div class='normalwidget-title'>
+                <h2 class='title'>
+                    <data:title />
+                </h2>
+            </div>
+        </b:if>
+        <b:include name='content' />
+    </b:includable>
+    <b:includable id='content'>
+        <div class='widget-content'>
+            <b:tag cond='data:link' expr:href='data:link' name='a'>
+                <img class='lazyload' expr:alt='data:title'
+                    expr:data-src='data:sourceUrl' expr:height='data:height'
+                    expr:id='data:widget.instanceId + &quot;_img&quot;'
+                    expr:width='data:width'
+                    src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAABCAYAAAD9yd/wAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAOxAAADsQBlSsOGwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAAPSURBVAiZY+zt7c1kwAIALtACEvr8z1AAAAAASUVORK5CYII=' />
+                <div class='lazy-loading' />
+            </b:tag>
+            <br />
+            <b:if cond='data:caption'>
+                <span class='caption'>
+                    <data:caption />
+                </span>
+            </b:if>
+        </div>
+    </b:includable>
+</b:defaultmarkup>
+<!-- WIDGET IMAGE END -->

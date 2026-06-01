@@ -1,0 +1,75 @@
+<b:includable id='blogPostBody'>
+    <div class='post-body post-body-artikel'
+        expr:id='&quot;post-body-&quot; + data:post.id'>
+        <data:post.body />
+    </div>
+    <div id='baca-juga' />
+    <script>
+            //<![CDATA[
+            var bacaJugaJudul = [],
+            bacaJugaNum = 0,
+            bacaJugaUrl = [];
+            function bacaJuga(a) {
+            for (var u = 0; u < a.feed.entry.length; u++) {
+                var e = a.feed.entry[u];
+                bacaJugaJudul[bacaJugaNum] = e.title.$t;
+                for (var l = 0; l < e.link.length; l++)
+                if ("alternate" == e.link[l].rel) {
+                    ((bacaJugaUrl[bacaJugaNum] = e.link[l].href), bacaJugaNum++);
+                    break;
+                }
+            }
+            }
+            function showBacaJuga(a) {
+            var u = document.querySelector("#baca-juga"),
+                e = document.createElement("div"),
+                l,
+                r = document
+                .querySelector(".post-body-artikel")
+                .querySelectorAll("div > br, span > br, div > p, span > p"),
+                t = Math.ceil(0.5 * r.length),
+                n = document.getElementById("related");
+            e.setAttribute("class", "baca-juga-wrap");
+            var c = { bacaJuga: !0, jumlahBacaJuga: 3, judulBacaJuga: "Baca Juga" };
+            optionLinkMagz(c);
+            var g = function (a) {
+                var u = a.previousElementSibling;
+                null != u && "BR" === u.tagName && (u.style.display = "none");
+                },
+                J = function (a, u) {
+                u.parentNode.insertBefore(a, u.nextSibling);
+                };
+            if (!0 === c.bacaJuga && void 0 !== r[t]) {
+                J(u, null !== n ? n : r[t]);
+                for (var i = 0; i < bacaJugaUrl.length; i++)
+                bacaJugaUrl[i] == a &&
+                    (bacaJugaUrl.splice(i, 1), bacaJugaJudul.splice(i, 1));
+                var b = Math.floor((bacaJugaJudul.length - 1) * Math.random());
+                if (((i = 0), bacaJugaJudul.length > 0 && c.jumlahBacaJuga > 0)) {
+                (u.appendChild(e), g(u));
+                for (
+                    var o = "<strong>" + c.judulBacaJuga + "</strong><ul>";
+                    i < bacaJugaJudul.length && i < c.jumlahBacaJuga;
+                    i++
+                )
+                    ((o +=
+                    '<li><a href="' +
+                    bacaJugaUrl[b] +
+                    '">' +
+                    bacaJugaJudul[b] +
+                    "</a></li>"),
+                    b < bacaJugaJudul.length - 1 ? b++ : (b = 0));
+                ((o += "</ul>"), (e.innerHTML = o));
+                }
+            }
+            }
+            //]]>
+        </script>
+    <b:loop values='data:post.labels' var='label'>
+        <script
+            expr:src='&quot;/feeds/posts/summary/-/&quot; + data:label.name + &quot;?alt=json-in-script&amp;callback=bacaJuga&amp;max-results=5&quot;' />
+    </b:loop>
+    <script>
+            showBacaJuga(&quot;<data:post.url/>&quot;);
+        </script>
+</b:includable>

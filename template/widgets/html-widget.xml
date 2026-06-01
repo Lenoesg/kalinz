@@ -1,0 +1,18 @@
+<!-- WIDGET HTML -->
+<b:defaultmarkup type='HTML'>
+    <b:includable id='main'>
+        <b:if cond='data:content'>
+            <b:if cond='data:title'>
+                <div class='normalwidget-title html'>
+                    <h2 class='title'>
+                        <data:title />
+                    </h2>
+                </div>
+            </b:if>
+            <div class='widget-content'>
+                <data:content />
+            </div>
+        </b:if>
+    </b:includable>
+</b:defaultmarkup>
+<!-- WIDGET HTML END -->
