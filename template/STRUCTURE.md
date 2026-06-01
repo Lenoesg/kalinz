@@ -2,45 +2,59 @@
 
 Panduan singkat tentang setiap file dan folder dalam struktur template Kalinz.
 
+## Prinsip struktur
+Struktur ini dibuat supaya file kecil punya tanggung jawab yang jelas.
+
+- `head/` untuk isi `<head>`
+- `styles/` untuk CSS
+- `snippets/` untuk komponen reusable
+- `widgets/` untuk widget Blogger dan layout besar
+- `scripts/` untuk behavior JavaScript
+- `config/` untuk setting dan custom code
+
+Kalau satu file mulai berisi lebih dari satu tanggung jawab, file itu perlu dibelah lagi.
+
+---
+
 ## Folder & Fungsi
 
 ### 📋 `head/` - Bagian HEAD HTML
-Berisi meta tags, title, dan link konfigurasi yang diletakkan di dalam `<head>` tag.
+Berisi meta tags, title, social tags, preconnect, analytics, dan layout skin.
 
 | File | Fungsi |
 |------|--------|
-| `meta.xml` | Content-Type, viewport, charset, generator |
-| `title.xml` | Dynamic title berdasarkan halaman (post, archive, dsb) |
-| `social.xml` | OpenGraph, Twitter Cards, canonical URL |
-| `preconnect.xml` | DNS prefetch dan preconnect untuk CDN/external resources |
-| `analytics.xml` | Google Analytics, AdSense, tracking scripts |
-| `layout-skin.xml` | Favicon, theme color, skin variables |
+| `meta.xml` | Viewport, charset, generator, canonical, favicon, feed links |
+| `title.xml` | Dynamic title berdasarkan halaman |
+| `social.xml` | OpenGraph, Twitter Cards, image fallback |
+| `preconnect.xml` | DNS prefetch dan preconnect |
+| `analytics.xml` | Google Analytics dan AdSense script |
+| `layout-skin.xml` | CSS layout khusus Blogger mode layout |
 
 ### 🎨 `styles/` - CSS Stylesheets
-Berisi semua CSS yang dipisah berdasarkan komponen/section.
+Berisi CSS yang dipisah berdasarkan area tanggung jawab.
 
 | File | Fungsi |
 |------|--------|
-| `variables.xml` | CSS variables untuk color, font, spacing |
-| `reset.css` | CSS reset untuk normalize browser defaults |
-| `base.css` | Base styling untuk heading, paragraph, links |
+| `variables.xml` | Semua CSS variable dan `<Group>` Blogger |
+| `reset.css` | Reset, normalize, font-face, baseline |
+| `base.css` | Elemen dasar dan utility umum |
 | `header.css` | Styling header dan blog title |
-| `nav.css` | Styling navigation menu |
-| `content.css` | Styling content area utama |
-| `sidebar.css` | Styling sidebar dan widget container |
-| `widgets.css` | Styling widget-specific elements |
+| `nav.css` | Styling navigation menu desktop/mobile |
+| `content.css` | Styling wrapper konten utama |
+| `sidebar.css` | Styling sidebar dan container widget |
+| `widgets.css` | Styling widget generic dan widget khusus |
 | `comments.css` | Styling section komentar |
 | `footer.css` | Styling footer |
-| `responsive.css` | Media queries dan responsive breakpoints |
+| `responsive.css` | Media queries dan responsive overrides |
 
 ### 📝 `snippets/` - Reusable Content Snippets
-Berisi HTML/XML snippets yang bisa dipake di berbagai tempat.
+Berisi bagian kecil yang dipanggil dari widget utama.
 
 | File | Fungsi |
 |------|--------|
 | `breadcrumbs.xml` | Navigation breadcrumb untuk SEO |
 | `post-title.xml` | Judul postingan |
-| `post-info.xml` | Tanggal, author, label postingan |
+| `post-info.xml` | Tanggal, author, komentar |
 | `post-snippet.xml` | Preview/excerpt postingan |
 | `post-body.xml` | Isi utama postingan |
 | `read-more.xml` | Tombol "Baca Selengkapnya" |
@@ -48,18 +62,18 @@ Berisi HTML/XML snippets yang bisa dipake di berbagai tempat.
 | `author-profile.xml` | Profil/bio penulis |
 | `pagination.xml` | Navigasi halaman |
 | `error-message.xml` | Pesan error 404 |
-| `filter-message.xml` | Pesan ketika menggunakan filter/search |
+| `filter-message.xml` | Pesan archive/search |
 
-### 🧩 `widgets/` - Blogger Widgets & Custom Components
-Berisi widget-widget utama yang bisa di-customize.
+### 🧩 `widgets/` - Blogger Widgets & Layout Components
+Berisi widget utama dan markup besar untuk rendering halaman.
 
 | File | Fungsi |
 |------|--------|
-| `header-widget.xml` | Widget header/masthead dengan blog title |
-| `featured-post-widget.xml` | Widget untuk postingan pilihan |
-| `blog-widget.xml` | Blog posts widget (main content area) |
+| `header-widget.xml` | Widget header/masthead |
+| `featured-post-widget.xml` | Featured post widget |
+| `blog-widget.xml` | Alur utama blog, routing view, loop post, comments, dan pemanggilan snippets |
 | `popular-post-widget.xml` | Widget postingan populer |
-| `html-widget.xml` | Custom HTML widget |
+| `html-widget.xml` | Generic HTML widget |
 | `profile-widget.xml` | Profil blogger/author |
 | `label-widget.xml` | Label/kategori widget |
 | `page-list-widget.xml` | Daftar halaman statis |
@@ -70,27 +84,29 @@ Berisi widget-widget utama yang bisa di-customize.
 | `stats-widget.xml` | Statistik blog |
 
 ### 🔧 `scripts/` - JavaScript Files
-Berisi JavaScript untuk interaktivitas dan functionality.
+Berisi JavaScript yang dipisah per behavior.
 
 | File | Fungsi |
 |------|--------|
 | `defer.js` | Defer loading untuk non-critical scripts |
-| `menu.js` | Mobile menu toggle dan navigasi interaktif |
+| `menu.js` | Sticky menu, mobile menu, submenu |
 | `search.js` | Fungsi pencarian blog |
 | `toc.js` | Table of Contents generator |
 | `related-post.js` | Load postingan terkait |
 | `infinite-scroll.js` | Infinite scroll pagination |
 | `lazyload.js` | Lazy loading untuk images |
-| `ads.js` | Google AdSense dan ads management |
+| `ads.js` | Penempatan ads dan logic related ads |
 
 ### ⚙️ `config/` - Konfigurasi Template
-Berisi konfigurasi dan custom code.
+Berisi konfigurasi dan custom code yang tetap mudah diubah manual.
 
 | File | Fungsi |
 |------|--------|
-| `template-settings.xml` | Blogger template settings dan skin variables |
-| `custom-css.xml` | Custom CSS dan additional styles |
+| `template-settings.xml` | Blogger template settings dan setting global template |
+| `custom-css.xml` | Custom CSS tambahan |
 | `custom-js-footer.xml` | Custom JavaScript di footer |
+
+---
 
 ## Aturan Editing
 
@@ -98,42 +114,51 @@ Berisi konfigurasi dan custom code.
 2. **2 spasi indentasi** - Konsisten gunakan 2 spasi, bukan tab
 3. **No minify** - Jangan minify file source untuk readability
 4. **Deskriptif** - Nama file harus jelas sesuai fungsi
-5. **Comments** - Gunakan `<b:comment><!-- ... --></b:comment>` untuk penjelasan
+5. **Satu tanggung jawab** - Jika satu file mulai memegang banyak fitur, pecah lagi
+6. **Comments** - Gunakan `<b:comment><!-- ... --></b:comment>` untuk penjelasan
+
+---
 
 ## Workflow
 
 ```
 1. Edit file-file individual di masing-masing folder
    └─ Jangan edit template.xml langsung
-   
+
 2. Test perubahan di Blogger test blog
    └─ Merge semua file ke template.xml
-   
+
 3. Upload template.xml ke Blogger
    └─ Lihat BUILD.md untuk panduan merge
-   
+
 4. Backup perubahan
    └─ Copy template.xml ke folder backup/
 ```
 
+---
+
 ## Tips Maintenance
 
-- **Gunakan VSCode** dengan XML/HTML extension untuk syntax highlighting
-- **Format dengan Prettier** atau built-in formatter
-- **Search & Replace** untuk perubahan global (cari di semua folder)
-- **Git/Version Control** untuk track history dan revert jika diperlukan
-- **Dokumentasi** - Tambah comment untuk perubahan kompleks
+- Gunakan VSCode dengan XML/HTML extension untuk syntax highlighting
+- Gunakan search global untuk menemukan blok terkait
+- Simpan logic besar di file yang sesuai domainnya, jangan di root
+- Dokumentasikan dependency antar file jika ada
+- Backup sebelum refactor besar
+
+---
 
 ## File yang TIDAK boleh diedit
 
-- `index.xml` - Placeholder saja, ignore
-- `README.md` - Dokumentasi referensi
-- `BUILD.md` - Dokumentasi merge
-- Jangan tambah file di root template/ (selain dokumentasi)
+- `index.xml` - Manifest referensi struktur
+- `README.md` - Dokumentasi umum
+- `BUILD.md` - Panduan merge
+- Jangan tambah file di root `template/` selain dokumentasi
+
+---
 
 ## Perlu bantuan?
 
 Lihat:
 - [README.md](./README.md) - Dokumentasi umum struktur
 - [BUILD.md](./BUILD.md) - Panduan merge file
-- Blogger Documentation - https://support.google.com/blogger
+- [MERGE-ORDER.md](./MERGE-ORDER.md) - Urutan merge visual
