@@ -1,7 +1,390 @@
-<b:comment><!-- LAYOUT & SKIN - Favicon, Theme Color, CSS Variables -->
-</b:comment>
-<link expr:href='data:blog.blogspotFaviconUrl' rel='icon' type='image/x-icon' />
-<b:if cond='data:widgets'>
-  <meta expr:content='data:skin.vars.body_background_color' name='theme-color' />
-  <meta expr:content='data:skin.vars.body_background_color' name='msapplication-navbutton-color' />
+<b:if cond='data:view.isLayoutMode'>
+  <b:template-skin>
+    <![CDATA[
+    body#layout {
+    background-color: #fff4e5;
+    border: 1px solid #f7dab2;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    width: 780px;
+    margin: 20px auto;
+    padding: 80px 36px 25px;
+    position: relative
+    }
+
+    body#layout::before {
+        content: "linkmagz versi 3.8.0 (29/11/2025)";
+        display: block;
+        position: absolute;
+        left: 36px;
+        font-family: Arial, sans-serif;
+        background: #f9e8d5;
+        padding: 10px 14px;
+        color: #795e41;
+        top: 19px
+    }
+
+    body#layout .add_widget a,
+    body#layout div.layout-title,
+    body#layout div.layout-widget-description {
+        font-size: 1em;
+        overflow: hidden
+    }
+
+    body#layout .add_widget {
+        border: 1px dashed #757575;
+        padding: 12px;
+        position: relative;
+        text-align: left;
+        margin-bottom: 8px
+    }
+
+    body#layout .add_widget a {
+        font-weight: 700;
+        text-transform: uppercase;
+        font-size: 12px
+    }
+
+    body#layout div.section {
+        background: 0 0;
+        margin: 0 0 10px;
+        padding: 0;
+        border: none;
+        font-family: Arial, sans-serif
+    }
+
+    body#layout div.section h4 {
+        background: #b28850;
+        color: #fff;
+        text-transform: capitalize;
+        font-weight: 400;
+        padding: 3px 10px;
+        font-size: 1em;
+        line-height: 18px;
+        margin: 0 0 8px;
+        text-align: center
+    }
+
+    body#layout div.section>div {
+        margin-top: 0
+    }
+
+    body#layout div.layout-widget-description {
+        font-size: 12px;
+        opacity: .7;
+        display: none
+    }
+
+    body#layout .editlink.icon {
+        top: 12px
+    }
+
+    body#layout div.widget .widget-content {
+        padding: 12px
+    }
+
+    body#layout #main-content {
+        margin-bottom: 10px
+    }
+
+    body#layout #main-content .Blog .widget-content {
+        height: 120px
+    }
+
+    body#layout #above-post-widget h4,
+    body#layout #bellow-header-widget h4,
+    body#layout #bellow-header-widget2 h4,
+    body#layout #custom-css h4,
+    body#layout #custom-javascript-footer h4,
+    body#layout #footer-text h4,
+    body#layout #footer-widget-html h4,
+    body#layout #header h4,
+    body#layout #iklan-atas h4,
+    body#layout #iklan-bawah h4,
+    body#layout #iklan-infeed h4,
+    body#layout #iklan-tengah1 h4,
+    body#layout #iklan-tengah2 h4,
+    body#layout #main-content h4,
+    body#layout #matched-content h4,
+    body#layout #navbarrr h4,
+    body#layout #navmenu h4,
+    body#layout #page-navmenu h4,
+    body#layout #template-settings h4,
+    body#layout #top-widget h4,
+    body#layout #top-widget2 h4 {
+        display: none
+    }
+
+    body#layout .custom-css,
+    body#layout .custom-javascript-footer,
+    body#layout .template-settings {
+        width: 300px;
+        display: block
+    }
+
+    body#layout .custom-css div.widget .widget-content,
+    body#layout .custom-javascript-footer div.widget .widget-content,
+    body#layout .template-settings div.widget .widget-content {
+        padding: 6px 12px;
+        background: #e4ffff
+    }
+
+    body#layout .custom-css h4,
+    body#layout .custom-javascript-footer h4,
+    body#layout .template-settings h4 {
+        background: #569494;
+        display: none
+    }
+
+    body#layout .custom-css div.layout-widget-description,
+    body#layout .custom-javascript-footer div.layout-widget-description,
+    body#layout .template-settings div.layout-widget-description {
+        display: none
+    }
+
+    body#layout .custom-css .editlink.icon,
+    body#layout .custom-javascript-footer .editlink.icon,
+    body#layout .template-settings .editlink.icon {
+        top: 6px
+    }
+
+    body#layout #template-settings div.widget {
+        margin-top: 0
+    }
+
+    body#layout #iklan-atas div.widget .widget-content,
+    body#layout #iklan-bawah div.widget .widget-content,
+    body#layout #iklan-tengah1 div.widget .widget-content,
+    body#layout #iklan-tengah2 div.widget .widget-content {
+        background: #eaffe9;
+        padding: 6px 12px
+    }
+
+    body#layout #iklan-atas div.widget .widget-content .editlink.icon,
+    body#layout #iklan-bawah div.widget .widget-content .editlink.icon,
+    body#layout #iklan-tengah1 div.widget .widget-content .editlink.icon,
+    body#layout #iklan-tengah2 div.widget .widget-content .editlink.icon {
+        top: 5px
+    }
+
+    body#layout #matched-content div.widget .widget-content {
+        background: #ffe9e9;
+        padding: 6px 12px
+    }
+
+    body#layout #matched-content div.widget .widget-content .editlink.icon {
+        top: 5px
+    }
+
+    body#layout #iklan-infeed div.widget .widget-content {
+        background: #e9e9ff;
+        padding: 6px 12px
+    }
+
+    body#layout #iklan-infeed div.widget .widget-content .editlink.icon {
+        top: 5px
+    }
+
+    body#layout #header-outer {
+        padding-top: 20px
+    }
+
+    body#layout #header {
+        float: left;
+        width: 48%
+    }
+
+    body#layout #wrapper {
+        padding: 20px 0
+    }
+
+    body#layout #header-content::after,
+    body#layout #wrapper::after {
+        content: "";
+        clear: both;
+        display: block
+    }
+
+    body#layout #content-wrap {
+        width: 58%;
+        float: left
+    }
+
+    body#layout #sidebar-wrap {
+        width: 38%;
+        float: right
+    }
+
+    body#layout #sidebar-wrap .sidebar-sticky {
+        padding-top: 10px
+    }
+
+    body#layout #footer-outer {
+        padding-bottom: 20px
+    }
+    ]]>
+    </b:template-skin>
 </b:if>
+
+<script>
+    //<![CDATA[
+    /* template option */
+    var linkMagzSetting;
+    function optionLinkMagz(i) {
+      if (void 0 !== linkMagzSetting)
+        for (var n in linkMagzSetting)
+          linkMagzSetting.hasOwnProperty(n) &&
+            void 0 !== linkMagzSetting[n] &&
+            (i[n] = linkMagzSetting[n]);
+    }
+    /* shinsenter/defer.js */
+    !(function () {
+      !(function (n, t, e) {
+        function c(n, t, o) {
+          k
+            ? S(n, t)
+            : ((o = o === e ? c.lazy : o) ? N : C).push(
+                n,
+                Math.max(o ? 350 : 0, t),
+              );
+        }
+        function o(n) {
+          j.head.appendChild(n);
+        }
+        function i(n, t) {
+          n.forEach(function (n) {
+            t(n);
+          });
+        }
+        function u(t, e, c, o) {
+          i(e.split(" "), function (e) {
+            (o || n)[t + "EventListener"](e, c || d);
+          });
+        }
+        function r(n, t, c, o) {
+          return (
+            (o = t ? j.getElementById(t) : e) ||
+              ((o = j.createElement(n)), t && (o.id = t)),
+            c && u(y, p, c, o),
+            o
+          );
+        }
+        function f(n, t) {
+          i(q.call(n.attributes), function (n) {
+            t(n.name, n.value);
+          });
+        }
+        function s(n, t) {
+          return q.call((t || j).querySelectorAll(n));
+        }
+        function a(n, t) {
+          (i(s("source,img", n), a),
+            f(n, function (t, e, c) {
+              (c = /^data-(.+)/.exec(t)) && n[x](c[1], e);
+            }),
+            t && (n.className += " " + t),
+            n[p] && n[p]());
+        }
+        function l(n, t, e) {
+          c(
+            function (t) {
+              (i((t = s(n || "script[type=deferjs]")), function (n, t) {
+                n.src &&
+                  ((t = r(h)),
+                  f(n, function (n, e) {
+                    n != A && t[x]("src" == n ? "href" : n, e);
+                  }),
+                  (t.rel = "preload"),
+                  (t.as = m),
+                  o(t));
+              }),
+                (function n(e, c) {
+                  (e = t[E]()) &&
+                    ((c = r(m)),
+                    f(e, function (n, t) {
+                      n != A && c[x](n, t);
+                    }),
+                    (c.text = e.text),
+                    e.parentNode.replaceChild(c, e),
+                    c.src && !c.getAttribute("async")
+                      ? u(y, p + " error", n, c)
+                      : n());
+                })());
+            },
+            t,
+            e,
+          );
+        }
+        function d(n, t) {
+          for (
+            t = k ? (u(b, g), N) : (u(b, w), (k = c), N[0] && u(y, g), C);
+            t[0];
+          )
+            S(t[E](), t[E]());
+        }
+        var h = "link",
+          m = "script",
+          p = "load",
+          v = "pageshow",
+          y = "add",
+          b = "remove",
+          g = "touchstart mousemove mousedown keydown wheel",
+          w = "on" + v in n ? v : p,
+          x = "setAttribute",
+          E = "shift",
+          A = "type",
+          I = n.IntersectionObserver,
+          j = n.document || n,
+          k = /p/.test(j.readyState),
+          C = [],
+          N = [],
+          S = n.setTimeout,
+          q = C.slice;
+        ((c.all = l),
+          (c.dom = function (n, o, u, r, f) {
+            c(
+              function (o) {
+                function l(n) {
+                  (r && !1 === r(n)) || a(n, u);
+                }
+                ((o = I
+                  ? new I(function (n) {
+                      i(n, function (n, t) {
+                        n.isIntersecting && (o.unobserve((t = n.target)), l(t));
+                      });
+                    }, f)
+                  : e),
+                  i(s(n || "[data-src]"), function (n) {
+                    n[t] || ((n[t] = c), o ? o.observe(n) : l(n));
+                  }));
+              },
+              o,
+              !1,
+            );
+          }),
+          (c.css = function (n, t, e, i, u) {
+            c(
+              function (e) {
+                (((e = r(h, t, i)).rel = "stylesheet"), (e.href = n), o(e));
+              },
+              e,
+              u,
+            );
+          }),
+          (c.js = function (n, t, e, i, u) {
+            c(
+              function (e) {
+                (((e = r(m, t, i)).src = n), o(e));
+              },
+              e,
+              u,
+            );
+          }),
+          (c.reveal = a),
+          (n[t] = c),
+          k || u(y, w),
+          l());
+      })(this, "Defer");
+    })();
+    //]]>
+</script>

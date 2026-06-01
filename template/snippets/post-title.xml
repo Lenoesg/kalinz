@@ -1,7 +1,0 @@
-<b:comment><!-- POST TITLE - Judul postingan -->
-</b:comment>
-<h2 class='post-title'>
-  <b:if cond='data:view.isSingleItem'>
-    <data:post.title />
-  </b:if>
-</h2>

@@ -1,12 +1,1 @@
-<b:comment><!-- ANALYTICS - Google Analytics, Ads, dan Tracking -->
-</b:comment>
-<b:if cond='data:blog.analyticsAccountNumber'>
-  <script type='text/javascript'>
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', '<data:blog.analyticsAccountNumber />']);
-    _gaq.push(['_trackPageview']);
-  </script>
-  <script async='async' src='//www.google-analytics.com/ga.js' />
-</b:if>
-<b:comment><!-- Tempat untuk Google AdSense, Ads Manager, dll -->
-</b:comment>
+<b:include data='blog' name='google-analytics' />

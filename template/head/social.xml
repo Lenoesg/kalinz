@@ -1,8 +1,34 @@
-<b:comment><!-- SOCIAL META - Open Graph dan Twitter Cards -->
+<b:comment><!-- Meta tag Twitter Cards -->
 </b:comment>
-<link expr:href='data:view.url.canonical' rel='canonical' />
-<data:blog.feedLinks />
-<data:blog.meTag />
-<b:tag cond='data:blog.googleProfileUrl' expr:href='data:blog.googleProfileUrl' name='link' rel='publisher' />
-<b:tag cond='data:view.featuredImage' expr:href='data:view.featuredImage' name='link' rel='image_src' />
-<b:include name='openGraphMetaData' />
+<b:if cond='data:view.isHomepage'>
+    <meta content='summary_large_image' name='twitter:card' />
+    <meta expr:content='data:blog.title' property='twitter:title' />
+    <meta expr:content='data:blog.url' property='twitter:url' />
+    <b:elseif cond='data:view.isSingleItem' />
+    <meta content='summary_large_image' name='twitter:card' />
+    <meta expr:content='data:blog.pageName' property='twitter:title' />
+    <meta expr:content='data:blog.url' property='twitter:url' />
+</b:if>
+<b:if cond='data:blog.metaDescription'>
+    <meta expr:content='data:blog.metaDescription' property='twitter:description' />
+    <b:else />
+    <meta
+        expr:content='data:blog.pageName + &quot; - &quot; + data:blog.title + &quot; - &quot; + data:blog.homepageUrl'
+        property='twitter:description' />
+</b:if>
+<b:if cond='data:view.featuredImage'>
+    <meta expr:content='resizeImage(data:view.featuredImage, 1200, &quot;1200:630&quot;)'
+        property='twitter:image' />
+    <b:elseif cond='data:widgets' />
+    <b:loop
+        values='data:widgets.Blog.first.posts where (p =&gt; p.featuredImage) map (p =&gt; p.featuredImage)'
+        var='imageUrl'>
+        <meta expr:content='resizeImage(data:imageUrl, 1200, &quot;1200:630&quot;)'
+            property='twitter:image' />
+    </b:loop>
+    <b:elseif cond='data:blog.postImageUrl' />
+    <meta expr:content='resizeImage(data:blog.postImageUrl, 1200, &quot;1200:630&quot;)'
+        property='twitter:image' />
+</b:if>
+<b:comment><!-- Meta tag Twitter Cards End -->
+</b:comment>

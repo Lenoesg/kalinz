@@ -1,9 +1,0 @@
-<b:comment><!-- ERROR MESSAGE - Pesan error 404 -->
-</b:comment>
-<b:if cond='data:view.isError'>
-  <div class='error-message'>
-    <h2>404 - Halaman Tidak Ditemukan</h2>
-    <p>Maaf, halaman yang Anda cari tidak tersedia.</p>
-    <a class='btn' href='/'>Kembali ke Beranda</a>
-  </div>
-</b:if>

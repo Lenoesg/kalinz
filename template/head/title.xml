@@ -1,21 +1,47 @@
-<b:comment><!-- TITLE - Dynamic title berdasarkan halaman -->
+<b:comment><!-- Title start -->
 </b:comment>
 <b:if cond='data:view.isPost'>
   <title><data:blog.pageName /> - <data:blog.title /></title>
+  <b:comment><!-- title post -->
+  </b:comment>
   <b:elseif cond='data:view.isPage' />
   <title><data:blog.pageName /> - <data:blog.title /></title>
+  <b:comment><!-- title page -->
+  </b:comment>
   <b:elseif cond='data:view.isHomepage' />
-  <title><data:blog.pageTitle /></title>
+  <title>
+    <data:blog.pageTitle />
+  </title>
+  <b:comment><!-- title homepage -->
+  </b:comment>
   <b:elseif cond='data:view.isArchive' />
   <title><data:blog.pageName /> - <data:blog.title /></title>
+  <b:comment><!-- title archive -->
+  </b:comment>
   <b:elseif cond='data:view.isLabelSearch' />
   <title><data:blog.pageName /> - <data:blog.title /></title>
+  <b:comment><!-- title label -->
+  </b:comment>
   <b:elseif cond='data:view.search.query' />
   <title><data:blog.pageName /> - <data:blog.title /></title>
+  <b:comment><!-- title search -->
+  </b:comment>
   <b:elseif cond='data:view.isError' />
   <title>404 : <data:messages.theresNothingHere /></title>
+  <b:comment><!-- title error -->
+  </b:comment>
   <b:elseif cond='data:view.isMultipleItems and data:blog.pageName == &quot;&quot;' />
-  <title><data:blog.title /></title>
+  <title>
+    <data:blog.title />
+  </title>
+  <b:comment><!-- title all post -->
+  </b:comment>
   <b:else />
-  <title><data:blog.pageName /></title>
+  <title>
+    <data:blog.pageName />
+  </title>
+  <b:comment><!-- default title -->
+  </b:comment>
 </b:if>
+<b:comment><!-- Title end -->
+</b:comment>

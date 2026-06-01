@@ -1,8 +1,30 @@
-<b:comment><!-- META TAGS - Content Type, Viewport, Generator -->
-</b:comment>
-<meta expr:content='&quot;text/html; charset=&quot; + data:blog.encoding' http-equiv='Content-Type' />
 <meta content='width=device-width, initial-scale=1' name='viewport' />
+
+<b:comment><!-- all-head-content start -->
+</b:comment>
+
+<meta expr:content='&quot;text/html; charset=&quot; + data:blog.encoding'
+  http-equiv='Content-Type' />
+
+<b:if cond='data:widgets'>
+  <meta expr:content='data:skin.vars.body_background_color' name='theme-color' />
+  <meta expr:content='data:skin.vars.body_background_color'
+    name='msapplication-navbutton-color' />
+</b:if>
 <meta content='blogger' name='generator' />
+<link expr:href='data:blog.blogspotFaviconUrl' rel='icon' type='image/x-icon' />
 <b:if cond='data:blog.adultContent'>
   <meta content='adult' name='rating' />
 </b:if>
+<link expr:href='data:view.url.canonical' rel='canonical' />
+<data:blog.feedLinks />
+<data:blog.meTag />
+<b:tag cond='data:blog.googleProfileUrl' expr:href='data:blog.googleProfileUrl' name='link'
+  rel='publisher' />
+<b:tag cond='data:view.featuredImage' expr:href='data:view.featuredImage' name='link'
+  rel='image_src' />
+
+<b:include name='openGraphMetaData' />
+
+<b:comment><!-- all-head-content end -->
+</b:comment>
