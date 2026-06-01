@@ -1,0 +1,39 @@
+<div id='footer-widget-html-wrap'>
+    <b:section class='footer-widget-html' id='footer-widget-html' maxwidgets='1'
+        showaddelement='no'>
+        <b:widget id='HTML831' locked='true' title='Widget HTML #3' type='HTML' version='2'
+            visible='true'>
+            <b:widget-settings>
+                <b:widget-setting name='content'><![CDATA[<!-- Ikon Sosial Footer (FB, YouTube, TikTok, WA Channel) -->
+<div class="footer-sosmed-wrap">
+  <a href="https://facebook.com/lenoess" aria-label="Facebook" rel="noopener noreferrer" target="_blank">
+    <i class="icon-facebook"></i>
+  </a>
+  <a href="https://youtube.com/@kalinz-id" aria-label="YouTube" rel="noopener noreferrer" target="_blank">
+    <i class="icon-youtube"></i>
+  </a>
+  <a href="https://tiktok.com/@lenoes" aria-label="TikTok" rel="noopener noreferrer" target="_blank">
+    <i class="icon-tiktok"></i>
+  </a>
+  <a href="https://whatsapp.com/channel/0029VbAh79s1t90dxLWm8T1o" aria-label="WhatsApp" rel="noopener noreferrer" target="_blank">
+    <i class="icon-whatsapp"></i>
+  </a>
+</div>]]></b:widget-setting>
+            </b:widget-settings>
+            <b:includable id='main'>
+                <b:if cond='data:content'>
+                    <b:if cond='data:title'>
+                        <div class='normalwidget-title html'>
+                            <h2 class='title'>
+                                <data:title />
+                            </h2>
+                        </div>
+                    </b:if>
+                    <div class='widget-content'>
+                        <data:content />
+                    </div>
+                </b:if>
+            </b:includable>
+        </b:widget>
+    </b:section>
+</div>
