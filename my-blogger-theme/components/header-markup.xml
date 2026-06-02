@@ -1,88 +1,4 @@
-<header id='header-outer'>
-    <div id='header-wrap'>
-        <div id='header-content'>
-
-            <b:comment><!-- widget header -->
-            </b:comment>
-            <b:section class='header' id='header' maxwidgets='1' showaddelement='no'>
-                <b:widget id='Header1' locked='true'
-                    title='KALINZ | Lirik Lagu Nias &amp;amp; Budaya Nias (Header)'
-                    type='Header' version='2' visible='true'>
-                    <b:widget-settings>
-                        <b:widget-setting name='displayUrl'>
-                            https://blogger.googleusercontent.com/img/a/AVvXsEhXlK6nk2PxMK2QyRXKcemz_zG4Lbulhgml6qnH7l0D75dDTAs9YYXbFt500s9nN13AQIc3h3JM5-EOhZM8KOvkW1STDf3qRg3jw3c--wDIk2dj771u46Bx2AwJjEMm-15ul059NveeJMTLivXG8-88m_XJnmdOpREA3EM6d1KWMluertVcbu4dhIFMV-g=s260</b:widget-setting>
-                        <b:widget-setting name='displayHeight'>54</b:widget-setting>
-                        <b:widget-setting name='sectionWidth'>374</b:widget-setting>
-                        <b:widget-setting name='useImage'>true</b:widget-setting>
-                        <b:widget-setting name='shrinkToFit'>false</b:widget-setting>
-                        <b:widget-setting name='imagePlacement'>REPLACE</b:widget-setting>
-                        <b:widget-setting name='displayWidth'>260</b:widget-setting>
-                    </b:widget-settings>
-                    <b:includable id='main' var='this'>
-                        <b:include
-                            cond='data:imagePlacement in {&quot;REPLACE&quot;,&quot;BEFORE_DESCRIPTION&quot;}'
-                            name='image' />
-                        <b:include name='title' />
-                        <b:include cond='data:imagePlacement != &quot;REPLACE&quot;'
-                            name='description' />
-                    </b:includable>
-                    <b:includable id='behindImageStyle'>
-                        <b:if cond='data:sourceUrl'>
-                            <b:include cond='data:this.image'
-                                data='{                    image: data:this.image,                    selector: &quot;.header-widget&quot;                  }'
-                                name='responsiveImageStyle' />
-                            <style type='text/css'>
-        .header-widget {
-          background-position: <data:blog.locale.languageAlignment/>;
-          background-repeat: no-repeat;
-          background-size: cover;
-        }
-      </style>
-                        </b:if>
-                    </b:includable>
-                    <b:includable id='description'>
-                        <b:if cond='data:this.description'>
-                            <p class='title-description'>
-                                <data:this.description />
-                            </p>
-                        </b:if>
-                    </b:includable>
-                    <b:includable id='image'>
-                        <a expr:href='data:blog.homepageUrl' expr:title='data:title'>
-                            <img expr:alt='data:title' expr:height='data:height'
-                                expr:src='resizeImage(data:sourceUrl, 1600)'
-                                expr:srcset='resizeImage(data:sourceUrl, 400) + &quot; 1x, &quot; + resizeImage(data:sourceUrl, 1600) + &quot; 2x&quot;'
-                                expr:title='data:title' expr:width='data:width' />
-                        </a>
-                    </b:includable>
-                    <b:includable id='title'>
-                        <div class='blog-title-wrap'>
-                            <b:class
-                                cond='data:this.imagePlacement in {&quot;REPLACE&quot;,&quot;BEFORE_DESCRIPTION&quot;}'
-                                name='hide-title' />
-                            <b:if cond='data:view.isSingleItem'>
-                                <h2 class='blog-title'>
-                                    <a expr:data-text='data:title'
-                                        expr:href='data:blog.homepageUrl'
-                                        expr:title='data:title'>
-                                        <data:title />
-                                    </a>
-                                </h2>
-                                <b:else />
-                                <h1 class='blog-title'>
-                                    <a expr:data-text='data:title'
-                                        expr:href='data:blog.homepageUrl'
-                                        expr:title='data:title'>
-                                        <data:title />
-                                    </a>
-                                </h1>
-                            </b:if>
-                        </div>
-                    </b:includable>
-                </b:widget>
-            </b:section>
-        </div>
-    </div>
+<header xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr' id='header-outer'>
     <div id='navmenu-wrap'>
         <b:include name='searchFormContainer' />
         <b:comment><!-- widget menu navigasi -->
@@ -104,6 +20,85 @@
                 <b:includable id='main'>
 
                     <div class='nav-outer nav-original'>
+                        <b:comment><!-- widget header -->
+                        </b:comment>
+                        <b:section class='header' id='header' maxwidgets='1' showaddelement='no'>
+                            <b:widget id='Header1' locked='true'
+                                title='KALINZ | Lirik Lagu Nias &amp; Budaya Nias (Header)'
+                                type='Header' version='2' visible='true'>
+                                <b:widget-settings>
+                                    <b:widget-setting name='displayUrl'>
+                                        https://blogger.googleusercontent.com/img/a/AVvXsEhXlK6nk2PxMK2QyRXKcemz_zG4Lbulhgml6qnH7l0D75dDTAs9YYXbFt500s9nN13AQIc3h3JM5-EOhZM8KOvkW1STDf3qRg3jw3c--wDIk2dj771u46Bx2AwJjEMm-15ul059NveeJMTLivXG8-88m_XJnmdOpREA3EM6d1KWMluertVcbu4dhIFMV-g=s260</b:widget-setting>
+                                        <b:widget-setting name='displayHeight'>54</b:widget-setting>
+                                        <b:widget-setting name='sectionWidth'>374</b:widget-setting>
+                                        <b:widget-setting name='useImage'>true</b:widget-setting>
+                                        <b:widget-setting name='shrinkToFit'>false</b:widget-setting>
+                                        <b:widget-setting name='imagePlacement'>REPLACE</b:widget-setting>
+                                        <b:widget-setting name='displayWidth'>260</b:widget-setting>
+                                    </b:widget-settings>
+                                    <b:includable id='main' var='this'>
+                                        <b:include
+                                            cond='data:imagePlacement in {"REPLACE","BEFORE_DESCRIPTION"}'
+                                            name='image' />
+                                        <b:include name='title' />
+                                        <b:include cond='data:imagePlacement != "REPLACE"'
+                                            name='description' />
+                                    </b:includable>
+                                    <b:includable id='behindImageStyle'>
+                                        <b:if cond='data:sourceUrl'>
+                                            <b:include cond='data:this.image'
+                                                data='{                    image: data:this.image,                    selector: ".header-widget"                  }'
+                                                name='responsiveImageStyle' />
+                                            <style type='text/css'>
+        .header-widget {
+          background-position: <data:blog.locale.languageAlignment/>;
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+      </style>
+                                        </b:if>
+                                    </b:includable>
+                                    <b:includable id='description'>
+                                        <b:if cond='data:this.description'>
+                                            <p class='title-description'>
+                                                <data:this.description />
+                                            </p>
+                                        </b:if>
+                                    </b:includable>
+                                    <b:includable id='image'>
+                                        <a expr:href='data:blog.homepageUrl' expr:title='data:title'>
+                                            <img expr:alt='data:title' expr:height='data:height'
+                                                expr:src='resizeImage(data:sourceUrl, 1600)'
+                                                expr:srcset='resizeImage(data:sourceUrl, 400) + " 1x, " + resizeImage(data:sourceUrl, 1600) + " 2x"'
+                                                expr:title='data:title' expr:width='data:width' />
+                                        </a>
+                                    </b:includable>
+                                    <b:includable id='title'>
+                                        <div class='blog-title-wrap'>
+                                            <b:class
+                                                cond='data:this.imagePlacement in {"REPLACE","BEFORE_DESCRIPTION"}'
+                                                name='hide-title' />
+                                            <b:if cond='data:view.isSingleItem'>
+                                                <h2 class='blog-title'>
+                                                    <a expr:data-text='data:title'
+                                                        expr:href='data:blog.homepageUrl'
+                                                        expr:title='data:title'>
+                                                        <data:title />
+                                                    </a>
+                                                </h2>
+                                                <b:else />
+                                                <h1 class='blog-title'>
+                                                    <a expr:data-text='data:title'
+                                                        expr:href='data:blog.homepageUrl'
+                                                        expr:title='data:title'>
+                                                        <data:title />
+                                                    </a>
+                                                </h1>
+                                            </b:if>
+                                        </div>
+                                    </b:includable>
+                                </b:widget>
+                            </b:section>
 
                         <nav class='navmenu-content'>
                             <ul>
