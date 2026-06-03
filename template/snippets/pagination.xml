@@ -1,6 +1,0 @@
-<b:includable id='postPagination'>
-    <div class='blog-pager container' id='blog-pager'>
-        <b:include cond='data:newerPageUrl' name='previousPageLink' />
-        <b:include cond='data:olderPageUrl' name='nextPageLink' />
-    </div>
-</b:includable>
