@@ -1,4 +1,4 @@
-        <header id='header-outer'>
+<header id='header-outer'>
             <div id='header-wrap'>
                 <div id='header-content'>
 
@@ -6,7 +6,7 @@
                     </b:comment>
                     <b:section class='header' id='header' maxwidgets='1' showaddelement='no'>
                         <b:widget id='Header1' locked='true'
-                            title='KALINZ | Lirik Lagu Nias &amp;amp; Budaya Nias (Header)'
+                            title='KALINZ | Lirik Lagu Nias &amp; Budaya Nias (Header)'
                             type='Header' version='2' visible='true'>
                             <b:widget-settings>
                                 <b:widget-setting name='displayUrl'>
@@ -20,16 +20,16 @@
                             </b:widget-settings>
                             <b:includable id='main' var='this'>
                                 <b:include
-                                    cond='data:imagePlacement in {&quot;REPLACE&quot;,&quot;BEFORE_DESCRIPTION&quot;}'
+                                    cond='data:imagePlacement in {"REPLACE","BEFORE_DESCRIPTION"}'
                                     name='image' />
                                 <b:include name='title' />
-                                <b:include cond='data:imagePlacement != &quot;REPLACE&quot;'
+                                <b:include cond='data:imagePlacement != "REPLACE"'
                                     name='description' />
                             </b:includable>
                             <b:includable id='behindImageStyle'>
                                 <b:if cond='data:sourceUrl'>
                                     <b:include cond='data:this.image'
-                                        data='{                    image: data:this.image,                    selector: &quot;.header-widget&quot;                  }'
+                                        data='{                    image: data:this.image,                    selector: ".header-widget"                  }'
                                         name='responsiveImageStyle' />
                                     <style type='text/css'>
         .header-widget {
@@ -51,14 +51,14 @@
                                 <a expr:href='data:blog.homepageUrl' expr:title='data:title'>
                                     <img expr:alt='data:title' expr:height='data:height'
                                         expr:src='resizeImage(data:sourceUrl, 1600)'
-                                        expr:srcset='resizeImage(data:sourceUrl, 400) + &quot; 1x, &quot; + resizeImage(data:sourceUrl, 1600) + &quot; 2x&quot;'
+                                        expr:srcset='resizeImage(data:sourceUrl, 400) + " 1x, " + resizeImage(data:sourceUrl, 1600) + " 2x"'
                                         expr:title='data:title' expr:width='data:width' />
                                 </a>
                             </b:includable>
                             <b:includable id='title'>
                                 <div class='blog-title-wrap'>
                                     <b:class
-                                        cond='data:this.imagePlacement in {&quot;REPLACE&quot;,&quot;BEFORE_DESCRIPTION&quot;}'
+                                        cond='data:this.imagePlacement in {"REPLACE","BEFORE_DESCRIPTION"}'
                                         name='hide-title' />
                                     <b:if cond='data:view.isSingleItem'>
                                         <h2 class='blog-title'>
@@ -81,51 +81,52 @@
                             </b:includable>
                         </b:widget>
                     </b:section>
-                </div>
-            </div>
-            <div id='navmenu-wrap'>
-                <b:include name='searchFormContainer' />
-                <b:comment><!-- widget menu navigasi -->
-                </b:comment>
-                <div id='navmenu-wrap-sticky'>
-                    <div class='menu-sticky'>
-                        <div class='nav-outer nav-copy'>
+
+                    <div id='navmenu-wrap'>
+                        <b:include name='searchFormContainer' />
+                        <b:comment><!-- widget menu navigasi -->
+                        </b:comment>
+                        <div id='navmenu-wrap-sticky'>
+                            <div class='menu-sticky'>
+                                <div class='nav-outer nav-copy'>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <b:section class='navmenu' id='navmenu' maxwidgets='1' showaddelement='no'>
-                    <b:widget id='HTML72' locked='true' title='Kode Menu Navigasi' type='HTML'
-                        version='2' visible='true'>
-                        <b:widget-settings>
-                            <b:widget-setting name='content'><![CDATA[<li><a href='https://kalinz.blogspot.com/search/label/Lagu%20Nias'>Lagu Nias</a></li>
+                        <b:section class='navmenu' id='navmenu' maxwidgets='1' showaddelement='no'>
+                            <b:widget id='HTML72' locked='true' title='Kode Menu Navigasi' type='HTML'
+                                version='2' visible='true'>
+                                <b:widget-settings>
+                                    <b:widget-setting name='content'><![CDATA[<li><a href='https://kalinz.blogspot.com/search/label/Lagu%20Nias'>Lagu Nias</a></li>
 <li><a href='https://kalinz.blogspot.com/search/label/Lagu%20Rohani'>Lagu Rohani</a></li>
 <li><a href='https://kalinz.blogspot.com/search/label/Maena%20Nias'>Maena Nias</a></li>]]></b:widget-setting>
-                        </b:widget-settings>
-                        <b:includable id='main'>
+                                </b:widget-settings>
+                                <b:includable id='main'>
 
-                            <div class='nav-outer nav-original'>
+                                    <div class='nav-outer nav-original'>
 
-                                <nav class='navmenu-content'>
-                                    <ul>
-                                        <data:content />
-                                    </ul>
-                                </nav>
+                                        <nav class='navmenu-content'>
+                                            <ul>
+                                                <data:content />
+                                            </ul>
+                                        </nav>
 
-                                <div class='nav-secondary'>
-                                    <b:include name='searchIcon' />
-                                </div>
+                                        <div class='nav-secondary'>
+                                            <b:include name='searchIcon' />
+                                        </div>
 
-                                <button aria-label='menu' class='navmenu-button'>
-                                    <span />
-                                    <span />
-                                    <span />
-                                </button>
+                                        <button aria-label='menu' class='navmenu-button'>
+                                            <span />
+                                            <span />
+                                            <span />
+                                        </button>
 
-                            </div>
-                            <b:include name='mobileMenuContainer' />
+                                    </div>
+                                    <b:include name='mobileMenuContainer' />
 
-                        </b:includable>
-                    </b:widget>
-                </b:section>
+                                </b:includable>
+                            </b:widget>
+                        </b:section>
+                    </div>
+                </div>
             </div>
         </header>
