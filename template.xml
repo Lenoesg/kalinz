@@ -1305,11 +1305,16 @@ p.featured-more a {
         width: 100%
     }
 
-    #navmenu-wrap .navmenu,
+    #navmenu-wrap .navmenu {
+    width: 100%;
+    max-width: none;
+    padding: 0
+    }
+
     #navmenu-wrap-sticky .menu-sticky {
         width: 100%;
         max-width: none;
-        padding: 0
+        padding: 0 30px
     }
 
     .menu-sticky,
@@ -4824,11 +4829,16 @@ span.blog-admin {
         min-width: 0
     }
 
-    #navmenu-wrap .navmenu,
+    #navmenu-wrap .navmenu {
+    max-width: none;
+    width: 100%;
+    padding: 0
+    }
+
     #navmenu-wrap-sticky .menu-sticky {
         max-width: none;
         width: 100%;
-        padding: 0
+        padding: 0 22px
     }
 
     #navmenu-wrap-sticky {
