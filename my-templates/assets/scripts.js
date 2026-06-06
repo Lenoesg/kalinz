@@ -334,7 +334,7 @@
         : (e.SmoothScroll = t(e)));
 })();
 !(function () {
-  var e, t, n, o, i, r, u;
+  var e, t, n, o, i, r, u, s, c, l;
   ((u = { menuSticky: !0 }),
     optionLinkMagz(u),
     1 == u.menuSticky &&
@@ -346,6 +346,9 @@
       (o = document.querySelector(".nav-original")),
       (i = document.querySelector(".sidebar-sticky")),
       (r = "navsticky-show"),
+      (s = "navsticky-hide"),
+      (c = 0),
+      (l = null),
       null != o && (n.innerHTML = o.innerHTML),
       null != o &&
         (window.addEventListener("resize", function () {
@@ -353,11 +356,26 @@
             .querySelector("#header-outer")
             .getBoundingClientRect().height;
         }),
-        window.addEventListener("scroll", function () {
-          Math.round(window.pageYOffset) >= e
-            ? t.classList.add(r)
-            : t.classList.remove(r);
-        })),
+        window.addEventListener(
+          "scroll",
+          function () {
+            var d = Math.round(window.pageYOffset);
+            if (d >= e) {
+              if (d < c) {
+                t.classList.remove(s);
+                t.classList.add(r);
+              } else {
+                t.classList.remove(r);
+                t.classList.add(s);
+              }
+            } else {
+              t.classList.remove(r);
+              t.classList.remove(s);
+            }
+            c = d;
+          },
+          { passive: !0 },
+        )),
       null != i && (i.style.top = "88px"),
       (function () {
         for (
