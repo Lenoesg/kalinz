@@ -933,7 +933,7 @@ p.featured-more a {
     background: var(--menu-bg-color2);
     position: fixed;
     width: 100%;
-    z-index: 9;
+    z-index: 999;
     top: 0;
     left: 0;
     right: 0;
@@ -950,7 +950,7 @@ p.featured-more a {
     -webkit-transition: -webkit-transform .2s ease-in-out;
     transition: transform .2s ease-in-out;
     transition: transform .2s ease-in-out, -webkit-transform .2s ease-in-out;
-    display: table
+    display: block
 }
 
 #navmenu-wrap-sticky.navsticky-hide {
@@ -2687,7 +2687,10 @@ header>.google-auto-placed {
 
 #ms-related-post {
     margin: 30px auto 0;
-    overflow: hidden
+    overflow: hidden;
+    position: relative;
+    z-index: 99;
+    pointer-events: auto
 }
 
 #ms-related-post p.ms-title {
@@ -3869,7 +3872,10 @@ span.blog-admin {
 }
 
 #share-container {
-    margin: 20px auto 30px
+    margin: 20px auto 30px;
+    position: relative;
+    z-index: 99;
+    pointer-events: auto
 }
 
 #share-container::after {
@@ -3914,7 +3920,10 @@ span.blog-admin {
     color: #fff;
     -webkit-transition: opacity .2s linear;
     transition: opacity .2s linear;
-    float: left
+    float: left;
+    podding: relative;
+    z-index: 99;
+    padding: 12px 0
 }
 
 #share a:first-child {
