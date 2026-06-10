@@ -588,7 +588,8 @@ p.featured-more a {
 }
 
 #header-outer {
-    width: 100%
+    width: 100%;
+    border-bottom: 1px solid #e5e5e5
 }
 
 #header-outer #header-wrap {
@@ -950,6 +951,8 @@ p.featured-more a {
     -webkit-transition: -webkit-transform .2s ease-in-out;
     transition: transform .2s ease-in-out;
     transition: transform .2s ease-in-out, -webkit-transform .2s ease-in-out;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    background: #ffffff;
     display: block
 }
 
@@ -1013,7 +1016,7 @@ p.featured-more a {
 .navmenu-content>ul>li>a::before {
     -webkit-transition: width .2s;
     transition: width .2s;
-    background: var(--menu-text-color);
+    background: #1a6b8a;
     position: absolute;
     bottom: 12px;
     left: 0;
@@ -1722,7 +1725,8 @@ p.featured-more a {
     -webkit-transition: .2s ease-in-out;
     transition: .2s ease-in-out;
     background: var(--labels-bg-color);
-    color: var(--labels-text-color)
+    color: var(--labels-text-color);
+    border: 1px solid rgba(0,0,0,0.08)
 }
 
 .iklan-atas .widget,
@@ -1964,7 +1968,8 @@ header>.google-auto-placed {
         flex: 1 1 100%;
         max-width: 100%;
         padding: 30px 0;
-        margin-top: 45px
+        margin-top: 45px;
+        border-left: 1px solid #f0f0f0
     }
 
     .sidebar .widget,
@@ -3662,7 +3667,7 @@ span.blog-admin {
 .blog-pager .js-load:hover,
 .blog-pager .js-loaded:hover,
 .blog-pager .js-loading:hover {
-    background: var(--pagination-hover-color)
+    background: #e0e0e0
 }
 
 .blog-pager .js-load:visited,

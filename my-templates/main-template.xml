@@ -176,7 +176,7 @@ Designer: Mas Sugeng
 </Group>
 
 <Group description="Background Address Bar (Mobile)" selector="body">
-    <Variable name="body.background.color" description="Background" type="color" default="$(header.background.color)" value="#1b1b1b"/>
+    <Variable name="body.background.color" description="Background" type="color" default="$(header.background.color)" value="#ffffff"/>
 </Group>
 
 <Group description="Teks Halaman" selector="body">
@@ -186,29 +186,29 @@ Designer: Mas Sugeng
 </Group>
 
 <Group description="Warna Link" selector="body">
-    <Variable name="body.link.color" description="Warna Link" type="color" default="#0273b9" value="#0273b9"/>
-    <Variable name="body.link.visited.color" description="Warna Dikunjungi" type="color" default="#0273b9" value="#0273b9"/>
-    <Variable name="body.link.hover.color" description="Warna Hover" type="color" default="#31353a" value="#31353a"/>
+    <Variable name="body.link.color" description="Warna Link" type="color" default="#1a6b8a" value="#1a6b8a"/>
+    <Variable name="body.link.visited.color" description="Warna Dikunjungi" type="color" default="#1a6b8a" value="#1a6b8a"/>
+    <Variable name="body.link.hover.color" description="Warna Hover" type="color" default="#144d66" value="#144d66"/>
 </Group>
 
 <Group description="Warna Link Sidebar" selector="#sidebar-wrap">
-    <Variable name="sidebar.link.color" description="Warna Link" type="color" default="$(body.link.color)" value="#0273b9"/>
-    <Variable name="sidebar.link.visited.color" description="Warna Dikunjungi" type="color" default="$(body.link.visited.color)" value="#0273b9"/>
-    <Variable name="sidebar.link.hover.color" description="Warna Hover" type="color" default="$(body.link.hover.color)" value="#31353a"/>
+    <Variable name="sidebar.link.color" description="Warna Link" type="color" default="$(body.link.color)" value="#1a6b8a"/>
+    <Variable name="sidebar.link.visited.color" description="Warna Dikunjungi" type="color" default="$(body.link.visited.color)" value="#1a6b8a"/>
+    <Variable name="sidebar.link.hover.color" description="Warna Hover" type="color" default="$(body.link.hover.color)" value="#144d66"/>
 </Group>
 
 <Group description="Background Halaman" selector="body">
-    <Variable name="body.background" description="Background" type="color" default="#edf1f2" value="#edf1f2"/>
+    <Variable name="body.background" description="Background" type="color" default="#ffffff" value="#ffffff"/>
 </Group>
 
 <Group description="Background Header" selector="header">
-    <Variable name="header.background.color" description="Bagian Header" type="color" default="#1b1b1b" value="#1b1b1b"/>
-    <Variable name="header2.background.color" description="Bagian Header Samping" type="color" default="#2f2f2f" value="#2f2f2f"/>
+    <Variable name="header.background.color" description="Bagian Header" type="color" default="#ffffff" value="#ffffff"/>
+    <Variable name="header2.background.color" description="Bagian Header Samping" type="color" default="#ffffff" value="#ffffff"/>
 </Group>
 
 <Group description="Background Menu" selector="header">
-    <Variable name="navmenu.background.color" description="Bagian Menu" type="color" default="#1b1b1b" value="#1b1b1b"/>
-    <Variable name="navmenu2.background.color" description="Bagian Menu Samping" type="color" default="#2f2f2f" value="#2f2f2f"/>
+    <Variable name="navmenu.background.color" description="Bagian Menu" type="color" default="#ffffff" value="#ffffff"/>
+    <Variable name="navmenu2.background.color" description="Bagian Menu Samping" type="color" default="#ffffff" value="#ffffff"/>
 </Group>
 
 <Group description="Background Konten" selector="#content-wrap">
@@ -216,11 +216,11 @@ Designer: Mas Sugeng
 </Group>
 
 <Group description="Background Sidebar" selector="#sidebar-wrap">
-    <Variable name="sidebar.background.color" description="Bagian Sidebar" type="color" default="#f8fafa" value="#f8fafa"/>
+    <Variable name="sidebar.background.color" description="Bagian Sidebar" type="color" default="#ffffff" value="#ffffff"/>
 </Group>
 
 <Group description="Judul Blog" selector="#header">
-    <Variable name="judul.color" description="Warna Judul" type="color" default="#FFFFFF" value="#FFFFFF"/>
+    <Variable name="judul.color" description="Warna Judul" type="color" default="#1a1a1a" value="#1a1a1a"/>
 </Group>
 
 <Group description="Ukuran Logo" selector="#header">
@@ -228,26 +228,26 @@ Designer: Mas Sugeng
 </Group>
 
 <Group description="Deskripsi Blog" selector="#header">
-    <Variable name="deskripsi.color" description="Warna Deskripsi" type="color" default="$(judul.color)" value="#FFFFFF"/>
+    <Variable name="deskripsi.color" description="Warna Deskripsi" type="color" default="$(judul.color)" value="#666666"/>
 </Group>
 
 <Group description="Menu Navigasi" selector=".navmenu-content">
-    <Variable name="navmenu.color" description="Warna" type="color" default="#FFFFFF" value="#FFFFFF"/>
+    <Variable name="navmenu.color" description="Warna" type="color" default="#2c2c2c" value="#2c2c2c"/>
 </Group>
 
 <Group description="Icon Pencarian" selector=".iconsearch-label">
-    <Variable name="search.color" description="Warna" type="color" default="$(navmenu.color)" value="#FFFFFF"/>
-    <Variable name="search.bg" description="Background" type="color" default="$(navmenu.color)" value="#FFFFFF"/>
+    <Variable name="search.color" description="Warna" type="color" default="$(navmenu.color)" value="#2c2c2c"/>
+    <Variable name="search.bg" description="Background" type="color" default="$(navmenu.color)" value="#2c2c2c"/>
 </Group>
 
 <Group description="Judul Featured Post, Popular Post" selector=".FeaturedPost h3.title, .PopularPosts .popular-post-widget-title h3.title">
-    <Variable name="featured.color" description="Warna" type="color" default="#FFFFFF" value="#FFFFFF"/>
-    <Variable name="featured.bg" description="Background" type="color" default="#1b1b1b" value="#1b1b1b"/>
+    <Variable name="featured.color" description="Warna" type="color" default="#1a1a1a" value="#1a1a1a"/>
+    <Variable name="featured.bg" description="Background" type="color" default="#ffffff" value="#ffffff"/>
 </Group>
 
 <Group description="Judul Post Terbaru" selector=".latestposts-title">
     <Variable name="latestpost.color" description="Warna" type="color" default="#707070" value="#707070"/>
-    <Variable name="latestpost.bg" description="Background" type="color" default="#f8fafa" value="#f8fafa"/>
+    <Variable name="latestpost.bg" description="Background" type="color" default="#ffffff" value="#ffffff"/>
 </Group>
 
 <Group description="Judul Widget di Sidebar" selector=".normalwidget-title">
@@ -257,7 +257,7 @@ Designer: Mas Sugeng
 
 <Group description="Judul Post" selector=".post-title">
     <Variable name="posts.title.color" description="Warna" type="color" default="#575a5f" value="#575a5f"/>
-    <Variable name="posts.title.hover" description="Warna Hover" type="color" default="#2675A6" value="#2675A6"/>
+    <Variable name="posts.title.hover" description="Warna Hover" type="color" default="#1a6b8a" value="#1a6b8a"/>
 </Group>
 
 <Group description="Post Footer" selector=".post-info">
@@ -266,50 +266,50 @@ Designer: Mas Sugeng
 </Group>
 
 <Group description="Label Post" selector=".label-info a">
-    <Variable name="labelinfo.color" description="Warna" type="color" default="#FFFFFF" value="#FFFFFF"/>
-    <Variable name="labelinfo.bg" description="Background" type="color" default="#1b1b1b" value="#1b1b1b"/>
+    <Variable name="labelinfo.color" description="Warna" type="color" default="#444444" value="#444444"/>
+    <Variable name="labelinfo.bg" description="Background" type="color" default="#ffffff" value="#ffffff"/>
 </Group>
 
 <Group description="Pagination" selector=".blog-pager, .follow-by-email-submit">
-    <Variable name="infinite.color" description="Warna Teks" type="color" default="#FFFFFF" value="#FFFFFF"/>
-    <Variable name="infinite.bg" description="Background" type="color" default="#1b1b1b" value="#1b1b1b"/>
-    <Variable name="infinite.hover" description="Background Hover" type="color" default="#555555" value="#555555"/>
+    <Variable name="infinite.color" description="Warna Teks" type="color" default="#333333" value="#333333"/>
+    <Variable name="infinite.bg" description="Background" type="color" default="#f0f0f0" value="#f0f0f0"/>
+    <Variable name="infinite.hover" description="Background Hover" type="color" default="#e0e0e0" value="#e0e0e0"/>
 </Group>
 
 <Group description="Widget Featured Post" selector=".FeaturedPost">
-    <Variable name="featured.bgd" description="Background" type="color" default="#f8fafa" value="#f8fafa"/>
+    <Variable name="featured.bgd" description="Background" type="color" default="#ffffff" value="#ffffff"/>
     <Variable name="featured.title" description="Warna Judul" type="color" default="#575a5f" value="#575a5f"/>
-    <Variable name="featured.title.hover" description="Warna Judul Hover" type="color" default="#2675A6" value="#2675A6"/>
+    <Variable name="featured.title.hover" description="Warna Judul Hover" type="color" default="#1a6b8a" value="#1a6b8a"/>
     <Variable name="featured.desc" description="Warna Deskripsi" type="color" default="$(body.text.color)" value="#31353a"/>
-    <Variable name="featured.readmore" description="Warna Readmore" type="color" default="#FFFFFF" value="#FFFFFF"/>
-    <Variable name="featured.readmore.bg" description="Background Readmore" type="color" default="#1b1b1b" value="#1b1b1b"/>
-    <Variable name="featured.readmore.hover" description="Background Readmore Hover" type="color" default="#555555" value="#555555"/>
+    <Variable name="featured.readmore" description="Warna Readmore" type="color" default="#ffffff" value="#ffffff"/>
+    <Variable name="featured.readmore.bg" description="Background Readmore" type="color" default="#1a6b8a" value="#1a6b8a"/>
+    <Variable name="featured.readmore.hover" description="Background Readmore Hover" type="color" default="#144d66" value="#144d66"/>
 </Group>
 
 <Group description="Widget Popular Posts" selector=".PopularPosts">
     <Variable name="popular.bg" description="Background" type="color" default="#ffffff" value="#ffffff"/>
     <Variable name="popular.title" description="Warna Judul" type="color" default="#575a5f" value="#575a5f"/>
-    <Variable name="popular.title.hover" description="Warna Judul Hover" type="color" default="#2675A6" value="#2675A6"/>
+    <Variable name="popular.title.hover" description="Warna Judul Hover" type="color" default="#1a6b8a" value="#1a6b8a"/>
     <Variable name="popular.desc" description="Warna Deskripsi" type="color" default="#737373" value="#737373"/>
 </Group>
 
 <Group description="Widget Profil" selector=".Profile .widget-content">
     <Variable name="profile.bg" description="Background" type="color" default="#ffffff" value="#ffffff"/>
     <Variable name="profile.text" description="Warna Teks" type="color" default="#737373" value="#737373"/>
-    <Variable name="profile.link" description="Warna Link" type="color" default="#2675A6" value="#2675A6"/>
-    <Variable name="profile.link.hover" description="Warna Link Hover" type="color" default="#575a5f" value="#575a5f"/>
+    <Variable name="profile.link" description="Warna Link" type="color" default="#1a6b8a" value="#1a6b8a"/>
+    <Variable name="profile.link.hover" description="Warna Link Hover" type="color" default="#144d66" value="#144d66"/>
 </Group>
 
 <Group description="Widget HTML Footer" selector="#footer-widget-html">
-    <Variable name="footerwidget.bg" description="Background" type="color" default="#2f2f2f" value="#2f2f2f"/>
-    <Variable name="footerwidget.text" description="Warna Teks" type="color" default="#FFFFFF" value="#FFFFFF"/>
+    <Variable name="footerwidget.bg" description="Background" type="color" default="#f4f4f4" value="#f4f4f4"/>
+    <Variable name="footerwidget.text" description="Warna Teks" type="color" default="#444444" value="#444444"/>
 </Group>
 
 <Group description="Footer" selector="#footer-outer">
-    <Variable name="footer.color" description="Warna" type="color" default="#FFFFFF" value="#FFFFFF"/>
-    <Variable name="footer.color.hover" description="Warna Hover" type="color" default="#dddddd" value="#dddddd"/>
-    <Variable name="footer.bg" description="Background" type="color" default="#1b1b1b" value="#1b1b1b"/>
-    <Variable name="footer.bg2" description="Background Samping" type="color" default="#2f2f2f" value="#2f2f2f"/>
+    <Variable name="footer.color" description="Warna" type="color" default="#cccccc" value="#cccccc"/>
+    <Variable name="footer.color.hover" description="Warna Hover" type="color" default="#1a6b8a" value="#1a6b8a"/>
+    <Variable name="footer.bg" description="Background" type="color" default="#2c2c2c" value="#2c2c2c"/>
+    <Variable name="footer.bg2" description="Background Samping" type="color" default="#2c2c2c" value="#2c2c2c"/>
 </Group>
 
 <Group description="YANG INI JANGAN DIEDIT">
