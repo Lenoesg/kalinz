@@ -350,6 +350,14 @@
       (c = 0),
       (l = null),
       null != o && (n.innerHTML = o.innerHTML),
+      (function () {
+        var logo = document.querySelector("#header .widget a");
+        if (logo && n) {
+          var clone = logo.cloneNode(true);
+          clone.classList.add("sticky-logo-link");
+          n.insertBefore(clone, n.firstChild);
+        }
+      })(),
       null != o &&
         (window.addEventListener("resize", function () {
           e = document
