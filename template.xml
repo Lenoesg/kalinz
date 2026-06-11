@@ -658,16 +658,37 @@ Variable end */
                     <div id='baca-juga' />
                     <script>
             //<![CDATA[
-            var bacaJugaJudul=[],bacaJugaNum=0,bacaJugaUrl=[];function bacaJuga(a){for(var u=0;u<a.feed.entry.length;u++){var e=a.feed.entry[u];bacaJugaJudul[bacaJugaNum]=e.title.$t;for(var l=0;l<e.link.length;l++)if("alternate"==e.link[l].rel){bacaJugaUrl[bacaJugaNum]=e.link[l].href,bacaJugaNum++;break}}}function showBacaJuga(a){var u=document.querySelector("#baca-juga"),e=document.createElement("div"),l,r=document.querySelector(".post-body-artikel").querySelectorAll("div > br, span > br, div > p, span > p"),t=Math.ceil(.5*r.length),n=document.getElementById("related");e.setAttribute("class","baca-juga-wrap");var c={bacaJuga:!0,jumlahBacaJuga:3,judulBacaJuga:"Baca Juga"};optionLinkMagz(c);var g=function(a){var u=a.previousElementSibling;null!=u&&"BR"===u.tagName&&(u.style.display="none")},J=function(a,u){u.parentNode.insertBefore(a,u.nextSibling)};if(!0===c.bacaJuga&&void 0!==r[t]){J(u,null!==n?n:r[t]);for(var i=0;i<bacaJugaUrl.length;i++)bacaJugaUrl[i]==a&&(bacaJugaUrl.splice(i,1),bacaJugaJudul.splice(i,1));var b=Math.floor((bacaJugaJudul.length-1)*Math.random());if(i=0,bacaJugaJudul.length>0&&c.jumlahBacaJuga>0){u.appendChild(e),g(u);for(var o="<strong>"+c.judulBacaJuga+"</strong><ul>";i<bacaJugaJudul.length&&i<c.jumlahBacaJuga;i++)o+='<li><a href="'+bacaJugaUrl[b]+'">'+bacaJugaJudul[b]+"</a></li>",b<bacaJugaJudul.length-1?b++:b=0;o+="</ul>",e.innerHTML=o}}}
+            // Baca Juga — hanya definisi fungsi, request dilakukan di relatedPostScript
+            function showBacaJuga(json) {
+                if (!json.feed || !json.feed.entry) return;
+                var cfg = { bacaJuga: true, jumlahBacaJuga: 3, judulBacaJuga: 'Baca Juga' };
+                optionLinkMagz(cfg);
+                if (!cfg.bacaJuga) return;
+                var currentUrl = &quot;<data:post.url/>&quot;;
+                var entries = json.feed.entry;
+                var html = '', count = 0;
+                for (var i = 0; i < entries.length && count < cfg.jumlahBacaJuga; i++) {
+                    var url = '#';
+                    for (var j = 0; j < entries[i].link.length; j++) {
+                        if (entries[i].link[j].rel === 'alternate') { url = entries[i].link[j].href; break; }
+                    }
+                    if (url === currentUrl) continue;
+                    html += '<li><a href="' + url + '">' + entries[i].title.$t + '</a></li>';
+                    count++;
+                }
+                if (count > 0) {
+                    var wrap = document.createElement('div');
+                    wrap.className = 'baca-juga-wrap';
+                    wrap.innerHTML = '<strong>' + cfg.judulBacaJuga + '</strong><ul>' + html + '</ul>';
+                    var body = document.querySelector('.post-body-artikel');
+                    if (!body) return;
+                    var elems = body.querySelectorAll('div > br, span > br, div > p, span > p');
+                    var idx = Math.ceil(elems.length * 0.5);
+                    if (elems[idx]) elems[idx].parentNode.insertBefore(wrap, elems[idx].nextSibling);
+                }
+            }
             //]]>
-        </script>
-                    <b:loop values='data:post.labels' var='label'>
-                        <script
-                            expr:src='&quot;/feeds/posts/summary/-/&quot; + data:label.name + &quot;?alt=json-in-script&amp;callback=bacaJuga&amp;max-results=5&quot;' />
-                    </b:loop>
-                    <script>
-            showBacaJuga(&quot;<data:post.url/>&quot;);
-        </script>
+                    </script>
                 </b:includable>
 
                 <b:includable id='postReadMore'>
@@ -822,18 +843,74 @@ Variable end */
             homePageUrl: &quot;<data:blog.canonicalHomepageUrl/>&quot;,
             relatedTitleText: &quot;Artikel Terkait&quot;,
         }; 
-        </script> <!--
-                    related posts end -->
-                    <div id='ms-matched-content' />
+        </script> 
+        <!-- related posts end -->
                 </b:includable>
 
                 <b:includable id='relatedPostScript'>
                     <script>
-            //<![CDATA[	
-            // related post js from www.dte.web.id modified by sugeng.id
-                !function(){var e={relatedTitleOuterOpen:'<div class="related-title"><p class="ms-title">',relatedTitleOuterClose:"</p></div>",relatedTitleText:"Artikel Terkait",thumbWidth:192,thumbHeight:108,imgBlank:"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAJCAYAAAA7KqwyAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAD6AAAA+gBtXtSawAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAAYSURBVCiRY0xISOBgoAAwUaJ51IBhYwAAuQABOsYCprwAAAAASUVORK5CYII=",relatedOuter:"ms-related-post"};for(var t in relatedConfig)"undefined"!=relatedConfig[t]&&(e[t]=relatedConfig[t]);var a={relatedPosts:!0,jumlahRelatedPosts:4,relatedPostsThumb:!0,judulRelatedPosts:e.relatedTitleText,relatedPostsNoThumbImg:"//1.bp.blogspot.com/-sLMytth04W8/XtoBMx9lUjI/AAAAAAAAHmM/zK-toM5XTacePvBHnpIO_tfzjg63BD3ZgCK4BGAsYHg/w192-h108-n-k-no-nu-rw/nomage%2B%25281%2529.png"};optionLinkMagz(a);var l=function(e){var t=document.createElement("script");t.src=e,document.getElementsByTagName("head")[0].appendChild(t)},r=function(e){var t,a,l=e.length;if(0!==l){for(;--l;)t=Math.floor(Math.random()*(l+1)),a=e[l],e[l]=e[t],e[t]=a;return e}return!1};if("object"==typeof postLabels&&0<postLabels.length)var s="/-/"+r(postLabels)[0];else s="";s=s.replace("&amp;","&"),msRelatedPosts=function(t){var s,d,o,i,n,A,m,u,h,c=e.relatedTitleOuterOpen+a.judulRelatedPosts+e.relatedTitleOuterClose,g=document.getElementById(e.relatedOuter),f=r(t.feed.entry);c+=1==a.relatedPostsThumb?'<ul class="ms-related-hasthumb">':'<ul class="ms-related-nothumb">';for(var p=0;p<f.length;p++)for(var b=0,v=f[p].link.length;b<v;b++)f[p].link[b].href==e.postUrl&&f.splice(p,1);if(l&&f.length>0){for(var B=0;B<a.jumlahRelatedPosts&&B<f.length;B++){d=f[B].title.$t,void 0!==f[B].content&&(n=(i=f[B].content.$t).indexOf("<img",0));var P=function(t){o=t.replace(/.*?:\/\//g,"//").replace(/s72-(c|.*?-c)/,"w"+e.thumbWidth+"-h"+e.thumbHeight+"-c-rw")};"media$thumbnail"in f[B]?P(f[B].media$thumbnail.url):void 0!==n&&-1!==n?(A=i.indexOf("/>",n),u=(m=i.slice(n,A)).indexOf("src=",0)+5,h=m.indexOf('"',u),P(m.slice(u,h))):o=a.relatedPostsNoThumbImg,s="#";var O=0;for(v=f[B].link.length;O<v;O++)if("alternate"==f[B].link[O].rel){s=f[B].link[O].href;break}c+="<li>"+(1==a.relatedPostsThumb?'<div class="related-thumb-outer"><a href="'+s+'"><img alt="'+d+'" class="related-thumb" src="'+o+'" width="'+e.thumbWidth+'" height="'+e.thumbHeight+'"></a></div>':"")+'<div class="related-title-outer"><a href="'+s+'">'+d+"</a></div></li>"}1==a.relatedPosts&&(g.innerHTML=c+="</ul>")}},msRandomIndex=function(t){var r=t.feed.openSearch$totalResults.$t-(a.jumlahRelatedPosts+1),d=r>1?1+Math.floor(Math.random()*r):1;l(e.homePageUrl.replace(/\/$/,"")+"/feeds/posts/default"+s+"?alt=json-in-script&orderby=updated&start-index="+d+"&max-results="+(a.jumlahRelatedPosts+1)+"&callback=msRelatedPosts")},l(e.homePageUrl.replace(/\/$/,"")+"/feeds/posts/summary"+s+"?alt=json-in-script&orderby=updated&max-results=0&callback=msRandomIndex")}();
-                !function(){var t,o,d;d={fullwidthImage:!0},optionLinkMagz(d),1==d.fullwidthImage&&(t=document.querySelector(".post-body img"),(o=document.querySelector(".post-body > .tr-caption-container"))?o.classList.add("fullwidth"):t&&t.classList.add("fullwidth"))}();
-            //]]>		  
+            //<![CDATA[
+            // Related Post — simplified, 1 request, label pertama
+            !function(){
+                var e = {
+                    relatedTitleOuterOpen: '<div class="related-title"><p class="ms-title">',
+                    relatedTitleOuterClose: '</p></div>',
+                    relatedTitleText: 'Artikel Terkait',
+                    relatedOuter: 'ms-related-post'
+                };
+                for (var t in relatedConfig) {
+                    if (typeof relatedConfig[t] !== 'undefined') e[t] = relatedConfig[t];
+                }
+                var a = { relatedPosts: true, jumlahRelatedPosts: 3, judulRelatedPosts: e.relatedTitleText };
+                optionLinkMagz(a);
+                if (!a.relatedPosts || typeof postLabels === 'undefined' || !postLabels.length) return;
+                var label = postLabels[0].replace(/&amp;/g, '&');
+                window.msRelatedPosts = function(json) {
+                    if (!json.feed || !json.feed.entry) return;
+                    var entries = json.feed.entry;
+                    var container = document.getElementById(e.relatedOuter);
+                    if (!container) return;
+                    var html = e.relatedTitleOuterOpen + a.judulRelatedPosts + e.relatedTitleOuterClose;
+                    html += '<ul class="ms-related-nothumb">';
+                    var count = 0;
+                    for (var i = 0; i < entries.length && count < a.jumlahRelatedPosts; i++) {
+                        var entryUrl = '#';
+                        for (var j = 0; j < entries[i].link.length; j++) {
+                            if (entries[i].link[j].rel === 'alternate') { entryUrl = entries[i].link[j].href; break; }
+                        }
+                        if (entryUrl === e.postUrl) continue;
+                        html += '<li><div class="related-title-outer"><a href="' + entryUrl + '">' + entries[i].title.$t + '</a></div></li>';
+                        count++;
+                    }
+                    html += '</ul>';
+                    if (count > 0) container.innerHTML = html;
+                };
+                var s = document.createElement('script');
+                s.src = e.homePageUrl.replace(/\/$/, '') + '/feeds/posts/default/-/'
+                    + encodeURIComponent(label)
+                    + '?alt=json-in-script&orderby=updated&max-results=' + (a.jumlahRelatedPosts + 1)
+                    + '&callback=msRelatedPosts';
+                document.head.appendChild(s);
+            }();
+
+            // Baca Juga — 1 request, label pertama (fungsi showBacaJuga sudah didefinisikan di blogPostBody)
+            !function(){
+                var cfg = { bacaJuga: true, jumlahBacaJuga: 3 };
+                optionLinkMagz(cfg);
+                if (!cfg.bacaJuga || typeof postLabels === 'undefined' || !postLabels.length) return;
+                if (typeof showBacaJuga !== 'function') return;
+                var label = postLabels[0].replace(/&amp;/g, '&');
+                var s = document.createElement('script');
+                s.src = relatedConfig.homePageUrl.replace(/\/$/, '') + '/feeds/posts/default/-/'
+                    + encodeURIComponent(label)
+                    + '?alt=json-in-script&orderby=updated&max-results=' + (cfg.jumlahBacaJuga + 1)
+                    + '&callback=showBacaJuga';
+                document.head.appendChild(s);
+            }();
+
+            // fullwidthImage — dipertahankan
+            !function(){var t,o,d;d={fullwidthImage:!0},optionLinkMagz(d),1==d.fullwidthImage&&(t=document.querySelector(".post-body img"),(o=document.querySelector(".post-body > .tr-caption-container"))?o.classList.add("fullwidth"):t&&t.classList.add("fullwidth"))}();
+            //]]>
         </script>
                 </b:includable>
 
