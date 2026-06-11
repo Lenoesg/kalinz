@@ -138,6 +138,10 @@
                                         </b:if>
                                     </a>
                                 </b:includable>
+                                <b:includable id='commentsLinkIframe'>
+                                    <!-- G+ comments, no longer available. The includable is
+                                    retained for backwards-compatibility. -->
+                                </b:includable>
                                 <b:includable id='emailPostIcon'>
                                     <span class='byline post-icons'>
                                         <!-- email post links -->
@@ -176,6 +180,8 @@
                                             </b:if>
                                         </b:loop>
                                     </b:if>
+                                </b:includable>
+                                <b:includable id='googlePlusShare'>
                                 </b:includable>
                                 <b:includable id='headerByline'>
                                     <b:if cond='data:widgets.Blog.first.headerByline'>
@@ -333,6 +339,10 @@
                                             <data:post.location.name />
                                         </a>
                                     </span>
+                                </b:includable>
+                                <b:includable id='postReactions'>
+                                    <!-- Reaction feature no longer available. The includable is
+                                    retained for backwards-compatibility. -->
                                 </b:includable>
                                 <b:includable id='postShareButtons'>
                                     <div class='byline post-share-buttons goog-inline-block'>

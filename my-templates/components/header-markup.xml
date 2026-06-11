@@ -1,4 +1,4 @@
-<header id='header-outer'>
+        <header id='header-outer'>
             <div id='header-wrap'>
                 <div id='header-content'>
 
@@ -6,30 +6,30 @@
                     </b:comment>
                     <b:section class='header' id='header' maxwidgets='1' showaddelement='no'>
                         <b:widget id='Header1' locked='true'
-                            title='KALINZ | Lirik Lagu Nias &amp; Budaya Nias (Header)'
-                            type='Header' version='2' visible='true'>
+                            title='KALINZ | Lirik Lagu Nias dan Budaya Nias (Header)' type='Header'
+                            version='2' visible='true'>
                             <b:widget-settings>
                                 <b:widget-setting name='displayUrl'>
-                                    https://blogger.googleusercontent.com/img/a/AVvXsEhXlK6nk2PxMK2QyRXKcemz_zG4Lbulhgml6qnH7l0D75dDTAs9YYXbFt500s9nN13AQIc3h3JM5-EOhZM8KOvkW1STDf3qRg3jw3c--wDIk2dj771u46Bx2AwJjEMm-15ul059NveeJMTLivXG8-88m_XJnmdOpREA3EM6d1KWMluertVcbu4dhIFMV-g=s260</b:widget-setting>
-                                <b:widget-setting name='displayHeight'>54</b:widget-setting>
+                                    https://blogger.googleusercontent.com/img/a/AVvXsEjLRNsDPu8ljBrEtVZ8HCrKX8gZVai1tj8bZntY9TcEpstFMIyy-e8DRMxqjWY11LQw5dODvidzUOIeiY8_0NzGVW7T26Jkeq8GhzDxcDVSzrLzqPRt4HeO-rAWjI87MZEjHeWEUq_y_h8u1LLTprxYs3kXVTJzRZARKdBfF4bcgEHvvn1R-eIqaybfpV8=s1600</b:widget-setting>
+                                <b:widget-setting name='displayHeight'>347</b:widget-setting>
                                 <b:widget-setting name='sectionWidth'>374</b:widget-setting>
                                 <b:widget-setting name='useImage'>true</b:widget-setting>
                                 <b:widget-setting name='shrinkToFit'>false</b:widget-setting>
                                 <b:widget-setting name='imagePlacement'>REPLACE</b:widget-setting>
-                                <b:widget-setting name='displayWidth'>260</b:widget-setting>
+                                <b:widget-setting name='displayWidth'>1600</b:widget-setting>
                             </b:widget-settings>
                             <b:includable id='main' var='this'>
                                 <b:include
-                                    cond='data:imagePlacement in {"REPLACE","BEFORE_DESCRIPTION"}'
+                                    cond='data:imagePlacement in {&quot;REPLACE&quot;,&quot;BEFORE_DESCRIPTION&quot;}'
                                     name='image' />
                                 <b:include name='title' />
-                                <b:include cond='data:imagePlacement != "REPLACE"'
+                                <b:include cond='data:imagePlacement != &quot;REPLACE&quot;'
                                     name='description' />
                             </b:includable>
                             <b:includable id='behindImageStyle'>
                                 <b:if cond='data:sourceUrl'>
                                     <b:include cond='data:this.image'
-                                        data='{                    image: data:this.image,                    selector: ".header-widget"                  }'
+                                        data='{                    image: data:this.image,                    selector: &quot;.header-widget&quot;                  }'
                                         name='responsiveImageStyle' />
                                     <style type='text/css'>
         .header-widget {
@@ -51,14 +51,14 @@
                                 <a expr:href='data:blog.homepageUrl' expr:title='data:title'>
                                     <img expr:alt='data:title' expr:height='data:height'
                                         expr:src='resizeImage(data:sourceUrl, 1600)'
-                                        expr:srcset='resizeImage(data:sourceUrl, 400) + " 1x, " + resizeImage(data:sourceUrl, 1600) + " 2x"'
+                                        expr:srcset='resizeImage(data:sourceUrl, 400) + &quot; 1x, &quot; + resizeImage(data:sourceUrl, 1600) + &quot; 2x&quot;'
                                         expr:title='data:title' expr:width='data:width' />
                                 </a>
                             </b:includable>
                             <b:includable id='title'>
                                 <div class='blog-title-wrap'>
                                     <b:class
-                                        cond='data:this.imagePlacement in {"REPLACE","BEFORE_DESCRIPTION"}'
+                                        cond='data:this.imagePlacement in {&quot;REPLACE&quot;,&quot;BEFORE_DESCRIPTION&quot;}'
                                         name='hide-title' />
                                     <b:if cond='data:view.isSingleItem'>
                                         <h2 class='blog-title'>
@@ -93,8 +93,8 @@
                             </div>
                         </div>
                         <b:section class='navmenu' id='navmenu' maxwidgets='1' showaddelement='no'>
-                            <b:widget id='HTML72' locked='true' title='Kode Menu Navigasi' type='HTML'
-                                version='2' visible='true'>
+                            <b:widget id='HTML72' locked='true' title='Kode Menu Navigasi'
+                                type='HTML' version='2' visible='true'>
                                 <b:widget-settings>
                                     <b:widget-setting name='content'><![CDATA[<li><a href='https://kalinz.blogspot.com/search/label/Lagu%20Nias'>Lagu Nias</a></li>
 <li><a href='https://kalinz.blogspot.com/search/label/Lagu%20Rohani'>Lagu Rohani</a></li>
