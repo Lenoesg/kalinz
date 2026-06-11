@@ -2850,7 +2850,7 @@ Defer(
 var linkMagzSetting = {
     menuSticky : true,
     relatedPosts : true,
-    jumlahRelatedPosts: 4,
+    jumlahRelatedPosts: 3,
     relatedPostsThumb: false,
     infiniteScrollNav : true,
     scrollToTop : true,
