@@ -5,6 +5,7 @@
 **Niche:** Lagu Nias, Budaya Nias, Bahasa Nias, Dokumentasi Budaya Daerah  
 **Platform:** Blogger | **Monetisasi:** Google AdSense
 
+---
 
 ## Ringkasan Eksekutif
 
