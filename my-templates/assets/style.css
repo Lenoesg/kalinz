@@ -913,7 +913,7 @@ p.featured-more a {
     }
 
     .nav-copy .sticky-logo-link img {
-        max-height: 28px;
+        max-height: 28px
     }
 
     .menu-sticky .nav-outer,
@@ -986,7 +986,7 @@ p.featured-more a {
     -webkit-box-ordinal-group: 2;
     -ms-flex-order: 1;
     order: 1;
-    overflow-x: auto;
+    overflow-x: visible;
     -webkit-overflow-scrolling: touch
 }
 
