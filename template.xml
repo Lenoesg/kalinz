@@ -2981,6 +2981,64 @@ var linkMagzSetting = {
                         font-weight: 400;
                         font-style: normal;
                         display: inline-block;
+                        }
+
+                        .kalinz-home-intro {
+                        max-width: 620px;
+                        margin: 0 auto 28px;
+                        font-size: .9375rem;
+                        color: #666;
+                        line-height: 1.7;
+                        text-align: center;
+                        }
+                        .kalinz-cat-grid {
+                        display: grid;
+                        grid-template-columns: repeat(3, 1fr);
+                        gap: 10px;
+                        max-width: 840px;
+                        margin: 0 auto;
+                        }
+                        .kalinz-cat-item {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 4px;
+                        padding: 14px 16px;
+                        border-radius: 6px;
+                        border: 1px solid #e8ecef;
+                        border-left: 4px solid var(--cat-color, #1a6b8a);
+                        border-left-width: 3px;
+                        text-decoration: none !important;
+                        background: #fff;
+                        transition: background .18s, transform .18s, box-shadow .18s;
+                        }
+                        .kalinz-cat-item:hover {
+                        background: #f9f7f4;
+                        transform: translateY(-2px);
+                        box-shadow: 0 4px 12px rgba(0,0,0,.07);
+                        text-decoration: none !important;
+                        }
+                        .kalinz-cat-label {
+                        font-size: .9rem;
+                        font-weight: 700;
+                        color: var(--cat-color, #1a6b8a);
+                        display: block;
+                        }
+                        .kalinz-cat-item small {
+                        font-size: .725rem;
+                        color: #999;
+                        line-height: 1.4;
+                        display: block;
+                        }
+                        .kalinz-cat-all .kalinz-cat-label {
+                        color: #555;
+                        }
+                        @media (max-width: 600px) {
+                        .kalinz-cat-grid {
+                        grid-template-columns: repeat(2, 1fr);
+                        gap: 8px;
+                        }
+                        .kalinz-cat-item { padding: 12px 13px; }
+                        .kalinz-home-intro { font-size: .875rem; }
                         }</b:widget-setting>
                 </b:widget-settings>
                 <b:includable id='main'>
@@ -3005,7 +3063,7 @@ var linkMagzSetting = {
                             version='2' visible='true'>
                             <b:widget-settings>
                                 <b:widget-setting name='displayUrl'>
-                                    https://blogger.googleusercontent.com/img/a/AVvXsEjLRNsDPu8ljBrEtVZ8HCrKX8gZVai1tj8bZntY9TcEpstFMIyy-e8DRMxqjWY11LQw5dODvidzUOIeiY8_0NzGVW7T26Jkeq8GhzDxcDVSzrLzqPRt4HeO-rAWjI87MZEjHeWEUq_y_h8u1LLTprxYs3kXVTJzRZARKdBfF4bcgEHvvn1R-eIqaybfpV8=s1600</b:widget-setting>
+                                    https://blogger.googleusercontent.com/img/a/AVvXsEiA60iqO3_Ix7HJgSdZuCU4pIJO9Fgbu4I622jL65PVabLz0WF6rDLZ8D8RRNoiRSjkFe5gVIllCNVt0DQ69y_eF54sx-EGO7j6-TkB_r-ivcijlU9Kudo2LkZMSIzlJrjjlzek2cqzzuoT_jd4mGgZkrwVw8W5U1nm01ywxxEtVgNuhqrnbO2T4sD8Yq8=s1600</b:widget-setting>
                                 <b:widget-setting name='displayHeight'>347</b:widget-setting>
                                 <b:widget-setting name='sectionWidth'>374</b:widget-setting>
                                 <b:widget-setting name='useImage'>true</b:widget-setting>
@@ -3167,9 +3225,40 @@ var linkMagzSetting = {
 
                 <b:section class='top-widget2' id='top-widget2' maxwidgets='1' showaddelement='no'>
                     <b:widget id='HTML421' locked='true' title='Widget HTML #2 (homepage)'
-                        type='HTML' version='2' visible='false'>
+                        type='HTML' version='2' visible='true'>
                         <b:widget-settings>
-                            <b:widget-setting name='content' />
+                            <b:widget-setting name='content'><![CDATA[<div class="kalinz-home-intro">
+  <p>Kalinz adalah arsip digital <strong>lirik lagu Nias</strong>, <strong>syair Maena</strong>,
+  <strong>terjemahan bahasa Nias–Indonesia</strong>, dan catatan budaya Pulau Nias
+  yang terus diperbarui.</p>
+</div>
+
+<nav class="kalinz-cat-grid" aria-label="Jelajahi kategori">
+  <a href="/search/label/Lagu%20Nias" class="kalinz-cat-item" style="--cat-color:#1a6b8a;">
+    <span class="kalinz-cat-label">Lagu Nias</span>
+    <small>Lirik &amp; terjemahan lagu daerah</small>
+  </a>
+  <a href="/search/label/Maena%20Nias" class="kalinz-cat-item" style="--cat-color:#4a7c59;">
+    <span class="kalinz-cat-label">Maena Nias</span>
+    <small>Syair, makna, dan tradisi Maena</small>
+  </a>
+  <a href="/search/label/Lagu%20Rohani" class="kalinz-cat-item" style="--cat-color:#5c6bc0;">
+    <span class="kalinz-cat-label">Lagu Rohani</span>
+    <small>Pujian dan lagu ibadah Nias</small>
+  </a>
+  <a href="/search/label/Bahasa%20Nias" class="kalinz-cat-item" style="--cat-color:#8d6e63;">
+    <span class="kalinz-cat-label">Bahasa Nias</span>
+    <small>Kosakata, terjemahan &amp; peribahasa</small>
+  </a>
+  <a href="/search/label/Budaya%20Nias" class="kalinz-cat-item" style="--cat-color:#a1794d;">
+    <span class="kalinz-cat-label">Budaya Nias</span>
+    <small>Tradisi, adat, dan kebudayaan Nias</small>
+  </a>
+  <a href="/search/label/Lagu%20Nias" class="kalinz-cat-item kalinz-cat-all" style="--cat-color:#555;">
+    <span class="kalinz-cat-label">Semua Konten →</span>
+    <small>Jelajahi seluruh arsip Kalinz</small>
+  </a>
+</nav>]]></b:widget-setting>
                         </b:widget-settings>
                         <b:includable id='main'>
                             <b:if cond='data:view.isHomepage'>
@@ -3185,11 +3274,11 @@ var linkMagzSetting = {
 
                 <b:section class='main-content' id='main-content' maxwidgets='2' showaddelement='no'>
                     <b:widget id='FeaturedPost1' locked='true' title='Featured Post'
-                        type='FeaturedPost' version='2' visible='false'>
+                        type='FeaturedPost' version='2' visible='true'>
                         <b:widget-settings>
                             <b:widget-setting name='showSnippet'>true</b:widget-setting>
                             <b:widget-setting name='showPostTitle'>true</b:widget-setting>
-                            <b:widget-setting name='postId'>1163759332799871430</b:widget-setting>
+                            <b:widget-setting name='postId'>8552280597204003794</b:widget-setting>
                             <b:widget-setting name='showFirstImage'>true</b:widget-setting>
                             <b:widget-setting name='useMostRecentPost'>false</b:widget-setting>
                         </b:widget-settings>
@@ -4941,7 +5030,7 @@ var linkMagzSetting = {
                                     <b:widget-setting name='numItemsToShow'>5</b:widget-setting>
                                     <b:widget-setting name='showThumbnails'>true</b:widget-setting>
                                     <b:widget-setting name='showSnippets'>true</b:widget-setting>
-                                    <b:widget-setting name='timeRange'>LAST_MONTH</b:widget-setting>
+                                    <b:widget-setting name='timeRange'>ALL_TIME</b:widget-setting>
                                 </b:widget-settings>
                                 <b:includable id='main' var='this'>
                                     <div>
