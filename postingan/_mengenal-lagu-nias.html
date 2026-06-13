@@ -1,0 +1,375 @@
+<style>
+.post-kalinz {
+  max-width: 740px;
+  margin: 0 auto;
+  padding: 0;
+  color: inherit;
+  line-height: 1.8;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+  font-family: inherit;
+}
+
+.post-kalinz,
+.post-kalinz * {
+  box-sizing: border-box;
+}
+
+.post-kalinz p {
+  font-size: 1rem;
+  margin: 0 0 1.2em;
+}
+
+.post-kalinz strong,
+.post-kalinz em,
+.post-kalinz a,
+.post-kalinz td,
+.post-kalinz span,
+.post-kalinz div {
+  font-family: inherit;
+}
+
+.post-kalinz h2 {
+  font-family: inherit !important;
+  font-size: 1.15rem !important;
+  font-weight: 700 !important;
+  margin: 1.4em 0 0.85em !important;
+  padding: 0 0 10px !important;
+  color: inherit !important;
+  border: 0 !important;
+  line-height: 1.4 !important;
+  position: relative;
+}
+
+.post-kalinz h2::after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 3px;
+  margin-top: 8px;
+  border-radius: 999px;
+  background: #0090d4;
+}
+
+.post-kalinz .post-featured-image {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin: 0 auto 1.5em;
+  display: block;
+}
+
+.post-kalinz .post-box {
+  background: #f5f9ff;
+  border: 1px solid #d0e4f7;
+  border-radius: 8px;
+  padding: 16px 20px;
+  margin: 1.5em 0;
+  font-size: 0.875rem;
+  color: inherit;
+}
+
+.post-kalinz .post-box table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+.post-kalinz .post-box td {
+  padding: 6px 0;
+  vertical-align: top;
+  overflow-wrap: anywhere;
+}
+
+.post-kalinz .post-box td:first-child {
+  color: #666;
+  width: 130px;
+  font-size: 0.8125rem;
+  white-space: nowrap;
+  padding-right: 12px;
+}
+
+.post-kalinz .post-box td:last-child {
+  font-weight: 600;
+  color: inherit;
+}
+
+.post-kalinz .post-divider {
+  border: none;
+  border-top: 1px solid #eee;
+  margin: 1em 0 !important;
+}
+
+.post-kalinz .post-tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.post-kalinz .post-tag {
+  font-family: inherit;
+  font-size: 0.75rem;
+  background: #f0f0f0;
+  border-radius: 4px;
+  padding: 4px 12px;
+  color: inherit;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.post-kalinz .post-tag:hover {
+  background: #e7e7e7;
+  color: inherit;
+}
+
+/* Explore links di akhir artikel */
+.post-kalinz .kalinz-explore {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+  margin: 1.2em 0;
+}
+
+.post-kalinz .kalinz-explore a {
+  display: block;
+  padding: 10px 14px;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #1a6b8a;
+  text-decoration: none !important;
+  transition: background .15s, border-color .15s;
+  line-height: 1.4;
+}
+
+.post-kalinz .kalinz-explore a small {
+  display: block;
+  font-weight: 400;
+  font-size: 0.75rem;
+  color: #888;
+  margin-top: 2px;
+}
+
+.post-kalinz .kalinz-explore a:hover {
+  background: #f0f8fb;
+  border-color: #1a6b8a;
+  text-decoration: none !important;
+}
+
+@media (max-width: 480px) {
+  .post-kalinz p { font-size: 0.96875rem; }
+  .post-kalinz h2 { font-size: 1.05rem !important; }
+  .post-kalinz .post-box { padding: 14px 16px; }
+  .post-kalinz .post-box td { display: block; padding: 2px 0; }
+  .post-kalinz .post-box td:first-child {
+    width: auto; white-space: normal;
+    padding-right: 0; margin-top: 8px;
+  }
+  .post-kalinz .post-box tr:first-child td:first-child { margin-top: 0; }
+  .post-kalinz .kalinz-explore { grid-template-columns: 1fr; }
+}
+
+body.darkmode .post-kalinz { color: #e9e9e9; }
+body.darkmode .post-kalinz h2 { color: #f5f5f5 !important; }
+body.darkmode .post-kalinz h2::after { background: #7cc8ff; }
+body.darkmode .post-kalinz .post-box { background: #2d2d2d; border-color: #444; }
+body.darkmode .post-kalinz .post-box td:first-child { color: #bdbdbd; }
+body.darkmode .post-kalinz .post-divider { border-top-color: #3d3d3d; }
+body.darkmode .post-kalinz .post-tag { background: #3a3a3a; color: #ededed; }
+body.darkmode .post-kalinz .post-tag:hover { background: #474747; }
+body.darkmode .post-kalinz .kalinz-explore a {
+  border-color: #3d3d3d; color: #7cc8ff;
+}
+body.darkmode .post-kalinz .kalinz-explore a small { color: #999; }
+body.darkmode .post-kalinz .kalinz-explore a:hover {
+  background: #2a2a2a; border-color: #7cc8ff;
+}
+</style>
+
+<article class="post-kalinz">
+
+  <!--GAMBAR UTAMA — gunakan foto sunset Pulau Nias-->
+  <img alt="Pantai Pulau Nias saat matahari terbenam — tanah leluhur Ono Niha" class="post-featured-image" height="533" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiffpIgDB9FzxR1WyGFh2tEfLW2ohJluenKwAvHJYpiRN8Q5gnQd9aOr3XrN5fV-jKYPJNnehMN89ZzK1bXM3uZRDFaJa58KII9Zb7JRG9EK9tyZbJqvQvhXhySHwD5pT2tQ4BjREIkfeRMzjof_o3vYHuPMRhhTURI1l90evng-Df2wDasVVRjs6PgJww/w400-h266/Pantai%20Pulau%20Nias.png" title="Pulau Nias, Tanah Leluhur Ono Niha" width="800" />
+
+  <!--INTRO-->
+  <p>Jika kamu pernah mendengar irama lagu yang terasa berbeda — melodi yang hangat, lirik dalam bahasa yang jarang terdengar di luar Pulau Nias — kemungkinan besar kamu sedang mendengar <strong>lagu Nias</strong>. Musik dari pulau yang terletak di lepas pantai barat Sumatra ini menyimpan kedalaman budaya yang jarang mendapat perhatian di luar komunitasnya sendiri.</p>
+
+  <p>Kalinz hadir untuk mengumpulkan, mendokumentasikan, dan menerjemahkan lagu-lagu Nias — agar warisan ini bisa diakses oleh siapa saja, baik masyarakat Nias yang merantau maupun siapa pun yang ingin mengenal budaya Nias lebih dalam.</p>
+
+  <!--RINGKASAN INFO-->
+  <div class="post-box">
+    <table>
+      <tbody><tr>
+        <td>Bahasa</td>
+        <td>Li Niha (Bahasa Nias) — bahasa Austronesia</td>
+      </tr>
+      <tr>
+        <td>Dialek</td>
+        <td>Nias Utara, Nias Selatan, Nias Tengah</td>
+      </tr>
+      <tr>
+        <td>Jenis lagu</td>
+        <td>Lagu Daerah, Maena, Lagu Rohani, Pop Nias</td>
+      </tr>
+      <tr>
+        <td>Wilayah</td>
+        <td>Pulau Nias, Kab. Nias, Nias Selatan, Nias Barat, Nias Utara</td>
+      </tr>
+      <tr>
+        <td>Diarsipkan</td>
+        <td>Kalinz — arsip digital budaya Nias</td>
+      </tr>
+    </tbody></table>
+  </div>
+
+  <!--ISI ARTIKEL-->
+
+  <h2>Musik Nias: Kaya, tapi Jarang Dikenal</h2>
+
+  <p>Pulau Nias — atau dalam bahasa setempat disebut <strong>Tanö Niha</strong> — adalah rumah bagi masyarakat <strong>Ono Niha</strong>, yang secara harfiah berarti "orang dari tanah ini." Mereka memiliki bahasa sendiri, yaitu <strong>Li Niha</strong>, yang digunakan dalam percakapan sehari-hari, upacara adat, doa, hingga lagu-lagu yang diturunkan dari generasi ke generasi secara lisan.</p>
+
+  <p>Musik Nias bukan sekadar hiburan. Dalam tradisi Ono Niha, lagu adalah medium untuk menyampaikan perasaan, mengiringi ritual adat, merayakan momen penting, dan mewariskan nilai-nilai budaya kepada generasi berikutnya. Sayangnya, dokumentasi tertulis tentang lagu-lagu ini masih sangat terbatas — dan itulah yang mendorong kehadiran Kalinz.</p>
+
+  <h2>Jenis-Jenis Lagu Nias</h2>
+
+  <p>Lagu Nias bukan satu jenis yang seragam. Ada beragam bentuk musik yang tumbuh di Pulau Nias, masing-masing dengan konteks, fungsi, dan keindahannya tersendiri.</p>
+
+  <p><strong>Lagu daerah Nias</strong> adalah lagu rakyat yang diturunkan dari generasi ke generasi melalui tradisi lisan. Liriknya bercerita tentang alam Nias, perasaan rindu, cinta, atau kisah kehidupan sehari-hari masyarakat Ono Niha. Banyak di antaranya tidak memiliki penulis yang tercatat — lagu ini milik bersama, milik seluruh komunitas.</p>
+
+  <p><strong>Maena</strong> adalah bentuk musik tradisional paling khas dari Nias. Dibawakan secara komunal dalam prosesi adat, Maena bukan sekadar lagu — ia adalah pengalaman bersama yang mempersatukan komunitas dalam irama dan makna yang sama.</p>
+
+  <p><strong>Lagu rohani Nias</strong> adalah nyanyian pujian dan ibadah dalam bahasa Nias. Mengingat mayoritas masyarakat Nias memeluk agama Kristen, lagu rohani berbahasa Nias memiliki tempat yang sangat penting — menjadi persimpangan antara iman dan identitas budaya Ono Niha.</p>
+
+  <p><strong>Lagu pop modern Nias</strong> adalah genre kontemporer yang berkembang sejalan dengan masuknya pengaruh musik Indonesia dan dunia. Para penyanyi Nias modern menciptakan lagu-lagu tentang cinta, kerinduan kampung halaman, dan kisah kehidupan — namun tetap dalam bahasa Nias, menjadikannya jembatan antara tradisi dan zaman.</p>
+
+  <h2>Apa Itu Maena?</h2>
+
+  <p><strong>Maena</strong> adalah tradisi lisan berupa syair yang dinyanyikan bersama dalam berbagai upacara adat Nias. Bukan sekadar lagu biasa — Maena adalah ekspresi kolektif yang mempererat ikatan antara sesama anggota komunitas, sekaligus antara yang hidup dan para leluhur.</p>
+
+  <p>Maena umumnya dibawakan dalam acara-acara besar seperti <em>pernikahan adat Nias</em>, penyambutan tamu kehormatan, atau perayaan komunal yang melibatkan seluruh warga kampung. Para peserta bergerak dalam formasi tertentu sambil menyanyikan bait-bait syair secara bersama-sama, menciptakan satu kesatuan suara dan gerak yang ritmis.</p>
+
+  <p>Bahasa yang digunakan dalam Maena umumnya adalah bahasa Nias yang lebih klasik dan puitis — berbeda dengan percakapan sehari-hari. Karena itu, tidak semua generasi muda Nias bisa langsung memahami setiap liriknya, dan inilah salah satu alasan mengapa dokumentasi dengan terjemahan menjadi sangat penting.</p>
+
+  <h2>Bahasa Nias dalam Lagu: Mengenal Li Niha</h2>
+
+  <p><strong>Li Niha</strong> adalah bahasa yang hanya dituturkan oleh masyarakat Ono Niha. Bahasa ini termasuk dalam rumpun bahasa Austronesia dan memiliki setidaknya tiga dialek utama: <strong>Nias Utara</strong>, <strong>Nias Selatan</strong>, dan <strong>Nias Tengah</strong> — masing-masing punya perbedaan dalam kosakata, intonasi, dan pelafalan.</p>
+
+  <p>Dalam konteks lagu, perbedaan dialek ini bisa terasa cukup nyata. Satu kata yang sama bisa memiliki bunyi berbeda atau nuansa makna yang berbeda tergantung dari mana asal lagunya. Karena itu, memahami lagu Nias seringkali membutuhkan lebih dari sekadar terjemahan kata per kata — diperlukan pemahaman konteks budaya di baliknya.</p>
+
+  <p>Di Kalinz, setiap lirik yang diarsipkan dilengkapi dengan <strong>terjemahan bahasa Indonesia</strong>. Untuk kosakata atau frasa yang punya nilai budaya khusus, kami berusaha menyertakan penjelasan tambahan agar maknanya tidak hilang dalam terjemahan.</p>
+
+  <h2>Mengapa Lagu Nias Perlu Didokumentasikan?</h2>
+
+  <p>Banyak lagu Nias — terutama lagu rakyat lama dan syair Maena klasik — hanya hidup dalam ingatan para tetua adat. Tidak ada partitur yang tercatat, tidak ada rekaman resmi, tidak ada arsip digital yang sistematis. Ketika seorang tetua meninggal tanpa sempat mengajarkan lagu-lagunya, lagu itu ikut hilang untuk selamanya.</p>
+
+  <p>Di sisi lain, generasi muda Nias yang merantau ke kota besar semakin jarang mendengar lagu dalam bahasa leluhurnya. Batas antara "masih ingat" dan "sudah lupa" semakin tipis setiap tahunnya. Ini bukan hanya soal hilangnya lagu — ini soal hilangnya sebagian dari cara Ono Niha memandang dunia dan mengungkapkan diri.</p>
+
+  <p>Dokumentasi digital adalah salah satu cara paling realistis untuk memperlambat proses kehilangan ini. Dengan mengarsipkan lirik, terjemahan, dan konteks setiap lagu, Kalinz berharap menjadi jembatan — bukan hanya bagi generasi Nias yang jauh dari kampung halaman, tetapi juga bagi siapa pun yang ingin memahami kekayaan budaya Indonesia yang sering luput dari perhatian.</p>
+
+  <h2>Jelajahi Arsip Kalinz</h2>
+
+  <p>Kalinz mengarsipkan ratusan lirik lagu Nias lengkap dengan terjemahan bahasa Indonesia. Mulai jelajahi berdasarkan kategori yang kamu minati:</p>
+
+  <div class="kalinz-explore">
+    <a href="https://kalinz.blogspot.com/search/label/Lagu%20Nias">
+      Lagu Nias
+      <small>Lirik &amp; terjemahan lagu daerah Nias</small>
+    </a>
+    <a href="https://kalinz.blogspot.com/search/label/Maena%20Nias">
+      Maena Nias
+      <small>Syair, makna, dan tradisi Maena</small>
+    </a>
+    <a href="https://kalinz.blogspot.com/search/label/Lagu%20Rohani">
+      Lagu Rohani
+      <small>Pujian dan lagu ibadah berbahasa Nias</small>
+    </a>
+    <a href="https://kalinz.blogspot.com/search/label/Bahasa%20Nias">
+      Bahasa Nias
+      <small>Kosakata, terjemahan &amp; peribahasa Li Niha</small>
+    </a>
+    <a href="https://kalinz.blogspot.com/search/label/Budaya%20Nias">
+      Budaya Nias
+      <small>Catatan adat dan tradisi Pulau Nias</small>
+    </a>
+    <a href="https://kalinz.blogspot.com/">
+      Semua Arsip →
+      <small>Jelajahi seluruh koleksi Kalinz</small>
+    </a>
+  </div>
+
+  <hr class="post-divider" />
+
+  <!--TAG LABEL-->
+  <div class="post-tag-list">
+    <a class="post-tag" href="https://kalinz.blogspot.com/search/label/Budaya%20Nias" rel="tag">Budaya Nias</a>
+    <a class="post-tag" href="https://kalinz.blogspot.com/search/label/Lagu%20Nias" rel="tag">Lagu Nias</a>
+    <a class="post-tag" href="https://kalinz.blogspot.com/search/label/Maena%20Nias" rel="tag">Maena Nias</a>
+    <a class="post-tag" href="https://kalinz.blogspot.com/search/label/Bahasa%20Nias" rel="tag">Bahasa Nias</a>
+  </div>
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Mengenal Lagu Nias: Tradisi Musik, Maena, dan Warisan Budaya Pulau Nias",
+  "description": "Panduan lengkap mengenal lagu Nias: jenis lagu daerah, tradisi Maena, bahasa Li Niha dalam musik Nias, dan pentingnya dokumentasi budaya Pulau Nias.",
+  "image": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiffpIgDB9FzxR1WyGFh2tEfLW2ohJluenKwAvHJYpiRN8Q5gnQd9aOr3XrN5fV-jKYPJNnehMN89ZzK1bXM3uZRDFaJa58KII9Zb7JRG9EK9tyZbJqvQvhXhySHwD5pT2tQ4BjREIkfeRMzjof_o3vYHuPMRhhTURI1l90evng-Df2wDasVVRjs6PgJww/w400-h266/Pantai%20Pulau%20Nias.png",
+  "author": {
+    "@type": "Person",
+    "name": "KALINZ",
+    "url": "https://kalinz.blogspot.com"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "KALINZ",
+    "url": "https://kalinz.blogspot.com",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://blogger.googleusercontent.com/img/a/AVvXsEiA60iqO3_Ix7HJgSdZuCU4pIJO9Fgbu4I622jL65PVabLz0WF6rDLZ8D8RRNoiRSjkFe5gVIllCNVt0DQ69y_eF54sx-EGO7j6-TkB_r-ivcijlU9Kudo2LkZMSIzlJrjjlzek2cqzzuoT_jd4mGgZkrwVw8W5U1nm01ywxxEtVgNuhqrnbO2T4sD8Yq8=s1600"
+    }
+  },
+  "datePublished": "2026-06-13",
+  "dateModified": "2026-06-13",
+  "inLanguage": "id",
+  "keywords": [
+    "Lagu Nias",
+    "Maena Nias",
+    "Budaya Nias",
+    "Li Niha",
+    "Bahasa Nias",
+    "Musik Tradisional Nias",
+    "Ono Niha",
+    "Lagu Daerah Nias",
+    "Tanö Niha",
+    "Arsip Budaya Nias"
+  ],
+  "articleSection": ["Budaya Nias", "Musik Nias"],
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://kalinz.blogspot.com/2026/06/mengenal-lagu-nias-tradisi-musik-maena.html"
+  },
+  "about": [
+    {
+      "@type": "Thing",
+      "name": "Lagu Nias",
+      "description": "Tradisi musik dan lagu dari Pulau Nias, Indonesia, mencakup lagu daerah, Maena, lagu rohani, dan pop Nias dalam bahasa Li Niha."
+    },
+    {
+      "@type": "Thing",
+      "name": "Maena",
+      "description": "Tradisi syair lisan khas Nias yang dinyanyikan secara komunal dalam upacara adat seperti pernikahan dan penyambutan tamu."
+    },
+    {
+      "@type": "Language",
+      "name": "Li Niha",
+      "alternateName": "Bahasa Nias",
+      "description": "Bahasa Austronesia yang dituturkan oleh masyarakat Ono Niha di Pulau Nias, Sumatera Utara, Indonesia."
+    }
+  ]
+}
+</script>
+
+</article>

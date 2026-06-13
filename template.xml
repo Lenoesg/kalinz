@@ -2929,7 +2929,7 @@ var linkMagzSetting = {
     relatedPosts : true,
     jumlahRelatedPosts: 3,
     relatedPostsThumb: false,
-    infiniteScrollNav : true,
+    infiniteScrollNav : false,
     scrollToTop : true,
     fullwidthImage : true,
     bacaJuga : true,
