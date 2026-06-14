@@ -2949,7 +2949,10 @@ var linkMagzSetting = {
             <b:widget id='HTML82' locked='true' title='Custom CSS' type='HTML' version='2'
                 visible='true'>
                 <b:widget-settings>
-                    <b:widget-setting name='content'>/* Footer Social Icons */
+                    <b:widget-setting name='content'>/*
+                        ----------------------------------------------------------
+                        1. FOOTER &#8212; Social Icons
+                        ---------------------------------------------------------- */
                         .footer-sosmed-wrap {
                         display: flex;
                         justify-content: center;
@@ -2959,8 +2962,8 @@ var linkMagzSetting = {
                         }
                         .footer-sosmed-wrap a {
                         font-size: 1.6rem;
-                        color: #555555;
-                        opacity: 0.7;
+                        color: #555;
+                        opacity: .7;
                         transition: opacity .2s, transform .2s;
                         display: inline-flex;
                         align-items: center;
@@ -2983,6 +2986,10 @@ var linkMagzSetting = {
                         display: inline-block;
                         }
 
+
+                        /* ----------------------------------------------------------
+                        2. HOMEPAGE &#8212; Intro Text
+                        ---------------------------------------------------------- */
                         .kalinz-home-intro {
                         max-width: 620px;
                         margin: 0 auto 28px;
@@ -2991,6 +2998,14 @@ var linkMagzSetting = {
                         line-height: 1.7;
                         text-align: center;
                         }
+                        @media (max-width: 600px) {
+                        .kalinz-home-intro { font-size: .875rem; }
+                        }
+
+
+                        /* ----------------------------------------------------------
+                        3. HOMEPAGE &#8212; Category Grid
+                        ---------------------------------------------------------- */
                         .kalinz-cat-grid {
                         display: grid;
                         grid-template-columns: repeat(3, 1fr);
@@ -3005,8 +3020,7 @@ var linkMagzSetting = {
                         padding: 14px 16px;
                         border-radius: 6px;
                         border: 1px solid #e8ecef;
-                        border-left: 4px solid var(--cat-color, #1a6b8a);
-                        border-left-width: 3px;
+                        border-left: 3px solid var(--cat-color, #1a6b8a);
                         text-decoration: none !important;
                         background: #fff;
                         transition: background .18s, transform .18s, box-shadow .18s;
@@ -3038,7 +3052,114 @@ var linkMagzSetting = {
                         gap: 8px;
                         }
                         .kalinz-cat-item { padding: 12px 13px; }
-                        .kalinz-home-intro { font-size: .875rem; }
+                        }
+
+
+                        /* ----------------------------------------------------------
+                        4. SIDEBAR &#8212; Tentang Kalinz + Profil Penulis
+                        ---------------------------------------------------------- */
+                        .kalinz-about {
+                        font-size: .875rem;
+                        color: #555;
+                        line-height: 1.7;
+                        }
+                        .kalinz-about p { margin: 0 0 10px; }
+                        .kalinz-about strong { color: #2c2c2c; }
+
+                        .kalinz-author-row {
+                        display: flex;
+                        align-items: center;
+                        gap: 10px;
+                        margin-bottom: 10px;
+                        }
+                        .kalinz-author-img {
+                        width: 48px;
+                        height: 48px;
+                        border-radius: 50%;
+                        object-fit: cover;
+                        flex-shrink: 0;
+                        border: 2px solid #e8ecef;
+                        }
+                        .kalinz-author-name {
+                        display: block;
+                        font-size: .875rem;
+                        color: #2c2c2c;
+                        font-weight: 700;
+                        }
+                        .kalinz-author-label {
+                        display: block;
+                        font-size: .75rem;
+                        color: #999;
+                        margin-top: 1px;
+                        }
+                        .kalinz-about-link {
+                        display: inline-block;
+                        font-size: .8125rem;
+                        font-weight: 700;
+                        color: #1a6b8a;
+                        text-decoration: none;
+                        border-bottom: 1px solid rgba(26,107,138,.25);
+                        transition: border-color .2s;
+                        }
+                        .kalinz-about-link:hover {
+                        border-color: #1a6b8a;
+                        color: #1a6b8a;
+                        }
+
+
+                        /* ----------------------------------------------------------
+                        5. SIDEBAR &#8212; Artis Populer
+                        ---------------------------------------------------------- */
+                        .kalinz-artist-list {
+                        list-style: none;
+                        padding: 0 !important;
+                        margin: 0;
+                        }
+                        .kalinz-artist-list li {
+                        border-bottom: 1px solid #f0f0f0;
+                        margin: 0 !important;
+                        padding: 0 !important;
+                        }
+                        .kalinz-artist-list li:last-child { border-bottom: none; }
+                        .kalinz-artist-list li::before { display: none !important; }
+                        .kalinz-artist-list a {
+                        display: block;
+                        padding: 8px 4px;
+                        font-size: .875rem;
+                        color: #444;
+                        text-decoration: none;
+                        transition: color .15s, padding-left .15s;
+                        }
+                        .kalinz-artist-list a:hover {
+                        color: #1a6b8a;
+                        padding-left: 6px;
+                        }
+
+
+                        /* ----------------------------------------------------------
+                        6. SIDEBAR STICKY &#8212; Jelajahi
+                        ---------------------------------------------------------- */
+                        .kalinz-sticky-nav {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 2px;
+                        }
+                        .kalinz-sticky-nav a {
+                        display: block;
+                        padding: 9px 12px;
+                        font-size: .875rem;
+                        font-weight: 600;
+                        color: #444;
+                        border-radius: 5px;
+                        border-left: 3px solid transparent;
+                        text-decoration: none !important;
+                        transition: background .15s, color .15s, border-color .15s;
+                        }
+                        .kalinz-sticky-nav a:hover,
+                        .kalinz-sticky-nav a:focus {
+                        background: #f0f8fb;
+                        color: #1a6b8a;
+                        border-left-color: #1a6b8a;
                         }</b:widget-setting>
                 </b:widget-settings>
                 <b:includable id='main'>
@@ -3273,7 +3394,7 @@ var linkMagzSetting = {
                 </b:section>
 
                 <b:section class='main-content' id='main-content' maxwidgets='2' showaddelement='no'>
-                    <b:widget id='FeaturedPost1' locked='true' title='Featured Post'
+                    <b:widget id='FeaturedPost1' locked='true' title='Artikel Pilihan'
                         type='FeaturedPost' version='2' visible='true'>
                         <b:widget-settings>
                             <b:widget-setting name='showSnippet'>true</b:widget-setting>
@@ -5519,8 +5640,208 @@ var linkMagzSetting = {
                                     </div>
                                 </b:includable>
                             </b:widget>
+                            <b:widget id='HTML1' locked='false' title='Tentang Kalinz' type='HTML'
+                                visible='true'>
+                                <b:widget-settings>
+                                    <b:widget-setting name='content'><![CDATA[<div class="kalinz-about">
+  <div class="kalinz-author-row">
+    <img
+      class="kalinz-author-img"
+      src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgvU-_IiBbgeMQHn19yPoxtmm3eesLdYlsW8F4gL5_wY6MewI-iP0Bj0iUjjzByTJs56lxTCfS5IBu28fRCx8yJwqcsWUbXdVwKrW9jC4mZpjA_zCzvjf2pUM4n1inI86YpZJLWGU6zIQPUjR4WCwq5UK5ohOdkewAmdwx88oV0UcWTEcJQqPRJSY1V7yw/s320/IMG_20260519_061326.jpg"
+      alt="Melinus Gulo — pengelola Kalinz"
+      width="48" height="48"
+    />
+    <div>
+      <strong class="kalinz-author-name">Melinus Gulo</strong>
+      <span class="kalinz-author-label">Pengelola Kalinz</span>
+    </div>
+  </img
+></div>
+  <p>Pencinta musik dan budaya Nias yang mendokumentasikan
+  warisan Ono Niha secara digital — lirik, terjemahan,
+  Maena, dan catatan budaya Pulau Nias.</p>
+  <a class="kalinz-about-link" href="/p/about.html">Tentang Kalinz →</a>
+</div>]]></b:widget-setting>
+                                </b:widget-settings>
+                                <b:includable id='main'>
+                                    <b:if cond='data:content'>
+                                        <b:if cond='data:title'>
+                                            <div class='normalwidget-title html'>
+                                                <h2 class='title'>
+                                                    <data:title />
+                                                </h2>
+                                            </div>
+                                        </b:if>
+                                        <div class='widget-content'>
+                                            <data:content />
+                                        </div>
+                                    </b:if>
+                                </b:includable>
+                            </b:widget>
+                            <b:widget id='HTML3' locked='false' title='Artis Populer' type='HTML'
+                                visible='true'>
+                                <b:widget-settings>
+                                    <b:widget-setting name='content'><![CDATA[<ul class="kalinz-artist-list">
+  <li><a href="/search/label/Erick%20Ij%C3%B6">Erick Ijö</a></li>
+  <li><a href="/search/label/Fati%20Zebua">Fati Zebua</a></li>
+  <li><a href="/search/label/Delada%20Trio">Delada Trio</a></li>
+  <li><a href="/search/label/Vivid%20Gulo">Vivid Gulo</a></li>
+  <li><a href="/search/label/Tice%20Halawa">Tice Halawa</a></li>
+  <!-- tambahkan artis lain yang punya banyak lagu di blog -->
+</ul>]]></b:widget-setting>
+                                </b:widget-settings>
+                                <b:includable id='main'>
+                                    <b:if cond='data:content'>
+                                        <b:if cond='data:title'>
+                                            <div class='normalwidget-title html'>
+                                                <h2 class='title'>
+                                                    <data:title />
+                                                </h2>
+                                            </div>
+                                        </b:if>
+                                        <div class='widget-content'>
+                                            <data:content />
+                                        </div>
+                                    </b:if>
+                                </b:includable>
+                            </b:widget>
+                            <b:widget id='BlogArchive1' locked='false' title='Arsip'
+                                type='BlogArchive' visible='true'>
+                                <b:widget-settings>
+                                    <b:widget-setting name='showStyle'>HIERARCHY</b:widget-setting>
+                                    <b:widget-setting name='yearPattern'>yyyy</b:widget-setting>
+                                    <b:widget-setting name='showWeekEnd'>true</b:widget-setting>
+                                    <b:widget-setting name='monthPattern'>MMMM</b:widget-setting>
+                                    <b:widget-setting name='dayPattern'>MMM dd</b:widget-setting>
+                                    <b:widget-setting name='weekPattern'>MM/dd</b:widget-setting>
+                                    <b:widget-setting name='chronological'>true</b:widget-setting>
+                                    <b:widget-setting name='showPosts'>true</b:widget-setting>
+                                    <b:widget-setting name='frequency'>MONTHLY</b:widget-setting>
+                                </b:widget-settings>
+                                <b:includable id='main' var='this'>
+                                    <b:if cond='data:title'>
+                                        <div class='normalwidget-title'>
+                                            <h2 class='title'>
+                                                <data:title />
+                                            </h2>
+                                        </div>
+                                    </b:if>
+                                    <b:include name='content' />
+                                </b:includable>
+                                <b:includable id='content'>
+                                    <div class='widget-content'>
+                                        <div id='ArchiveList'>
+                                            <div
+                                                expr:id='data:widget.instanceId + &quot;_ArchiveList&quot;'>
+                                                <b:include
+                                                    cond='data:this.style == &quot;HIERARCHY&quot;'
+                                                    name='hierarchy' />
+                                                <b:include
+                                                    cond='data:this.style in {&quot;FLAT&quot;}'
+                                                    name='flat' />
+                                                <b:include
+                                                    cond='data:this.style in {&quot;MENU&quot;}'
+                                                    name='dropdown' />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </b:includable>
+                                <b:includable id='dropdown'>
+                                    <div class='archive-dropdown'>
+                                        <select aria-label='archive'
+                                            onChange='window.location.href=this.value'>
+                                            <b:loop values='data:data' var='i'>
+                                                <option expr:value='data:i.url'>
+                                                    <data:i.name />
+                                                    <span class='post-count'>(<data:i.post-count />)</span>
+                                                </option>
+                                            </b:loop>
+                                        </select>
+                                    </div>
+                                </b:includable>
+                                <b:includable id='flat'>
+                                    <div class='archive-flat'>
+                                        <ul>
+                                            <b:loop values='data:data' var='i'>
+                                                <li class='archivedate'>
+                                                    <a expr:href='data:i.url'>
+                                                        <data:i.name />
+                                                        <span class='post-count'>(<data:i.post-count />
+                                                            )</span>
+                                                    </a>
+                                                </li>
+                                            </b:loop>
+                                        </ul>
+                                    </div>
+                                </b:includable>
+                                <b:includable id='hierarchy'>
+                                    <div class='archive-hierarchy'>
+                                        <b:include data='data' name='interval' />
+                                    </div>
+                                </b:includable>
+                                <b:includable id='interval' var='intervals'>
+                                    <ul class='hierarchy'>
+                                        <b:loop values='data:intervals' var='interval'>
+                                            <li class='archivedate'>
+                                                <div class='hierarchy-title'>
+                                                    <a class='post-count-link'
+                                                        expr:href='data:interval.url'>
+                                                        <data:interval.name />
+                                                        <span class='post-count'>(<data:interval.post-count />
+                                                            )</span>
+                                                    </a>
+                                                </div>
+                                                <div class='hierarchy-content'>
+                                                    <b:include cond='data:interval.data'
+                                                        data='interval.data' name='interval' />
+                                                    <b:include cond='data:interval.posts'
+                                                        data='interval.posts' name='posts' />
+                                                </div>
+                                            </li>
+                                        </b:loop>
+                                    </ul>
+                                </b:includable>
+                                <b:includable id='posts' var='posts'>
+                                    <ul class='posts hierarchy'>
+                                        <b:loop values='data:posts' var='post'>
+                                            <li>
+                                                <a expr:href='data:post.url'>
+                                                    <data:post.title />
+                                                </a>
+                                            </li>
+                                        </b:loop>
+                                    </ul>
+                                </b:includable>
+                            </b:widget>
                         </b:section>
-                        <b:section class='sidebar-sticky' id='sidebar-sticky' />
+                        <b:section class='sidebar-sticky' id='sidebar-sticky'>
+                            <b:widget id='HTML2' locked='false' title='Jelajahi' type='HTML'
+                                visible='true'>
+                                <b:widget-settings>
+                                    <b:widget-setting name='content'><![CDATA[<nav class="kalinz-sticky-nav" aria-label="Jelajahi kategori">
+  <a href="/search/label/Lagu%20Nias">Lagu Nias</a>
+  <a href="/search/label/Maena%20Nias">Maena Nias</a>
+  <a href="/search/label/Lagu%20Rohani">Lagu Rohani</a>
+  <a href="/search/label/Bahasa%20Nias">Bahasa Nias</a>
+  <a href="/search/label/Budaya%20Nias">Budaya Nias</a>
+</nav>]]></b:widget-setting>
+                                </b:widget-settings>
+                                <b:includable id='main'>
+                                    <b:if cond='data:content'>
+                                        <b:if cond='data:title'>
+                                            <div class='normalwidget-title html'>
+                                                <h2 class='title'>
+                                                    <data:title />
+                                                </h2>
+                                            </div>
+                                        </b:if>
+                                        <div class='widget-content'>
+                                            <data:content />
+                                        </div>
+                                    </b:if>
+                                </b:includable>
+                            </b:widget>
+                        </b:section>
                     </aside>
 
                 </b:if>
@@ -5532,7 +5853,7 @@ var linkMagzSetting = {
         <div id='footer-widget-html-wrap'>
             <b:section class='footer-widget-html' id='footer-widget-html' maxwidgets='1'
                 showaddelement='no'>
-                <b:widget id='HTML831' locked='true' title='Widget HTML #3' type='HTML' version='2'
+                <b:widget id='HTML831' locked='true' title='Ikuti Kalinz' type='HTML' version='2'
                     visible='true'>
                     <b:widget-settings>
                         <b:widget-setting name='content'><![CDATA[<!-- Ikon Sosial Footer (FB, YouTube, TikTok, WA Channel) -->
