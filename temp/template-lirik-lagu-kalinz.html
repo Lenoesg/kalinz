@@ -1,0 +1,585 @@
+<!--
+========================================================
+KALINZ | Template Artikel Lirik Lagu
+Versi 1.0 — 2026
+Dioptimalkan: SEO 2026 · karaoke UX · mobile · tanpa dark mode
+
+PANDUAN SINGKAT
+───────────────
+1. Buka Blogger → Postingan Baru → klik ikon HTML (<>)
+2. Hapus semua konten yang ada, tempel seluruh kode ini
+3. Ganti semua [HURUF_BESAR_DALAM_KURUNG] dengan konten asli
+4. Untuk lirik & terjemahan: edit di mode HTML agar jeda baris terjaga
+5. Setelah selesai hapus komentar <!-- --> ini jika mau (opsional)
+6. Jangan ubah nama class CSS — template bergantung padanya
+
+PLACEHOLDERS UTAMA
+──────────────────
+[JUDUL_LAGU]      → cth: Hulo Batu
+[PENYANYI]        → cth: Erick Ijö
+[TAHUN_RILIS]     → cth: 2014
+[GENRE]           → cth: Pop Nias
+[TEMA]            → cth: Kerinduan / Kampung Halaman
+[URL_GAMBAR]      → URL Blogger image (w400-h400)
+[URL_ARTIKEL]     → URL lengkap artikel ini di Blogger
+[TANGGAL_PUBLIKASI] → format ISO: 2026-05-24T13:00:00+07:00
+[TANGGAL_UPDATE]  → sama dengan publikasi jika artikel baru
+[META_DESCRIPTION] → ~150 karakter, masukkan keyword utama
+========================================================
+-->
+
+<style>
+/* ======================================================
+   KALINZ — Artikel Lirik Lagu (light mode)
+   ====================================================== */
+
+.post-kalinz {
+  max-width: 740px;
+  margin: 0 auto;
+  padding: 0;
+  color: inherit;
+  line-height: 1.8;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+  font-family: inherit;
+}
+
+.post-kalinz,
+.post-kalinz * { box-sizing: border-box; }
+
+.post-kalinz p { font-size: 1rem; margin: 0 0 1.2em; }
+
+/* —— Headings —— */
+.post-kalinz h2 {
+  font-family: inherit !important;
+  font-size: 1.15rem !important;
+  font-weight: 700 !important;
+  margin: 1.75em 0 0.85em !important;
+  padding: 0 0 8px !important;
+  color: inherit !important;
+  border: 0 !important;
+  line-height: 1.4 !important;
+  position: relative;
+}
+.post-kalinz h2::after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 3px;
+  margin-top: 8px;
+  border-radius: 999px;
+  background: #1a6b8a;
+}
+
+/* —— Gambar Utama —— */
+.post-kalinz .post-featured-image {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 8px;
+  margin: 0 auto 1.5em;
+  display: block;
+}
+
+/* —— Hook (1 kalimat sebelum lirik) —— */
+.post-kalinz .post-hook { font-size: 1rem; margin: 0 0 1.2em; }
+
+/* —— Ringkasan Cepat —— */
+.post-kalinz .post-keyfacts {
+  background: #f0f8fb;
+  border-left: 3px solid #1a6b8a;
+  border-radius: 0 6px 6px 0;
+  padding: 14px 20px;
+  margin: 0 0 1.5em;
+}
+.post-kalinz .post-keyfacts ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px 20px;
+}
+.post-kalinz .post-keyfacts li {
+  font-size: 0.875rem;
+  padding: 3px 0;
+  color: #444;
+}
+.post-kalinz .post-keyfacts li .kf-label {
+  color: #888;
+  font-size: 0.8125rem;
+}
+.post-kalinz .post-keyfacts li .kf-label::after { content: ": "; }
+.post-kalinz .post-keyfacts li .kf-value {
+  font-weight: 600;
+  color: #31353a;
+}
+
+/* —— Info Lagu Box —— */
+.post-kalinz .post-box {
+  background: #f5f9ff;
+  border: 1px solid #d0e4f7;
+  border-radius: 8px;
+  padding: 16px 20px;
+  margin: 1.5em 0;
+  font-size: 0.875rem;
+  color: inherit;
+}
+.post-kalinz .post-box table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+.post-kalinz .post-box td {
+  padding: 5px 0;
+  vertical-align: top;
+  overflow-wrap: anywhere;
+}
+.post-kalinz .post-box td:first-child {
+  color: #666;
+  width: 130px;
+  font-size: 0.8125rem;
+  white-space: nowrap;
+  padding-right: 12px;
+}
+.post-kalinz .post-box td:last-child {
+  font-weight: 600;
+  color: inherit;
+}
+
+/* —— Divider —— */
+.post-kalinz .post-divider {
+  border: none;
+  border-top: 1px solid #eee;
+  margin: 1.6em 0 !important;
+}
+
+/* —— Kotak Lirik (bersih, untuk karaoke) —— */
+.post-kalinz .post-lyric-box {
+  background: #fafafa;
+  border: 1px solid #e8e8e8;
+  border-radius: 8px;
+  padding: 24px 28px;
+  font-size: 1rem;
+  line-height: 2;
+  white-space: pre-line;
+  margin: 1.2em 0;
+}
+
+/* —— Kotak Terjemahan —— */
+.post-kalinz .post-lyric-translation {
+  background: #fffdf5;
+  border: 1px solid #f2e6c5;
+  border-radius: 8px;
+  padding: 20px 24px;
+  font-size: 0.9375rem;
+  line-height: 1.9;
+  white-space: pre-line;
+  margin: 1.2em 0;
+}
+
+/* —— Kamus —— */
+.post-kalinz .dictionary-table { background: #f5f9ff; }
+.post-kalinz .dictionary-table table { table-layout: auto; }
+.post-kalinz .dictionary-table thead th {
+  text-align: left;
+  padding: 4px 12px 10px 0;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: #666;
+  border-bottom: 1px solid #d0e4f7;
+}
+.post-kalinz .dictionary-table tbody td {
+  padding: 7px 12px 7px 0 !important;
+  width: auto !important;
+  white-space: normal !important;
+  font-size: 0.875rem !important;
+  border-bottom: 1px solid #e8f0f8;
+}
+.post-kalinz .dictionary-table tbody tr:last-child td { border-bottom: none; }
+.post-kalinz .dictionary-table tbody td:first-child {
+  font-weight: 700 !important;
+  color: #1a6b8a !important;
+  width: 175px !important;
+  white-space: nowrap !important;
+}
+
+/* —— FAQ —— */
+.post-kalinz .post-faq { margin: 0.75em 0; }
+.post-kalinz .post-faq-item {
+  border-bottom: 1px solid #f0f0f0;
+  padding: 13px 0;
+}
+.post-kalinz .post-faq-item:first-child { padding-top: 4px; }
+.post-kalinz .post-faq-item:last-child {
+  border-bottom: none;
+  padding-bottom: 4px;
+}
+.post-kalinz .post-faq-q {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: #31353a;
+  margin: 0 0 5px;
+  line-height: 1.5;
+}
+.post-kalinz .post-faq-a {
+  font-size: 0.9375rem;
+  color: #555;
+  margin: 0;
+  line-height: 1.7;
+}
+
+/* —— Tags —— */
+.post-kalinz .post-tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+.post-kalinz .post-tag {
+  font-size: 0.75rem;
+  background: #f0f0f0;
+  border-radius: 4px;
+  padding: 4px 12px;
+  color: #444;
+  text-decoration: none;
+  display: inline-block;
+  transition: background .15s, color .15s;
+}
+.post-kalinz .post-tag:hover {
+  background: #d6e8f0;
+  color: #1a6b8a;
+}
+
+/* ======================================================
+   Responsive — mobile ≤ 480px
+   ====================================================== */
+@media (max-width: 480px) {
+  .post-kalinz p,
+  .post-kalinz .post-hook { font-size: 0.96875rem; }
+
+  .post-kalinz h2 { font-size: 1.05rem !important; }
+
+  .post-kalinz .post-keyfacts { padding: 12px 14px; }
+  .post-kalinz .post-keyfacts ul { grid-template-columns: 1fr; gap: 2px; }
+
+  .post-kalinz .post-box { padding: 14px 16px; }
+
+  /* Info lagu: tampilkan label dan nilai stacked */
+  .post-kalinz .post-box.song-meta td { display: block; padding: 2px 0; }
+  .post-kalinz .post-box.song-meta td:first-child {
+    width: auto;
+    white-space: normal;
+    padding-right: 0;
+    margin-top: 6px;
+  }
+  .post-kalinz .post-box.song-meta tr:first-child td:first-child { margin-top: 0; }
+
+  .post-kalinz .post-lyric-box { padding: 18px 16px; font-size: 0.96875rem; }
+  .post-kalinz .post-lyric-translation { padding: 16px; font-size: 0.90625rem; }
+
+  .post-kalinz .dictionary-table tbody td:first-child { width: 140px !important; }
+
+  .post-kalinz .post-faq-q,
+  .post-kalinz .post-faq-a { font-size: 0.9rem; }
+}
+</style>
+
+<!-- ============================================================
+     MULAI ARTIKEL
+     ============================================================ -->
+<article class="post-kalinz">
+
+  <!-- ① GAMBAR UTAMA
+       Gunakan URL gambar dari Blogger (sudah di-upload ke postingan).
+       Dimensi ideal: 1:1 atau 4:3, min 400×400 px. -->
+  <img
+    class="post-featured-image"
+    src="[URL_GAMBAR]"
+    alt="Lagu [JUDUL_LAGU] karya [PENYANYI]"
+    title="[JUDUL_LAGU] - [PENYANYI]"
+    width="400"
+    height="400"
+  />
+
+  <!-- ② HOOK — 1 kalimat singkat untuk Google & AI
+       Tulis dalam 1 kalimat: nama lagu + penyanyi + inti cerita lagu.
+       Contoh: "Hulo Batu adalah lagu Nias karya Erick Ijö yang bercerita tentang
+       kerinduan seorang perantau terhadap kampung halamannya di Kepulauan Nias Selatan." -->
+  <p class="post-hook"><strong>[JUDUL_LAGU]</strong> adalah lagu Nias yang dinyanyikan oleh <strong>[PENYANYI]</strong>, [DESKRIPSI_SINGKAT_1_KALIMAT].</p>
+
+  <!-- ③ RINGKASAN CEPAT
+       Grid 2 kolom di desktop, 1 kolom di mobile.
+       Tema: pilih dari — Kerinduan/Kampung Halaman · Cinta/Percintaan ·
+       Sukacita/Perayaan · Kehidupan Sehari-hari · Kesedihan/Duka ·
+       Kebanggaan/Identitas Nias · Alam/Ono Niha · Rohani/Penyembahan -->
+  <div class="post-keyfacts">
+    <ul>
+      <li><span class="kf-label">Bahasa</span><span class="kf-value">Nias (Li Niha)</span></li>
+      <li><span class="kf-label">Genre</span><span class="kf-value">[GENRE — cth: Pop Nias]</span></li>
+      <li><span class="kf-label">Tema</span><span class="kf-value">[TEMA — cth: Kerinduan / Kampung Halaman]</span></li>
+      <li><span class="kf-label">Penyanyi</span><span class="kf-value">[PENYANYI]</span></li>
+      <li><span class="kf-label">Tahun</span><span class="kf-value">[TAHUN_RILIS]</span></li>
+      <li><span class="kf-label">Terjemahan</span><span class="kf-value">Tersedia ↓</span></li>
+    </ul>
+  </div>
+
+  <!-- ④ INFO LAGU — tabel lengkap
+       Tambah baris "Pencipta" jika diketahui. -->
+  <div class="post-box song-meta">
+    <table>
+      <tr><td>Judul Lagu</td><td>[JUDUL_LAGU]</td></tr>
+      <tr><td>Penyanyi</td><td>[PENYANYI]</td></tr>
+      <tr><td>Bahasa</td><td>Nias (Li Niha)</td></tr>
+      <tr><td>Genre</td><td>[GENRE]</td></tr>
+      <tr><td>Tema</td><td>[TEMA]</td></tr>
+      <tr><td>Tahun Rilis</td><td>[TAHUN_RILIS]</td></tr>
+    </table>
+  </div>
+
+  <hr class="post-divider" />
+
+  <!-- ⑤ LIRIK — bersih, untuk karaoke
+       Edit di mode HTML. Biarkan baris kosong antar bait agar white-space:pre-line
+       menampilkan jeda yang benar. Jangan tambahkan <br> manual. -->
+  <h2>Lirik Lagu [JUDUL_LAGU] — [PENYANYI]</h2>
+
+  <div class="post-lyric-box">Bait 1 baris 1
+Bait 1 baris 2
+Bait 1 baris 3
+Bait 1 baris 4
+
+Bait 2 baris 1
+Bait 2 baris 2
+Bait 2 baris 3
+Bait 2 baris 4
+
+Reff baris 1
+Reff baris 2
+Reff baris 3
+Reff baris 4</div>
+
+  <hr class="post-divider" />
+
+  <!-- ⑥ MAKNA LAGU — intro panjang turun ke sini
+       Paragraf 1: tema, konteks, apa yang membuat lagu ini khas.
+       Paragraf 2: konteks budaya / tradisi Nias yang relevan (jika ada). -->
+  <h2>Makna Lagu [JUDUL_LAGU]</h2>
+
+  <p>[PARAGRAF_KONTEKS_1 — cth: Judul Hulo Batu merujuk pada wilayah kepulauan di Nias Selatan. Dalam bahasa Nias, "itörö tödögu" berarti aku teringat/merindukan, sementara "asöndru bakha dödögu" berarti terasa sedih di dalam hatiku. Lagu ini menggambarkan seseorang yang secara fisik berada jauh namun hatinya tidak pernah benar-benar pergi dari kampung halamannya.]</p>
+
+  <p>[PARAGRAF_KONTEKS_2 opsional — cth: Perasaan rindu kampung halaman adalah tema yang sangat akrab dalam musik Nias, terutama bagi mereka yang merantau ke kota-kota besar di Sumatera. Lewat lagu ini, Erick Ijö berhasil menyuarakan kerinduan kolektif orang Nias yang jauh dari pulau.]</p>
+
+  <!-- ⑦ TERJEMAHAN — satu blok penuh, terpisah dari lirik
+       Sejajarkan strukturnya dengan lirik di atas (bait demi bait). -->
+  <h2>Terjemahan [JUDUL_LAGU] dalam Bahasa Indonesia</h2>
+
+  <div class="post-lyric-translation"><em>Terjemahan bait 1 baris 1
+Terjemahan bait 1 baris 2
+Terjemahan bait 1 baris 3
+Terjemahan bait 1 baris 4
+
+Terjemahan bait 2 baris 1
+Terjemahan bait 2 baris 2
+Terjemahan bait 2 baris 3
+Terjemahan bait 2 baris 4
+
+Terjemahan reff baris 1
+Terjemahan reff baris 2
+Terjemahan reff baris 3
+Terjemahan reff baris 4</em></div>
+
+  <hr class="post-divider" />
+
+  <!-- ⑧ KOSAKATA — kamus mini dari kata dalam lirik -->
+  <h2>Kosakata Bahasa Nias dalam Lagu Ini</h2>
+
+  <p>Berikut kata-kata bahasa Nias (Li Niha) yang muncul dalam lagu ini beserta artinya:</p>
+
+  <div class="post-box dictionary-table">
+    <table>
+      <thead>
+        <tr>
+          <th scope="col">Kosakata</th>
+          <th scope="col">Arti</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>[kata_nias_1]</td><td>[arti 1]</td></tr>
+        <tr><td>[kata_nias_2]</td><td>[arti 2]</td></tr>
+        <tr><td>[kata_nias_3]</td><td>[arti 3]</td></tr>
+        <tr><td>[kata_nias_4]</td><td>[arti 4]</td></tr>
+        <tr><td>[kata_nias_5]</td><td>[arti 5]</td></tr>
+        <tr><td>[kata_nias_6]</td><td>[arti 6]</td></tr>
+        <tr><td>[kata_nias_7]</td><td>[arti 7]</td></tr>
+        <tr><td>[kata_nias_8]</td><td>[arti 8]</td></tr>
+        <!-- Tambah atau kurangi baris sesuai kebutuhan -->
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ⑨ TENTANG PENYANYI + internal link ke lagu lain
+       Sertakan 2–4 link ke lagu lain dari penyanyi yang sama.
+       Ini menggantikan fungsi "Baca Juga" untuk cluster internal. -->
+  <h2>Tentang [PENYANYI]</h2>
+
+  <p>[DESKRIPSI_PENYANYI — 2–3 kalimat: siapa, gaya musik, kontribusi terhadap musik Nias.] Beberapa lagu [PENYANYI] lainnya yang bisa kamu simak di Kalinz: <a href="[URL_LAGU_LAIN_1]"><em>[JUDUL_LAGU_LAIN_1]</em></a>, <a href="[URL_LAGU_LAIN_2]"><em>[JUDUL_LAGU_LAIN_2]</em></a>, dan <a href="[URL_LAGU_LAIN_3]"><em>[JUDUL_LAGU_LAIN_3]</em></a>.</p>
+
+  <hr class="post-divider" />
+
+  <!-- ⑩ FAQ — 5 pertanyaan standar
+       Sesuaikan jawaban untuk setiap lagu.
+       FAQPage schema di bawah harus diisi sesuai pertanyaan & jawaban di sini. -->
+  <h2>Pertanyaan yang Sering Ditanyakan</h2>
+
+  <div class="post-faq">
+
+    <div class="post-faq-item">
+      <p class="post-faq-q">Apa arti judul lagu [JUDUL_LAGU]?</p>
+      <p class="post-faq-a">[JAWABAN_1 — cth: Hulo Batu adalah nama wilayah kepulauan di Nias Selatan. Dalam konteks lagu ini, Hulo Batu merujuk pada kampung halaman yang selalu dirindukan oleh si penutur lagu.]</p>
+    </div>
+
+    <div class="post-faq-item">
+      <p class="post-faq-q">Siapa yang menyanyikan lagu [JUDUL_LAGU]?</p>
+      <p class="post-faq-a">[JAWABAN_2 — cth: Lagu ini dinyanyikan oleh Erick Ijö, penyanyi pop Nias yang dikenal lewat lagu-lagu bertema kerinduan dan kehidupan sehari-hari masyarakat Nias.]</p>
+    </div>
+
+    <div class="post-faq-item">
+      <p class="post-faq-q">Apa tema utama lagu [JUDUL_LAGU]?</p>
+      <p class="post-faq-a">[JAWABAN_3 — cth: Tema utama lagu ini adalah kerinduan terhadap kampung halaman. Lagu ini menggambarkan perasaan seorang perantau yang secara fisik jauh dari Nias, namun hatinya tidak pernah benar-benar pergi.]</p>
+    </div>
+
+    <div class="post-faq-item">
+      <p class="post-faq-q">Bahasa apa yang digunakan dalam lagu [JUDUL_LAGU]?</p>
+      <p class="post-faq-a">Lagu [JUDUL_LAGU] dinyanyikan dalam bahasa Nias atau Li Niha, bahasa daerah yang digunakan oleh masyarakat Ono Niha di Pulau Nias, Sumatera Utara.</p>
+    </div>
+
+    <div class="post-faq-item">
+      <p class="post-faq-q">Kapan lagu [JUDUL_LAGU] dirilis?</p>
+      <p class="post-faq-a">[JAWABAN_5 — cth: Lagu Hulo Batu dirilis pada tahun 2014 oleh Erick Ijö.]</p>
+    </div>
+
+  </div>
+
+  <hr class="post-divider" />
+
+  <!-- ⑪ PENUTUP + kontak -->
+  <p>Itulah lirik lagu Nias <strong>[JUDUL_LAGU]</strong> dari <strong>[PENYANYI]</strong> lengkap dengan makna dan terjemahannya. Jika ada koreksi lirik atau tambahan informasi tentang lagu ini, silakan sampaikan melalui halaman <a href="https://kalinz.blogspot.com/p/hubungi-kam.html" rel="noopener noreferrer" target="_blank">Kontak</a>.</p>
+
+  <!-- ⑫ TAGS / LABEL
+       Sesuaikan URL label dan teks sesuai label Blogger yang kamu pakai. -->
+  <div class="post-tag-list">
+    <a class="post-tag" href="https://kalinz.blogspot.com/search/label/Lagu%20Nias" rel="tag">Lagu Nias</a>
+    <a class="post-tag" href="[URL_LABEL_PENYANYI — cth: /search/label/Erick%20Ijo]" rel="tag">[PENYANYI]</a>
+    <!-- Tambah tag lain jika ada label genre: Rohani Nias, Maena Nias, dst -->
+  </div>
+
+  <!-- ⑬ JSON-LD SCHEMA
+       Isi ulang SEMUA nilai placeholder.
+       Catatan: template Blogger sudah menghasilkan schema BlogPosting otomatis.
+       Schema di bawah melengkapinya dengan MusicRecording + FAQPage.
+       Jawaban FAQ di schema harus sama dengan teks FAQ di atas. -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Lirik Lagu Nias [JUDUL_LAGU] — [PENYANYI]: Arti dan Terjemahan",
+      "description": "[META_DESCRIPTION — ~150 karakter, contoh: Lirik lagu Nias Hulo Batu oleh Erick Ijö lengkap dengan arti, makna, dan terjemahan bahasa Indonesia. Kisah rindu kampung halaman perantau Li Niha.]",
+      "image": "[URL_GAMBAR]",
+      "author": {
+        "@type": "Person",
+        "name": "KALINZ",
+        "url": "https://kalinz.blogspot.com"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "KALINZ",
+        "url": "https://kalinz.blogspot.com",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://blogger.googleusercontent.com/img/a/AVvXsEiA60iqO3_Ix7HJgSdZuCU4pIJO9Fgbu4I622jL65PVabLz0WF6rDLZ8D8RRNoiRSjkFe5gVIllCNVt0DQ69y_eF54sx-EGO7j6-TkB_r-ivcijlU9Kudo2LkZMSIzlJrjjlzek2cqzzuoT_jd4mGgZkrwVw8W5U1nm01ywxxEtVgNuhqrnbO2T4sD8Yq8=w1600"
+        }
+      },
+      "datePublished": "[TANGGAL_PUBLIKASI — cth: 2026-05-24T13:00:00+07:00]",
+      "dateModified": "[TANGGAL_UPDATE — sama dengan publikasi jika artikel baru]",
+      "inLanguage": "id",
+      "keywords": [
+        "Lagu Nias",
+        "[JUDUL_LAGU]",
+        "[PENYANYI]",
+        "Lirik Lagu Nias",
+        "Terjemahan Bahasa Indonesia",
+        "Li Niha",
+        "Kamus Bahasa Nias",
+        "[TEMA]"
+      ],
+      "articleSection": ["Lagu Nias", "Terjemahan Lagu", "Budaya Nias"],
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "[URL_ARTIKEL — URL lengkap artikel, cth: https://kalinz.blogspot.com/2026/05/lirik-...]"
+      },
+      "about": {
+        "@type": "MusicRecording",
+        "name": "[JUDUL_LAGU]",
+        "byArtist": {
+          "@type": "MusicGroup",
+          "name": "[PENYANYI]"
+        },
+        "inLanguage": "nia",
+        "genre": "[GENRE]",
+        "description": "[DESKRIPSI_SINGKAT_LAGU — 1–2 kalimat tentang isi lagu]",
+        "datePublished": "[TAHUN_RILIS]"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Apa arti judul lagu [JUDUL_LAGU]?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "[JAWABAN_1 — sama persis dengan teks FAQ di atas]"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Siapa yang menyanyikan lagu [JUDUL_LAGU]?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "[JAWABAN_2 — sama persis dengan teks FAQ di atas]"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Apa tema utama lagu [JUDUL_LAGU]?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "[JAWABAN_3 — sama persis dengan teks FAQ di atas]"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Bahasa apa yang digunakan dalam lagu [JUDUL_LAGU]?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Lagu [JUDUL_LAGU] dinyanyikan dalam bahasa Nias atau Li Niha, bahasa daerah yang digunakan oleh masyarakat Ono Niha di Pulau Nias, Sumatera Utara."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Kapan lagu [JUDUL_LAGU] dirilis?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "[JAWABAN_5 — sama persis dengan teks FAQ di atas]"
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+
+</article>
