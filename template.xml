@@ -645,7 +645,7 @@ Variable end */
 
                 <b:includable id='blogPostSnippet'>
                     <div class='post-snippet' expr:id='&quot;post-snippet-&quot; + data:post.id'>
-                        <b:eval expr='snippet(data:post.snippets.long, { length: 100 })' />
+                        <b:eval expr='snippet(data:post.snippets.long, { length: 150 })' />
                         <b:include name='postReadMore' />
                     </div>
                 </b:includable>
@@ -2904,6 +2904,31 @@ Defer(
         </b:defaultmarkups>
         <script async='async' crossorigin='anonymous'
             src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8813103182865992' />
+
+        <b:if cond='data:view.isHomepage'>
+            <script type='application/ld+json'>
+      {
+        &quot;@context&quot;: &quot;https://schema.org&quot;,
+        &quot;@type&quot;: &quot;WebSite&quot;,
+        &quot;name&quot;: &quot;Kalinz&quot;,
+        &quot;alternateName&quot;: &quot;Kalinz &#8212; Arsip Lirik Lagu dan Budaya Nias&quot;,
+        &quot;url&quot;: &quot;https://kalinz.blogspot.com&quot;,
+        &quot;description&quot;: &quot;Arsip digital lirik lagu Nias, syair Maena, terjemahan bahasa Nias&#8211;Indonesia, dan dokumentasi budaya Pulau Nias.&quot;,
+        &quot;inLanguage&quot;: &quot;id&quot;,
+        &quot;potentialAction&quot;: {
+          &quot;@type&quot;: &quot;SearchAction&quot;,
+          &quot;target&quot;: &quot;https://kalinz.blogspot.com/search?q={search_term_string}&amp;m=1&quot;,
+          &quot;query-input&quot;: &quot;required name=search_term_string&quot;
+        },
+        &quot;about&quot;: {
+          &quot;@type&quot;: &quot;Thing&quot;,
+          &quot;name&quot;: &quot;Budaya Nias&quot;,
+          &quot;description&quot;: &quot;Dokumentasi musik, bahasa, dan budaya masyarakat Ono Niha dari Pulau Nias, Indonesia.&quot;
+        }
+      }
+      </script>
+        </b:if>
+
     </head>
 
     <body>
