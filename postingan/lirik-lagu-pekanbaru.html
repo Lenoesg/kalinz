@@ -1,10 +1,238 @@
-Judul Lagu			: PEKAN BARU
-Penulis Lagu		: Arisman Zagoto
-Dipopulerkan oleh	: BJB Trio (Bastian Ndraha, Jhony Ndraha, Berys Telaumbanua)
-Tahun Rilis			: 2022
-Bahasa				: Daerah Nias
+<style>
+.post-kalinz {
+  max-width: 740px;
+  margin: 0 auto;
+  padding: 0;
+  color: inherit;
+  line-height: 1.8;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+  font-family: inherit;
+}
 
-Na tenga fofanögu
+.post-kalinz,
+.post-kalinz * { box-sizing: border-box; }
+
+.post-kalinz p { font-size: 1rem; margin: 0 0 1.2em; }
+
+.post-kalinz h2 {
+  font-family: inherit !important;
+  font-size: 1.15rem !important;
+  font-weight: 700 !important;
+  margin: 1.75em 0 0.85em !important;
+  padding: 0 0 8px !important;
+  color: inherit !important;
+  border: 0 !important;
+  line-height: 1.4 !important;
+  position: relative;
+}
+.post-kalinz h2::after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 3px;
+  margin-top: 8px;
+  border-radius: 999px;
+  background: #1a6b8a;
+}
+
+.post-kalinz .post-featured-image {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 8px;
+  margin: 0 auto 1.5em;
+  display: block;
+}
+
+.post-kalinz .post-hook { font-size: 1rem; margin: 0 0 1.2em; }
+
+.post-kalinz .post-box {
+  background: #f5f9ff;
+  border: 1px solid #d0e4f7;
+  border-radius: 8px;
+  padding: 16px 20px;
+  margin: 1.2em 0 1.5em;
+  font-size: 0.875rem;
+  color: inherit;
+}
+.post-kalinz .post-box table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+.post-kalinz .post-box td {
+  padding: 5px 0;
+  vertical-align: top;
+  overflow-wrap: anywhere;
+}
+.post-kalinz .post-box td:first-child {
+  color: #666;
+  width: 130px;
+  font-size: 0.8125rem;
+  white-space: nowrap;
+  padding-right: 12px;
+}
+.post-kalinz .post-box td:last-child {
+  font-weight: 600;
+  color: inherit;
+}
+
+.post-kalinz .post-divider {
+  border: none;
+  border-top: 1px solid #eee;
+  margin: 1.6em 0 !important;
+}
+
+.post-kalinz .post-lyric-box {
+  background: #fafafa;
+  border: 1px solid #e8e8e8;
+  border-radius: 8px;
+  padding: 24px 28px;
+  font-size: 1rem;
+  line-height: 2;
+  white-space: pre-line;
+  margin: 1.2em 0;
+}
+
+.post-kalinz .post-lyric-translation {
+  background: #fffdf5;
+  border: 1px solid #f2e6c5;
+  border-radius: 8px;
+  padding: 20px 24px;
+  font-size: 0.9375rem;
+  line-height: 1.9;
+  white-space: pre-line;
+  margin: 1.2em 0;
+}
+
+.post-kalinz .dictionary-table { background: #f5f9ff; }
+.post-kalinz .dictionary-table table { table-layout: auto; }
+.post-kalinz .dictionary-table thead th {
+  text-align: left;
+  padding: 4px 12px 10px 0;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: #666;
+  border-bottom: 1px solid #d0e4f7;
+}
+.post-kalinz .dictionary-table tbody td {
+  padding: 7px 12px 7px 0 !important;
+  width: auto !important;
+  white-space: normal !important;
+  font-size: 0.875rem !important;
+  border-bottom: 1px solid #e8f0f8;
+}
+.post-kalinz .dictionary-table tbody tr:last-child td { border-bottom: none; }
+.post-kalinz .dictionary-table tbody td:first-child {
+  font-weight: 700 !important;
+  color: #1a6b8a !important;
+  width: 175px !important;
+  white-space: nowrap !important;
+}
+
+.post-kalinz .post-faq { margin: 0.75em 0; }
+.post-kalinz .post-faq-item {
+  border-bottom: 1px solid #f0f0f0;
+  padding: 13px 0;
+}
+.post-kalinz .post-faq-item:first-child { padding-top: 4px; }
+.post-kalinz .post-faq-item:last-child {
+  border-bottom: none;
+  padding-bottom: 4px;
+}
+.post-kalinz .post-faq-q {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: #31353a;
+  margin: 0 0 5px;
+  line-height: 1.5;
+}
+.post-kalinz .post-faq-a {
+  font-size: 0.9375rem;
+  color: #555;
+  margin: 0;
+  line-height: 1.7;
+}
+
+.post-kalinz .post-tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+.post-kalinz .post-tag {
+  font-size: 0.75rem;
+  background: #f0f0f0;
+  border-radius: 4px;
+  padding: 4px 12px;
+  color: #444;
+  text-decoration: none;
+  display: inline-block;
+  transition: background .15s, color .15s;
+}
+.post-kalinz .post-tag:hover {
+  background: #d6e8f0;
+  color: #1a6b8a;
+}
+
+@media (max-width: 480px) {
+  .post-kalinz p,
+  .post-kalinz .post-hook { font-size: 0.96875rem; }
+
+  .post-kalinz h2 { font-size: 1.05rem !important; }
+
+  .post-kalinz .post-box { padding: 14px 16px; }
+
+  .post-kalinz .post-box.song-meta td { display: block; padding: 2px 0; }
+  .post-kalinz .post-box.song-meta td:first-child {
+    width: auto;
+    white-space: normal;
+    padding-right: 0;
+    margin-top: 6px;
+  }
+  .post-kalinz .post-box.song-meta tr:first-child td:first-child { margin-top: 0; }
+
+  .post-kalinz .post-lyric-box { padding: 18px 16px; font-size: 0.96875rem; }
+  .post-kalinz .post-lyric-translation { padding: 16px; font-size: 0.90625rem; }
+
+  .post-kalinz .dictionary-table tbody td:first-child { width: 140px !important; }
+
+  .post-kalinz .post-faq-q,
+  .post-kalinz .post-faq-a { font-size: 0.9rem; }
+}
+</style>
+
+<article class="post-kalinz">
+
+  <img
+    class="post-featured-image"
+    src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjrcX1qPd7vkh8doudmR0E8hUWZ_p4wokMS_q8aNH8VgLniNNO_1VPTlfeqa8kmuQBgDZePEYZYD2vb4HRw8m2pMAm5I3i-n88jca0jvKOhmHVglM5sUwPCbuNq9SstErdNbhRgfj9aPIf2FlM0ukauvBQlisl1Wz1SBlf-LFUoOclZIrxNEIq4qYz9siY/w400-h266/Pekan%20Baru%20BJB%20Trio.png"
+    alt="Lagu Pekan Baru dinyanyikan BJB Trio"
+    title="Lirik Lagu Nias - BJB Trio"
+    width="400"
+    height="266"
+  />
+
+  <p class="post-hook"><strong>Pekanbaru</strong> adalah lagu Nias yang dinyanyikan oleh <strong>BJB Trio</strong>, bercerita tentang kepedihan seorang perantau yang pulang ke kampung halaman hanya untuk mendapati kekasihnya telah pergi pada yang lain.</p>
+
+  <div class="post-box song-meta">
+    <table>
+      <tr><td>Judul Lagu</td><td>Pekan Baru</td></tr>
+      <tr><td>Dipopulerkan oleh</td><td>BJB Trio (Bastian Ndraha, Jhony Ndraha, Berys Telaumbanua)</td></tr>
+      <tr><td>Penulis Lagu</td><td>Arisman Zagötö</td></tr>
+      <tr><td>Bahasa</td><td>Nias (Li Niha)</td></tr>
+      <tr><td>Genre</td><td>Pop Nias</td></tr>
+      <tr><td>Tema</td><td>Patah Hati</td></tr>
+      <tr><td>Tahun Rilis</td><td>2022</td></tr>
+    </table>
+  </div>
+
+  <hr class="post-divider" />
+
+  <h2>Lirik Lagu Pekan Baru — BJB Trio</h2>
+
+  <div class="post-lyric-box">Na tenga fofanögu
 Wemöi ba pekan baru
 U'ila nazikhalau khigu
 Hafa'aombö dödögu
@@ -60,12 +288,19 @@ He tuho dödögu
 Bologö dödö khögu
 He omasi'ögu
 Bologö dödöu khögu
-Oh jantung hatiku
+Oh jantung hatiku</div>
 
-________________________________________
-Terjemahan Bahasa Indonesia — Pekan Baru
+  <hr class="post-divider" />
 
-Kalau bukan karena kepergianku
+  <h2>Makna Lagu Pekan Baru</h2>
+
+  <p>Lagu ini bercerita tentang dilema seorang perantau yang meninggalkan kekasihnya untuk bekerja di Pekanbaru. Frasa pembuka "na tenga fofanögu" — yang berarti "kalau bukan karena kepergianku" — langsung menetapkan nada penyesalan yang menyelimuti seluruh lagu. Ketegangan antara kebutuhan mencari nafkah dan ikatan cinta terangkum dalam satu baris: "wolohi sambö fefu hewa'ae ötegu" — mengejar penghidupan meski kekasih sempat melarang. Saat ia akhirnya pulang, kabar pahit sudah menunggu: kekasihnya telah pergi pada yang lain.</p>
+
+  <p>Tema merantau yang merenggut cinta adalah cerita yang sangat dikenal di kalangan masyarakat Nias. Banyak orang Nias yang merantau ke Pekanbaru, Medan, dan kota-kota besar di Sumatera demi kehidupan yang lebih baik, meninggalkan orang-orang tersayang di pulau. Lagu ini menyuarakan perasaan yang sering tak terucapkan: penyesalan karena memilih pergi, dan duka karena kepergian itu mengakhiri sesuatu yang tidak bisa dikembalikan.</p>
+
+  <h2>Terjemahan Lagu Pekan Baru dalam Bahasa Indonesia</h2>
+
+  <div class="post-lyric-translation"><em>Kalau bukan karena kepergianku
 Merantau ke Pekanbaru
 Masih bisa kupandang wajahmu, kasih
 Namun hati ini terus gelisah
@@ -75,7 +310,7 @@ Saat aku kembali pulang
 Untuk menemui dirimu
 Betapa hancurnya hatiku
 Ketika seseorang berkata kepadaku
-Bahwa kekasihku telah pergi meninggalkan kampung halaman
+Bahwa kekasihku telah pergi pada yang lain
 
 Ke mana harus kubawa hati ini untuk mengadu?
 Siapa yang harus kusalahkan atas semua ini?
@@ -85,18 +320,138 @@ Siapa yang harus kusalahkan atas semua ini?
 Maafkanlah aku, kasihku
 Yang begitu kucintai
 Maafkanlah aku, kasihku
-Wahai belahan jiwaku
+Wahai belahan jiwaku</em></div>
 
-________________________________________
-Kosa Kata
+  <hr class="post-divider" />
 
-fofanögu        : kepergianku
-zikhalau        : penampilanmu, wajahmu
-aombö           : khawatir
-utandrösaigö    : kulampiaskan
-hewa'ae         : walaupun
-ötegu           : kamu tegur
-watahisa        : menyalahkan
-wolohi          : mengejar
-mofanö          : pergi
-Tandrawa        : penyebab
+  <h2>Kosakata Bahasa Nias dalam Lagu Ini</h2>
+
+  <p>Berikut kata-kata bahasa Nias (Li Niha) yang muncul dalam lagu ini beserta artinya:</p>
+
+  <div class="post-box dictionary-table">
+    <table>
+      <thead>
+        <tr>
+          <th scope="col">Kosakata</th>
+          <th scope="col">Arti</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>fofanögu</td><td>kepergianku</td></tr>
+        <tr><td>zikhalau</td><td>penampilanmu, wajahmu</td></tr>
+        <tr><td>aombö</td><td>khawatir</td></tr>
+        <tr><td>utandrösaigö</td><td>kulampiaskan</td></tr>
+        <tr><td>hewa'ae</td><td>walaupun</td></tr>
+        <tr><td>ötegu</td><td>kamu tegur</td></tr>
+        <tr><td>watahisa</td><td>menyalahkan</td></tr>
+        <tr><td>wolohi</td><td>mengejar</td></tr>
+        <tr><td>mofanö</td><td>pergi</td></tr>
+        <tr><td>tandrawa</td><td>penyebab</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ⑧ TENTANG PENYANYI + internal link
+       Sertakan 2–4 link ke lagu lain dari penyanyi yang sama.
+       Ini sekaligus berfungsi sebagai internal linking cluster. -->
+  <h2>Tentang BJB Trio</h2>
+
+  <p>BJB Trio adalah grup vokal Nias yang beranggotakan Bastian Ndraha, Jhony Ndraha, dan Berys Telaumbanua. Mereka dikenal lewat lagu-lagu pop Nias bertema kehidupan sehari-hari, percintaan, dan kerinduan yang dekat dengan pengalaman masyarakat Ono Niha. Lagu Pekan Baru yang ditulis oleh Arisman Zagötö menjadi salah satu karya mereka yang paling banyak dikenal. Beberapa lagu BJB Trio lainnya di Kalinz.</p>
+
+  <hr class="post-divider" />
+
+  <h2>Pertanyaan yang Sering Ditanyakan</h2>
+
+  <div class="post-faq">
+
+    <div class="post-faq-item">
+      <p class="post-faq-q">Apa arti judul lagu Pekan Baru?</p>
+      <p class="post-faq-a">"Pekan Baru" dalam lagu ini merujuk pada kota Pekanbaru, ibu kota Provinsi Riau di Sumatera. Dalam konteks cerita lagu, Pekanbaru adalah kota perantauan tempat si penutur pergi mencari nafkah, jauh dari kekasih yang akhirnya meninggalkannya.</p>
+    </div>
+
+    <div class="post-faq-item">
+      <p class="post-faq-q">Siapa yang menyanyikan lagu Pekan Baru?</p>
+      <p class="post-faq-a">Lagu Pekan Baru dipopulerkan oleh BJB Trio, grup vokal Nias yang beranggotakan Bastian Ndraha, Jhony Ndraha, dan Berys Telaumbanua. Lagu ini ditulis oleh Arisman Zagötö dan dirilis pada tahun 2022.</p>
+    </div>
+
+    <div class="post-faq-item">
+      <p class="post-faq-q">Apa tema utama lagu Pekan Baru?</p>
+      <p class="post-faq-a">Tema utama lagu ini adalah patah hati akibat perpisahan di tengah perantauan. Lagu menggambarkan penyesalan seorang perantau yang memilih bekerja di Pekanbaru meski sempat ditegur kekasihnya, lalu saat kembali mendapati kekasihnya telah pergi pada orang lain.</p>
+    </div>
+
+    <div class="post-faq-item">
+      <p class="post-faq-q">Bahasa apa yang digunakan dalam lagu Pekan Baru?</p>
+      <p class="post-faq-a">Lagu Pekan Baru dinyanyikan dalam bahasa Nias atau Li Niha, bahasa daerah yang digunakan oleh masyarakat Ono Niha di Pulau Nias, Sumatera Utara.</p>
+    </div>
+
+    <div class="post-faq-item">
+      <p class="post-faq-q">Kapan lagu Pekan Baru dirilis?</p>
+      <p class="post-faq-a">Lagu Pekan Baru dirilis pada tahun 2022 dan dipopulerkan oleh BJB Trio.</p>
+    </div>
+
+  </div>
+
+  <hr class="post-divider" />
+
+  <p>Itulah lirik lagu Nias <strong>Pekan Baru</strong> dari <strong>BJB Trio</strong> lengkap dengan makna dan terjemahannya. Jika ada koreksi lirik atau tambahan informasi, silakan sampaikan melalui halaman <a href="https://kalinz.blogspot.com/p/hubungi-kam.html" rel="noopener noreferrer" target="_blank">Kontak</a>.</p>
+
+  <div class="post-tag-list">
+    <a class="post-tag" href="https://kalinz.blogspot.com/search/label/Lagu%20Nias" rel="tag">Lagu Nias</a>
+    <a class="post-tag" href="https://kalinz.blogspot.com/search/label/BJB%20Trio" rel="tag">BJB Trio</a>
+  </div>
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Lirik Lagu Nias Pekan Baru — BJB Trio: Arti dan Terjemahan",
+  "description": "Lirik lagu Nias Pekan Baru — BJB Trio, lengkap dengan terjemahan bahasa Indonesia dan kosakata Li Niha. Kisah patah hati seorang perantau Nias.",
+  "image": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjrcX1qPd7vkh8doudmR0E8hUWZ_p4wokMS_q8aNH8VgLniNNO_1VPTlfeqa8kmuQBgDZePEYZYD2vb4HRw8m2pMAm5I3i-n88jca0jvKOhmHVglM5sUwPCbuNq9SstErdNbhRgfj9aPIf2FlM0ukauvBQlisl1Wz1SBlf-LFUoOclZIrxNEIq4qYz9siY/w400-h266/Pekan%20Baru%20BJB%20Trio.png",
+  "author": {
+    "@type": "Person",
+    "name": "KALINZ",
+    "url": "https://kalinz.blogspot.com"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "KALINZ",
+    "url": "https://kalinz.blogspot.com",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://blogger.googleusercontent.com/img/a/AVvXsEiA60iqO3_Ix7HJgSdZuCU4pIJO9Fgbu4I622jL65PVabLz0WF6rDLZ8D8RRNoiRSjkFe5gVIllCNVt0DQ69y_eF54sx-EGO7j6-TkB_r-ivcijlU9Kudo2LkZMSIzlJrjjlzek2cqzzuoT_jd4mGgZkrwVw8W5U1nm01ywxxEtVgNuhqrnbO2T4sD8Yq8=w1600"
+    }
+  },
+  "datePublished": "2022-05-21T21:37:00+07:00",
+  "dateModified": "2026-06-15T00:00:00+07:00",
+  "inLanguage": "id",
+  "keywords": [
+    "Lagu Nias",
+    "Pekan Baru",
+    "BJB Trio",
+    "Lirik Lagu Nias",
+    "Terjemahan Bahasa Indonesia",
+    "Li Niha",
+    "Kamus Bahasa Nias",
+    "Patah Hati"
+  ],
+  "articleSection": ["Lagu Nias", "Terjemahan Lagu", "Budaya Nias"],
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://kalinz.blogspot.com/2022/05/lirik-lagu-nias-pekan-baru.html"
+  },
+  "about": {
+    "@type": "MusicRecording",
+    "name": "Pekan Baru",
+    "byArtist": {
+      "@type": "MusicGroup",
+      "name": "BJB Trio"
+    },
+    "inLanguage": "nia",
+    "genre": "Pop Nias",
+    "description": "Lagu pop Nias yang bercerita tentang kepedihan seorang perantau yang pergi ke Pekanbaru mencari nafkah, lalu pulang dan mendapati kekasihnya telah pergi pada orang lain.",
+    "datePublished": "2022"
+  }
+}
+  </script>
+
+</article>
