@@ -1,0 +1,439 @@
+<style>
+.post-kalinz {
+  max-width: 740px;
+  margin: 0 auto;
+  padding: 0;
+  color: inherit;
+  line-height: 1.8;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+  font-family: inherit;
+}
+
+.post-kalinz,
+.post-kalinz * { box-sizing: border-box; }
+
+.post-kalinz p { font-size: 1rem; margin: 0 0 1.2em; }
+
+.post-kalinz h2 {
+  font-family: inherit !important;
+  font-size: 1.15rem !important;
+  font-weight: 700 !important;
+  margin: 1.75em 0 0.85em !important;
+  padding: 0 0 8px !important;
+  color: inherit !important;
+  border: 0 !important;
+  line-height: 1.4 !important;
+  position: relative;
+}
+.post-kalinz h2::after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 3px;
+  margin-top: 8px;
+  border-radius: 999px;
+  background: #1a6b8a;
+}
+
+.post-kalinz .post-featured-image {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 8px;
+  margin: 0 auto 1.5em;
+  display: block;
+}
+
+.post-kalinz .post-hook { font-size: 1rem; margin: 0 0 1.2em; }
+
+.post-kalinz .post-box {
+  background: #f5f9ff;
+  border: 1px solid #d0e4f7;
+  border-radius: 8px;
+  padding: 16px 20px;
+  margin: 1.2em 0 1.5em;
+  font-size: 0.875rem;
+  color: inherit;
+}
+.post-kalinz .post-box table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+.post-kalinz .post-box td {
+  padding: 5px 0;
+  vertical-align: top;
+  overflow-wrap: anywhere;
+}
+.post-kalinz .post-box td:first-child {
+  color: #666;
+  width: 130px;
+  font-size: 0.8125rem;
+  white-space: nowrap;
+  padding-right: 12px;
+}
+.post-kalinz .post-box td:last-child {
+  font-weight: 600;
+  color: inherit;
+}
+
+.post-kalinz .post-divider {
+  border: none;
+  border-top: 1px solid #eee;
+  margin: 1.6em 0 !important;
+}
+
+.post-kalinz .post-lyric-box {
+  background: #fafafa;
+  border: 1px solid #e8e8e8;
+  border-radius: 8px;
+  padding: 24px 28px;
+  font-size: 1rem;
+  line-height: 2;
+  white-space: pre-line;
+  margin: 1.2em 0;
+}
+
+.post-kalinz .post-lyric-translation {
+  background: #fffdf5;
+  border: 1px solid #f2e6c5;
+  border-radius: 8px;
+  padding: 20px 24px;
+  font-size: 0.9375rem;
+  line-height: 1.9;
+  white-space: pre-line;
+  margin: 1.2em 0;
+}
+
+.post-kalinz .dictionary-table { background: #f5f9ff; }
+.post-kalinz .dictionary-table table { table-layout: auto; }
+.post-kalinz .dictionary-table thead th {
+  text-align: left;
+  padding: 4px 12px 10px 0;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: #666;
+  border-bottom: 1px solid #d0e4f7;
+}
+.post-kalinz .dictionary-table tbody td {
+  padding: 7px 12px 7px 0 !important;
+  width: auto !important;
+  white-space: normal !important;
+  font-size: 0.875rem !important;
+  border-bottom: 1px solid #e8f0f8;
+}
+.post-kalinz .dictionary-table tbody tr:last-child td { border-bottom: none; }
+.post-kalinz .dictionary-table tbody td:first-child {
+  font-weight: 700 !important;
+  color: #1a6b8a !important;
+  width: 175px !important;
+  white-space: nowrap !important;
+}
+
+.post-kalinz .post-faq { margin: 0.75em 0; }
+.post-kalinz .post-faq-item {
+  border-bottom: 1px solid #f0f0f0;
+  padding: 13px 0;
+}
+.post-kalinz .post-faq-item:first-child { padding-top: 4px; }
+.post-kalinz .post-faq-item:last-child {
+  border-bottom: none;
+  padding-bottom: 4px;
+}
+.post-kalinz .post-faq-q {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: #31353a;
+  margin: 0 0 5px;
+  line-height: 1.5;
+}
+.post-kalinz .post-faq-a {
+  font-size: 0.9375rem;
+  color: #555;
+  margin: 0;
+  line-height: 1.7;
+}
+
+.post-kalinz .post-tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+.post-kalinz .post-tag {
+  font-size: 0.75rem;
+  background: #f0f0f0;
+  border-radius: 4px;
+  padding: 4px 12px;
+  color: #444;
+  text-decoration: none;
+  display: inline-block;
+  transition: background .15s, color .15s;
+}
+.post-kalinz .post-tag:hover {
+  background: #d6e8f0;
+  color: #1a6b8a;
+}
+
+@media (max-width: 480px) {
+  .post-kalinz p,
+  .post-kalinz .post-hook { font-size: 0.96875rem; }
+
+  .post-kalinz h2 { font-size: 1.05rem !important; }
+
+  .post-kalinz .post-box { padding: 14px 16px; }
+
+  .post-kalinz .post-box.song-meta td { display: block; padding: 2px 0; }
+  .post-kalinz .post-box.song-meta td:first-child {
+    width: auto;
+    white-space: normal;
+    padding-right: 0;
+    margin-top: 6px;
+  }
+  .post-kalinz .post-box.song-meta tr:first-child td:first-child { margin-top: 0; }
+
+  .post-kalinz .post-lyric-box { padding: 18px 16px; font-size: 0.96875rem; }
+  .post-kalinz .post-lyric-translation { padding: 16px; font-size: 0.90625rem; }
+
+  .post-kalinz .dictionary-table tbody td:first-child { width: 140px !important; }
+
+  .post-kalinz .post-faq-q,
+  .post-kalinz .post-faq-a { font-size: 0.9rem; }
+}
+</style>
+
+<article class="post-kalinz">
+
+  <img
+    class="post-featured-image"
+    src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgdKFfkX1WCKH5AvPpEmD81t9n4pOrEW1Y4aNDk5KgS8Dl_fE5y1mEiLMxX26oQUbxX6Gya0uHZ1tuE-pE-c88l8q1fSmgkmkPh88xX0YK7meGEXnxRN5oJUFXzcwQQA-lglfp3xRsiuCVhiPFpJQiKWpOExXtwijjxbZae_ibJbwlnNfH_hj90ELlFV9k/w400-h400/laua%20nakhi%20-%20bjb%20trio.png"
+    alt="Lagu Laua Nakhi dinyanyikan BJB Trio"
+    title="Lirik Lagu Nias - BJB Trio"
+    width="400"
+    height="400"
+  />
+
+  <p class="post-hook"><strong>Laua Nakhi</strong> adalah lagu Nias yang dinyanyikan oleh <strong>BJB Trio</strong>, mengisahkan kesedihan seseorang yang harus merelakan orang yang dicintainya pergi dan memilih orang lain. Melalui lirik yang penuh perasaan, lagu ini menggambarkan luka hati akibat janji cinta yang tidak dapat dipertahankan hingga akhirnya hanya menyisakan kenangan dan air mata.</p>
+
+  <div class="post-box song-meta">
+    <table>
+      <tr><td>Judul Lagu</td><td>Laua Nakhi</td></tr>
+      <tr><td>Dipopulerkan oleh</td><td>BJB Trio (Bastian Ndraha, Jhony Ndraha, Berys Telaumbanua)</td></tr>
+      <tr><td>Penulis Lagu</td><td>Yurisman Laoli</td></tr>
+      <tr><td>Bahasa</td><td>Nias (Li Niha)</td></tr>
+      <tr><td>Genre</td><td>Pop Nias</td></tr>
+      <tr><td>Tema</td><td>Cinta</td></tr>
+      <tr><td>Tahun Rilis</td><td>2022</td></tr>
+    </table>
+  </div>
+
+  <hr class="post-divider" />
+
+  <h2>Lirik Lagu Laua Nakhi — BJB Trio</h2>
+
+  <div class="post-lyric-box">Alai ndra'o alai ndra'o zalua khögu
+Me öröido ösawa nilau dödömö
+Hauga fakhe ba zilalö wefaoda he akhigu
+No fondrege wa'afokho nitaögögu
+
+Laua nakhi laua nakhi he öröido
+No olifu'ö bu'u liu zinumalö
+Hatö fe'e tawa hörö zalua khögu tuho dödö
+Me so niha zi oföna wa me'eli
+
+Böi busi dödömö
+Me fabali ita
+Böi halö esuanö
+Sagötö ba wefaoda
+
+Yaesa gangandrōwagu khömö
+lō u'alui wangali mbotomö
+
+Alai ndra'o alai ndra'o zalua khögu
+Me öröido ösawa nilau dödömö
+Hauga fakhe ba zilalö wefaoda he akhigu
+No fondrege wa'afokho nitaögögu
+
+Laua nakhi laua nakhi he öröido
+No olifu'ö bu'u liu zinumalö
+Hatö fe'e tawa hörö zalua khögu tuho dödö
+Me so niha zi oföna wa me'eli
+
+Böi busi dödömö
+Me fabali ita
+Böi halö esuanö
+Sagötö ba wefaoda
+
+Yaesa gangandrōwagu khömö
+lō u'alui wangali mbotomö
+
+Böi busi dödömö
+Me fabali ita
+Böi halö esuanö
+Sagötö ba wefaoda
+
+Yaesa gangandrōwagu khömö
+lō u'alui wangali mbotomö
+Satu pintaku kepadamu
+Takkan kucari pengganti dirimu</div>
+
+  <hr class="post-divider" />
+
+  <h2>Makna Lagu Laua Nakhi</h2>
+
+  <p>Lagu <strong>Laua Nakhi</strong> menceritakan rasa kecewa dan kesedihan mendalam setelah ditinggalkan oleh orang yang dicintai. Dari terjemahan lirik terlihat bahwa tokoh dalam lagu merasa sakit karena hubungan yang telah dijalani selama bertahun-tahun berakhir ketika sang kekasih memilih orang lain yang lebih dahulu melamarnya. Ungkapan seperti “kau lupakan janji kita yang lalu” dan “tinggal tangis dan air mata yang kurasakan” menjadi gambaran kuat tentang luka akibat cinta yang tidak berakhir sesuai harapan.</p>
+
+  <p>Kisah dalam lagu ini dekat dengan pengalaman banyak masyarakat Nias dan Indonesia pada umumnya, di mana hubungan percintaan sering kali dihadapkan pada pilihan hidup, komitmen, dan keputusan keluarga. Meski penuh kesedihan, tokoh dalam lagu tetap menunjukkan ketulusan dengan tidak menyimpan kebencian dan bahkan berpesan agar tidak bersedih atas perpisahan yang terjadi. Nilai ketulusan dan pengorbanan inilah yang membuat lagu Laua Nakhi mudah diterima oleh banyak pendengar.</p>
+
+  <h2>Terjemahan Lagu Laua Nakhi dalam Bahasa Indonesia</h2>
+
+  <div class="post-lyric-translation"><em>Sayang sekali yang terjadi padaku
+Kau tinggalkan aku mengikuti tujuan hatimu
+Berapa tahun kebersamaan kita dahulu
+Sungguh sakit yang aku rasakan
+
+Biarlah, sayang, kau tinggalkan aku
+Kau lupakan janji kita yang lalu
+Tinggal tangis dan air mata yang kurasakan
+Karena ada yang lebih dulu melamarmu
+
+Jangan bersedih
+Karena kita berpisah
+Jangan ambil hati
+Selama kebersamaan kita
+
+Satu pintaku kepadamu
+Takkan kucari pengganti dirimu</em></div>
+
+  <hr class="post-divider" />
+
+  <h2>Kosakata Bahasa Nias dalam Lagu Ini</h2>
+
+  <p>Berikut kata-kata bahasa Nias (Li Niha) yang muncul dalam lagu ini beserta artinya:</p>
+
+  <div class="post-box dictionary-table">
+    <table>
+      <thead>
+        <tr>
+          <th scope="col">Kosakata</th>
+          <th scope="col">Arti</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>alai ndra'o</td><td>betapa diriku</td></tr>
+        <tr><td>hauga fakhe</td><td>berapa tahun</td></tr>
+        <tr><td>no fondrege</td><td>sungguh, sangat</td></tr>
+        <tr><td>nitaögögu</td><td>yang kuterima</td></tr>
+        <tr><td>zinumalö</td><td>yang berlalu</td></tr>
+        <tr><td>hatö fe'e</td><td>tinggal tangis</td></tr>
+        <tr><td>tawa hörö</td><td>air mata</td></tr>
+        <tr><td>busi dödö</td><td>hati bersedih</td></tr>
+        <tr><td>sagötö</td><td>selama</td></tr>
+        <tr><td>gangandrōwagu</td><td>permintaanku</td></tr>
+        <tr><td>no olifu'ö</td><td>kau telah lupakan</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>Tentang BJB Trio</h2>
+
+  <p>BJB Trio adalah grup vokal Nias yang beranggotakan Bastian Ndraha, Jhony Ndraha, dan Berys Telaumbanua. Mereka dikenal lewat lagu-lagu pop Nias bertema kehidupan sehari-hari, percintaan, dan kerinduan yang dekat dengan pengalaman masyarakat Nias. Lagu Laua nakhi yang ditulis oleh Yurisman Laoli menjadi salah satu karya mereka yang cukup dikenal. Beberapa lagu BJB Trio lainnya juga tersedia di Kalinz, seperti <a href="https://kalinz.blogspot.com/2026/06/lirik-lagu-nias-no-nifiliu-bjb-trio.html"><em>No Nifiliu</em></a>, <a href="https://kalinz.blogspot.com/2022/05/lirik-lagu-nias-pekan-baru.html"><em>Pekan Baru</em></a>, dan <a href="https://kalinz.blogspot.com/2026/06/lirik-lagu-nias-no-nilau-dododa-bjb.html"><em>No Nilau Dödöda</em></a>.</p>
+
+  <hr class="post-divider" />
+
+  <h2>Pertanyaan yang Sering Ditanyakan</h2>
+
+  <div class="post-faq">
+
+    <div class="post-faq-item">
+      <p class="post-faq-q">Apa arti judul lagu Laua Nakhi?</p>
+      <p class="post-faq-a">Laua Nakhi dapat dipahami sebagai ungkapan kesedihan atau penyesalan dalam konteks percintaan. Judul ini menggambarkan perasaan seseorang yang harus merelakan hubungan cintanya berakhir.</p>
+    </div>
+
+    <div class="post-faq-item">
+      <p class="post-faq-q">Siapa yang menyanyikan lagu Laua Nakhi?</p>
+      <p class="post-faq-a">Lagu Laua Nakhi dipopulerkan oleh BJB Trio yang beranggotakan Bastian Ndraha, Jhony Ndraha, dan Berys Telaumbanua.</p>
+    </div>
+
+    <div class="post-faq-item">
+      <p class="post-faq-q">Apa tema utama lagu Laua Nakhi?</p>
+      <p class="post-faq-a">Tema utama lagu Laua Nakhi adalah cinta dan perpisahan, khususnya tentang rasa sakit hati ketika orang yang dicintai memilih orang lain serta melupakan janji yang pernah dibuat bersama.</p>
+    </div>
+
+    <div class="post-faq-item">
+      <p class="post-faq-q">Bahasa apa yang digunakan dalam lagu Laua Nakhi?</p>
+      <p class="post-faq-a">Lagu Laua Nakhi menggunakan bahasa Nias (Li Niha), yaitu bahasa daerah yang digunakan oleh masyarakat Nias di Sumatera Utara.</p>
+    </div>
+
+    <div class="post-faq-item">
+      <p class="post-faq-q">Kapan lagu Laua Nakhi dirilis?</p>
+      <p class="post-faq-a">Berdasarkan informasi yang tersedia pada metadata lagu, Laua Nakhi dirilis pada tahun 2022.</p>
+    </div>
+
+  </div>
+
+  <hr class="post-divider" />
+
+  <p>Itulah lirik lagu Nias <strong>Laua Nakhi</strong> dari <strong>BJB Trio</strong> lengkap dengan makna dan terjemahannya. Jika ada koreksi lirik atau tambahan informasi, silakan sampaikan melalui halaman <a href="https://kalinz.blogspot.com/p/hubungi-kam.html" rel="noopener noreferrer" target="_blank">Kontak</a>.</p>
+
+  <div class="post-tag-list">
+    <a class="post-tag" href="https://kalinz.blogspot.com/search/label/Lagu%20Nias" rel="tag">Lagu Nias</a>
+    <a class="post-tag" href="https://kalinz.blogspot.com/search/label/BJB%20Trio" rel="tag">BJB Trio</a>
+  </div>
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Lirik Lagu Nias Laua Nakhi — BJB Trio: Arti dan Terjemahan",
+  "description": "Lirik lagu Nias Laua Nakhi dari BJB Trio lengkap dengan arti, terjemahan bahasa Indonesia, makna lagu, dan kosakata Li Niha. Lagu cinta yang menceritakan kesedihan karena ditinggalkan oleh orang yang dicintai.",
+  "image": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgdKFfkX1WCKH5AvPpEmD81t9n4pOrEW1Y4aNDk5KgS8Dl_fE5y1mEiLMxX26oQUbxX6Gya0uHZ1tuE-pE-c88l8q1fSmgkmkPh88xX0YK7meGEXnxRN5oJUFXzcwQQA-lglfp3xRsiuCVhiPFpJQiKWpOExXtwijjxbZae_ibJbwlnNfH_hj90ELlFV9k/w400-h400/laua%20nakhi%20-%20bjb%20trio.png",
+  "author": {
+    "@type": "Person",
+    "name": "KALINZ",
+    "url": "https://kalinz.blogspot.com"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "KALINZ",
+    "url": "https://kalinz.blogspot.com",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://blogger.googleusercontent.com/img/a/AVvXsEiA60iqO3_Ix7HJgSdZuCU4pIJO9Fgbu4I622jL65PVabLz0WF6rDLZ8D8RRNoiRSjkFe5gVIllCNVt0DQ69y_eF54sx-EGO7j6-TkB_r-ivcijlU9Kudo2LkZMSIzlJrjjlzek2cqzzuoT_jd4mGgZkrwVw8W5U1nm01ywxxEtVgNuhqrnbO2T4sD8Yq8=w1600"
+    }
+  },
+  "datePublished": "2022-05-21T21:37:00+07:00",
+  "dateModified": "2026-06-15T00:00:00+07:00",
+  "inLanguage": "id",
+  "keywords": [
+    "Lagu Nias",
+    "Laua Nakhi",
+    "BJB Trio",
+    "Lirik Lagu Nias",
+    "Terjemahan Bahasa Indonesia",
+    "Li Niha",
+    "Kamus Bahasa Nias",
+    "Kisah Cinta"
+  ],
+  "articleSection": ["Lagu Nias", "Terjemahan Lagu", "Budaya Nias"],
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://kalinz.blogspot.com/2026/06/lirik-lagu-nias-laua-nakhi-bjb-trio.html"
+  },
+  "about": {
+    "@type": "MusicRecording",
+    "name": "Laua Nakhi",
+    "byArtist": {
+      "@type": "MusicGroup",
+      "name": "BJB Trio"
+    },
+    "inLanguage": "nia",
+    "genre": "Pop Nias",
+    "description": "Laua Nakhi adalah lagu Pop Nias karya Yurisman Laoli yang dipopulerkan oleh BJB Trio pada tahun 2022. Lagu ini bercerita tentang kesedihan seseorang yang ditinggalkan oleh kekasihnya setelah hubungan yang telah lama dijalani dan janji cinta yang pernah dibuat bersama.",
+    "datePublished": "2022"
+  }
+}
+  </script>
+
+</article>

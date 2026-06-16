@@ -1,0 +1,432 @@
+<style>
+.post-kalinz {
+  max-width: 740px;
+  margin: 0 auto;
+  padding: 0;
+  color: inherit;
+  line-height: 1.8;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+  font-family: inherit;
+}
+
+.post-kalinz,
+.post-kalinz * { box-sizing: border-box; }
+
+.post-kalinz p { font-size: 1rem; margin: 0 0 1.2em; }
+
+.post-kalinz h2 {
+  font-family: inherit !important;
+  font-size: 1.15rem !important;
+  font-weight: 700 !important;
+  margin: 1.75em 0 0.85em !important;
+  padding: 0 0 8px !important;
+  color: inherit !important;
+  border: 0 !important;
+  line-height: 1.4 !important;
+  position: relative;
+}
+.post-kalinz h2::after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 3px;
+  margin-top: 8px;
+  border-radius: 999px;
+  background: #1a6b8a;
+}
+
+.post-kalinz .post-featured-image {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 8px;
+  margin: 0 auto 1.5em;
+  display: block;
+}
+
+.post-kalinz .post-hook { font-size: 1rem; margin: 0 0 1.2em; }
+
+.post-kalinz .post-box {
+  background: #f5f9ff;
+  border: 1px solid #d0e4f7;
+  border-radius: 8px;
+  padding: 16px 20px;
+  margin: 1.2em 0 1.5em;
+  font-size: 0.875rem;
+  color: inherit;
+}
+.post-kalinz .post-box table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+.post-kalinz .post-box td {
+  padding: 5px 0;
+  vertical-align: top;
+  overflow-wrap: anywhere;
+}
+.post-kalinz .post-box td:first-child {
+  color: #666;
+  width: 130px;
+  font-size: 0.8125rem;
+  white-space: nowrap;
+  padding-right: 12px;
+}
+.post-kalinz .post-box td:last-child {
+  font-weight: 600;
+  color: inherit;
+}
+
+.post-kalinz .post-divider {
+  border: none;
+  border-top: 1px solid #eee;
+  margin: 1.6em 0 !important;
+}
+
+.post-kalinz .post-lyric-box {
+  background: #fafafa;
+  border: 1px solid #e8e8e8;
+  border-radius: 8px;
+  padding: 24px 28px;
+  font-size: 1rem;
+  line-height: 2;
+  white-space: pre-line;
+  margin: 1.2em 0;
+}
+
+.post-kalinz .post-lyric-translation {
+  background: #fffdf5;
+  border: 1px solid #f2e6c5;
+  border-radius: 8px;
+  padding: 20px 24px;
+  font-size: 0.9375rem;
+  line-height: 1.9;
+  white-space: pre-line;
+  margin: 1.2em 0;
+}
+
+.post-kalinz .dictionary-table { background: #f5f9ff; }
+.post-kalinz .dictionary-table table { table-layout: auto; }
+.post-kalinz .dictionary-table thead th {
+  text-align: left;
+  padding: 4px 12px 10px 0;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: #666;
+  border-bottom: 1px solid #d0e4f7;
+}
+.post-kalinz .dictionary-table tbody td {
+  padding: 7px 12px 7px 0 !important;
+  width: auto !important;
+  white-space: normal !important;
+  font-size: 0.875rem !important;
+  border-bottom: 1px solid #e8f0f8;
+}
+.post-kalinz .dictionary-table tbody tr:last-child td { border-bottom: none; }
+.post-kalinz .dictionary-table tbody td:first-child {
+  font-weight: 700 !important;
+  color: #1a6b8a !important;
+  width: 175px !important;
+  white-space: nowrap !important;
+}
+
+.post-kalinz .post-faq { margin: 0.75em 0; }
+.post-kalinz .post-faq-item {
+  border-bottom: 1px solid #f0f0f0;
+  padding: 13px 0;
+}
+.post-kalinz .post-faq-item:first-child { padding-top: 4px; }
+.post-kalinz .post-faq-item:last-child {
+  border-bottom: none;
+  padding-bottom: 4px;
+}
+.post-kalinz .post-faq-q {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: #31353a;
+  margin: 0 0 5px;
+  line-height: 1.5;
+}
+.post-kalinz .post-faq-a {
+  font-size: 0.9375rem;
+  color: #555;
+  margin: 0;
+  line-height: 1.7;
+}
+
+.post-kalinz .post-tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+.post-kalinz .post-tag {
+  font-size: 0.75rem;
+  background: #f0f0f0;
+  border-radius: 4px;
+  padding: 4px 12px;
+  color: #444;
+  text-decoration: none;
+  display: inline-block;
+  transition: background .15s, color .15s;
+}
+.post-kalinz .post-tag:hover {
+  background: #d6e8f0;
+  color: #1a6b8a;
+}
+
+@media (max-width: 480px) {
+  .post-kalinz p,
+  .post-kalinz .post-hook { font-size: 0.96875rem; }
+
+  .post-kalinz h2 { font-size: 1.05rem !important; }
+
+  .post-kalinz .post-box { padding: 14px 16px; }
+
+  .post-kalinz .post-box.song-meta td { display: block; padding: 2px 0; }
+  .post-kalinz .post-box.song-meta td:first-child {
+    width: auto;
+    white-space: normal;
+    padding-right: 0;
+    margin-top: 6px;
+  }
+  .post-kalinz .post-box.song-meta tr:first-child td:first-child { margin-top: 0; }
+
+  .post-kalinz .post-lyric-box { padding: 18px 16px; font-size: 0.96875rem; }
+  .post-kalinz .post-lyric-translation { padding: 16px; font-size: 0.90625rem; }
+
+  .post-kalinz .dictionary-table tbody td:first-child { width: 140px !important; }
+
+  .post-kalinz .post-faq-q,
+  .post-kalinz .post-faq-a { font-size: 0.9rem; }
+}
+</style>
+
+<article class="post-kalinz">
+
+  <img
+    class="post-featured-image"
+    src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiywlwkh0LKY3CKlsJtc5wd9ldbNqukGkt3sMgXDThFtbyajyhZUiYaTxtc7E9Ek3_K3jlDa-dSbUEe3FtXTDQChPLX2RGO20yAQfK8sNzH-60I2ozl4jiOtT44R3Wh18JGAQKk05EJu7JShF857VM5yGQW36OMhm73H9-Vxowat0H9b9R1WDQhr-pGkXE/w400-h400/na%20uangeraigo%20todo%20-%20bjb%20trio.png"
+    alt="Lagu Na U'angeraigö Tödö dinyanyikan BJB Trio"
+    title="Lirik Lagu Nias - BJB Trio"
+    width="400"
+    height="400"
+  />
+
+  <p class="post-hook"><strong>Na U'angeraigö Tödö</strong> adalah lagu Nias yang dinyanyikan oleh <strong>BJB Trio</strong>, bercerita tentang seseorang yang berusaha melanjutkan hidup bersama orang baru, namun kasih sayang yang dirasakannya tak kunjung sebanding dengan cinta lamanya.</p>
+
+  <div class="post-box song-meta">
+    <table>
+      <tr><td>Judul Lagu</td><td>Na U'angeraigö Tödö</td></tr>
+      <tr><td>Dipopulerkan oleh</td><td>BJB Trio (Bastian Ndraha, Jhony Ndraha, Berys Telaumbanua)</td></tr>
+      <tr><td>Penulis Lagu</td><td>Aderitus Wau</td></tr>
+      <tr><td>Bahasa</td><td>Nias (Li Niha)</td></tr>
+      <tr><td>Genre</td><td>Pop Nias</td></tr>
+      <tr><td>Tema</td><td>Cinta</td></tr>
+      <tr><td>Tahun Rilis</td><td>2022</td></tr>
+    </table>
+  </div>
+
+  <hr class="post-divider" />
+
+  <h2>Lirik Lagu Na U'angeraigö Tödö — BJB Trio</h2>
+
+  <div class="post-lyric-box">He usöndra zi mae ya'ugö
+Fa'omasi no fabö'ö
+Biar kudapat penggantimu
+Kasih sayang jauh berbeda
+
+Na u'angeraigo tödö
+Tenga fa löbadödögu ya'ugö
+Ha börö wolaumö sagafökhö
+Uo'ö nilau dödö zatuagu
+
+Ba tenga fa löbadödö
+Ba tenga fa löomasi
+Uwalinga ösi dödömö
+Wefaosada ba zino numalö
+
+He afökhö bakha badödö
+Wolaumö he tuho dödö
+He usöndra zi mae ya'ugö
+Fa'omasi no fabö'ö
+
+Ba tenga fa löbadödö
+Ba tenga fa löomasi
+Uwalinga ösi dödömö
+Wefaosada ba zino numalö
+
+He afökhö bakha badödö
+Wolaumö he tuho dödö
+He usöndra zi mae ya'ugö
+Fa'omasi no fabö'ö
+
+He afökhö bakha badödö (akhigu...)
+Wolaumö he tuho dödö (omasiö...)
+He usöndra zi mae ya'ugö
+Fa'omasi no fabö'ö
+
+Biar kudapat penggantimu
+Kasih sayang jauh berbeda</div>
+
+  <hr class="post-divider" />
+
+  <h2>Makna Lagu Na U'angeraigö Tödö</h2>
+
+  <p>Lagu Na U'angeraigö Tödö mengangkat kisah tentang seseorang yang masih menyimpan kerinduan mendalam terhadap mantan kekasihnya, meski kini telah bersama orang lain. Inti dari lagu ini tertuang kuat dalam baris "Bukan karena aku tidak menganggapmu" dan "Dan bukan karena tidak ada cinta" — sebuah pengakuan bahwa perpisahan terjadi bukan atas kehendak hati, melainkan karena rasa sakit yang ditimbulkan sang kekasih dan desakan dari orang tua. Di penghujung lagu, tokoh ini menegaskan bahwa meski sudah mendapatkan pengganti, kasih sayang yang dirasakannya tetap jauh berbeda — penyesalan diam-diam yang tersimpan rapat di dalam hati.</p>
+
+  <p>Dalam budaya masyarakat Nias, peran orang tua dalam urusan hubungan anak memiliki tempat yang sangat besar. Baris "Aku mengikuti kata hati orang tuaku" mencerminkan nilai tersebut — keputusan berpisah bukan semata dorongan pribadi, melainkan bagian dari rasa hormat kepada keluarga. Tema seperti ini sangat dekat dengan pengalaman banyak anak muda Nias, baik yang tinggal di kampung halaman maupun yang merantau, yang kerap harus menyeimbangkan perasaan pribadi dengan harapan keluarga. Inilah yang membuat lagu ini terasa begitu menyentuh dan mudah dihayati oleh pendengarnya.</p>
+
+  <h2>Terjemahan Lagu Na U'angeraigö Tödö dalam Bahasa Indonesia</h2>
+
+  <div class="post-lyric-translation"><em>Walau kudapat penggantimu
+Kasih sayang jauh berbeda
+Biar kudapat penggantimu
+Kasih sayang jauh berbeda
+
+Jika kuingat dalam hati
+Bukan karena aku tidak menganggapmu
+Hanya karena sakit yang kau lakukan
+Aku mengikuti kata hati orang tuaku
+
+Dan bukan karena aku tidak menganggapmu
+Dan bukan karena tidak ada cinta
+Kukira kesungguhan hatimu
+Kebersamaan kita yang telah berlalu
+
+Walau sakit dalam hati
+Yang kau lakukan, oh kasih
+Walau kudapat yang lain sepertimu
+Kasih sayangnya jauh berbeda</em></div>
+
+  <hr class="post-divider" />
+
+  <h2>Kosakata Bahasa Nias dalam Lagu Ini</h2>
+
+  <p>Berikut kata-kata bahasa Nias (Li Niha) yang muncul dalam lagu ini beserta artinya:</p>
+
+  <div class="post-box dictionary-table">
+    <table>
+      <thead>
+        <tr>
+          <th scope="col">Kosakata</th>
+          <th scope="col">Arti</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>usöndra</td><td>kutemukan, kudapat</td></tr>
+        <tr><td>tenga</td><td>bukan</td></tr>
+        <tr><td>wolaumö</td><td>yang kau lakukan</td></tr>
+        <tr><td>uwalinga</td><td>kukira</td></tr>
+        <tr><td>bakha</td><td>dalam</td></tr>
+        <tr><td>tuho dödö</td><td>pujaan hati</td></tr>
+        <tr><td>numalö</td><td>yang lalu</td></tr>
+        <tr><td>wefaosada</td><td>kebersamaan kita</td></tr>
+        <tr><td>fabö'ö</td><td>berbeda</td></tr>
+        <tr><td>zi mae</td><td>seperti</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>Tentang BJB Trio</h2>
+
+  <p>BJB Trio adalah grup vokal Nias yang beranggotakan Bastian Ndraha, Jhony Ndraha, dan Berys Telaumbanua. Mereka dikenal lewat lagu-lagu pop Nias bertema kehidupan sehari-hari, percintaan, dan kerinduan yang dekat dengan pengalaman masyarakat Nias. Lagu Na U'angeraigö Tödö yang ditulis oleh Aderitus Wau menjadi salah satu karya mereka yang cukup dikenal. Beberapa lagu BJB Trio lainnya di Kalinz.</p>
+
+  <hr class="post-divider" />
+
+  <h2>Pertanyaan yang Sering Ditanyakan</h2>
+
+  <div class="post-faq">
+
+    <div class="post-faq-item">
+      <p class="post-faq-q">Apa arti judul lagu Na U'angeraigö Tödö?</p>
+      <p class="post-faq-a">Judul "Na U'angeraigö Tödö" dalam bahasa Nias (Li Niha) secara harfiah berarti "Jika Kuingat dalam Hati" atau "Kalau Kurenungkan dalam Hati." Frasa ini menggambarkan perasaan sang tokoh yang terus-menerus dilanda kenangan tentang hubungan yang telah berlalu, meski sudah berusaha untuk melanjutkan hidup.</p>
+    </div>
+
+    <div class="post-faq-item">
+      <p class="post-faq-q">Siapa yang menyanyikan lagu Na U'angeraigö Tödö?</p>
+      <p class="post-faq-a">Lagu Na U'angeraigö Tödö dinyanyikan oleh BJB Trio, grup vokal Nias yang beranggotakan Bastian Ndraha, Jhony Ndraha, dan Berys Telaumbanua. Lagu ini ditulis oleh Aderitus Wau dan merupakan salah satu lagu pop Nias yang mereka rilis pada tahun 2022.</p>
+    </div>
+
+    <div class="post-faq-item">
+      <p class="post-faq-q">Apa tema utama lagu Na U'angeraigö Tödö?</p>
+      <p class="post-faq-a">Tema utama lagu Na U'angeraigö Tödö adalah cinta yang tak tergantikan. Lagu ini bercerita tentang seseorang yang telah memiliki orang baru, namun merasakan bahwa kasih sayang yang diterimanya kini tidak sebanding dengan cinta yang pernah ia rasakan bersama kekasih lamanya.</p>
+    </div>
+
+    <div class="post-faq-item">
+      <p class="post-faq-q">Bahasa apa yang digunakan dalam lagu Na U'angeraigö Tödö?</p>
+      <p class="post-faq-a">Lagu Na U'angeraigö Tödö menggunakan bahasa Nias atau Li Niha, bahasa daerah yang digunakan oleh masyarakat Nias di Provinsi Sumatera Utara. Beberapa baris dalam lagu juga menggunakan bahasa Indonesia, seperti pada baris pembuka dan penutup "Biar kudapat penggantimu / Kasih sayang jauh berbeda."</p>
+    </div>
+
+    <div class="post-faq-item">
+      <p class="post-faq-q">Kapan lagu Na U'angeraigö Tödö dirilis?</p>
+      <p class="post-faq-a">Lagu Na U'angeraigö Tödö dirilis pada tahun 2022 oleh BJB Trio melalui channel youtube Bologödödö Reborn</p>
+    </div>
+
+  </div>
+
+  <hr class="post-divider" />
+
+  <p>Itulah lirik lagu Nias <strong>Na U'angeraigö Tödö</strong> dari <strong>BJB Trio</strong> lengkap dengan makna dan terjemahannya. Jika ada koreksi lirik atau tambahan informasi, silakan sampaikan melalui halaman <a href="https://kalinz.blogspot.com/p/hubungi-kam.html" rel="noopener noreferrer" target="_blank">Kontak</a>.</p>
+
+  <div class="post-tag-list">
+    <a class="post-tag" href="https://kalinz.blogspot.com/search/label/Lagu%20Nias" rel="tag">Lagu Nias</a>
+    <a class="post-tag" href="https://kalinz.blogspot.com/search/label/BJB%20Trio" rel="tag">BJB Trio</a>
+  </div>
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Lirik Lagu Nias Na U'angeraigö Tödö — BJB Trio: Arti dan Terjemahan",
+  "description": "Lirik lagu Nias Na U'angeraigö Tödö — BJB Trio, lengkap dengan terjemahan bahasa Indonesia dan kosakata Li Niha. Kisah cinta sesorang.",
+  "image": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiywlwkh0LKY3CKlsJtc5wd9ldbNqukGkt3sMgXDThFtbyajyhZUiYaTxtc7E9Ek3_K3jlDa-dSbUEe3FtXTDQChPLX2RGO20yAQfK8sNzH-60I2ozl4jiOtT44R3Wh18JGAQKk05EJu7JShF857VM5yGQW36OMhm73H9-Vxowat0H9b9R1WDQhr-pGkXE/w400-h400/na%20uangeraigo%20todo%20-%20bjb%20trio.png",
+  "author": {
+    "@type": "Person",
+    "name": "KALINZ",
+    "url": "https://kalinz.blogspot.com"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "KALINZ",
+    "url": "https://kalinz.blogspot.com",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://blogger.googleusercontent.com/img/a/AVvXsEiA60iqO3_Ix7HJgSdZuCU4pIJO9Fgbu4I622jL65PVabLz0WF6rDLZ8D8RRNoiRSjkFe5gVIllCNVt0DQ69y_eF54sx-EGO7j6-TkB_r-ivcijlU9Kudo2LkZMSIzlJrjjlzek2cqzzuoT_jd4mGgZkrwVw8W5U1nm01ywxxEtVgNuhqrnbO2T4sD8Yq8=w1600"
+    }
+  },
+  "datePublished": "2026-06-16T08:50:00+07:00",
+  "dateModified": "2026-06-16T08:50:00+07:00",
+  "inLanguage": "id",
+  "keywords": [
+    "Lagu Nias",
+    "Na U'angeraigö Tödö",
+    "BJB Trio",
+    "Lirik Lagu Nias",
+    "Terjemahan Bahasa Indonesia",
+    "Li Niha",
+    "Kamus Bahasa Nias",
+    "Kisah Cinta"
+  ],
+  "articleSection": ["Lagu Nias", "Terjemahan Lagu", "Budaya Nias"],
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://kalinz.blogspot.com/2026/06/lirik-lagu-nias-na-uangeraigo-todo-bjb.html"
+  },
+  "about": {
+    "@type": "MusicRecording",
+    "name": "Na U'angeraigö Tödö",
+    "byArtist": {
+      "@type": "MusicGroup",
+      "name": "BJB Trio"
+    },
+    "inLanguage": "nia",
+    "genre": "Pop Nias",
+    "description": "Lagu pop Nias bertema cinta yang ditulis oleh Aderitus Wau dan dipopulerkan oleh BJB Trio, mengisahkan pergulatan batin seseorang yang masih merindukan cinta lamanya meski telah bersama orang baru.",
+    "datePublished": "2022"
+  }
+}
+  </script>
+
+</article>
