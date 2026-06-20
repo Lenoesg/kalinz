@@ -821,7 +821,7 @@ Variable end */
                         </div>
                         <div id='share'>
                             <a aria-label='whatsapp' class='whatsapp'
-                                expr:href='&quot;https://api.whatsapp.com/send?text=&quot; + data:post.title + &quot;%20%2D%20&quot; + data:post.url'
+                                expr:href='&quot;https://api.whatsapp.com/send?text=&quot; + data:post.title + &quot;%0A%0A&quot; + data:blog.metaDescription + &quot;%0A%0A&quot; + data:post.url'
                                 rel='nofollow noreferrer' target='_blank' title='whatsapp'>
                                 <i class='icon-whatsapp' />
                             </a>
@@ -3871,34 +3871,32 @@ var linkMagzSetting = {
                             </div>
                         </b:includable>
                     </b:widget>
-                    <b:widget id='Blog1' locked='true' title='Blog Posts' type='Blog' version='2'
-                        visible='true'>
+                    <b:widget id='Blog1' locked='true' title='Postingan Blog' type='Blog'
+                        version='2' visible='true'>
                         <b:widget-settings>
-                            <b:widget-setting name='commentLabel'>komentar</b:widget-setting>
-                            <b:widget-setting name='showShareButtons'>false</b:widget-setting>
-                            <b:widget-setting name='authorLabel'>Diposkan oleh</b:widget-setting>
-                            <b:widget-setting name='style.unittype'>TextAndImage</b:widget-setting>
-                            <b:widget-setting name='timestampLabel'>di</b:widget-setting>
-                            <b:widget-setting name='reactionsLabel' />
-                            <b:widget-setting name='showAuthorProfile'>false</b:widget-setting>
-                            <b:widget-setting name='style.layout'>970x90</b:widget-setting>
-                            <b:widget-setting name='showLocation'>false</b:widget-setting>
-                            <b:widget-setting name='showTimestamp'>true</b:widget-setting>
-                            <b:widget-setting name='postsPerAd'>1</b:widget-setting>
-                            <b:widget-setting name='style.bordercolor'>#ffffff</b:widget-setting>
-                            <b:widget-setting name='backlinksLabel' />
                             <b:widget-setting name='showDateHeader'>false</b:widget-setting>
                             <b:widget-setting name='style.textcolor'>#ffffff</b:widget-setting>
+                            <b:widget-setting name='showShareButtons'>false</b:widget-setting>
+                            <b:widget-setting name='authorLabel'>Diposkan oleh</b:widget-setting>
                             <b:widget-setting name='showCommentLink'>true</b:widget-setting>
                             <b:widget-setting name='style.urlcolor'>#ffffff</b:widget-setting>
                             <b:widget-setting name='postLocationLabel'>Lokasi:</b:widget-setting>
                             <b:widget-setting name='showAuthor'>false</b:widget-setting>
                             <b:widget-setting name='style.linkcolor'>#ffffff</b:widget-setting>
+                            <b:widget-setting name='style.unittype'>TextAndImage</b:widget-setting>
                             <b:widget-setting name='style.bgcolor'>#ffffff</b:widget-setting>
+                            <b:widget-setting name='reactionsLabel' />
+                            <b:widget-setting name='showAuthorProfile'>false</b:widget-setting>
+                            <b:widget-setting name='style.layout'>970x90</b:widget-setting>
                             <b:widget-setting name='showLabels'>true</b:widget-setting>
+                            <b:widget-setting name='showLocation'>false</b:widget-setting>
                             <b:widget-setting name='postLabelsLabel'>Tag:</b:widget-setting>
+                            <b:widget-setting name='showTimestamp'>true</b:widget-setting>
+                            <b:widget-setting name='postsPerAd'>1</b:widget-setting>
                             <b:widget-setting name='showBacklinks'>false</b:widget-setting>
+                            <b:widget-setting name='style.bordercolor'>#ffffff</b:widget-setting>
                             <b:widget-setting name='showInlineAds'>false</b:widget-setting>
+                            <b:widget-setting name='backlinksLabel' />
                             <b:widget-setting name='showReactions'>false</b:widget-setting>
                         </b:widget-settings>
                         <b:includable id='main' var='this'>
@@ -5709,7 +5707,7 @@ var linkMagzSetting = {
                                     <b:widget-setting name='content'><![CDATA[<ul class="kalinz-artist-list">
   <li><a href="/search/label/Erick%20Ij%C3%B6">Erick Ijö</a></li>
   <li><a href="/search/label/Fati%20Zebua">Fati Zebua</a></li>
-  <li><a href="/search/label/Delada%20Trio">Delada Trio</a></li>
+  <li><a href="/search/label/BJB%20Trio">BJB Trio</a></li>
   <li><a href="/search/label/Vivid%20Gulo">Vivid Gulo</a></li>
   <li><a href="/search/label/Tice%20Halawa">Tice Halawa</a></li>
   <!-- tambahkan artis lain yang punya banyak lagu di blog -->
@@ -5923,7 +5921,7 @@ var linkMagzSetting = {
                         type='PageList' version='2' visible='true'>
                         <b:widget-settings>
                             <b:widget-setting name='pageListJson'><![CDATA[{"5026083009044766414":{"href":"https://kalinz.blogspot.com/p/hubungi-kam.html","position":0,"title":"Kontak"},"3106317128406358487":{"href":"https://kalinz.blogspot.com/p/privacy-policy.html","position":1,"title":"Kebijakan Privasi"},"2817569514580233880":{"href":"https://kalinz.blogspot.com/p/disclaimer.html","position":2,"title":"Disclaimer"}}]]></b:widget-setting>
-                            <b:widget-setting name='homeTitle'>Home</b:widget-setting>
+                            <b:widget-setting name='homeTitle'>Beranda</b:widget-setting>
                         </b:widget-settings>
                         <b:includable id='main'>
                             <b:if cond='data:title'>
