@@ -281,14 +281,12 @@ Rohani / Penyembahan
   <p class="post-hook"><strong>[JUDUL_LAGU]</strong> adalah lagu Nias yang dinyanyikan oleh <strong>[PENYANYI]</strong>, [DESKRIPSI_SINGKAT_1_KALIMAT].</p>
 
   <!-- ③ INFO LAGU
-       Tambah baris "Pencipta" di bawah "Penyanyi" jika pencipta berbeda.
-       Bahasa selalu diisi "Nias (Li Niha)" — tidak perlu diubah. -->
+       Tambah baris "Penulis Lagu" di bawah "Penyanyi" jika pencipta berbeda. -->
   <div class="post-box song-meta">
     <table>
       <tr><td>Judul Lagu</td><td>[JUDUL_LAGU]</td></tr>
       <tr><td>Dipopulerkan oleh</td><td>[PENYANYI]</td></tr>
       <tr><td>Penulis Lagu</td><td>[PENULIS_LAGU]</td></tr>
-      <tr><td>Bahasa</td><td>Nias (Li Niha)</td></tr>
       <tr><td>Genre</td><td>[GENRE]</td></tr>
       <tr><td>Tema</td><td>[TEMA]</td></tr>
       <tr><td>Tahun Rilis</td><td>[TAHUN_RILIS]</td></tr>
@@ -406,8 +404,8 @@ Terjemahan reff baris 3</em></div>
     </div>
 
     <div class="post-faq-item">
-      <p class="post-faq-q">Bahasa apa yang digunakan dalam lagu [JUDUL_LAGU]?</p>
-      <p class="post-faq-a">Lagu [JUDUL_LAGU] dinyanyikan dalam bahasa Nias atau Li Niha, bahasa daerah yang digunakan oleh masyarakat Ono Niha di Pulau Nias, Sumatera Utara.</p>
+      <p class="post-faq-q">Siapa penulis lagu [JUDUL_LAGU]?</p>
+      <p class="post-faq-a">Lagu ini ditulis oleh [PENULIS_LAGU].</p>
     </div>
 
     <div class="post-faq-item">
@@ -420,7 +418,7 @@ Terjemahan reff baris 3</em></div>
   <hr class="post-divider" />
 
   <!-- ⑩ PENUTUP -->
-  <p>Itulah lirik lagu Nias <strong>[JUDUL_LAGU]</strong> dari <strong>[PENYANYI]</strong> lengkap dengan makna dan terjemahannya. Jika ada koreksi lirik atau tambahan informasi, silakan sampaikan melalui halaman <a href="https://kalinz.blogspot.com/p/hubungi-kam.html" rel="noopener noreferrer" target="_blank">Kontak</a>.</p>
+  <p>Itulah lirik lagu Nias <strong>[JUDUL_LAGU]</strong> dari <strong>[PENYANYI]</strong> lengkap dengan makna dan terjemahannya. Jika Anda menemukan kesalahan lirik, arti kata, atau informasi mengenai lagu ini, silakan hubungi saya melalui halaman <a href="https://kalinz.blogspot.com/p/hubungi-kam.html" rel="noopener noreferrer" target="_blank">Kontak</a> agar artikel dapat diperbarui dan tetap akurat.</p>
 
   <!-- ⑪ TAGS
        URL label format: /search/label/Nama%20Label
@@ -440,6 +438,7 @@ Terjemahan reff baris 3</em></div>
          konten HTML (bagian ⑨) yang masih berguna untuk AI Overview.
        - byArtist: gunakan "@type": "Person" untuk penyanyi solo,
          "@type": "MusicGroup" untuk grup/duo/choir. -->
+  <!-- kalinz-custom-schema -->
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -449,7 +448,7 @@ Terjemahan reff baris 3</em></div>
   "image": "[URL_GAMBAR]",
   "author": {
     "@type": "Person",
-    "name": "KALINZ",
+    "name": "Melinus Gulo",
     "url": "https://kalinz.blogspot.com"
   },
   "publisher": {
