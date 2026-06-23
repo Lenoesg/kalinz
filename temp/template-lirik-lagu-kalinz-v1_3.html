@@ -1,7 +1,7 @@
 <!--
 ========================================================
 KALINZ | Template Artikel Lirik Lagu
-Versi 1.1 — 2026
+Versi 1.3 — 2026
 Dioptimalkan: SEO 2026 · karaoke UX · mobile · tanpa dark mode
 
 PANDUAN SINGKAT
@@ -11,6 +11,7 @@ PANDUAN SINGKAT
 3. Ganti semua [HURUF_BESAR_DALAM_KURUNG] dengan konten asli
 4. Lirik & terjemahan: edit di mode HTML agar jeda baris terjaga
 5. Jangan ubah nama class CSS
+6. JANGAN hapus komentar <!-- kalinz-custom-schema --> di bagian ⑫
 
 PLACEHOLDERS UTAMA
 ──────────────────
@@ -272,6 +273,7 @@ Rohani / Penyembahan
     title="[JUDUL_LAGU] - [PENYANYI]"
     width="400"
     height="400"
+    fetchpriority="high"
   />
 
   <!-- ② HOOK — 1 kalimat untuk Google & AI
@@ -281,7 +283,10 @@ Rohani / Penyembahan
   <p class="post-hook"><strong>[JUDUL_LAGU]</strong> adalah lagu Nias yang dinyanyikan oleh <strong>[PENYANYI]</strong>, [DESKRIPSI_SINGKAT_1_KALIMAT].</p>
 
   <!-- ③ INFO LAGU
-       Tambah baris "Penulis Lagu" di bawah "Penyanyi" jika pencipta berbeda. -->
+       Tambah baris "Penulis Lagu" di bawah "Penyanyi" jika pencipta berbeda.
+       Tidak ada baris "Bahasa" — sengaja dihilangkan karena seluruh blog
+       sudah bertema Nias (redundan). Bahasa tetap tercatat di JSON-LD
+       (about.inLanguage) di bagian ⑫. -->
   <div class="post-box song-meta">
     <table>
       <tr><td>Judul Lagu</td><td>[JUDUL_LAGU]</td></tr>
@@ -404,8 +409,8 @@ Terjemahan reff baris 3</em></div>
     </div>
 
     <div class="post-faq-item">
-      <p class="post-faq-q">Siapa penulis lagu [JUDUL_LAGU]?</p>
-      <p class="post-faq-a">Lagu ini ditulis oleh [PENULIS_LAGU].</p>
+      <p class="post-faq-q">Bahasa apa yang digunakan dalam lagu [JUDUL_LAGU]?</p>
+      <p class="post-faq-a">Lagu [JUDUL_LAGU] dinyanyikan dalam bahasa Nias atau Li Niha, bahasa daerah yang digunakan oleh masyarakat Ono Niha di Pulau Nias, Sumatera Utara.</p>
     </div>
 
     <div class="post-faq-item">
@@ -418,7 +423,7 @@ Terjemahan reff baris 3</em></div>
   <hr class="post-divider" />
 
   <!-- ⑩ PENUTUP -->
-  <p>Itulah lirik lagu Nias <strong>[JUDUL_LAGU]</strong> dari <strong>[PENYANYI]</strong> lengkap dengan makna dan terjemahannya. Jika Anda menemukan kesalahan lirik, arti kata, atau informasi mengenai lagu ini, silakan hubungi saya melalui halaman <a href="https://kalinz.blogspot.com/p/hubungi-kam.html" rel="noopener noreferrer" target="_blank">Kontak</a> agar artikel dapat diperbarui dan tetap akurat.</p>
+  <p>Itulah lirik lagu Nias <strong>[JUDUL_LAGU]</strong> dari <strong>[PENYANYI]</strong> lengkap dengan makna dan terjemahannya. Jika Anda menemukan kesalahan lirik, arti kata, atau informasi mengenai lagu ini, silakan hubungi saya melalui halaman <a href="https://kalinz.blogspot.com/p/hubungi-kam.html">Kontak</a> agar artikel dapat diperbarui dan tetap akurat.</p>
 
   <!-- ⑪ TAGS
        URL label format: /search/label/Nama%20Label
@@ -431,13 +436,20 @@ Terjemahan reff baris 3</em></div>
 
   <!-- ⑫ JSON-LD SCHEMA
        Catatan penting:
-       - Template Blogger sudah menghasilkan BlogPosting schema otomatis.
-         Schema di bawah MELENGKAPI dengan entity MusicRecording.
+       - Marker komentar <!-- kalinz-custom-schema --> tepat di bawah ini
+         memberi sinyal ke template Blogger (includable postMetaCustom) untuk
+         MENGHENTIKAN BlogPosting otomatis pada post ini, supaya tidak
+         duplikat dengan schema Article + MusicRecording berikut.
+         JANGAN hapus baris marker tersebut.
+       - Post LAMA yang belum migrasi ke v1.1+ (tanpa marker ini) tetap akan
+         mendapat BlogPosting otomatis dari template sebagai fallback.
        - FAQPage schema TIDAK disertakan karena Google resmi menghentikan
          dukungan FAQ rich results per 7 Mei 2026. FAQ tetap ada sebagai
          konten HTML (bagian ⑨) yang masih berguna untuk AI Overview.
        - byArtist: gunakan "@type": "Person" untuk penyanyi solo,
-         "@type": "MusicGroup" untuk grup/duo/choir. -->
+         "@type": "MusicGroup" untuk grup/duo/choir.
+       - author.sameAs: hanya isi dengan profil yang benar-benar milik
+         Melinus Gulo dan idealnya juga ditautkan di halaman About. -->
   <!-- kalinz-custom-schema -->
   <script type="application/ld+json">
 {
@@ -449,7 +461,11 @@ Terjemahan reff baris 3</em></div>
   "author": {
     "@type": "Person",
     "name": "Melinus Gulo",
-    "url": "https://kalinz.blogspot.com"
+    "url": "https://kalinz.blogspot.com/p/about.html",
+    "sameAs": [
+      "https://id.linkedin.com/in/melinus-gulo",
+      "https://x.com/_kalinz_"
+    ]
   },
   "publisher": {
     "@type": "Organization",
@@ -487,8 +503,16 @@ Terjemahan reff baris 3</em></div>
     },
     "inLanguage": "nia",
     "genre": "[GENRE]",
-    "description": "[DESKRIPSI_SINGKAT_LAGU — 1 kalimat]",
-    "datePublished": "[TAHUN_RILIS]"
+    "description": "[DESKRIPSI_SINGKAT_LAGU]",
+    "datePublished": "[TAHUN_RILIS]",
+    "recordingOf": {
+      "@type": "MusicComposition",
+      "name": "[JUDUL_LAGU]",
+      "lyricist": {
+        "@type": "Person",
+        "name": "[PENULIS_LAGU]"
+      }
+    }
   }
 }
   </script>
