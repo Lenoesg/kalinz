@@ -1,0 +1,430 @@
+<style>
+.post-kalinz {
+  max-width: 740px;
+  margin: 0 auto;
+  padding: 0;
+  color: inherit;
+  line-height: 1.8;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+  font-family: inherit;
+}
+
+.post-kalinz,
+.post-kalinz * { box-sizing: border-box; }
+
+.post-kalinz p { font-size: 1rem; margin: 0 0 1.2em; }
+
+.post-kalinz h2 {
+  font-family: inherit !important;
+  font-size: 1.15rem !important;
+  font-weight: 700 !important;
+  margin: 1.75em 0 0.85em !important;
+  padding: 0 0 8px !important;
+  color: inherit !important;
+  border: 0 !important;
+  line-height: 1.4 !important;
+  position: relative;
+}
+.post-kalinz h2::after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 3px;
+  margin-top: 8px;
+  border-radius: 999px;
+  background: #1a6b8a;
+}
+
+.post-kalinz .post-featured-image {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 8px;
+  margin: 0 auto 1.5em;
+  display: block;
+}
+
+.post-kalinz .post-hook { font-size: 1rem; margin: 0 0 1.2em; }
+
+.post-kalinz .post-box {
+  background: #f5f9ff;
+  border: 1px solid #d0e4f7;
+  border-radius: 8px;
+  padding: 16px 20px;
+  margin: 1.2em 0 1.5em;
+  font-size: 0.875rem;
+  color: inherit;
+}
+.post-kalinz .post-box table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+.post-kalinz .post-box td {
+  padding: 5px 0;
+  vertical-align: top;
+  overflow-wrap: anywhere;
+}
+.post-kalinz .post-box td:first-child {
+  color: #666;
+  width: 130px;
+  font-size: 0.8125rem;
+  white-space: nowrap;
+  padding-right: 12px;
+}
+.post-kalinz .post-box td:last-child {
+  font-weight: 600;
+  color: inherit;
+}
+
+.post-kalinz .post-divider {
+  border: none;
+  border-top: 1px solid #eee;
+  margin: 1.6em 0 !important;
+}
+
+.post-kalinz .post-lyric-box {
+  background: #fafafa;
+  border: 1px solid #e8e8e8;
+  border-radius: 8px;
+  padding: 24px 28px;
+  font-size: 1rem;
+  line-height: 2;
+  white-space: pre-line;
+  margin: 1.2em 0;
+}
+
+.post-kalinz .post-lyric-translation {
+  background: #fffdf5;
+  border: 1px solid #f2e6c5;
+  border-radius: 8px;
+  padding: 20px 24px;
+  font-size: 0.9375rem;
+  line-height: 1.9;
+  white-space: pre-line;
+  margin: 1.2em 0;
+}
+
+.post-kalinz .dictionary-table { background: #f5f9ff; }
+.post-kalinz .dictionary-table table { table-layout: auto; }
+.post-kalinz .dictionary-table thead th {
+  text-align: left;
+  padding: 4px 12px 10px 0;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: #666;
+  border-bottom: 1px solid #d0e4f7;
+}
+.post-kalinz .dictionary-table tbody td {
+  padding: 7px 12px 7px 0 !important;
+  width: auto !important;
+  white-space: normal !important;
+  font-size: 0.875rem !important;
+  border-bottom: 1px solid #e8f0f8;
+}
+.post-kalinz .dictionary-table tbody tr:last-child td { border-bottom: none; }
+.post-kalinz .dictionary-table tbody td:first-child {
+  font-weight: 700 !important;
+  color: #1a6b8a !important;
+  width: 175px !important;
+  white-space: nowrap !important;
+}
+
+.post-kalinz .post-faq { margin: 0.75em 0; }
+.post-kalinz .post-faq-item {
+  border-bottom: 1px solid #f0f0f0;
+  padding: 13px 0;
+}
+.post-kalinz .post-faq-item:first-child { padding-top: 4px; }
+.post-kalinz .post-faq-item:last-child {
+  border-bottom: none;
+  padding-bottom: 4px;
+}
+.post-kalinz .post-faq-q {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: #31353a;
+  margin: 0 0 5px;
+  line-height: 1.5;
+}
+.post-kalinz .post-faq-a {
+  font-size: 0.9375rem;
+  color: #555;
+  margin: 0;
+  line-height: 1.7;
+}
+
+.post-kalinz .post-tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+.post-kalinz .post-tag {
+  font-size: 0.75rem;
+  background: #f0f0f0;
+  border-radius: 4px;
+  padding: 4px 12px;
+  color: #444;
+  text-decoration: none;
+  display: inline-block;
+  transition: background .15s, color .15s;
+}
+.post-kalinz .post-tag:hover {
+  background: #d6e8f0;
+  color: #1a6b8a;
+}
+
+@media (max-width: 480px) {
+  .post-kalinz p,
+  .post-kalinz .post-hook { font-size: 0.96875rem; }
+
+  .post-kalinz h2 { font-size: 1.05rem !important; }
+
+  .post-kalinz .post-box { padding: 14px 16px; }
+
+  .post-kalinz .post-box.song-meta td { display: block; padding: 2px 0; }
+  .post-kalinz .post-box.song-meta td:first-child {
+    width: auto;
+    white-space: normal;
+    padding-right: 0;
+    margin-top: 6px;
+  }
+  .post-kalinz .post-box.song-meta tr:first-child td:first-child { margin-top: 0; }
+
+  .post-kalinz .post-lyric-box { padding: 18px 16px; font-size: 0.96875rem; }
+  .post-kalinz .post-lyric-translation { padding: 16px; font-size: 0.90625rem; }
+
+  .post-kalinz .dictionary-table tbody td:first-child { width: 140px !important; }
+
+  .post-kalinz .post-faq-q,
+  .post-kalinz .post-faq-a { font-size: 0.9rem; }
+}
+</style>
+
+<article class="post-kalinz">
+
+  <img
+    class="post-featured-image"
+    src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhrASoJl0POTCwOLxAMT4EOzvXt0Q9uk6XNMswmV0Mlx7kSPMfP9slVhn8XGSpaSmv-I4ZpIxcEiiJshyd2kC-xWfFOgea6jdxoUnDI_g_SifsGxxyrMBWquMGUKjHguc7fgxKc8C8L7uwxVTUP2T0bVHERHwwz3iYz1lE1414vImX5IfCACRP36Kdmpfk/s320/ena'o%20naso'o%20bazingagu.png"
+    alt="Lagu Ena'ö Naso'ö Bazingagu dinyanyikan Tice Halawa"
+    title="Ena'ö Naso'ö Bazingagu - Tice Halawa"
+    width="400"
+    height="400"
+    fetchpriority="high"
+  />
+
+  <p class="post-hook"><strong>Ena'ö Naso'ö Bazingagu</strong> adalah lagu Nias yang dinyanyikan oleh <strong>Tice Halawa</strong>, bertema harapan cinta yang menceritakan kerinduan dua insan yang terpisah jarak dan berharap dapat kembali dipertemukan.</p>
+
+  <div class="post-box song-meta">
+    <table>
+      <tr><td>Judul Lagu</td><td>Ena'ö Naso'ö Bazingagu</td></tr>
+      <tr><td>Dipopulerkan oleh</td><td>Tice Halawa</td></tr>
+      <tr><td>Penulis Lagu</td><td>Constant Giawa</td></tr>
+      <tr><td>Genre</td><td>Dangdut Nias</td></tr>
+      <tr><td>Tema</td><td>Harapan Cinta</td></tr>
+      <tr><td>Tahun Rilis</td><td>2007</td></tr>
+    </table>
+  </div>
+
+  <hr class="post-divider" />
+
+  <h2>Lirik Lagu Ena'ö Naso'ö Bazingagu — Tice Halawa</h2>
+
+  <div class="post-lyric-box">Ena'ö naso'ö bazingagu
+hawa'asökhi bakha dödögu
+Me itaria itörö tödögu
+mo'ala khögu nidanö hörö
+
+No ufalala sa wanayaigö
+No ufalala sa uhani - hanigö
+Utandaigö ufakifu hörö
+balö taya badödö nda'ugö
+
+He uwisa wangalui lala
+ena'ö  falukha ita
+Meso nasi otaluada
+samabali yaita
+
+Tengamai owökhi ba'agafökhö
+wahuwusada sino lumalö
+Metenga nahia metenga löfö
+tafaoma tabologö dödö</div>
+
+  <hr class="post-divider" />
+
+  <h2>Makna Lagu Ena'ö Naso'ö Bazingagu</h2>
+
+  <p>Lagu <strong>Ena'ö Naso'ö Bazingagu</strong> menggambarkan kerinduan seseorang kepada orang yang dicintainya. Tokoh dalam lagu berusaha melupakan kenangan masa lalu, namun bayangan orang yang dicintai tetap hadir dalam hati dan pikirannya. Kerinduan tersebut digambarkan melalui ungkapan hati yang terus mengingat meskipun sudah berusaha melepaskannya.</p>
+
+  <p>Selain bercerita tentang cinta, lagu ini juga menggambarkan kenyataan hidup yang membuat dua orang tidak dapat bersatu. Dalam lirik disebutkan adanya laut yang memisahkan mereka, sebuah simbol jarak dan keadaan yang sulit diatasi. Meski hubungan mereka berakhir, keduanya memilih untuk saling memaafkan dan menerima keadaan dengan lapang dada.</p>
+
+  <h2>Terjemahan Ena'ö Naso'ö Bazingagu dalam Bahasa Indonesia</h2>
+
+  <div class="post-lyric-translation"><em>Seandainya kau ada di sampingku
+Betapa bahagianya hatiku
+Karena terkadang saat kuingat dirimu
+Air mataku pun menetes
+
+Aku sudah berusaha melupakanmu
+Aku sudah berusaha menghapus bayangmu
+Bahkan kucoba dengan memejamkan mata
+Namun kau tak juga hilang dari hatiku
+
+Bagaimana caranya mencari jalan
+Agar kita bisa bertemu
+Karena ada lautan di antara kita
+Yang memisahkan kita berdua
+
+Betapa pedih dan sakitnya
+Hubungan kita yang telah berlalu
+Karena bukan tempat dan bukan pula rezeki
+Mari kita saling memaafkan</em></div>
+
+  <hr class="post-divider" />
+
+  <h2>Kosakata Bahasa Nias dalam Lagu Ini</h2>
+
+  <p>Berikut kata-kata bahasa Nias (Li Niha) yang muncul dalam lagu ini beserta artinya:</p>
+
+  <div class="post-box dictionary-table">
+    <table>
+      <thead>
+        <tr>
+          <th scope="col">Kosakata</th>
+          <th scope="col">Arti</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>ena'ö</td><td>seandainya, hendaknya</td></tr>
+        <tr><td>bazingagu</td><td>disampingku</td></tr>
+        <tr><td>itaria</td><td>kadang</td></tr>
+        <tr><td>wanayaigö</td><td>menghilangkan</td></tr>
+        <tr><td>ufalala</td><td>berusaha</td></tr>
+        <tr><td>asi</td><td>laut</td></tr>
+        <tr><td>owökhi</td><td>perih</td></tr>
+        <tr><td>löfö</td><td>rejeki</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>Tentang Tice Halawa</h2>
+
+  <p>Tice Halawa merupakan salah satu penyanyi pop Nias yang dikenal luas melalui lagu-lagu bertema cinta, kesetiaan, dan kehidupan masyarakat Nias. Karakter vokalnya yang lembut dan penuh penghayatan membuat banyak lagunya tetap digemari hingga sekarang. Melalui karya-karyanya, Tice Halawa turut berperan dalam melestarikan bahasa Nias (Li Niha) dan memperkenalkannya kepada generasi muda. Beberapa lagu Tice Halawa lainnya di Kalinz: <a href="https://kalinz.blogspot.com/2026/06/lirik-lagu-nias-yae-goroisagu-tice.html"><em>Yae Goroisagu</em></a>, <a href="https://kalinz.blogspot.com/2026/06/lirik-lagu-nias-safu-tanga-tice-halawa.html"><em>Safu Tanga</em></a>, dan <a href="https://kalinz.blogspot.com/2016/05/lirik-lagu-nias-telefonmo-tice-halawa.html"><em>Telefonmö</em></a>.</p>
+
+  <hr class="post-divider" />
+
+  <h2>Pertanyaan yang Sering Ditanyakan</h2>
+
+  <div class="post-faq">
+
+    <div class="post-faq-item">
+      <p class="post-faq-q">Apa arti judul lagu Ena'ö Naso'ö Bazingagu?</p>
+      <p class="post-faq-a">Lirik lagu Ena'ö Naso'ö Bazingagu menceritakan kerinduan seseorang kepada orang yang dicintainya. Secara harfiah, judul lagu ini berarti "Seandainya Engkau Ada di Sampingku", sebuah ungkapan harapan untuk kembali bersama dengan orang yang dirindukan.</p>
+    </div>
+
+    <div class="post-faq-item">
+      <p class="post-faq-q">Siapa yang menyanyikan lagu Ena'ö Naso'ö Bazingagu?</p>
+      <p class="post-faq-a">Lagu Ena'ö Naso'ö Bazingagu dipopulerkan oleh Tice Halawa, salah satu penyanyi Nias yang dikenal melalui berbagai lagu bertema cinta, kerinduan, dan kehidupan masyarakat Nias.</p>
+    </div>
+
+    <div class="post-faq-item">
+      <p class="post-faq-q">Siapa yang menulis lagu Ena'ö Naso'ö Bazingagu?</p>
+      <p class="post-faq-a">Lagu Ena'ö Naso'ö Bazingagu ditulis oleh Constant Giawa dan dirilis dalam genre Dangdut Nias pada tahun 2007.</p>
+    </div>
+
+    <div class="post-faq-item">
+      <p class="post-faq-q">Apa tema utama lagu Ena'ö Naso'ö Bazingagu?</p>
+      <p class="post-faq-a">Tema utama lagu Ena'ö Naso'ö Bazingagu adalah harapan cinta dan kerinduan. Liriknya menggambarkan seseorang yang merindukan kehadiran orang yang dicintainya namun terhalang oleh jarak dan keadaan hidup.</p>
+    </div>
+
+    <div class="post-faq-item">
+      <p class="post-faq-q">Bahasa apa yang digunakan dalam lagu Ena'ö Naso'ö Bazingagu?</p>
+      <p class="post-faq-a">Lagu Ena'ö Naso'ö Bazingagu dinyanyikan dalam bahasa Nias atau Li Niha, bahasa daerah yang digunakan oleh masyarakat Ono Niha di Pulau Nias, Sumatera Utara.</p>
+    </div>
+
+    <div class="post-faq-item">
+      <p class="post-faq-q">Kapan lagu Ena'ö Naso'ö Bazingagu dirilis?</p>
+      <p class="post-faq-a">Lagu Ena'ö Naso'ö Bazingagu dirilis pada tahun 2007 dan menjadi salah satu lagu Dangdut Nias yang cukup dikenal oleh penikmat musik Nias.</p>
+    </div>
+
+  </div>
+
+  <hr class="post-divider" />
+
+  <p>Itulah lirik lagu Nias <strong>Ena'ö Naso'ö Bazingagu</strong> dari <strong>Tice Halawa</strong> lengkap dengan makna dan terjemahannya. Jika Anda menemukan kesalahan lirik, arti kata, atau informasi mengenai lagu ini, silakan hubungi saya melalui halaman <a href="https://kalinz.blogspot.com/p/hubungi-kam.html">Kontak</a> agar artikel dapat diperbarui dan tetap akurat.</p>
+
+  <div class="post-tag-list">
+    <a class="post-tag" href="https://kalinz.blogspot.com/search/label/Lagu%20Nias" rel="tag">Lagu Nias</a>
+    <a class="post-tag" href="https://kalinz.blogspot.com/search/label/Tice%20Halawa" rel="tag">Tice Halawa</a>
+  </div>
+
+  <!-- kalinz-custom-schema -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Lirik Lagu Nias Ena'ö Naso'ö Bazingagu — Tice Halawa: Arti dan Terjemahan",
+  "description": "Lirik lagu Nias Ena'ö Naso'ö Bazingagu oleh Tice Halawa lengkap dengan arti, terjemahan bahasa Indonesia, makna lagu, dan kosakata Li Niha.",
+  "image": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhrASoJl0POTCwOLxAMT4EOzvXt0Q9uk6XNMswmV0Mlx7kSPMfP9slVhn8XGSpaSmv-I4ZpIxcEiiJshyd2kC-xWfFOgea6jdxoUnDI_g_SifsGxxyrMBWquMGUKjHguc7fgxKc8C8L7uwxVTUP2T0bVHERHwwz3iYz1lE1414vImX5IfCACRP36Kdmpfk/s320/ena'o%20naso'o%20bazingagu.png",
+  "author": {
+    "@type": "Person",
+    "name": "Melinus Gulo",
+    "url": "https://kalinz.blogspot.com/p/about.html",
+    "sameAs": [
+      "https://id.linkedin.com/in/melinus-gulo",
+      "https://x.com/_kalinz_"
+    ]
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "KALINZ",
+    "url": "https://kalinz.blogspot.com",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://blogger.googleusercontent.com/img/a/AVvXsEiA60iqO3_Ix7HJgSdZuCU4pIJO9Fgbu4I622jL65PVabLz0WF6rDLZ8D8RRNoiRSjkFe5gVIllCNVt0DQ69y_eF54sx-EGO7j6-TkB_r-ivcijlU9Kudo2LkZMSIzlJrjjlzek2cqzzuoT_jd4mGgZkrwVw8W5U1nm01ywxxEtVgNuhqrnbO2T4sD8Yq8=w1600"
+    }
+  },
+  "datePublished": "2016-05-27T05:36:00+07:00",
+  "dateModified": "2026-06-25T02:33:00+07:00",
+  "inLanguage": "id",
+  "keywords": [
+    "Lagu Nias",
+    "Ena'ö Naso'ö Bazingagu",
+    "Tice Halawa",
+    "Lirik Lagu Nias",
+    "Terjemahan Bahasa Indonesia",
+    "Li Niha",
+    "Kamus Bahasa Nias",
+    "Harapan Cinta"
+  ],
+  "articleSection": ["Lagu Nias", "Terjemahan Lagu", "Budaya Nias"],
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://kalinz.blogspot.com/2016/05/lirik-lagu-nias-enao-nasoo-bazingagu.html"
+  },
+  "about": {
+    "@type": "MusicRecording",
+    "name": "Ena'ö Naso'ö Bazingagu",
+    "byArtist": {
+      "@type": "Person",
+      "name": "Tice Halawa"
+    },
+    "inLanguage": "nia",
+    "genre": "Dangdut Nias",
+    "description": "Lagu Dangdut Nias bertema harapan cinta dan kerinduan tentang seseorang yang berharap dapat kembali bersama dengan orang yang dicintainya.",
+    "datePublished": "2007",
+    "recordingOf": {
+      "@type": "MusicComposition",
+      "name": "Ena'ö Naso'ö Bazingagu",
+      "lyricist": {
+        "@type": "Person",
+        "name": "Constant Giawa"
+      }
+    }
+  }
+}
+  </script>
+
+</article>
