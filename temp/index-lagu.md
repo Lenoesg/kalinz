@@ -32,3 +32,4 @@
 - [Telefonmö](https://kalinz.blogspot.com/2016/05/lirik-lagu-nias-telefonmo-tice-halawa.html)
 - [Yae Goroisagu](https://kalinz.blogspot.com/2026/06/lirik-lagu-nias-yae-goroisagu-tice.html)
 - [Ena'ö Naso'ö Bazingagu](https://kalinz.blogspot.com/2016/05/lirik-lagu-nias-enao-nasoo-bazingagu.html)
+- [Fabali Awuyu](https://kalinz.blogspot.com/2026/06/lirik-lagu-nias-fabali-awuyu-tice.html)
