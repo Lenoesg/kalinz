@@ -33,3 +33,5 @@
 - [Yae Goroisagu](https://kalinz.blogspot.com/2026/06/lirik-lagu-nias-yae-goroisagu-tice.html)
 - [Ena'ö Naso'ö Bazingagu](https://kalinz.blogspot.com/2016/05/lirik-lagu-nias-enao-nasoo-bazingagu.html)
 - [Fabali Awuyu](https://kalinz.blogspot.com/2026/06/lirik-lagu-nias-fabali-awuyu-tice.html)
+- [Falimosa Manö](https://kalinz.blogspot.com/2026/06/lirik-lagu-nias-falimosa-mano-tice.html)
+- [Hatö Fe'e Khögu](https://kalinz.blogspot.com/2026/06/lirik-lagu-nias-hato-fee-khogu-tice.html)

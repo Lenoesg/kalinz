@@ -1,0 +1,453 @@
+<style>
+.post-kalinz {
+  max-width: 740px;
+  margin: 0 auto;
+  padding: 0;
+  color: inherit;
+  line-height: 1.8;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+  font-family: inherit;
+}
+
+.post-kalinz,
+.post-kalinz * { box-sizing: border-box; }
+
+.post-kalinz p { font-size: 1rem; margin: 0 0 1.2em; }
+
+.post-kalinz h2 {
+  font-family: inherit !important;
+  font-size: 1.15rem !important;
+  font-weight: 700 !important;
+  margin: 1.75em 0 0.85em !important;
+  padding: 0 0 8px !important;
+  color: inherit !important;
+  border: 0 !important;
+  line-height: 1.4 !important;
+  position: relative;
+}
+.post-kalinz h2::after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 3px;
+  margin-top: 8px;
+  border-radius: 999px;
+  background: #1a6b8a;
+}
+
+.post-kalinz .post-featured-image {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 8px;
+  margin: 0 auto 1.5em;
+  display: block;
+}
+
+.post-kalinz .post-hook { font-size: 1rem; margin: 0 0 1.2em; }
+
+.post-kalinz .post-box {
+  background: #f5f9ff;
+  border: 1px solid #d0e4f7;
+  border-radius: 8px;
+  padding: 16px 20px;
+  margin: 1.2em 0 1.5em;
+  font-size: 0.875rem;
+  color: inherit;
+}
+.post-kalinz .post-box table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+.post-kalinz .post-box td {
+  padding: 5px 0;
+  vertical-align: top;
+  overflow-wrap: anywhere;
+}
+.post-kalinz .post-box td:first-child {
+  color: #666;
+  width: 130px;
+  font-size: 0.8125rem;
+  white-space: nowrap;
+  padding-right: 12px;
+}
+.post-kalinz .post-box td:last-child {
+  font-weight: 600;
+  color: inherit;
+}
+
+.post-kalinz .post-divider {
+  border: none;
+  border-top: 1px solid #eee;
+  margin: 1.6em 0 !important;
+}
+
+.post-kalinz .post-lyric-box {
+  background: #fafafa;
+  border: 1px solid #e8e8e8;
+  border-radius: 8px;
+  padding: 24px 28px;
+  font-size: 1rem;
+  line-height: 2;
+  white-space: pre-line;
+  margin: 1.2em 0;
+}
+
+.post-kalinz .post-lyric-translation {
+  background: #fffdf5;
+  border: 1px solid #f2e6c5;
+  border-radius: 8px;
+  padding: 20px 24px;
+  font-size: 0.9375rem;
+  line-height: 1.9;
+  white-space: pre-line;
+  margin: 1.2em 0;
+}
+
+.post-kalinz .dictionary-table { background: #f5f9ff; }
+.post-kalinz .dictionary-table table { table-layout: auto; }
+.post-kalinz .dictionary-table thead th {
+  text-align: left;
+  padding: 4px 12px 10px 0;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: #666;
+  border-bottom: 1px solid #d0e4f7;
+}
+.post-kalinz .dictionary-table tbody td {
+  padding: 7px 12px 7px 0 !important;
+  width: auto !important;
+  white-space: normal !important;
+  font-size: 0.875rem !important;
+  border-bottom: 1px solid #e8f0f8;
+}
+.post-kalinz .dictionary-table tbody tr:last-child td { border-bottom: none; }
+.post-kalinz .dictionary-table tbody td:first-child {
+  font-weight: 700 !important;
+  color: #1a6b8a !important;
+  width: 175px !important;
+  white-space: nowrap !important;
+}
+
+.post-kalinz .post-faq { margin: 0.75em 0; }
+.post-kalinz .post-faq-item {
+  border-bottom: 1px solid #f0f0f0;
+  padding: 13px 0;
+}
+.post-kalinz .post-faq-item:first-child { padding-top: 4px; }
+.post-kalinz .post-faq-item:last-child {
+  border-bottom: none;
+  padding-bottom: 4px;
+}
+.post-kalinz .post-faq-q {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: #31353a;
+  margin: 0 0 5px;
+  line-height: 1.5;
+}
+.post-kalinz .post-faq-a {
+  font-size: 0.9375rem;
+  color: #555;
+  margin: 0;
+  line-height: 1.7;
+}
+
+.post-kalinz .post-tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+.post-kalinz .post-tag {
+  font-size: 0.75rem;
+  background: #f0f0f0;
+  border-radius: 4px;
+  padding: 4px 12px;
+  color: #444;
+  text-decoration: none;
+  display: inline-block;
+  transition: background .15s, color .15s;
+}
+.post-kalinz .post-tag:hover {
+  background: #d6e8f0;
+  color: #1a6b8a;
+}
+
+@media (max-width: 480px) {
+  .post-kalinz p,
+  .post-kalinz .post-hook { font-size: 0.96875rem; }
+
+  .post-kalinz h2 { font-size: 1.05rem !important; }
+
+  .post-kalinz .post-box { padding: 14px 16px; }
+
+  .post-kalinz .post-box.song-meta td { display: block; padding: 2px 0; }
+  .post-kalinz .post-box.song-meta td:first-child {
+    width: auto;
+    white-space: normal;
+    padding-right: 0;
+    margin-top: 6px;
+  }
+  .post-kalinz .post-box.song-meta tr:first-child td:first-child { margin-top: 0; }
+
+  .post-kalinz .post-lyric-box { padding: 18px 16px; font-size: 0.96875rem; }
+  .post-kalinz .post-lyric-translation { padding: 16px; font-size: 0.90625rem; }
+
+  .post-kalinz .dictionary-table tbody td:first-child { width: 140px !important; }
+
+  .post-kalinz .post-faq-q,
+  .post-kalinz .post-faq-a { font-size: 0.9rem; }
+}
+</style>
+
+<article class="post-kalinz">
+
+  <img
+    class="post-featured-image"
+    src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgoPY7eW29Zy0fim74cPYvgp9kjaeG8jOAQi-y0IAGKyXtdskedl0QKAUwL0SQaww7kaSCm5ZT-DYaZlSoKFYHTSLdW7XAmCUr5c2_GIoBeZn4eme8Kkux10I7A2ST-Z0Hi9aK09oTN2eY5ufA1E-HK9rHzdcge3BJrqsTRYvlVUCWuvPPdmyaEFRtV06I/w400-h400/falimosa-mano-tice-halawa.png"
+    alt="Lagu Falimosa Manö dinyanyikan Tice Halawa"
+    title="Falimosa Manö - Tice Halawa"
+    width="400"
+    height="400"
+    fetchpriority="high"
+  />
+
+  <p class="post-hook"><strong>Falimosa Manö</strong> adalah lagu Nias yang dinyanyikan oleh <strong>Tice Halawa</strong>, kisah seseorang yang dikhianati oleh orang yang dicintainya setelah semua janji cinta ternyata hanya tipuan belaka.</p>
+
+  <div class="post-box song-meta">
+    <table>
+      <tr><td>Judul Lagu</td><td>Falimosa Manö</td></tr>
+      <tr><td>Dipopulerkan oleh</td><td>Tice Halawa</td></tr>
+      <tr><td>Penulis Lagu</td><td>Cristine Mendrofa</td></tr>
+      <tr><td>Genre</td><td>Pop Nias</td></tr>
+      <tr><td>Tema</td><td>Pengkhianatan Cinta</td></tr>
+      <tr><td>Tahun Rilis</td><td>2007</td></tr>
+    </table>
+  </div>
+
+  <hr class="post-divider" />
+
+  <h2>Lirik Lagu Falimosa Manö — Tice Halawa</h2>
+
+  <div class="post-lyric-box">Tebai taya ba dödö
+Hadia niwa'ömö khögu
+Fefu ululu khömö
+Faomasi soroi ba dödö
+
+Föna hörögu fao'ö ba niha bö'ö
+Afatö dödögu...
+Atata dölagu uwai fangifi manö
+Lö sindruhu...
+Laua manö me haya'ia zisökhi khömö
+
+Hölu si no öwaö
+Duhu ha ba mbawa manö
+Fabö'ö ba dödömö
+Na tafaigi no alösö
+
+Föna hörögu fao'ö ba niha bö'ö
+Afatö dödögu...
+Zazi si no öwa'ö ha falimosa manö
+Lö sindruhu...
+Laua manö me haya'ia zisökhi khömö
+
+Föna hörögu fao'ö ba niha bö'ö
+Afatö dödögu...
+Atata dölagu uwai fangifi manö
+Lö sindruhu...
+Laua manö me haya'ia zisökhi khömö
+
+Hölu si no öwaö
+Duhu ha ba mbawa manö
+Fabö'ö ba dödömö
+Na tafaigi no alösö
+
+Föna hörögu fao'ö ba niha bö'ö
+Afatö dödögu...
+Zazi si no öwa'ö ha falimosa manö
+Lö sindruhu...
+Laua manö me haya'ia zisökhi khömö
+
+Laua manö me haya'ia zisökhi khömö</div>
+
+  <hr class="post-divider" />
+
+  <h2>Makna Lagu Falimosa Manö</h2>
+
+  <p>Lagu <strong>Falimosa Manö</strong> menceritakan kekecewaan seseorang yang dikhianati oleh orang yang sangat dicintainya. Tokoh dalam lagu telah memberikan seluruh kasih sayangnya dengan tulus, tetapi harus menerima kenyataan bahwa orang yang dicintainya justru memilih orang lain. Peristiwa tersebut membuatnya menyadari bahwa semua janji cinta yang pernah diucapkan hanyalah tipuan.</p>
+
+  <p>Judul lagu <strong>Falimosa Manö</strong>, yang berarti "Tipuan Saja", menjadi inti dari keseluruhan cerita. Lagu ini menggambarkan rasa sakit ketika kata-kata manis, sumpah setia, dan janji cinta ternyata tidak pernah benar-benar ditepati. Meski dipenuhi kesedihan, tokoh dalam lagu akhirnya memilih menerima kenyataan bahwa orang yang dicintainya telah menemukan kebahagiaan bersama orang lain.</p>
+
+  <h2>Terjemahan Falimosa Manö dalam Bahasa Indonesia</h2>
+
+  <div class="post-lyric-translation"><em>Tak bisa hilang dari hati
+Apa yang telah kau katakan kepadaku
+Semua kuserahkan kepadamu
+Cinta ini tulus dari hati
+
+Di depan mataku kau berjalan dengan yang lain
+Sakit hati ini...
+Lemas tubuhku, kukira hanya mimpi
+Ternyata semua itu nyata...
+Biarlah, karena hanya dialah yang kau cintai
+
+Sumpah yang pernah kau ucapkan
+Ternyata hanya di bibir saja
+Berbeda dengan isi hatimu
+Terlihat begitu meyakinkan
+
+Di depan mataku kau berjalan dengan yang lain
+Sakit hati ini...
+Janji yang kau ucapkan hanyalah tipuan belaka
+Tak ada satu pun yang sungguh-sungguh
+Biarlah, karena hanya dialah yang kau cintai</em></div>
+
+  <hr class="post-divider" />
+
+  <h2>Kosakata Bahasa Nias dalam Lagu Ini</h2>
+
+  <p>Berikut kata-kata bahasa Nias (Li Niha) yang muncul dalam lagu ini beserta artinya:</p>
+
+  <div class="post-box dictionary-table">
+    <table>
+      <thead>
+        <tr>
+          <th scope="col">Kosakata</th>
+          <th scope="col">Arti</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>tebai</td><td>tak bisa</td></tr>
+        <tr><td>ululu</td><td>kuserahkan</td></tr>
+        <tr><td>dölagu</td><td>tulangku</td></tr>
+        <tr><td>sindruhu</td><td>benar, sungguh</td></tr>
+        <tr><td>zisökhi</td><td>yang terbaik</td></tr>
+        <tr><td>falimosa</td><td>tipuan</td></tr>
+        <tr><td>manö</td><td>saja</td></tr>
+        <tr><td>alösö</td><td>mulus</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>Tentang Tice Halawa</h2>
+
+  <p>Tice Halawa merupakan salah satu penyanyi pop Nias yang dikenal luas melalui lagu-lagu bertema cinta, kehidupan, dan hubungan antarmanusia. Karakter vokalnya yang lembut dan penuh penghayatan membuat setiap lagu yang dibawakannya terasa emosional dan mudah diterima pendengar. Melalui karya-karyanya, Tice Halawa turut berkontribusi dalam melestarikan bahasa Nias (Li Niha) sekaligus memperkenalkan musik Nias kepada masyarakat yang lebih luas. Beberapa lagu Tice Halawa lainnya di Kalinz: <a href="https://kalinz.blogspot.com/2026/06/lirik-lagu-nias-fabali-awuyu-tice.html"><em>Fabali Awuyu</em></a>, <a href="https://kalinz.blogspot.com/2016/05/lirik-lagu-nias-enao-nasoo-bazingagu.html"><em>Ena'ö Naso'ö Bazingagu</em></a>, dan <a href="https://kalinz.blogspot.com/2026/06/lirik-lagu-nias-yae-goroisagu-tice.html"><em>Yae Goroisagu</em></a>.</p>
+
+  <hr class="post-divider" />
+
+  <h2>Pertanyaan yang Sering Ditanyakan</h2>
+
+  <div class="post-faq">
+
+    <div class="post-faq-item">
+      <p class="post-faq-q">Apa arti judul lagu Falimosa Manö?</p>
+      <p class="post-faq-a">Lagu <strong>Falimosa Manö</strong> menceritakan kekecewaan akibat janji cinta yang tidak ditepati. Secara harfiah, "Falimosa Manö" berarti "Tipuan Saja", menggambarkan bahwa semua janji dan sumpah yang pernah diucapkan ternyata hanyalah kebohongan.</p>
+    </div>
+
+    <div class="post-faq-item">
+      <p class="post-faq-q">Siapa yang menyanyikan lagu Falimosa Manö?</p>
+      <p class="post-faq-a">Lagu Falimosa Manö dipopulerkan oleh <strong>Tice Halawa</strong>, salah satu penyanyi pop Nias yang dikenal melalui berbagai lagu bertema cinta dan kehidupan.</p>
+    </div>
+
+    <div class="post-faq-item">
+      <p class="post-faq-q">Siapa yang menulis lagu Falimosa Manö?</p>
+      <p class="post-faq-a">Lagu Falimosa Manö ditulis oleh <strong>Cristine Mendrofa</strong> dan dirilis pada tahun 2007 dalam genre Pop Nias.</p>
+    </div>
+
+    <div class="post-faq-item">
+      <p class="post-faq-q">Apa tema utama lagu Falimosa Manö?</p>
+      <p class="post-faq-a">Tema utama lagu Falimosa Manö adalah pengkhianatan cinta. Liriknya menceritakan seseorang yang merasa dikhianati setelah mengetahui bahwa janji dan sumpah cinta dari orang yang dicintainya ternyata hanya tipuan belaka.</p>
+    </div>
+
+    <div class="post-faq-item">
+      <p class="post-faq-q">Bahasa apa yang digunakan dalam lagu Falimosa Manö?</p>
+      <p class="post-faq-a">Lagu Falimosa Manö dinyanyikan dalam bahasa Nias atau Li Niha, bahasa daerah yang digunakan oleh masyarakat Ono Niha di Pulau Nias, Sumatera Utara.</p>
+    </div>
+
+    <div class="post-faq-item">
+      <p class="post-faq-q">Kapan lagu Falimosa Manö dirilis?</p>
+      <p class="post-faq-a">Lagu Falimosa Manö dirilis pada tahun 2007 dan menjadi salah satu lagu pop Nias yang cukup dikenal karena liriknya yang menggambarkan rasa kecewa akibat pengkhianatan dalam hubungan cinta.</p>
+    </div>
+
+  </div>
+
+  <hr class="post-divider" />
+
+  <p>Itulah lirik lagu Nias <strong>Falimosa Manö</strong> dari <strong>Tice Halawa</strong> lengkap dengan makna dan terjemahannya. Jika Anda menemukan kesalahan lirik, arti kata, atau informasi mengenai lagu ini, silakan hubungi saya melalui halaman <a href="https://kalinz.blogspot.com/p/hubungi-kam.html">Kontak</a> agar artikel dapat diperbarui dan tetap akurat.</p>
+
+  <div class="post-tag-list">
+    <a class="post-tag" href="https://kalinz.blogspot.com/search/label/Lagu%20Nias" rel="tag">Lagu Nias</a>
+    <a class="post-tag" href="https://kalinz.blogspot.com/search/label/Tice%20Halawa" rel="tag">Tice Halawa</a>
+  </div>
+
+  <!-- kalinz-custom-schema -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Lirik Lagu Nias Falimosa Manö — Tice Halawa: Arti dan Terjemahan",
+  "description": "Lirik lagu Nias Falimosa Manö oleh Tice Halawa lengkap dengan arti, terjemahan bahasa Indonesia, makna lagu, dan kosakata Li Niha.",
+  "image": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgoPY7eW29Zy0fim74cPYvgp9kjaeG8jOAQi-y0IAGKyXtdskedl0QKAUwL0SQaww7kaSCm5ZT-DYaZlSoKFYHTSLdW7XAmCUr5c2_GIoBeZn4eme8Kkux10I7A2ST-Z0Hi9aK09oTN2eY5ufA1E-HK9rHzdcge3BJrqsTRYvlVUCWuvPPdmyaEFRtV06I/w400-h400/falimosa-mano-tice-halawa.png",
+  "author": {
+    "@type": "Person",
+    "name": "Melinus Gulo",
+    "url": "https://kalinz.blogspot.com/p/about.html",
+    "sameAs": [
+      "https://id.linkedin.com/in/melinus-gulo",
+      "https://x.com/_kalinz_"
+    ]
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "KALINZ",
+    "url": "https://kalinz.blogspot.com",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://blogger.googleusercontent.com/img/a/AVvXsEiA60iqO3_Ix7HJgSdZuCU4pIJO9Fgbu4I622jL65PVabLz0WF6rDLZ8D8RRNoiRSjkFe5gVIllCNVt0DQ69y_eF54sx-EGO7j6-TkB_r-ivcijlU9Kudo2LkZMSIzlJrjjlzek2cqzzuoT_jd4mGgZkrwVw8W5U1nm01ywxxEtVgNuhqrnbO2T4sD8Yq8=w1600"
+    }
+  },
+  "datePublished": "2026-06-27T07:37:00+07:00",
+  "dateModified": "2026-06-27T07:37:00+07:00",
+  "inLanguage": "id",
+  "keywords": [
+    "Lagu Nias",
+    "Falimosa Manö",
+    "Tice Halawa",
+    "Lirik Lagu Nias",
+    "Terjemahan Bahasa Indonesia",
+    "Li Niha",
+    "Kamus Bahasa Nias",
+    "Pengkhianatan Cinta"
+  ],
+  "articleSection": ["Lagu Nias", "Terjemahan Lagu", "Budaya Nias"],
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://kalinz.blogspot.com/2026/06/lirik-lagu-nias-falimosa-mano-tice.html"
+  },
+  "about": {
+    "@type": "MusicRecording",
+    "name": "Falimosa Manö",
+    "byArtist": {
+      "@type": "Person",
+      "name": "Tice Halawa"
+    },
+    "inLanguage": "nia",
+    "genre": "Pop Nias",
+    "description": "Lagu pop Nias bertema pengkhianatan cinta tentang seseorang yang menyadari bahwa janji dan sumpah dari orang yang dicintainya hanyalah tipuan belaka.",
+    "datePublished": "2007",
+    "recordingOf": {
+      "@type": "MusicComposition",
+      "name": "Falimosa Manö",
+      "lyricist": {
+        "@type": "Person",
+        "name": "Cristine Mendrofa"
+      }
+    }
+  }
+}
+  </script>
+
+</article>

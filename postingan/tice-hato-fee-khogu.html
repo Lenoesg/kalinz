@@ -1,0 +1,480 @@
+<style>
+.post-kalinz {
+  max-width: 740px;
+  margin: 0 auto;
+  padding: 0;
+  color: inherit;
+  line-height: 1.8;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+  font-family: inherit;
+}
+
+.post-kalinz,
+.post-kalinz * { box-sizing: border-box; }
+
+.post-kalinz p { font-size: 1rem; margin: 0 0 1.2em; }
+
+.post-kalinz h2 {
+  font-family: inherit !important;
+  font-size: 1.15rem !important;
+  font-weight: 700 !important;
+  margin: 1.75em 0 0.85em !important;
+  padding: 0 0 8px !important;
+  color: inherit !important;
+  border: 0 !important;
+  line-height: 1.4 !important;
+  position: relative;
+}
+.post-kalinz h2::after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 3px;
+  margin-top: 8px;
+  border-radius: 999px;
+  background: #1a6b8a;
+}
+
+.post-kalinz .post-featured-image {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 8px;
+  margin: 0 auto 1.5em;
+  display: block;
+}
+
+.post-kalinz .post-hook { font-size: 1rem; margin: 0 0 1.2em; }
+
+.post-kalinz .post-box {
+  background: #f5f9ff;
+  border: 1px solid #d0e4f7;
+  border-radius: 8px;
+  padding: 16px 20px;
+  margin: 1.2em 0 1.5em;
+  font-size: 0.875rem;
+  color: inherit;
+}
+.post-kalinz .post-box table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+.post-kalinz .post-box td {
+  padding: 5px 0;
+  vertical-align: top;
+  overflow-wrap: anywhere;
+}
+.post-kalinz .post-box td:first-child {
+  color: #666;
+  width: 130px;
+  font-size: 0.8125rem;
+  white-space: nowrap;
+  padding-right: 12px;
+}
+.post-kalinz .post-box td:last-child {
+  font-weight: 600;
+  color: inherit;
+}
+
+.post-kalinz .post-divider {
+  border: none;
+  border-top: 1px solid #eee;
+  margin: 1.6em 0 !important;
+}
+
+.post-kalinz .post-lyric-box {
+  background: #fafafa;
+  border: 1px solid #e8e8e8;
+  border-radius: 8px;
+  padding: 24px 28px;
+  font-size: 1rem;
+  line-height: 2;
+  white-space: pre-line;
+  margin: 1.2em 0;
+}
+
+.post-kalinz .post-lyric-translation {
+  background: #fffdf5;
+  border: 1px solid #f2e6c5;
+  border-radius: 8px;
+  padding: 20px 24px;
+  font-size: 0.9375rem;
+  line-height: 1.9;
+  white-space: pre-line;
+  margin: 1.2em 0;
+}
+
+.post-kalinz .dictionary-table { background: #f5f9ff; }
+.post-kalinz .dictionary-table table { table-layout: auto; }
+.post-kalinz .dictionary-table thead th {
+  text-align: left;
+  padding: 4px 12px 10px 0;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: #666;
+  border-bottom: 1px solid #d0e4f7;
+}
+.post-kalinz .dictionary-table tbody td {
+  padding: 7px 12px 7px 0 !important;
+  width: auto !important;
+  white-space: normal !important;
+  font-size: 0.875rem !important;
+  border-bottom: 1px solid #e8f0f8;
+}
+.post-kalinz .dictionary-table tbody tr:last-child td { border-bottom: none; }
+.post-kalinz .dictionary-table tbody td:first-child {
+  font-weight: 700 !important;
+  color: #1a6b8a !important;
+  width: 175px !important;
+  white-space: nowrap !important;
+}
+
+.post-kalinz .post-faq { margin: 0.75em 0; }
+.post-kalinz .post-faq-item {
+  border-bottom: 1px solid #f0f0f0;
+  padding: 13px 0;
+}
+.post-kalinz .post-faq-item:first-child { padding-top: 4px; }
+.post-kalinz .post-faq-item:last-child {
+  border-bottom: none;
+  padding-bottom: 4px;
+}
+.post-kalinz .post-faq-q {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: #31353a;
+  margin: 0 0 5px;
+  line-height: 1.5;
+}
+.post-kalinz .post-faq-a {
+  font-size: 0.9375rem;
+  color: #555;
+  margin: 0;
+  line-height: 1.7;
+}
+
+.post-kalinz .post-tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+.post-kalinz .post-tag {
+  font-size: 0.75rem;
+  background: #f0f0f0;
+  border-radius: 4px;
+  padding: 4px 12px;
+  color: #444;
+  text-decoration: none;
+  display: inline-block;
+  transition: background .15s, color .15s;
+}
+.post-kalinz .post-tag:hover {
+  background: #d6e8f0;
+  color: #1a6b8a;
+}
+
+@media (max-width: 480px) {
+  .post-kalinz p,
+  .post-kalinz .post-hook { font-size: 0.96875rem; }
+
+  .post-kalinz h2 { font-size: 1.05rem !important; }
+
+  .post-kalinz .post-box { padding: 14px 16px; }
+
+  .post-kalinz .post-box.song-meta td { display: block; padding: 2px 0; }
+  .post-kalinz .post-box.song-meta td:first-child {
+    width: auto;
+    white-space: normal;
+    padding-right: 0;
+    margin-top: 6px;
+  }
+  .post-kalinz .post-box.song-meta tr:first-child td:first-child { margin-top: 0; }
+
+  .post-kalinz .post-lyric-box { padding: 18px 16px; font-size: 0.96875rem; }
+  .post-kalinz .post-lyric-translation { padding: 16px; font-size: 0.90625rem; }
+
+  .post-kalinz .dictionary-table tbody td:first-child { width: 140px !important; }
+
+  .post-kalinz .post-faq-q,
+  .post-kalinz .post-faq-a { font-size: 0.9rem; }
+}
+</style>
+
+<article class="post-kalinz">
+
+  <img
+    class="post-featured-image"
+    src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhNR0jwMf4OAua48aW549RR_Gzl33Pt3Xknmpq0wfRwWOu_dGPO5iOT4p0z7zulo9bQlRUSAU4FiSk6fI5dvfkFFd6ldaIYvyWeJmhwYwR_TrjhBGHsWJiSNPAt-Bvw-3rcamp_mHGUUTBLAKULWfond1HwwgltKkQhkA52IiDHBCCIYmzm-V_n4nxR3kg/w400-h400/hato%20fee%20khogu%20-%20tice%20halawa.png"
+    alt="Lagu Hatö Fe'e Khögu dinyanyikan Tice Halawa"
+    title="Hatö Fe'e Khögu - Tice Halawa"
+    width="400"
+    height="400"
+    fetchpriority="high"
+  />
+
+  <p class="post-hook"><strong>Hatö Fe'e Khögu</strong> adalah lagu Nias yang dinyanyikan oleh <strong>Tice Halawa</strong>, mengisahkan kepedihan hati seseorang yang ditinggal kekasih pergi ke orang lain, bersembunyi di balik tawa di depan orang banyak namun menangis dalam kesepian.</p>
+
+  <div class="post-box song-meta">
+    <table>
+      <tr><td>Judul Lagu</td><td>Hatö Fe'e Khögu</td></tr>
+      <tr><td>Dipopulerkan oleh</td><td>Tice Halawa</td></tr>
+      <tr><td>Penulis Lagu</td><td>N. N.</td></tr>
+      <tr><td>Genre</td><td>Dangdut Nias</td></tr>
+      <tr><td>Tema</td><td>Patah Hati, Perpisahan</td></tr>
+      <tr><td>Tahun Rilis</td><td>2007</td></tr>
+    </table>
+  </div>
+
+  <hr class="post-divider" />
+
+  <h2>Lirik Lagu Hatö Fe'e Khögu — Tice Halawa</h2>
+
+  <div class="post-lyric-box">Ubaliö fa'igi-igi
+Na ba ni'ila niha
+Ubaliö fe'e ba zi ha samösa
+U'alui wondrara dödö 
+Misa ba danö saröu
+Misa ba lala ba lala döröwagu asöndru dödö
+
+Me talu mbongi mege'egedo
+Ba lö usöndra wemörö
+Ba manuköu ndra'odo ba subutödö
+Hawa afökhö wolaumö
+Akhiu ya'o öröi manö
+Misa ba lala ba lala döröwagu asöndru dödö
+
+So khögu bazu'a danga
+Yawara hetawisa
+Me no sinehe
+Me böröta wabalisada
+
+So khögu bazu'a danga
+Yawara hetawisa
+Me no sinehe
+Me böröta wabalisada
+
+Me talu mbongi tokea ndra'o
+Urongo li towi-towi
+Ba wangombakha turiau ga'a wa fabali
+Lö sa'ae khöu faomasi
+Meno ösöndra wangali
+Ono alawe sitama sekola siyefo nasi
+
+Ubaliö fa'igi-igi
+Na ba ni'ila niha
+Ubaliö fe'e ba zi ha samösa
+U'alui wondrara dödö 
+Misa ba danö saröu
+Misa ba lala ba lala döröwagu asöndru dödö
+
+Ubaliö fa'igi-igi
+Na ba ni'ila niha
+Ubaliö fe'e ba zi ha samösa
+U'alui wondrara dödö 
+Misa ba danö saröu
+Misa ba lala ba lala döröwagu asöndru dödö
+
+Me talu mbongi tokea ndra'o
+Urongo li towi-towi
+Ba wangombakha turiau ga'a wa fabali
+Lö sa'ae khöu faomasi
+Meno ösöndra wangali
+Ono alawe sitama sekola siyefo nasi
+
+Ubaliö fa'igi-igi
+Na ba ni'ila niha
+Ubaliö fe'e ba zi ha samösa
+U'alui wondrara dödö 
+Misa ba danö saröu
+Misa ba lala ba lala döröwagu asöndru dödö</div>
+
+  <hr class="post-divider" />
+
+  <h2>Makna Lagu Hatö Fe'e Khögu</h2>
+  
+  <p>Lagu ini bercerita tentang seseorang yang memendam luka akibat ditinggalkan kekasihnya. Di hadapan orang lain ia berpura-pura bahagia, namun di balik itu ia menangis setiap malam hingga tak bisa tidur. Ia berkelana mencari penghibur hati, sementara dalam benaknya hanya ada bayangan perpisahan yang menyakitkan. Puncak kepedihannya terungkap ketika ia mengetahui bahwa sang kekasih kini telah memiliki pengganti — seorang gadis muda yang baru pulang menempuh pendidikan di luar pulau.</p>
+  
+  <p>Dalam budaya Nias, kepergian anak muda untuk bersekolah di perantauan (<em>siyefo nasi</em> — di luar pulau/daratan) adalah fenomena nyata yang kerap menjadi latar belakang perpisahan hubungan. Lagu ini menangkap realitas sosial itu dengan jujur: jarak yang jauh membuka celah bagi perubahan hati, dan bagi yang ditinggalkan, kepasrahan pada takdir (<em>bazu'a danga</em> — garis tangan) menjadi satu-satunya cara untuk merelakan.</p>
+
+  <h2>Terjemahan Hatö Fe'e Khögu dalam Bahasa Indonesia</h2>
+
+  <div class="post-lyric-translation"><em>Kujadikan tawa di hadapan orang-orang
+Namun tangis saat aku sendiri
+Kucari penghibur hati
+Di tempat yang jauh
+Menempuh perjalanan
+Di jalan yang penuh kesedihan
+
+Setiap malam aku menangis
+Hingga tak bisa tidur
+Rasa kantuk pun ditemani kesedihan hati
+Begitu sakit yang kau lakukan
+Kekasih, kau telah pergi meninggalkanku
+Menempuh jalan yang menyedihkan hati
+
+Semua sudah menjadi garis tangan
+Apa lagi yang bisa dilakukan?
+Karena memang sudah takdir
+Bahwa kita harus berpisah
+
+Semua sudah menjadi garis tangan
+Apa lagi yang bisa dilakukan?
+Karena memang sudah takdir
+Bahwa kita harus berpisah
+
+Pada suatu malam aku terkejut
+Kudengar suara burung
+Seakan membawa kabar bahwa kita telah berpisah
+Tak ada lagi cinta di hatimu
+Karena kau telah mendapatkan pengganti
+Seorang gadis yang lulus sekolah di luar pulau</em></div>
+
+  <hr class="post-divider" />
+
+  <h2>Kosakata Bahasa Nias dalam Lagu Ini</h2>
+
+  <p>Berikut kata-kata bahasa Nias (Li Niha) yang muncul dalam lagu ini beserta artinya:</p>
+
+  <div class="post-box dictionary-table">
+    <table>
+      <thead>
+        <tr>
+          <th scope="col">Kosakata</th>
+          <th scope="col">Arti</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>fa'igi-igi</td><td>ketawa</td></tr>
+        <tr><td>ubaliö</td><td>kujadikan</td></tr>
+        <tr><td>wondrara</td><td>penghibur</td></tr>
+        <tr><td>mege'egedo</td><td>menangis</td></tr>
+        <tr><td>samösa</td><td>sendiri</td></tr>
+        <tr><td>döröwagu</td><td>perjalananku, yang kulalui</td></tr>
+        <tr><td>u'alui</td><td>kucari</td></tr>
+        <tr><td>wolaumö</td><td>yang kau lakukan</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>Tentang Tice Halawa</h2>
+
+  <p>Tice Halawa adalah penyanyi dangdut Nias yang dikenal lewat karya-karyanya yang kaya nuansa emosional dan dekat dengan keseharian masyarakat Ono Niha. Ia membawakan lagu-lagu berbahasa Li Niha dengan gaya vokal yang hangat dan ekspresif, menjadikannya salah satu nama yang lekat di telinga penikmat musik Nias. Kontribusinya dalam melestarikan dan mempopulerkan musik daerah Nias patut diapresiasi, khususnya lewat genre dangdut yang mempertemukan tradisi lokal dengan selera musik populer. Beberapa lagu Tice Halawa lainnya di Kalinz: <a href="https://kalinz.blogspot.com/2026/06/lirik-lagu-nias-falimosa-mano-tice.html"><em>Falimosa Manö</em></a>, <a href="https://kalinz.blogspot.com/2026/06/lirik-lagu-nias-fabali-awuyu-tice.html"><em>Fabali Awuyu</em></a>, dan <a href="https://kalinz.blogspot.com/2026/06/lirik-lagu-nias-safu-tanga-tice-halawa.html"><em>Safu Tanga</em></a>.</p>
+
+  <hr class="post-divider" />
+
+  <h2>Pertanyaan yang Sering Ditanyakan</h2>
+
+  <div class="post-faq">
+
+    <div class="post-faq-item">
+      <p class="post-faq-q">Apa arti judul lagu Hatö Fe'e Khögu?</p>
+      <p class="post-faq-a">Hatö Fe'e Khögu</em> dalam bahasa Nias (Li Niha) berarti "Kekasihku Telah Pergi" atau "Kekasih yang Meninggalkanku." <em>Hatö</em> berarti sudah/telah, <em>fe'e</em> bermakna pergi/meninggalkan, dan <em>khögu</em> berarti milikku atau kekasihku.</p>
+    </div>
+
+    <div class="post-faq-item">
+      <p class="post-faq-q">Siapa yang menyanyikan lagu Hatö Fe'e Khögu?</p>
+      <p class="post-faq-a">Lagu Hatö Fe'e Khögu dinyanyikan oleh Tice Halawa</p>
+    </div>
+
+    <div class="post-faq-item">
+      <p class="post-faq-q">Siapa yang menulis lagu Hatö Fe'e Khögu?</p>
+      <p class="post-faq-a">Lagu Hatö Fe'e Khögu ditulis oleh <strong>N.N</strong> dan dirilis pada tahun 2007 dalam genre Dangdut Nias.</p>
+    </div>
+
+    <div class="post-faq-item">
+      <p class="post-faq-q">Apa tema utama lagu Hatö Fe'e Khögu?</p>
+      <p class="post-faq-a">Tema utama lagu Hatö Fe'e Khögu adalah patah hati dan perpisahan. Lagu ini mengisahkan kepedihan seseorang yang ditinggal kekasihnya, yang kini berpaling ke orang lain, sementara ia berpura-pura tegar di depan orang banyak namun menangis dalam kesendirian.</p>
+    </div>
+
+    <div class="post-faq-item">
+      <p class="post-faq-q">Bahasa apa yang digunakan dalam lagu Hatö Fe'e Khögu?</p>
+      <p class="post-faq-a">Lagu Hatö Fe'e Khögu dinyanyikan dalam bahasa Nias atau Li Niha, bahasa daerah yang digunakan oleh masyarakat Ono Niha di Pulau Nias, Sumatera Utara.</p>
+    </div>
+
+    <div class="post-faq-item">
+      <p class="post-faq-q">Kapan lagu Hatö Fe'e Khögu dirilis?</p>
+      <p class="post-faq-a">Lagu Hatö Fe'e Khögu dirilis pada tahun 2007.</p>
+    </div>
+
+  </div>
+
+  <hr class="post-divider" />
+
+  <p>Itulah lirik lagu Nias <strong>Hatö Fe'e Khögu</strong> dari <strong>Tice Halawa</strong> lengkap dengan makna dan terjemahannya. Jika Anda menemukan kesalahan lirik, arti kata, atau informasi mengenai lagu ini, silakan hubungi saya melalui halaman <a href="https://kalinz.blogspot.com/p/hubungi-kam.html">Kontak</a> agar artikel dapat diperbarui dan tetap akurat.</p>
+
+  <div class="post-tag-list">
+    <a class="post-tag" href="https://kalinz.blogspot.com/search/label/Lagu%20Nias" rel="tag">Lagu Nias</a>
+    <a class="post-tag" href="https://kalinz.blogspot.com/search/label/Tice%20Halawa" rel="tag">Tice Halawa</a>
+  </div>
+
+  <!-- kalinz-custom-schema -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Lirik Lagu Nias Hatö Fe'e Khögu — Tice Halawa: Arti dan Terjemahan",
+  "description": "Lirik lagu Nias Hatö Fe'e Khögu dari Tice Halawa lengkap dengan terjemahan bahasa Indonesia, makna lagu, dan kosakata Li Niha.",
+  "image": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhNR0jwMf4OAua48aW549RR_Gzl33Pt3Xknmpq0wfRwWOu_dGPO5iOT4p0z7zulo9bQlRUSAU4FiSk6fI5dvfkFFd6ldaIYvyWeJmhwYwR_TrjhBGHsWJiSNPAt-Bvw-3rcamp_mHGUUTBLAKULWfond1HwwgltKkQhkA52IiDHBCCIYmzm-V_n4nxR3kg/w400-h400/hato%20fee%20khogu%20-%20tice%20halawa.png",
+  "author": {
+    "@type": "Person",
+    "name": "Melinus Gulo",
+    "url": "https://kalinz.blogspot.com/p/about.html",
+    "sameAs": [
+      "https://id.linkedin.com/in/melinus-gulo",
+      "https://x.com/_kalinz_"
+    ]
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "KALINZ",
+    "url": "https://kalinz.blogspot.com",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://blogger.googleusercontent.com/img/a/AVvXsEiA60iqO3_Ix7HJgSdZuCU4pIJO9Fgbu4I622jL65PVabLz0WF6rDLZ8D8RRNoiRSjkFe5gVIllCNVt0DQ69y_eF54sx-EGO7j6-TkB_r-ivcijlU9Kudo2LkZMSIzlJrjjlzek2cqzzuoT_jd4mGgZkrwVw8W5U1nm01ywxxEtVgNuhqrnbO2T4sD8Yq8=w1600"
+    }
+  },
+  "datePublished": "2026-06-28T07:37:00+07:00",
+  "dateModified": "2026-06-28T07:37:00+07:00",
+  "inLanguage": "id",
+  "keywords": [
+    "Lagu Nias",
+    "Hatö Fe'e Khögu",
+    "Tice Halawa",
+    "Lirik Lagu Nias",
+    "Terjemahan Bahasa Indonesia",
+    "Li Niha",
+    "Kamus Bahasa Nias",
+    "Patah Hati"
+  ],
+  "articleSection": ["Lagu Nias", "Terjemahan Lagu", "Budaya Nias"],
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://kalinz.blogspot.com/2026/06/lirik-lagu-nias-hato-fee-khogu-tice.html"
+  },
+  "about": {
+    "@type": "MusicRecording",
+    "name": "Hatö Fe'e Khögu",
+    "byArtist": {
+      "@type": "Person",
+      "name": "Tice Halawa"
+    },
+    "inLanguage": "nia",
+    "genre": "Dangdut Nias",
+    "description": "Lagu Nias bergenre dangdut yang mengisahkan kepedihan seseorang yang ditinggal kekasihnya berpaling ke orang lain, dirilis tahun 2007 dan dinyanyikan oleh Tice Halawa.",
+    "datePublished": "2007",
+    "recordingOf": {
+      "@type": "MusicComposition",
+      "name": "Hatö Fe'e Khögu",
+      "lyricist": {
+        "@type": "Person",
+        "name": "N. N."
+      }
+    }
+  }
+}
+  </script>
+
+</article>
