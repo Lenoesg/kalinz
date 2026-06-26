@@ -35,3 +35,4 @@
 - [Fabali Awuyu](https://kalinz.blogspot.com/2026/06/lirik-lagu-nias-fabali-awuyu-tice.html)
 - [Falimosa Manö](https://kalinz.blogspot.com/2026/06/lirik-lagu-nias-falimosa-mano-tice.html)
 - [Hatö Fe'e Khögu](https://kalinz.blogspot.com/2026/06/lirik-lagu-nias-hato-fee-khogu-tice.html)
+- [Ohombo Ua Katawaena](https://kalinz.blogspot.com/2026/06/lirik-lagu-nias-ohombo-ua-katawaena.html)
