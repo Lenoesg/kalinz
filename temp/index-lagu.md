@@ -36,3 +36,7 @@
 - [Falimosa Manö](https://kalinz.blogspot.com/2026/06/lirik-lagu-nias-falimosa-mano-tice.html)
 - [Hatö Fe'e Khögu](https://kalinz.blogspot.com/2026/06/lirik-lagu-nias-hato-fee-khogu-tice.html)
 - [Ohombo Ua Katawaena](https://kalinz.blogspot.com/2026/06/lirik-lagu-nias-ohombo-ua-katawaena.html)
+- [No öbiniö Khögu](https://kalinz.blogspot.com/2026/06/lirik-lagu-nias-no-obinio-khogu-tice.html)
+- [Faomasiu Nagu](https://kalinz.blogspot.com/2026/07/lirik-lagu-nias-faomasiu-nagu-tice.html)
+- [Afökhö Bakha Dödögu](https://kalinz.blogspot.com/2026/06/lirik-lagu-nias-afokho-bakha-dodogu.html)
+- [Hadia Mbörö](https://kalinz.blogspot.com/2026/06/lirik-lagu-nias-hadia-mboro-tice-halawa.html)

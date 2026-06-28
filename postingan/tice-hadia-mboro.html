@@ -1,0 +1,485 @@
+<style>
+.post-kalinz {
+  max-width: 740px;
+  margin: 0 auto;
+  padding: 0;
+  color: inherit;
+  line-height: 1.8;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+  font-family: inherit;
+}
+
+.post-kalinz,
+.post-kalinz * { box-sizing: border-box; }
+
+.post-kalinz p { font-size: 1rem; margin: 0 0 1.2em; }
+
+.post-kalinz h2 {
+  font-family: inherit !important;
+  font-size: 1.15rem !important;
+  font-weight: 700 !important;
+  margin: 1.75em 0 0.85em !important;
+  padding: 0 0 8px !important;
+  color: inherit !important;
+  border: 0 !important;
+  line-height: 1.4 !important;
+  position: relative;
+}
+.post-kalinz h2::after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 3px;
+  margin-top: 8px;
+  border-radius: 999px;
+  background: #1a6b8a;
+}
+
+.post-kalinz .post-featured-image {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 8px;
+  margin: 0 auto 1.5em;
+  display: block;
+}
+
+.post-kalinz .post-hook { font-size: 1rem; margin: 0 0 1.2em; }
+
+.post-kalinz .post-box {
+  background: #f5f9ff;
+  border: 1px solid #d0e4f7;
+  border-radius: 8px;
+  padding: 16px 20px;
+  margin: 1.2em 0 1.5em;
+  font-size: 0.875rem;
+  color: inherit;
+}
+.post-kalinz .post-box table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+.post-kalinz .post-box td {
+  padding: 5px 0;
+  vertical-align: top;
+  overflow-wrap: anywhere;
+}
+.post-kalinz .post-box td:first-child {
+  color: #666;
+  width: 130px;
+  font-size: 0.8125rem;
+  white-space: nowrap;
+  padding-right: 12px;
+}
+.post-kalinz .post-box td:last-child {
+  font-weight: 600;
+  color: inherit;
+}
+
+.post-kalinz .post-divider {
+  border: none;
+  border-top: 1px solid #eee;
+  margin: 1.6em 0 !important;
+}
+
+.post-kalinz .post-lyric-box {
+  background: #fafafa;
+  border: 1px solid #e8e8e8;
+  border-radius: 8px;
+  padding: 24px 28px;
+  font-size: 1rem;
+  line-height: 2;
+  white-space: pre-line;
+  margin: 1.2em 0;
+}
+
+.post-kalinz .post-lyric-translation {
+  background: #fffdf5;
+  border: 1px solid #f2e6c5;
+  border-radius: 8px;
+  padding: 20px 24px;
+  font-size: 0.9375rem;
+  line-height: 1.9;
+  white-space: pre-line;
+  margin: 1.2em 0;
+}
+
+.post-kalinz .dictionary-table { background: #f5f9ff; }
+.post-kalinz .dictionary-table table { table-layout: auto; }
+.post-kalinz .dictionary-table thead th {
+  text-align: left;
+  padding: 4px 12px 10px 0;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: #666;
+  border-bottom: 1px solid #d0e4f7;
+}
+.post-kalinz .dictionary-table tbody td {
+  padding: 7px 12px 7px 0 !important;
+  width: auto !important;
+  white-space: normal !important;
+  font-size: 0.875rem !important;
+  border-bottom: 1px solid #e8f0f8;
+}
+.post-kalinz .dictionary-table tbody tr:last-child td { border-bottom: none; }
+.post-kalinz .dictionary-table tbody td:first-child {
+  font-weight: 700 !important;
+  color: #1a6b8a !important;
+  width: 175px !important;
+  white-space: nowrap !important;
+}
+
+.post-kalinz .post-faq { margin: 0.75em 0; }
+.post-kalinz .post-faq-item {
+  border-bottom: 1px solid #f0f0f0;
+  padding: 13px 0;
+}
+.post-kalinz .post-faq-item:first-child { padding-top: 4px; }
+.post-kalinz .post-faq-item:last-child {
+  border-bottom: none;
+  padding-bottom: 4px;
+}
+.post-kalinz .post-faq-q {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: #31353a;
+  margin: 0 0 5px;
+  line-height: 1.5;
+}
+.post-kalinz .post-faq-a {
+  font-size: 0.9375rem;
+  color: #555;
+  margin: 0;
+  line-height: 1.7;
+}
+
+.post-kalinz .post-tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+.post-kalinz .post-tag {
+  font-size: 0.75rem;
+  background: #f0f0f0;
+  border-radius: 4px;
+  padding: 4px 12px;
+  color: #444;
+  text-decoration: none;
+  display: inline-block;
+  transition: background .15s, color .15s;
+}
+.post-kalinz .post-tag:hover {
+  background: #d6e8f0;
+  color: #1a6b8a;
+}
+
+@media (max-width: 480px) {
+  .post-kalinz p,
+  .post-kalinz .post-hook { font-size: 0.96875rem; }
+
+  .post-kalinz h2 { font-size: 1.05rem !important; }
+
+  .post-kalinz .post-box { padding: 14px 16px; }
+
+  .post-kalinz .post-box.song-meta td { display: block; padding: 2px 0; }
+  .post-kalinz .post-box.song-meta td:first-child {
+    width: auto;
+    white-space: normal;
+    padding-right: 0;
+    margin-top: 6px;
+  }
+  .post-kalinz .post-box.song-meta tr:first-child td:first-child { margin-top: 0; }
+
+  .post-kalinz .post-lyric-box { padding: 18px 16px; font-size: 0.96875rem; }
+  .post-kalinz .post-lyric-translation { padding: 16px; font-size: 0.90625rem; }
+
+  .post-kalinz .dictionary-table tbody td:first-child { width: 140px !important; }
+
+  .post-kalinz .post-faq-q,
+  .post-kalinz .post-faq-a { font-size: 0.9rem; }
+}
+</style>
+
+<article class="post-kalinz">
+
+  <img
+    class="post-featured-image"
+    src="https://blogger.googleusercontent.com/img/a/AVvXsEj__R9XGEqYMhBMmSFlhqma4XQRxSnc6VFYlwOaaASPin034l-5A3TveiIQJ1VdF3SRuIr269p3bwjdv-sjFpdcWfC2OvUcS7LzKxNoAOdAOLcc_ZFb7Nv8mKnc1P5ag5FbgosVwy7_r0XG0gInhhaf4EaStbDfClWlh2XyINzdGIpHtihgWegkpVRo9nY=w400-h400"
+    alt="Lagu Hadia Mbörö dinyanyikan Tice Halawa"
+    title="Hadia Mbörö - Tice Halawa"
+    width="400"
+    height="400"
+    fetchpriority="high"
+  />
+
+  <p class="post-hook"><strong>Hadia Mbörö</strong> adalah lagu Nias yang dinyanyikan oleh <strong>Tice Halawa</strong>, mengisahkan seseorang yang mempertanyakan kesalahannya setelah hubungan cintanya retak karena kesalahpahaman dan hasutan orang lain.</p>
+
+  <div class="post-box song-meta">
+    <table>
+      <tr><td>Judul Lagu</td><td>Hadia Mbörö</td></tr>
+      <tr><td>Dipopulerkan oleh</td><td>Tice Halawa</td></tr>
+      <tr><td>Penulis Lagu</td><td>Yustinus Ndruru</td></tr>
+      <tr><td>Genre</td><td>Dangdut Nias</td></tr>
+      <tr><td>Tema</td><td>Kesalahpahaman Cinta</td></tr>
+      <tr><td>Tahun Rilis</td><td>2007</td></tr>
+    </table>
+  </div>
+
+  <hr class="post-divider" />
+
+  <h2>Lirik Lagu Hadia Mbörö — Tice Halawa</h2>
+
+  <div class="post-lyric-box">Hadia zala hadia horö
+Wa ölau khögu zafökhö
+Öbe ndrao abu dödö 
+Ba zilö uila mbörö
+
+No adölö bakha dödögu 
+Wanema li mö
+No adölö bakha dödögu
+Wanema li mö
+
+Uwai tenga sofönu'ö
+Me öfahatö ndraugö
+Ha wa omusö dödögu 
+Urau dangamö
+
+Afatö siai dödögu
+Me ötimba sa dangagu
+Lö na öfaigi mbawagu
+Mofönuö khögu
+
+Önönö nasa öbaliö ndrao so limo yaugö
+Faomasigu öbaliö sama'ala yaugö
+Me so li niha nirongomö samabali yaita
+Andrö öwaö sökhi na ölau'ö ba mbö'ö
+
+Hadia lö sala ndraugö
+Ba wolaumö simanö
+Hadia lö sala ndraugö
+Ba gamautamö simanö
+
+Hadia zala hadia horö 
+Wa lö öwaö öfatunö
+Nösi dödömö
+Nösi dödömö
+
+Uwai tenga sofönu'ö
+Me öfahatö ndraugö
+Ha wa omusö dödögu
+Urau dangamö
+
+Afatö siai dödögu
+Me ötimba sa dangagu
+Lö na öfaigi mbawagu
+Mofönuö khögu
+
+Önönö nasa öbaliö ndrao so limo yaugö
+Faomasigu öbaliö sama'ala yaugö
+Me so li niha nirongomö samabali yaita
+Andrö öwaö sökhi na ölau'ö ba mbö'ö
+
+Hadia lö sala ndraugö
+Ba wolaumö simanö
+Hadia lö sala ndraugö
+Ba gamautamö simanö
+
+Hadia zala hadia horö 
+Wa lö öwaö öfatunö
+Nösi dödömö
+Nösi dödömö</div>
+
+  <hr class="post-divider" />
+
+  <h2>Makna Lagu Hadia Mbörö</h2>
+
+  <p><strong>Hadia Mbörö</strong> mengangkat tema kesalahpahaman dalam hubungan cinta yang berujung pada perpisahan. Tokoh dalam lagu ini berulang kali mempertanyakan apa kesalahan dan dosanya hingga harus menerima perlakuan dingin dari orang yang dicintainya. Kata-kata seperti <em>hadia</em> (apa), <em>zala</em> (salah), <em>horö</em> (dosa), dan <em>nirongomö</em> (yang kau dengar) memperlihatkan bahwa keretakan hubungan bukan disebabkan oleh kesalahan nyata, melainkan karena pasangan lebih mempercayai ucapan orang lain daripada penjelasan dari orang yang mencintainya.</p>
+
+  <p>Lagu ini juga mencerminkan pentingnya kejujuran, komunikasi, dan saling percaya dalam budaya masyarakat Nias. Fitnah atau perkataan orang lain yang mampu memengaruhi hubungan digambarkan sebagai penyebab utama perpisahan. Pesan yang ingin disampaikan adalah bahwa sebuah hubungan akan sulit bertahan apabila kepercayaan mulai hilang dan tidak ada keterbukaan untuk menyampaikan isi hati.</p>
+
+  <h2>Terjemahan Hadia Mbörö dalam Bahasa Indonesia</h2>
+
+  <div class="post-lyric-translation"><em>Apa salahku, apa dosaku
+Hingga kau membuatku terluka
+Kau membuat hatiku gelisah
+Karena sesuatu yang tak kuketahui
+
+Begitu polos hatiku
+Saat menjawabmu
+Begitu polos hatiku
+Saat menjawabmu
+
+Kukira kau tidak sedang marah
+Saat kau berada di dekatku
+Betapa bahagianya hatiku
+Ketika kugenggam tanganmu
+
+Betapa kecewanya hatiku
+Saat kau melepaskan genggaman tanganku
+Bahkan kau tak lagi memandangku
+Karena kau marah kepadaku
+
+Belum lagi kau menuduhku telah membohongimu
+Cintaku kau anggap sebagai bencana bagimu
+Karena perkataan orang lain yang ingin memisahkan kita
+Maka kukatakan, lebih baik kau pergi bersama orang lain
+
+Apakah kau merasa tidak bersalah
+Dengan sikapmu seperti itu?
+Apakah kau merasa tidak bersalah
+Dengan sikapmu seperti itu?
+
+Apa salahku, apa dosaku
+Hingga kau tak pernah mengatakan
+Isi hatimu
+Isi hatimu</em></div>
+
+  <hr class="post-divider" />
+
+  <h2>Kosakata Bahasa Nias dalam Lagu Ini</h2>
+
+  <p>Berikut kata-kata bahasa Nias (Li Niha) yang muncul dalam lagu ini beserta artinya:</p>
+
+  <div class="post-box dictionary-table">
+    <table>
+      <thead>
+        <tr>
+          <th scope="col">Kosakata</th>
+          <th scope="col">Arti</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>zala</td><td>salah</td></tr>
+        <tr><td>horö</td><td>dosa</td></tr>
+        <tr><td>adölö</td><td>lurus</td></tr>
+        <tr><td>wanema li</td><td>menjawab</td></tr>
+        <tr><td>dangagu</td><td>tanganku</td></tr>
+        <tr><td>hadia</td><td>apa</td></tr>
+        <tr><td>mbörö</td><td>penyebab</td></tr>
+        <tr><td>nirongomö</td><td>yang kau dengar</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>Tentang Tice Halawa</h2>
+
+  <p><strong>Tice Halawa</strong> merupakan salah satu penyanyi musik Nias yang dikenal melalui lagu-lagu bergenre Pop dan Dangdut Nias dengan tema cinta, kehidupan, serta nilai-nilai budaya lokal. Karakter vokalnya yang khas dan penggunaan bahasa Li Niha yang baik membuat karya-karyanya tetap digemari oleh masyarakat Nias hingga sekarang. Beberapa lagu Tice Halawa lainnya di Kalinz: <a href="https://kalinz.blogspot.com/2026/06/lirik-lagu-nias-ohombo-ua-katawaena.html"><em>Ohombo Ua Katawaena</em></a>, <a href="https://kalinz.blogspot.com/2016/05/lirik-lagu-nias-enao-nasoo-bazingagu.html"><em>Ena'ö Naso'ö Bazingagu</em></a>, dan <a href="https://kalinz.blogspot.com/2026/06/lirik-lagu-nias-afokho-bakha-dodogu.html"><em>Afökhö Bakha Dödögu</em></a>.</p>
+
+  <hr class="post-divider" />
+
+  <h2>Pertanyaan yang Sering Ditanyakan</h2>
+
+  <div class="post-faq">
+
+    <div class="post-faq-item">
+      <p class="post-faq-q">Apa arti judul lagu Hadia Mbörö?</p>
+      <p class="post-faq-a">Judul <strong>Hadia Mbörö</strong> secara harfiah berarti "Apa Penyebabnya?" atau "Apa Salahku?". Judul ini menggambarkan seseorang yang mempertanyakan penyebab perubahan sikap kekasihnya setelah hubungan mereka dipenuhi kesalahpahaman.</p>
+    </div>
+
+    <div class="post-faq-item">
+      <p class="post-faq-q">Siapa yang menyanyikan lagu Hadia Mbörö?</p>
+      <p class="post-faq-a">Lagu Hadia Mbörö dipopulerkan oleh <strong>Tice Halawa</strong>, penyanyi musik Nias yang dikenal melalui berbagai lagu Pop dan Dangdut Nias bertema cinta dan kehidupan.</p>
+    </div>
+
+    <div class="post-faq-item">
+      <p class="post-faq-q">Siapa yang menulis lagu Hadia Mbörö?</p>
+      <p class="post-faq-a">Lagu Hadia Mbörö ditulis oleh <strong>Yustinus Ndruru</strong>, seorang pencipta lagu yang telah menghasilkan sejumlah karya dalam musik Nias.</p>
+    </div>
+
+    <div class="post-faq-item">
+      <p class="post-faq-q">Apa tema utama lagu Hadia Mbörö?</p>
+      <p class="post-faq-a">Tema utama lagu Hadia Mbörö adalah kesalahpahaman dalam hubungan cinta, hilangnya kepercayaan akibat hasutan orang lain, serta penyesalan karena hubungan yang berakhir tanpa adanya penjelasan yang jujur.</p>
+    </div>
+
+    <div class="post-faq-item">
+      <p class="post-faq-q">Bahasa apa yang digunakan dalam lagu Hadia Mbörö?</p>
+      <p class="post-faq-a">Lagu Hadia Mbörö dinyanyikan dalam bahasa Nias atau Li Niha, bahasa daerah yang digunakan oleh masyarakat Ono Niha di Pulau Nias, Sumatera Utara.</p>
+    </div>
+
+    <div class="post-faq-item">
+      <p class="post-faq-q">Kapan lagu Hadia Mbörö dirilis?</p>
+      <p class="post-faq-a">Lagu Hadia Mbörö dirilis pada tahun 2007 dan menjadi salah satu lagu Nias yang cukup dikenal di kalangan penikmat musik daerah Nias.</p>
+    </div>
+
+  </div>
+
+  <hr class="post-divider" />
+
+  <p>Itulah lirik lagu Nias <strong>Hadia Mbörö</strong> dari <strong>Tice Halawa</strong> lengkap dengan makna dan terjemahannya. Jika Anda menemukan kesalahan lirik, arti kata, atau informasi mengenai lagu ini, silakan hubungi saya melalui halaman <a href="https://kalinz.blogspot.com/p/hubungi-kam.html">Kontak</a> agar artikel dapat diperbarui dan tetap akurat.</p>
+
+  <div class="post-tag-list">
+    <a class="post-tag" href="https://kalinz.blogspot.com/search/label/Lagu%20Nias" rel="tag">Lagu Nias</a>
+    <a class="post-tag" href="https://kalinz.blogspot.com/search/label/Tice%20Halawa" rel="tag">Tice Halawa</a>
+  </div>
+
+  <!-- kalinz-custom-schema -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Lirik Lagu Nias Hadia Mbörö — Tice Halawa: Arti dan Terjemahan",
+  "description": "Lirik lagu Nias Hadia Mbörö oleh Tice Halawa lengkap dengan arti, makna, terjemahan Bahasa Indonesia, dan kosakata Li Niha.",
+  "image": "https://blogger.googleusercontent.com/img/a/AVvXsEj__R9XGEqYMhBMmSFlhqma4XQRxSnc6VFYlwOaaASPin034l-5A3TveiIQJ1VdF3SRuIr269p3bwjdv-sjFpdcWfC2OvUcS7LzKxNoAOdAOLcc_ZFb7Nv8mKnc1P5ag5FbgosVwy7_r0XG0gInhhaf4EaStbDfClWlh2XyINzdGIpHtihgWegkpVRo9nY=w400-h400",
+  "author": {
+    "@type": "Person",
+    "name": "Melinus Gulo",
+    "url": "https://kalinz.blogspot.com/p/about.html",
+    "sameAs": [
+      "https://id.linkedin.com/in/melinus-gulo",
+      "https://x.com/_kalinz_"
+    ]
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "KALINZ",
+    "url": "https://kalinz.blogspot.com",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://blogger.googleusercontent.com/img/a/AVvXsEiA60iqO3_Ix7HJgSdZuCU4pIJO9Fgbu4I622jL65PVabLz0WF6rDLZ8D8RRNoiRSjkFe5gVIllCNVt0DQ69y_eF54sx-EGO7j6-TkB_r-ivcijlU9Kudo2LkZMSIzlJrjjlzek2cqzzuoT_jd4mGgZkrwVw8W5U1nm01ywxxEtVgNuhqrnbO2T4sD8Yq8=w1600"
+    }
+  },
+  "datePublished": "2026-07-03T07:37:00+07:00",
+  "dateModified": "2026-07-03T07:37:00+07:00",
+  "inLanguage": "id",
+  "keywords": [
+    "Lagu Nias",
+    "Hadia Mbörö",
+    "Tice Halawa",
+    "Lirik Lagu Nias",
+    "Terjemahan Bahasa Indonesia",
+    "Li Niha",
+    "Kamus Bahasa Nias",
+    "Kesalahpahaman Cinta"
+  ],
+  "articleSection": ["Lagu Nias", "Terjemahan Lagu", "Budaya Nias"],
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://kalinz.blogspot.com/2026/06/lirik-lagu-nias-hadia-mboro-tice-halawa.html"
+  },
+  "about": {
+    "@type": "MusicRecording",
+    "name": "Hadia Mbörö",
+    "byArtist": {
+      "@type": "Person",
+      "name": "Tice Halawa"
+    },
+    "inLanguage": "nia",
+    "genre": "Dangdut Nias",
+    "description": "Lagu Dangdut Nias yang menceritakan kesalahpahaman, hilangnya kepercayaan, dan hubungan cinta yang berakhir karena pengaruh perkataan orang lain.",
+    "datePublished": "2007",
+    "recordingOf": {
+      "@type": "MusicComposition",
+      "name": "Hadia Mbörö",
+      "lyricist": {
+        "@type": "Person",
+        "name": "Yustinus Ndruru"
+      }
+    }
+  }
+}
+  </script>
+
+</article>
