@@ -40,3 +40,5 @@
 - [Faomasiu Nagu](https://kalinz.blogspot.com/2026/07/lirik-lagu-nias-faomasiu-nagu-tice.html)
 - [Afökhö Bakha Dödögu](https://kalinz.blogspot.com/2026/06/lirik-lagu-nias-afokho-bakha-dodogu.html)
 - [Hadia Mbörö](https://kalinz.blogspot.com/2026/06/lirik-lagu-nias-hadia-mboro-tice-halawa.html)
+- [Afatö Dödö](https://kalinz.blogspot.com/2026/07/lirik-lagu-nias-afato-dodo-tice-halawa.html)
+- [Haga Mbawa](https://kalinz.blogspot.com/2026/07/lirik-lagu-nias-haga-mbawa-tice-halawa.html)
