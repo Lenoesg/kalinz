@@ -33,6 +33,13 @@
         <b:tag cond='data:view.featuredImage' expr:href='data:view.featuredImage' name='link'
             rel='image_src' />
 
+        <b:if cond='data:blog.metaDescription'>
+            <meta expr:content='data:blog.metaDescription' name='description' />
+            <b:else />
+            <meta expr:content='data:blog.pageName + &quot; - &quot; + data:blog.title'
+                name='description' />
+        </b:if>
+
         <b:include name='openGraphMetaData' />
 
         <b:comment><!-- all-head-content end -->
@@ -671,7 +678,7 @@ Variable end */
                 var cfg = { bacaJuga: true, jumlahBacaJuga: 3, judulBacaJuga: 'Baca Juga' };
                 optionLinkMagz(cfg);
                 if (!cfg.bacaJuga) return;
-                var currentUrl = &quot;<data:post.url/>&quot;;
+                var currentUrl = '<data:post.url/>';
                 var entries = json.feed.entry;
                 var html = '', count = 0;
                 for (var i = 0; i < entries.length && count < cfg.jumlahBacaJuga; i++) {
@@ -3192,6 +3199,23 @@ var linkMagzSetting = {
                         background: #f0f8fb;
                         color: #1a6b8a;
                         border-left-color: #1a6b8a;
+                        }
+
+
+                        /* ----------------------------------------------------------
+                        7. POST BODY &#8212; Reserved Space Slot Iklan
+                        ---------------------------------------------------------- */
+                        .post-body .widget-content.kode-iklan-atas,
+                        .post-body .widget-content.kode-iklan-bawah,
+                        .post-body .widget-content.kode-iklan-tengah {
+                        min-height: 250px;
+                        }
+                        @media only screen and (max-width: 480px) {
+                        .post-body .widget-content.kode-iklan-atas,
+                        .post-body .widget-content.kode-iklan-bawah,
+                        .post-body .widget-content.kode-iklan-tengah {
+                        min-height: 280px;
+                        }
                         }</b:widget-setting>
                 </b:widget-settings>
                 <b:includable id='main'>
@@ -5063,7 +5087,24 @@ var linkMagzSetting = {
      data-ad-client="ca-pub-8813103182865992"
      data-ad-slot="6872202637"></ins>
 <script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
+     (function(){
+  var box = document.currentScript.parentElement;
+  if (!box) return;
+  function loadAd(){ (adsbygoogle = window.adsbygoogle || []).push({}); }
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (entry.isIntersecting) {
+          io.unobserve(entry.target);
+          loadAd();
+        }
+      });
+    }, { rootMargin: '300px 0px' });
+    io.observe(box);
+  } else {
+    loadAd();
+  }
+})();
 </script>]]></b:widget-setting>
                             </b:widget-settings>
                             <b:includable id='main'>
@@ -5100,7 +5141,24 @@ var linkMagzSetting = {
      data-ad-format="auto"
      data-full-width-responsive="true"></ins>
 <script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
+     (function(){
+  var box = document.currentScript.parentElement;
+  if (!box) return;
+  function loadAd(){ (adsbygoogle = window.adsbygoogle || []).push({}); }
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (entry.isIntersecting) {
+          io.unobserve(entry.target);
+          loadAd();
+        }
+      });
+    }, { rootMargin: '300px 0px' });
+    io.observe(box);
+  } else {
+    loadAd();
+  }
+})();
 </script>]]></b:widget-setting>
                             </b:widget-settings>
                             <b:includable id='main'>
@@ -5677,7 +5735,7 @@ var linkMagzSetting = {
   <div class="kalinz-author-row">
     <img
       class="kalinz-author-img"
-      src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgvU-_IiBbgeMQHn19yPoxtmm3eesLdYlsW8F4gL5_wY6MewI-iP0Bj0iUjjzByTJs56lxTCfS5IBu28fRCx8yJwqcsWUbXdVwKrW9jC4mZpjA_zCzvjf2pUM4n1inI86YpZJLWGU6zIQPUjR4WCwq5UK5ohOdkewAmdwx88oV0UcWTEcJQqPRJSY1V7yw/s320/IMG_20260519_061326.jpg"
+      src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjknHgPGwYroL7XWGS2-ryA2xg4WszGJEuPtzdeS_GwoKINorQJgGN2qSS_E8WYe4g1YtDnjCh2eamwIXFWsCtbccTLiA6DpUUfWFNzRjfXcMqXLaklH0UMeV8Liptn8A3BNJ1r1K-FEkSrJUOwAvFYKX9yKvIV23oX-4_vneW_ss8wVikFOl9MU_HbABA/s320/melinus-gulo.webp"
       alt="Melinus Gulo — pengelola Kalinz"
       width="48" height="48"
     />
@@ -5733,114 +5791,6 @@ var linkMagzSetting = {
                                             <data:content />
                                         </div>
                                     </b:if>
-                                </b:includable>
-                            </b:widget>
-                            <b:widget id='BlogArchive1' locked='false' title='Arsip'
-                                type='BlogArchive' visible='true'>
-                                <b:widget-settings>
-                                    <b:widget-setting name='showStyle'>HIERARCHY</b:widget-setting>
-                                    <b:widget-setting name='yearPattern'>yyyy</b:widget-setting>
-                                    <b:widget-setting name='showWeekEnd'>true</b:widget-setting>
-                                    <b:widget-setting name='monthPattern'>MMMM</b:widget-setting>
-                                    <b:widget-setting name='dayPattern'>MMM dd</b:widget-setting>
-                                    <b:widget-setting name='weekPattern'>MM/dd</b:widget-setting>
-                                    <b:widget-setting name='chronological'>true</b:widget-setting>
-                                    <b:widget-setting name='showPosts'>true</b:widget-setting>
-                                    <b:widget-setting name='frequency'>MONTHLY</b:widget-setting>
-                                </b:widget-settings>
-                                <b:includable id='main' var='this'>
-                                    <b:if cond='data:title'>
-                                        <div class='normalwidget-title'>
-                                            <h2 class='title'>
-                                                <data:title />
-                                            </h2>
-                                        </div>
-                                    </b:if>
-                                    <b:include name='content' />
-                                </b:includable>
-                                <b:includable id='content'>
-                                    <div class='widget-content'>
-                                        <div id='ArchiveList'>
-                                            <div
-                                                expr:id='data:widget.instanceId + &quot;_ArchiveList&quot;'>
-                                                <b:include
-                                                    cond='data:this.style == &quot;HIERARCHY&quot;'
-                                                    name='hierarchy' />
-                                                <b:include
-                                                    cond='data:this.style in {&quot;FLAT&quot;}'
-                                                    name='flat' />
-                                                <b:include
-                                                    cond='data:this.style in {&quot;MENU&quot;}'
-                                                    name='dropdown' />
-                                            </div>
-                                        </div>
-                                    </div>
-                                </b:includable>
-                                <b:includable id='dropdown'>
-                                    <div class='archive-dropdown'>
-                                        <select aria-label='archive'
-                                            onChange='window.location.href=this.value'>
-                                            <b:loop values='data:data' var='i'>
-                                                <option expr:value='data:i.url'>
-                                                    <data:i.name />
-                                                    <span class='post-count'>(<data:i.post-count />)</span>
-                                                </option>
-                                            </b:loop>
-                                        </select>
-                                    </div>
-                                </b:includable>
-                                <b:includable id='flat'>
-                                    <div class='archive-flat'>
-                                        <ul>
-                                            <b:loop values='data:data' var='i'>
-                                                <li class='archivedate'>
-                                                    <a expr:href='data:i.url'>
-                                                        <data:i.name />
-                                                        <span class='post-count'>(<data:i.post-count />
-                                                            )</span>
-                                                    </a>
-                                                </li>
-                                            </b:loop>
-                                        </ul>
-                                    </div>
-                                </b:includable>
-                                <b:includable id='hierarchy'>
-                                    <div class='archive-hierarchy'>
-                                        <b:include data='data' name='interval' />
-                                    </div>
-                                </b:includable>
-                                <b:includable id='interval' var='intervals'>
-                                    <ul class='hierarchy'>
-                                        <b:loop values='data:intervals' var='interval'>
-                                            <li class='archivedate'>
-                                                <div class='hierarchy-title'>
-                                                    <a class='post-count-link'
-                                                        expr:href='data:interval.url'>
-                                                        <data:interval.name />
-                                                        <span class='post-count'>(<data:interval.post-count />
-                                                            )</span>
-                                                    </a>
-                                                </div>
-                                                <div class='hierarchy-content'>
-                                                    <b:include cond='data:interval.data'
-                                                        data='interval.data' name='interval' />
-                                                    <b:include cond='data:interval.posts'
-                                                        data='interval.posts' name='posts' />
-                                                </div>
-                                            </li>
-                                        </b:loop>
-                                    </ul>
-                                </b:includable>
-                                <b:includable id='posts' var='posts'>
-                                    <ul class='posts hierarchy'>
-                                        <b:loop values='data:posts' var='post'>
-                                            <li>
-                                                <a expr:href='data:post.url'>
-                                                    <data:post.title />
-                                                </a>
-                                            </li>
-                                        </b:loop>
-                                    </ul>
                                 </b:includable>
                             </b:widget>
                         </b:section>
