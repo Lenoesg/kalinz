@@ -7,15 +7,6 @@
     xmlns:expr='http://www.google.com/2005/gml/expr'>
     <head>
 
-        <!-- Clarity tracking code for http://kalinz.blogspot.com/ -->
-        <script>
-          (function(c,l,a,r,i,t,y){
-              c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-              t=l.createElement(r);t.async=1;t.src=&quot;https://www.clarity.ms/tag/&quot;+i+&quot;?ref=bwt&quot;;
-              y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-          })(window, document, &quot;clarity&quot;, &quot;script&quot;, &quot;xf5j20w42f&quot;);
-      </script>
-
         <meta content='width=device-width, initial-scale=1' name='viewport' />
 
         <b:comment><!-- all-head-content start -->
@@ -141,12 +132,7 @@
         <b:comment><!-- preconnect and dns-prefetch -->
         </b:comment>
         <link crossorigin='' href='https://blogger.googleusercontent.com' rel='preconnect' />
-        <link href='https://fonts.googleapis.com' rel='preconnect' />
-        <link crossorigin='' href='https://fonts.gstatic.com' rel='preconnect' />
-
         <link href='https://blogger.googleusercontent.com' rel='dns-prefetch' />
-        <link href='https://fonts.googleapis.com' rel='dns-prefetch' />
-        <link href='https://fonts.gstatic.com' rel='dns-prefetch' />
         <b:comment><!-- preconnect and dns-prefetch end -->
         </b:comment>
 
@@ -941,530 +927,12 @@ Variable end */
                     <script>
             //<![CDATA[
             /*! smooth-scroll js from Chris Ferdinandi (http://github.com/cferdinandi/smooth-scroll) */
-!(function () {
-  var e, t;
-  ((e =
-    "undefined" != typeof global
-      ? global
-      : "undefined" != typeof window
-        ? window
-        : this),
-    (t = function (e) {
-      "use strict";
-      var t = {
-          ignore: "[data-scroll-ignore]",
-          header: null,
-          topOnEmptyHash: !0,
-          speed: 500,
-          speedAsDuration: !1,
-          durationMax: null,
-          durationMin: null,
-          clip: !0,
-          offset: 0,
-          easing: "easeInOutCubic",
-          customEasing: null,
-          updateURL: !0,
-          popstate: !0,
-          emitEvents: !0,
-        },
-        n = function () {
-          var e = {};
-          return (
-            Array.prototype.forEach.call(arguments, function (t) {
-              for (var n in t) {
-                if (!t.hasOwnProperty(n)) return;
-                e[n] = t[n];
-              }
-            }),
-            e
-          );
-        },
-        o = function (e) {
-          "#" === e.charAt(0) && (e = e.substr(1));
-          for (
-            var t,
-              n = String(e),
-              o = n.length,
-              a = -1,
-              r = "",
-              i = n.charCodeAt(0);
-            ++a < o;
-          ) {
-            if (0 === (t = n.charCodeAt(a)))
-              throw new InvalidCharacterError(
-                "Invalid character: the input contains U+0000.",
-              );
-            r +=
-              (1 <= t && t <= 31) ||
-              127 == t ||
-              (0 === a && 48 <= t && t <= 57) ||
-              (1 === a && 48 <= t && t <= 57 && 45 === i)
-                ? "\\" + t.toString(16) + " "
-                : 128 <= t ||
-                    45 === t ||
-                    95 === t ||
-                    (48 <= t && t <= 57) ||
-                    (65 <= t && t <= 90) ||
-                    (97 <= t && t <= 122)
-                  ? n.charAt(a)
-                  : "\\" + n.charAt(a);
-          }
-          return "#" + r;
-        },
-        a = function () {
-          return Math.max(
-            document.body.scrollHeight,
-            document.documentElement.scrollHeight,
-            document.body.offsetHeight,
-            document.documentElement.offsetHeight,
-            document.body.clientHeight,
-            document.documentElement.clientHeight,
-          );
-        },
-        r = function (t, n, o, a) {
-          if (n.emitEvents && "function" == typeof e.CustomEvent) {
-            var r = new CustomEvent(t, {
-              bubbles: !0,
-              detail: { anchor: o, toggle: a },
-            });
-            document.dispatchEvent(r);
-          }
-        };
-      return function (i, s) {
-        var c,
-          u,
-          l,
-          d,
-          f = {
-            cancelScroll: function (e) {
-              (cancelAnimationFrame(d), (d = null), e || r("scrollCancel", c));
-            },
-            animateScroll: function (o, i, s) {
-              f.cancelScroll();
-              var u = n(c || t, s || {}),
-                m = "[object Number]" === Object.prototype.toString.call(o),
-                h = m || !o.tagName ? null : o;
-              if (m || h) {
-                var p = e.pageYOffset;
-                u.header && !l && (l = document.querySelector(u.header));
-                var g,
-                  y,
-                  v,
-                  S,
-                  E,
-                  b,
-                  O,
-                  I,
-                  M = (function (t) {
-                    return t
-                      ? ((n = t),
-                        parseInt(e.getComputedStyle(n).height, 10) +
-                          t.offsetTop)
-                      : 0;
-                    var n;
-                  })(l),
-                  A = m
-                    ? o
-                    : (function (t, n, o, r) {
-                        var i = 0;
-                        if (t.offsetParent)
-                          for (; (i += t.offsetTop), (t = t.offsetParent); );
-                        return (
-                          (i = Math.max(i - n - o, 0)),
-                          r && (i = Math.min(i, a() - e.innerHeight)),
-                          i
-                        );
-                      })(
-                        h,
-                        M,
-                        parseInt(
-                          "function" == typeof u.offset
-                            ? u.offset(o, i)
-                            : u.offset,
-                          10,
-                        ),
-                        u.clip,
-                      ),
-                  C = A - p,
-                  w = a(),
-                  L = 0,
-                  H =
-                    ((g = C),
-                    (v = (y = u).speedAsDuration
-                      ? y.speed
-                      : Math.abs((g / 1e3) * y.speed)),
-                    y.durationMax && v > y.durationMax
-                      ? y.durationMax
-                      : y.durationMin && v < y.durationMin
-                        ? y.durationMin
-                        : parseInt(v, 10)),
-                  q = function (t) {
-                    var n, a, s;
-                    (S || (S = t),
-                      (L += t - S),
-                      (b =
-                        p +
-                        C *
-                          ((a = E = 1 < (E = 0 === H ? 0 : L / H) ? 1 : E),
-                          "easeInQuad" === (n = u).easing && (s = a * a),
-                          "easeOutQuad" === n.easing && (s = a * (2 - a)),
-                          "easeInOutQuad" === n.easing &&
-                            (s = a < 0.5 ? 2 * a * a : (4 - 2 * a) * a - 1),
-                          "easeInCubic" === n.easing && (s = a * a * a),
-                          "easeOutCubic" === n.easing && (s = --a * a * a + 1),
-                          "easeInOutCubic" === n.easing &&
-                            (s =
-                              a < 0.5
-                                ? 4 * a * a * a
-                                : (a - 1) * (2 * a - 2) * (2 * a - 2) + 1),
-                          "easeInQuart" === n.easing && (s = a * a * a * a),
-                          "easeOutQuart" === n.easing &&
-                            (s = 1 - --a * a * a * a),
-                          "easeInOutQuart" === n.easing &&
-                            (s =
-                              a < 0.5
-                                ? 8 * a * a * a * a
-                                : 1 - 8 * --a * a * a * a),
-                          "easeInQuint" === n.easing && (s = a * a * a * a * a),
-                          "easeOutQuint" === n.easing &&
-                            (s = 1 + --a * a * a * a * a),
-                          "easeInOutQuint" === n.easing &&
-                            (s =
-                              a < 0.5
-                                ? 16 * a * a * a * a * a
-                                : 1 + 16 * --a * a * a * a * a),
-                          n.customEasing && (s = n.customEasing(a)),
-                          s || a)),
-                      e.scrollTo(0, Math.floor(b)),
-                      (function (t, n) {
-                        var a,
-                          s,
-                          c,
-                          l = e.pageYOffset;
-                        if (
-                          t == n ||
-                          l == n ||
-                          (p < n && e.innerHeight + l) >= w
-                        )
-                          return (
-                            f.cancelScroll(!0),
-                            (s = n),
-                            (c = m),
-                            0 === (a = o) && document.body.focus(),
-                            c ||
-                              (a.focus(),
-                              document.activeElement !== a &&
-                                (a.setAttribute("tabindex", "-1"),
-                                a.focus(),
-                                (a.style.outline = "none")),
-                              e.scrollTo(0, s)),
-                            r("scrollStop", u, o, i),
-                            !(d = S = null)
-                          );
-                      })(b, A) || ((d = e.requestAnimationFrame(q)), (S = t)));
-                  };
-                (0 === e.pageYOffset && e.scrollTo(0, 0),
-                  (O = o),
-                  (I = u),
-                  m ||
-                    (history.pushState &&
-                      I.updateURL &&
-                      history.pushState(
-                        { smoothScroll: JSON.stringify(I), anchor: O.id },
-                        document.title,
-                        O === document.documentElement ? "#top" : "#" + O.id,
-                      )),
-                  "matchMedia" in e &&
-                  e.matchMedia("(prefers-reduced-motion)").matches
-                    ? e.scrollTo(0, Math.floor(A))
-                    : (r("scrollStart", u, o, i),
-                      f.cancelScroll(!0),
-                      e.requestAnimationFrame(q)));
-              }
-            },
-          },
-          m = function (t) {
-            if (
-              !t.defaultPrevented &&
-              !(0 !== t.button || t.metaKey || t.ctrlKey || t.shiftKey) &&
-              "closest" in t.target &&
-              (u = t.target.closest(i)) &&
-              "a" === u.tagName.toLowerCase() &&
-              !t.target.closest(c.ignore) &&
-              u.hostname === e.location.hostname &&
-              u.pathname === e.location.pathname &&
-              /#/.test(u.href)
-            ) {
-              var n, a;
-              try {
-                n = o(decodeURIComponent(u.hash));
-              } catch (t) {
-                n = o(u.hash);
-              }
-              if ("#" === n) {
-                if (!c.topOnEmptyHash) return;
-                a = document.documentElement;
-              } else a = document.querySelector(n);
-              (a = a || "#top" !== n ? a : document.documentElement) &&
-                (t.preventDefault(),
-                (function (t) {
-                  if (history.replaceState && t.updateURL && !history.state) {
-                    var n = e.location.hash;
-                    ((n = n || ""),
-                      history.replaceState(
-                        {
-                          smoothScroll: JSON.stringify(t),
-                          anchor: n || e.pageYOffset,
-                        },
-                        document.title,
-                        n || e.location.href,
-                      ));
-                  }
-                })(c),
-                f.animateScroll(a, u));
-            }
-          },
-          h = function (e) {
-            if (
-              null !== history.state &&
-              history.state.smoothScroll &&
-              history.state.smoothScroll === JSON.stringify(c)
-            ) {
-              var t = history.state.anchor;
-              ("string" == typeof t &&
-                t &&
-                !(t = document.querySelector(o(history.state.anchor)))) ||
-                f.animateScroll(t, null, { updateURL: !1 });
-            }
-          };
-        return (
-          (f.destroy = function () {
-            c &&
-              (document.removeEventListener("click", m, !1),
-              e.removeEventListener("popstate", h, !1),
-              f.cancelScroll(),
-              (d = l = u = c = null));
-          }),
-          (function () {
-            if (
-              !(
-                "querySelector" in document &&
-                "addEventListener" in e &&
-                "requestAnimationFrame" in e &&
-                "closest" in e.Element.prototype
-              )
-            )
-              throw "Smooth Scroll: This browser does not support the required JavaScript methods and browser APIs.";
-            (f.destroy(),
-              (c = n(t, s || {})),
-              (l = c.header ? document.querySelector(c.header) : null),
-              document.addEventListener("click", m, !1),
-              c.updateURL &&
-                c.popstate &&
-                e.addEventListener("popstate", h, !1));
-          })(),
-          f
-        );
-      };
-    }),
-    "function" == typeof define && define.amd
-      ? define([], function () {
-          return t(e);
-        })
-      : "object" == typeof exports
-        ? (module.exports = t(e))
-        : (e.SmoothScroll = t(e)));
-})();
-!(function () {
-  var e, t, n, o, i, r, u, s, c, l;
-  ((u = { menuSticky: !0 }),
-    optionLinkMagz(u),
-    1 == u.menuSticky &&
-      ((e = document
-        .querySelector("#header-outer")
-        .getBoundingClientRect().height),
-      (t = document.querySelector("#navmenu-wrap-sticky")),
-      (n = document.querySelector(".nav-copy")),
-      (o = document.querySelector(".nav-original")),
-      (i = document.querySelector(".sidebar-sticky")),
-      (r = "navsticky-show"),
-      (s = "navsticky-hide"),
-      (c = 0),
-      (l = null),
-      null != o && (n.innerHTML = o.innerHTML),
-(function () {
-    var logo = document.querySelector("#header .widget a");
-    if (logo && n) {
-        var clone = logo.cloneNode(true);
-        clone.classList.add("sticky-logo-link");
-        n.insertBefore(clone, n.firstChild);
-    }
-})(),
-      null != o &&
-        (window.addEventListener("resize", function () {
-          e = document
-            .querySelector("#header-outer")
-            .getBoundingClientRect().height;
-        }),
-        window.addEventListener("scroll", function () {
-          var d = Math.round(window.pageYOffset);
-          if (d >= e) {
-            if (d < c) {
-              t.classList.remove(s);
-              t.classList.add(r);
-            } else {
-              t.classList.remove(r);
-              t.classList.add(s);
-            }
-          } else {
-            t.classList.remove(r);
-            t.classList.remove(s);
-          }
-          c = d;
-        }, { passive: !0 })),
-      null != i && (i.style.top = "88px"),
-      (function () {
-        for (
-          var e = document.querySelectorAll(".menu-sticky a"), t = 0;
-          t < e.length;
-          t++
-        )
-          e[t].setAttribute("tabindex", "-1");
-      })()));
-})();
-((function () {
-  var e = document.querySelector(".navmenu-content"),
-    t = document.querySelector("#navmenu-sidebar-body"),
-    n = document.querySelectorAll(".navmenu-button"),
-    l = document.querySelector("#navmenu-overlay"),
-    u = document.querySelector("#navmenu-sidebar-closebtn"),
-    r = document.querySelector("#navmenu"),
-    s = "navmenu-activated";
-  null !== e && (t.innerHTML = e.innerHTML);
-  for (
-    var c = function (e) {
-        (e.preventDefault(), r.classList.add(s));
-      },
-      i = 0;
-    i < n.length;
-    i++
-  )
-    n[i].addEventListener("click", c);
-  var o = function (e) {
-    (e.preventDefault(), r.classList.remove(s));
-  };
-  (null !== l && l.addEventListener("click", o),
-    null !== u && u.addEventListener("click", o));
-})(),
-  (function () {
-    "use strict";
-    for (
-      var e = document.querySelectorAll(
-          "#navmenu-sidebar-body > ul > li.has-sub",
-        ),
-        t = function (e) {
-          var t = this.nextElementSibling,
-            n = t.scrollHeight;
-          t.clientHeight
-            ? ((t.style.height = "0px"),
-              this.classList.remove("ms-submenu-shown"))
-            : ((t.style.height = n + "px"),
-              this.classList.add("ms-submenu-shown"));
-        },
-        n = function () {
-          var e = document.createElement("span");
-          return (e.setAttribute("class", "ms-submenu-button"), e);
-        },
-        l = 0;
-      l < e.length;
-      l++
-    ) {
-      var u = n(),
-        r = e[l].querySelector("ul");
-      (e[l].insertBefore(u, e[l].lastElementChild),
-        r && ((r.style.height = "0"), (r.style.overflow = "hidden")),
-        u.addEventListener("click", t));
-    }
-  })());
-!(function () {
-  var e = document.getElementById("searchcontainer"),
-    n = document.getElementById("search-terms"),
-    t = document.querySelectorAll(".iconsearch-label");
-  if (null != e && null != n) {
-    for (var c = 0; c < t.length; c++)
-      t[c].addEventListener(
-        "click",
-        function (t) {
-          (e.classList.toggle("opensearch"),
-            e.classList.contains("opensearch") ||
-              (n.blur(), t.preventDefault()),
-            t.stopPropagation());
-        },
-        !1,
-      );
-    (n.addEventListener(
-      "click",
-      function (e) {
-        e.stopPropagation();
-      },
-      !1,
-    ),
-      document.addEventListener(
-        "click",
-        function (t) {
-          (e.classList.remove("opensearch"), n.blur(),t.stopPropagation());
-        },
-        !1,
-      ),
-      document.addEventListener("keydown", function (t) {
-        "Escape" == t.key && (e.classList.remove("opensearch"), n.blur());
-      }));
-  }
-})();
-!(function () {
-  var e = document.querySelector(".featured-img-bg");
-  if (e) {
-    var t = e.querySelector("img");
-    (r("data-src"), r("srcset"));
-  }
-  function r(e) {
-    let r = t.getAttribute(e);
-    r && ((r = r.replace(/-p-k-no-nu/g, "-c-rw")), t.setAttribute(e, r));
-  }
-})();
-Defer(
-  function () {
-    let e = document.getElementById("comment-editor");
-    if (!e) return;
-    let t = e.src.split("#"),
-      n = document.getElementById("comment-editor"),
-      i = document.getElementById("custom-comment-form");
-    (document.addEventListener("click", function (e) {
-      if ("btn-reply" !== e.target.className) return;
-      let l = e.target.dataset.commentId,
-        c = document.getElementById("c" + l).querySelector(".comment-starter");
-      ((n.style.visibility = "hidden"),
-        (n.src = t[0] + "&parentID=" + l + "#" + t[1]),
-        c.appendChild(i),
-        (n.onload = function () {
-          this.style.visibility = "visible";
-        }));
-    }),
-      document.addEventListener("click", function (e) {
-        if ("btn-cancel" !== e.target.className) return;
-        let l = document.querySelector(".toplevel-thread");
-        ((n.style.visibility = "hidden"),
-          (n.src = t[0] + "#" + t[1]),
-          l.parentNode.insertBefore(i, l.nextSibling),
-          (n.onload = function () {
-            this.style.visibility = "visible";
-          }));
-      }));
-  },
-  0,
-  !0,
-);
-
+            !function(){var e="undefined"!=typeof global?global:"undefined"!=typeof window?window:this,t=function(E){"use strict";function b(){var n={};return Array.prototype.forEach.call(arguments,function(e){for(var t in e){if(!e.hasOwnProperty(t))return;n[t]=e[t]}}),n}function i(e){"#"===e.charAt(0)&&(e=e.substr(1));for(var t,n=String(e),o=n.length,a=-1,r="",i=n.charCodeAt(0);++a<o;){if(0===(t=n.charCodeAt(a)))throw new InvalidCharacterError("Invalid character: the input contains U+0000.");r+=1<=t&&t<=31||127==t||0===a&&48<=t&&t<=57||1===a&&48<=t&&t<=57&&45===i?"\\"+t.toString(16)+" ":128<=t||45===t||95===t||48<=t&&t<=57||65<=t&&t<=90||97<=t&&t<=122?n.charAt(a):"\\"+n.charAt(a)}return"#"+r}function O(){return Math.max(document.body.scrollHeight,document.documentElement.scrollHeight,document.body.offsetHeight,document.documentElement.offsetHeight,document.body.clientHeight,document.documentElement.clientHeight)}function I(e,t,n,o){t.emitEvents&&"function"==typeof E.CustomEvent&&(t=new CustomEvent(e,{bubbles:!0,detail:{anchor:n,toggle:o}}),document.dispatchEvent(t))}var M={ignore:"[data-scroll-ignore]",header:null,topOnEmptyHash:!0,speed:500,speedAsDuration:!1,durationMax:null,durationMin:null,clip:!0,offset:0,easing:"easeInOutCubic",customEasing:null,updateURL:!0,popstate:!0,emitEvents:!0};return function(a,e){function t(e){if(!e.defaultPrevented&&!(0!==e.button||e.metaKey||e.ctrlKey||e.shiftKey)&&"closest"in e.target&&(r=e.target.closest(a))&&"a"===r.tagName.toLowerCase()&&!e.target.closest(y.ignore)&&r.hostname===E.location.hostname&&r.pathname===E.location.pathname&&/#/.test(r.href)){var t;try{n=i(decodeURIComponent(r.hash))}catch(e){n=i(r.hash)}if("#"===n){if(!y.topOnEmptyHash)return;t=document.documentElement}else t=document.querySelector(n);(t=t||"#top"!==n?t:document.documentElement)&&(e.preventDefault(),n=y,history.replaceState&&n.updateURL&&!history.state&&(o=(o=E.location.hash)||"",history.replaceState({smoothScroll:JSON.stringify(n),anchor:o||E.pageYOffset},document.title,o||E.location.href)),v.animateScroll(t,r))}var n,o}function n(e){var t;null===history.state||!history.state.smoothScroll||history.state.smoothScroll!==JSON.stringify(y)||"string"==typeof(t=history.state.anchor)&&t&&!(t=document.querySelector(i(history.state.anchor)))||v.animateScroll(t,null,{updateURL:!1})}var y,r,o,S,v={cancelScroll:function(e){cancelAnimationFrame(S),S=null,e||I("scrollCancel",y)},animateScroll:function(a,r,e){v.cancelScroll();var i,s,c,u,l,d,f,m,h,t,p=b(y||M,e||{}),g="[object Number]"===Object.prototype.toString.call(a),e=g||!a.tagName?null:a;(g||e)&&(i=E.pageYOffset,p.header&&!o&&(o=document.querySelector(p.header)),t=(t=o)?parseInt(E.getComputedStyle(t).height,10)+t.offsetTop:0,u=g?a:function(e,t,n,o){var a=0;if(e.offsetParent)for(;a+=e.offsetTop,e=e.offsetParent;);return a=Math.max(a-t-n,0),a=o?Math.min(a,O()-E.innerHeight):a}(e,t,parseInt("function"==typeof p.offset?p.offset(a,r):p.offset,10),p.clip),l=u-i,d=O(),f=0,t=(e=p).speedAsDuration?e.speed:Math.abs(l/1e3*e.speed),m=e.durationMax&&t>e.durationMax?e.durationMax:e.durationMin&&t<e.durationMin?e.durationMin:parseInt(t,10),h=function(e){var t,n,o;f+=e-(s=s||e),c=i+l*(o=1<(c=0===m?0:f/m)?1:c,"easeInQuad"===p.easing&&(t=o*o),"easeOutQuad"===p.easing&&(t=o*(2-o)),"easeInOutQuad"===p.easing&&(t=o<.5?2*o*o:(4-2*o)*o-1),"easeInCubic"===p.easing&&(t=o*o*o),"easeOutCubic"===p.easing&&(t=--o*o*o+1),"easeInOutCubic"===p.easing&&(t=o<.5?4*o*o*o:(o-1)*(2*o-2)*(2*o-2)+1),"easeInQuart"===p.easing&&(t=o*o*o*o),"easeOutQuart"===p.easing&&(t=1- --o*o*o*o),"easeInOutQuart"===p.easing&&(t=o<.5?8*o*o*o*o:1-8*--o*o*o*o),"easeInQuint"===p.easing&&(t=o*o*o*o*o),"easeOutQuint"===p.easing&&(t=1+--o*o*o*o*o),"easeInOutQuint"===p.easing&&(t=o<.5?16*o*o*o*o*o:1+16*--o*o*o*o*o),(t=p.customEasing?p.customEasing(o):t)||o),E.scrollTo(0,Math.floor(c)),t=u,o=E.pageYOffset,(!(c==t||o==t||(i<t&&E.innerHeight+o)>=d)||(v.cancelScroll(!0),o=t,t=g,0===(n=a)&&document.body.focus(),t||(n.focus(),document.activeElement!==n&&(n.setAttribute("tabindex","-1"),n.focus(),n.style.outline="none"),E.scrollTo(0,o)),I("scrollStop",p,a,r),S=s=null))&&(S=E.requestAnimationFrame(h),s=e)},0===E.pageYOffset&&E.scrollTo(0,0),e=a,g||history.pushState&&p.updateURL&&history.pushState({smoothScroll:JSON.stringify(p),anchor:e.id},document.title,e===document.documentElement?"#top":"#"+e.id),"matchMedia"in E&&E.matchMedia("(prefers-reduced-motion)").matches?E.scrollTo(0,Math.floor(u)):(I("scrollStart",p,a,r),v.cancelScroll(!0),E.requestAnimationFrame(h)))}};if(v.destroy=function(){y&&(document.removeEventListener("click",t,!1),E.removeEventListener("popstate",n,!1),v.cancelScroll(),S=o=r=y=null)},"querySelector"in document&&"addEventListener"in E&&"requestAnimationFrame"in E&&"closest"in E.Element.prototype)return v.destroy(),y=b(M,e||{}),o=y.header?document.querySelector(y.header):null,document.addEventListener("click",t,!1),y.updateURL&&y.popstate&&E.addEventListener("popstate",n,!1),v;throw"Smooth Scroll: This browser does not support the required JavaScript methods and browser APIs."}};"function"==typeof define&&define.amd?define([],function(){return t(e)}):"object"==typeof exports?module.exports=t(e):e.SmoothScroll=t(e)}();
+            !function(){var t,n,e,i,o,r,s,c,l={menuSticky:!0};if(optionLinkMagz(l),1==l.menuSticky){t=document.querySelector("#header-outer").getBoundingClientRect().height,n=document.querySelector("#navmenu-wrap-sticky"),l=document.querySelector(".nav-copy"),e=document.querySelector(".nav-original"),i=document.querySelector(".sidebar-sticky"),o="navsticky-show",r="navsticky-hide",s=0,null!=e&&(l.innerHTML=e.innerHTML),(c=document.querySelector("#header .widget a"))&&l&&((c=c.cloneNode(!0)).classList.add("sticky-logo-link"),l.insertBefore(c,l.firstChild)),null!=e&&(window.addEventListener("resize",function(){t=document.querySelector("#header-outer").getBoundingClientRect().height}),window.addEventListener("scroll",function(){var e=Math.round(window.pageYOffset);t<=e?e<s?(n.classList.remove(r),n.classList.add(o)):(n.classList.remove(o),n.classList.add(r)):(n.classList.remove(o),n.classList.remove(r)),s=e},{passive:!0})),null!=i&&(i.style.top="88px");for(var a=document.querySelectorAll(".menu-sticky a"),d=0;d<a.length;d++)a[d].setAttribute("tabindex","-1")}}();
+            (function(){var e=document.querySelector(".navmenu-content"),t=document.querySelector("#navmenu-sidebar-body"),n=document.querySelectorAll(".navmenu-button"),l=document.querySelector("#navmenu-overlay"),u=document.querySelector("#navmenu-sidebar-closebtn"),s=document.querySelector("#navmenu"),r="navmenu-activated";null!==e&&(t.innerHTML=e.innerHTML);function c(e){e.preventDefault(),s.classList.add(r)}for(var i=0;i<n.length;i++)n[i].addEventListener("click",c);function o(e){e.preventDefault(),s.classList.remove(r)}null!==l&&l.addEventListener("click",o),null!==u&&u.addEventListener("click",o)})(),function(){"use strict";for(var e=document.querySelectorAll("#navmenu-sidebar-body > ul > li.has-sub"),t=function(e){var t=this.nextElementSibling,n=t.scrollHeight;t.clientHeight?(t.style.height="0px",this.classList.remove("ms-submenu-shown")):(t.style.height=n+"px",this.classList.add("ms-submenu-shown"))},n=0;n<e.length;n++){l=void 0,(l=document.createElement("span")).setAttribute("class","ms-submenu-button");var l,u=e[n].querySelector("ul");e[n].insertBefore(l,e[n].lastElementChild),u&&(u.style.height="0",u.style.overflow="hidden"),l.addEventListener("click",t)}}();
+            !function(){var n=document.getElementById("searchcontainer"),t=document.getElementById("search-terms"),e=document.querySelectorAll(".iconsearch-label");if(null!=n&&null!=t){for(var c=0;c<e.length;c++)e[c].addEventListener("click",function(e){n.classList.toggle("opensearch"),n.classList.contains("opensearch")||(t.blur(),e.preventDefault()),e.stopPropagation()},!1);t.addEventListener("click",function(e){e.stopPropagation()},!1),document.addEventListener("click",function(e){n.classList.remove("opensearch"),t.blur(),e.stopPropagation()},!1),document.addEventListener("keydown",function(e){"Escape"==e.key&&(n.classList.remove("opensearch"),t.blur())})}}();
+            !function(){var r,e=document.querySelector(".featured-img-bg");function t(e){let t=r.getAttribute(e);t&&(t=t.replace(/-p-k-no-nu/g,"-c-rw"),r.setAttribute(e,t))}e&&(r=e.querySelector("img"),t("data-src"),t("srcset"))}();
+            Defer(function(){var e=document.getElementById("comment-editor");if(e){let n=e.src.split("#"),i=document.getElementById("comment-editor"),c=document.getElementById("custom-comment-form");document.addEventListener("click",function(e){var t;"btn-reply"===e.target.className&&(e=e.target.dataset.commentId,t=document.getElementById("c"+e).querySelector(".comment-starter"),i.style.visibility="hidden",i.src=n[0]+"&parentID="+e+"#"+n[1],t.appendChild(c),i.onload=function(){this.style.visibility="visible"})}),document.addEventListener("click",function(e){"btn-cancel"===e.target.className&&(e=document.querySelector(".toplevel-thread"),i.style.visibility="hidden",i.src=n[0]+"#"+n[1],e.parentNode.insertBefore(c,e.nextSibling),i.onload=function(){this.style.visibility="visible"})})}},0,!0);
             //]]>
             <b:if cond='data:view.isHomepage'>
                 //<![CDATA[
@@ -2979,7 +2447,7 @@ var linkMagzSetting = {
     relatedPostsThumb: false,
     infiniteScrollNav : false,
     scrollToTop : true,
-    fullwidthImage : true,
+    fullwidthImage : false,
     bacaJuga : true,
     jumlahBacaJuga : 3,
     judulBacaJuga : "Baca Juga",
@@ -3068,7 +2536,7 @@ var linkMagzSetting = {
                         padding: 14px 16px;
                         border-radius: 6px;
                         border: 1px solid #e8ecef;
-                        border-left: 3px solid var(--cat-color, #1a6b8a);
+                        border-left: 3px solid var(--cat-color, #6b6b6b);
                         text-decoration: none !important;
                         background: #fff;
                         transition: background .18s, transform .18s, box-shadow .18s;
@@ -3087,7 +2555,7 @@ var linkMagzSetting = {
                         }
                         .kalinz-cat-item small {
                         font-size: .725rem;
-                        color: #999;
+                        color: #6b6b6b;
                         line-height: 1.4;
                         display: block;
                         }
@@ -3137,7 +2605,7 @@ var linkMagzSetting = {
                         .kalinz-author-label {
                         display: block;
                         font-size: .75rem;
-                        color: #999;
+                        color: #6b6b6b;
                         margin-top: 1px;
                         }
                         .kalinz-about-link {
@@ -3249,13 +2717,13 @@ var linkMagzSetting = {
                             version='2' visible='true'>
                             <b:widget-settings>
                                 <b:widget-setting name='displayUrl'>
-                                    https://blogger.googleusercontent.com/img/a/AVvXsEiA60iqO3_Ix7HJgSdZuCU4pIJO9Fgbu4I622jL65PVabLz0WF6rDLZ8D8RRNoiRSjkFe5gVIllCNVt0DQ69y_eF54sx-EGO7j6-TkB_r-ivcijlU9Kudo2LkZMSIzlJrjjlzek2cqzzuoT_jd4mGgZkrwVw8W5U1nm01ywxxEtVgNuhqrnbO2T4sD8Yq8=s1600</b:widget-setting>
-                                <b:widget-setting name='displayHeight'>347</b:widget-setting>
+                                    https://blogger.googleusercontent.com/img/a/AVvXsEiBHL5HISVy9NR8I5xZIrgiCJkkISdhxMzNqOk-5Z2ie8tj1DKi_axlBzkEMQrtIKpmtChXg4CC0vGPJQXXQcDXXquPv-E1Z-MmNTcH6-bajkvdcsqosy1n5tCsusucn0NBmfAC2tQdnYNFPNNTKu3riJQioyvWjsrpPHf3DGER3eTHEkyvPLZ3u0I6RJc=s452</b:widget-setting>
+                                <b:widget-setting name='displayHeight'>98</b:widget-setting>
                                 <b:widget-setting name='sectionWidth'>374</b:widget-setting>
                                 <b:widget-setting name='useImage'>true</b:widget-setting>
                                 <b:widget-setting name='shrinkToFit'>false</b:widget-setting>
                                 <b:widget-setting name='imagePlacement'>REPLACE</b:widget-setting>
-                                <b:widget-setting name='displayWidth'>1600</b:widget-setting>
+                                <b:widget-setting name='displayWidth'>452</b:widget-setting>
                             </b:widget-settings>
                             <b:includable id='main' var='this'>
                                 <b:include
