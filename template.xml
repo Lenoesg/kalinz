@@ -696,6 +696,26 @@ Variable end */
                     if (elems[idx]) elems[idx].parentNode.insertBefore(wrap, elems[idx].nextSibling);
                 }
             }
+ 			// Perbesar ketajaman + paksa WebP untuk gambar unggulan di dalam isi post
+            !function(){
+                var img = document.querySelector('.post-body-artikel .post-featured-image');
+                if (!img) return;
+                var src = img.getAttribute('src') || '';
+                var m = src.match(/^(.*?)=w(\d+)-h(\d+)$/);
+                if (!m) return;
+                var base = m[1], w0 = parseInt(m[2],10), h0 = parseInt(m[3],10);
+                if (!w0 || !h0) return;
+                var dispW = img.clientWidth || parseInt(img.getAttribute('width'),10) || w0;
+                var ratio = h0 / w0;
+                var dpr = Math.min(window.devicePixelRatio || 1, 2);
+                var srcset = [1, 1.5, 2].map(function(s){
+                    var w = Math.round(dispW * s), h = Math.round(w * ratio);
+                    return base + '=w' + w + '-h' + h + '-rw ' + s + 'x';
+                }).join(', ');
+                var targetW = Math.round(dispW * dpr), targetH = Math.round(targetW * ratio);
+                img.setAttribute('srcset', srcset);
+                img.setAttribute('src', base + '=w' + targetW + '-h' + targetH + '-rw');
+            }();
             //]]>
                     </script>
                 </b:includable>
@@ -1047,8 +1067,8 @@ Variable end */
                 <b:includable id='image'>
                     <a expr:href='data:blog.homepageUrl' expr:title='data:title'>
                         <img expr:alt='data:title' expr:height='data:height'
-                            expr:src='resizeImage(data:sourceUrl, 1600)'
-                            expr:srcset='resizeImage(data:sourceUrl, 400) + &quot; 1x, &quot; + resizeImage(data:sourceUrl, 1600) + &quot; 2x&quot;'
+                            expr:src='resizeImage(data:sourceUrl, 160)'
+                            expr:srcset='resizeImage(data:sourceUrl, 160) + &quot; 1x, &quot; + resizeImage(data:sourceUrl, 320) + &quot; 2x&quot;'
                             expr:title='data:title' expr:width='data:width' />
                     </a>
                 </b:includable>
@@ -2757,8 +2777,8 @@ var linkMagzSetting = {
                             <b:includable id='image'>
                                 <a expr:href='data:blog.homepageUrl' expr:title='data:title'>
                                     <img expr:alt='data:title' expr:height='data:height'
-                                        expr:src='resizeImage(data:sourceUrl, 1600)'
-                                        expr:srcset='resizeImage(data:sourceUrl, 400) + &quot; 1x, &quot; + resizeImage(data:sourceUrl, 1600) + &quot; 2x&quot;'
+                                        expr:src='resizeImage(data:sourceUrl, 160)'
+                                        expr:srcset='resizeImage(data:sourceUrl, 160) + &quot; 1x, &quot; + resizeImage(data:sourceUrl, 320) + &quot; 2x&quot;'
                                         expr:title='data:title' expr:width='data:width' />
                                 </a>
                             </b:includable>
@@ -4542,7 +4562,24 @@ var linkMagzSetting = {
      data-ad-format="auto"
      data-full-width-responsive="true"></ins>
 <script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
+     (function(){
+  var box = document.currentScript.parentElement;
+  if (!box) return;
+  function loadAd(){ (adsbygoogle = window.adsbygoogle || []).push({}); }
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (entry.isIntersecting) {
+          io.unobserve(entry.target);
+          loadAd();
+        }
+      });
+    }, { rootMargin: '300px 0px' });
+    io.observe(box);
+  } else {
+    loadAd();
+  }
+})();
 </script>]]></b:widget-setting>
                             </b:widget-settings>
                             <b:includable id='main'>
