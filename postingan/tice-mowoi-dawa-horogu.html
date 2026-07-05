@@ -1,0 +1,441 @@
+<style>
+.post-kalinz {
+  max-width: 740px;
+  margin: 0 auto;
+  padding: 0;
+  color: inherit;
+  line-height: 1.8;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+  font-family: inherit;
+}
+
+.post-kalinz,
+.post-kalinz * { box-sizing: border-box; }
+
+.post-kalinz p { font-size: 1rem; margin: 0 0 1.2em; }
+
+.post-kalinz h2 {
+  font-family: inherit !important;
+  font-size: 1.15rem !important;
+  font-weight: 700 !important;
+  margin: 1.75em 0 0.85em !important;
+  padding: 0 0 8px !important;
+  color: inherit !important;
+  border: 0 !important;
+  line-height: 1.4 !important;
+  position: relative;
+}
+.post-kalinz h2::after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 3px;
+  margin-top: 8px;
+  border-radius: 999px;
+  background: #1a6b8a;
+}
+
+.post-kalinz .post-featured-image {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 8px;
+  margin: 0 auto 1.5em;
+  display: block;
+}
+
+.post-kalinz .post-hook { font-size: 1rem; margin: 0 0 1.2em; }
+
+.post-kalinz .post-box {
+  background: #f5f9ff;
+  border: 1px solid #d0e4f7;
+  border-radius: 8px;
+  padding: 16px 20px;
+  margin: 1.2em 0 1.5em;
+  font-size: 0.875rem;
+  color: inherit;
+}
+.post-kalinz .post-box table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+.post-kalinz .post-box td {
+  padding: 5px 0;
+  vertical-align: top;
+  overflow-wrap: anywhere;
+}
+.post-kalinz .post-box td:first-child {
+  color: #666;
+  width: 130px;
+  font-size: 0.8125rem;
+  white-space: nowrap;
+  padding-right: 12px;
+}
+.post-kalinz .post-box td:last-child {
+  font-weight: 600;
+  color: inherit;
+}
+
+.post-kalinz .post-divider {
+  border: none;
+  border-top: 1px solid #eee;
+  margin: 1.6em 0 !important;
+}
+
+.post-kalinz .post-lyric-box {
+  background: #fafafa;
+  border: 1px solid #e8e8e8;
+  border-radius: 8px;
+  padding: 24px 28px;
+  font-size: 1rem;
+  line-height: 2;
+  white-space: pre-line;
+  margin: 1.2em 0;
+}
+
+.post-kalinz .post-lyric-translation {
+  background: #fffdf5;
+  border: 1px solid #f2e6c5;
+  border-radius: 8px;
+  padding: 20px 24px;
+  font-size: 0.9375rem;
+  line-height: 1.9;
+  white-space: pre-line;
+  margin: 1.2em 0;
+}
+
+.post-kalinz .dictionary-table { background: #f5f9ff; }
+.post-kalinz .dictionary-table table { table-layout: auto; }
+.post-kalinz .dictionary-table thead th {
+  text-align: left;
+  padding: 4px 12px 10px 0;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: #666;
+  border-bottom: 1px solid #d0e4f7;
+}
+.post-kalinz .dictionary-table tbody td {
+  padding: 7px 12px 7px 0 !important;
+  width: auto !important;
+  white-space: normal !important;
+  font-size: 0.875rem !important;
+  border-bottom: 1px solid #e8f0f8;
+}
+.post-kalinz .dictionary-table tbody tr:last-child td { border-bottom: none; }
+.post-kalinz .dictionary-table tbody td:first-child {
+  font-weight: 700 !important;
+  color: #1a6b8a !important;
+  width: 175px !important;
+  white-space: nowrap !important;
+}
+
+.post-kalinz .post-faq { margin: 0.75em 0; }
+.post-kalinz .post-faq-item {
+  border-bottom: 1px solid #f0f0f0;
+  padding: 13px 0;
+}
+.post-kalinz .post-faq-item:first-child { padding-top: 4px; }
+.post-kalinz .post-faq-item:last-child {
+  border-bottom: none;
+  padding-bottom: 4px;
+}
+.post-kalinz .post-faq-q {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: #31353a;
+  margin: 0 0 5px;
+  line-height: 1.5;
+}
+.post-kalinz .post-faq-a {
+  font-size: 0.9375rem;
+  color: #555;
+  margin: 0;
+  line-height: 1.7;
+}
+
+.post-kalinz .post-tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+.post-kalinz .post-tag {
+  font-size: 0.75rem;
+  background: #f0f0f0;
+  border-radius: 4px;
+  padding: 4px 12px;
+  color: #444;
+  text-decoration: none;
+  display: inline-block;
+  transition: background .15s, color .15s;
+}
+.post-kalinz .post-tag:hover {
+  background: #d6e8f0;
+  color: #1a6b8a;
+}
+
+@media (max-width: 480px) {
+  .post-kalinz p,
+  .post-kalinz .post-hook { font-size: 0.96875rem; }
+
+  .post-kalinz h2 { font-size: 1.05rem !important; }
+
+  .post-kalinz .post-box { padding: 14px 16px; }
+
+  .post-kalinz .post-box.song-meta td { display: block; padding: 2px 0; }
+  .post-kalinz .post-box.song-meta td:first-child {
+    width: auto;
+    white-space: normal;
+    padding-right: 0;
+    margin-top: 6px;
+  }
+  .post-kalinz .post-box.song-meta tr:first-child td:first-child { margin-top: 0; }
+
+  .post-kalinz .post-lyric-box { padding: 18px 16px; font-size: 0.96875rem; }
+  .post-kalinz .post-lyric-translation { padding: 16px; font-size: 0.90625rem; }
+
+  .post-kalinz .dictionary-table tbody td:first-child { width: 140px !important; }
+
+  .post-kalinz .post-faq-q,
+  .post-kalinz .post-faq-a { font-size: 0.9rem; }
+}
+</style>
+
+<article class="post-kalinz">
+
+  <img
+    class="post-featured-image"
+    src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgD8xtxBhenmSTwvVDV7PfezldLA5eWIU432AcVLIxM9fbmwDZoeYjqDLVSLMeb6ctPaOLm85Z8L7J17rZ9UvBo0g28CWMAjSZfD7nQwQek0NEx9JVw161nBdjyoFk9pt-oBRRpLJ2-YqX1jzoJFArQZZaefK1XABl5qBzTjeuC5krn-DHbnN25PB0xBGo/w400-h400/mowoi_dawa_horo%20-%20tice_halawa.png"
+    alt="Lagu Mowöi Dawa Hörögu dinyanyikan Tice Halawa"
+    title="Mowöi Dawa Hörögu - Tice Halawa"
+    width="400"
+    height="400"
+    fetchpriority="high"
+  />
+
+  <p class="post-hook"><strong>Mowöi Dawa Hörögu</strong> adalah lagu Nias yang dinyanyikan oleh <strong>Tice Halawa</strong>, mengisahkan seseorang yang terluka karena cinta yang berubah dan hanya menyisakan air mata serta penyesalan.</p>
+
+  <div class="post-box song-meta">
+    <table>
+      <tr><td>Judul Lagu</td><td>Mowöi Dawa Hörögu</td></tr>
+      <tr><td>Dipopulerkan oleh</td><td>Tice Halawa</td></tr>
+      <tr><td>Penulis Lagu</td><td>Joeny S. Ndraha</td></tr>
+      <tr><td>Genre</td><td>Pop Nias</td></tr>
+      <tr><td>Tema</td><td>Patah Hati</td></tr>
+      <tr><td>Tahun Rilis</td><td>2010</td></tr>
+    </table>
+  </div>
+
+  <hr class="post-divider" />
+
+  <h2>Lirik Lagu Mowöi Dawa Hörögu — Tice Halawa</h2>
+
+  <div class="post-lyric-box">No öbe'e ba dödögu wengu
+öfatunö ba niha bö'ö
+Tenga si'oroi dödö wa'omasimö
+
+Wa'ö-wa'ö hadia ziso ba dödö
+Böi öbe'e mowöi dawa hörö
+Hadia hadia zalagu ölau zimanö
+
+Uwai sindruhu wa'omasimö ba mbotogu
+
+Hewa'ae so wa'omasi lö fanema ba dödö
+Atoru mowöi dawa hörögu
+Tebulö wa'omasi ötayaigö ba dödö
+Atoru mowöi dawa hörögu
+
+Wa'ö-wa'ö hadia ziso ba dödö
+Böi öbe'e mowöi dawa hörö
+Hadia hadia zalagu ölau zimanö
+
+Uwai sindruhu wa'omasimö ba mbotogu
+
+Hewa'ae so wa'omasi lö fanema ba dödö
+Atoru mowöi dawa hörögu
+Tebulö wa'omasi ötayaigö ba dödö
+Atoru mowöi dawa hörögu
+
+Hewa'ae so wa'omasi lö fanema ba dödö
+Atoru mowöi dawa hörögu
+Tebulö wa'omasi ötayaigö ba dödö
+Atoru mowöi dawa hörögu
+
+Hewa'ae so wa'omasi lö fanema ba dödö
+Atoru mowöi dawa hörögu
+Tebulö wa'omasi ötayaigö ba dödö
+Atoru mowöi dawa hörögu</div>
+
+  <hr class="post-divider" />
+
+  <h2>Makna Lagu Mowöi Dawa Hörögu</h2>
+
+  <p><strong>Mowöi Dawa Hörögu</strong> mengangkat tema patah hati akibat cinta yang tidak lagi tulus. Tokoh dalam lagu ini merasa sedih karena orang yang dicintainya justru mengungkapkan kepada orang lain bahwa cintanya tidak berasal dari hati. Ia terus mempertanyakan kesalahannya, sementara air mata menjadi simbol kesedihan yang tak mampu lagi dibendung. Frasa seperti <em>mowöi dawa hörö</em> (air mata menetes), <em>tebulö wa'omasi</em> (cinta telah berubah), dan <em>tayaigö ba dödö</em> (melupakan dalam hati) menggambarkan luka batin akibat perubahan perasaan orang yang dicintai.</p>
+
+  <p>Lagu ini juga mencerminkan nilai kejujuran dan ketulusan dalam hubungan yang dijunjung tinggi oleh masyarakat Nias. Ketika cinta tidak lagi disampaikan dengan jujur dan berubah tanpa penjelasan, yang tersisa hanyalah kesedihan serta hilangnya kepercayaan. Melalui lagu ini, pendengar diajak untuk menghargai ketulusan hati dan tidak mudah menyakiti perasaan orang yang pernah mencintai dengan sepenuh hati.</p>
+
+  <h2>Terjemahan Mowöi Dawa Hörögu dalam Bahasa Indonesia</h2>
+
+  <div class="post-lyric-translation"><em>Kau buat hatiku sedih
+Kau mengatakan kepada orang lain
+Bahwa cintamu bukan berasal dari hati
+
+Katakan saja apa yang ada di hatimu
+Jangan biarkan air mataku terus menetes
+Apa salahku hingga kau berbuat seperti ini?
+
+Kukira cintamu benar-benar tulus kepadaku
+
+Walau masih ada cinta, hatimu tak lagi menerimaku
+Air mataku pun jatuh menetes
+Cintamu telah berubah, kau lupakan aku dalam hatimu
+Air mataku terus menetes</em></div>
+
+  <hr class="post-divider" />
+
+  <h2>Kosakata Bahasa Nias dalam Lagu Ini</h2>
+
+  <p>Berikut kata-kata bahasa Nias (Li Niha) yang muncul dalam lagu ini beserta artinya:</p>
+
+  <div class="post-box dictionary-table">
+    <table>
+      <thead>
+        <tr>
+          <th scope="col">Kosakata</th>
+          <th scope="col">Arti</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>öbe'e</td><td>kau berikan, kau buat</td></tr>
+        <tr><td>wengu</td><td>sedih</td></tr>
+        <tr><td>wa'ö</td><td>bilang</td></tr>
+        <tr><td>mowöi</td><td>menetes</td></tr>
+        <tr><td>dawa</td><td>tinta</td></tr>
+        <tr><td>hörö</td><td>mata</td></tr>
+        <tr><td>sindruhu</td><td>sungguh</td></tr>
+        <tr><td>atoru</td><td>jatuh</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>Tentang Tice Halawa</h2>
+
+  <p><strong>Tice Halawa</strong> merupakan salah satu penyanyi Pop Nias yang dikenal melalui lagu-lagu bertema cinta, kehidupan, dan nilai-nilai budaya masyarakat Nias. Karakter vokalnya yang lembut dan penuh penghayatan membuat setiap lagu yang dibawakannya terasa emosional dan mudah diterima oleh penikmat musik daerah. Beberapa lagu Tice Halawa lainnya di Kalinz: <a href="https://kalinz.blogspot.com/2026/06/lirik-lagu-nias-falimosa-mano-tice.html"><em>Falimosa Manö</em></a>, <a href="https://kalinz.blogspot.com/2026/06/lirik-lagu-nias-afokho-bakha-dodogu.html"><em>Afökhö Bakha Dödögu</em></a>, dan <a href="https://kalinz.blogspot.com/2026/07/lirik-lagu-nias-haga-mbawa-tice-halawa.html"><em>Haga Mbawa</em></a>.</p>
+
+  <hr class="post-divider" />
+
+  <h2>Pertanyaan yang Sering Ditanyakan</h2>
+
+  <div class="post-faq">
+
+    <div class="post-faq-item">
+      <p class="post-faq-q">Apa arti judul lagu Mowöi Dawa Hörögu?</p>
+      <p class="post-faq-a">Judul <strong>Mowöi Dawa Hörögu</strong> berarti "Air Mataku Menetes". Judul ini melambangkan kesedihan mendalam seseorang yang harus menerima kenyataan bahwa cinta orang yang dicintainya telah berubah.</p>
+    </div>
+
+    <div class="post-faq-item">
+      <p class="post-faq-q">Siapa yang menyanyikan lagu Mowöi Dawa Hörögu?</p>
+      <p class="post-faq-a">Lagu Mowöi Dawa Hörögu dipopulerkan oleh <strong>Tice Halawa</strong>, penyanyi Pop Nias yang dikenal melalui berbagai lagu bertema cinta dan kehidupan dalam bahasa Li Niha.</p>
+    </div>
+
+    <div class="post-faq-item">
+      <p class="post-faq-q">Siapa yang menulis lagu Mowöi Dawa Hörögu?</p>
+      <p class="post-faq-a">Lagu Mowöi Dawa Hörögu ditulis oleh <strong>Joeny S. Ndraha</strong>, seorang pencipta lagu yang telah menghasilkan sejumlah karya dalam musik Nias.</p>
+    </div>
+
+    <div class="post-faq-item">
+      <p class="post-faq-q">Apa tema utama lagu Mowöi Dawa Hörögu?</p>
+      <p class="post-faq-a">Tema utama lagu Mowöi Dawa Hörögu adalah patah hati, perubahan perasaan dalam hubungan cinta, dan kesedihan akibat ditinggalkan oleh orang yang pernah dicintai dengan tulus.</p>
+    </div>
+
+    <div class="post-faq-item">
+      <p class="post-faq-q">Bahasa apa yang digunakan dalam lagu Mowöi Dawa Hörögu?</p>
+      <p class="post-faq-a">Lagu Mowöi Dawa Hörögu dinyanyikan dalam bahasa Nias atau Li Niha, bahasa daerah yang digunakan oleh masyarakat Ono Niha di Pulau Nias, Sumatera Utara.</p>
+    </div>
+
+    <div class="post-faq-item">
+      <p class="post-faq-q">Kapan lagu Mowöi Dawa Hörögu dirilis?</p>
+      <p class="post-faq-a">Lagu Mowöi Dawa Hörögu dirilis pada tahun 2010 dan menjadi salah satu lagu Nias yang cukup dikenal di kalangan penikmat musik daerah Nias.</p>
+    </div>
+
+  </div>
+
+  <hr class="post-divider" />
+
+  <p>Itulah lirik lagu Nias <strong>Mowöi Dawa Hörögu</strong> dari <strong>Tice Halawa</strong> lengkap dengan makna dan terjemahannya. Jika Anda menemukan kesalahan lirik, arti kata, atau informasi mengenai lagu ini, silakan hubungi saya melalui halaman <a href="https://kalinz.blogspot.com/p/hubungi-kam.html">Kontak</a> agar artikel dapat diperbarui dan tetap akurat.</p>
+
+  <div class="post-tag-list">
+    <a class="post-tag" href="https://kalinz.blogspot.com/search/label/Lagu%20Nias" rel="tag">Lagu Nias</a>
+    <a class="post-tag" href="https://kalinz.blogspot.com/search/label/Tice%20Halawa" rel="tag">Tice Halawa</a>
+  </div>
+
+  <!-- kalinz-custom-schema -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Lirik Lagu Nias Mowöi Dawa Hörögu — Tice Halawa: Arti dan Terjemahan",
+  "description": "Lirik lagu Nias Mowöi Dawa Hörögu oleh Tice Halawa lengkap dengan arti, makna, terjemahan Bahasa Indonesia, dan kosakata Li Niha.",
+  "image": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgD8xtxBhenmSTwvVDV7PfezldLA5eWIU432AcVLIxM9fbmwDZoeYjqDLVSLMeb6ctPaOLm85Z8L7J17rZ9UvBo0g28CWMAjSZfD7nQwQek0NEx9JVw161nBdjyoFk9pt-oBRRpLJ2-YqX1jzoJFArQZZaefK1XABl5qBzTjeuC5krn-DHbnN25PB0xBGo/w400-h400/mowoi_dawa_horo%20-%20tice_halawa.png",
+  "author": {
+    "@type": "Person",
+    "name": "Melinus Gulo",
+    "url": "https://kalinz.blogspot.com/p/about.html",
+    "sameAs": [
+      "https://id.linkedin.com/in/melinus-gulo",
+      "https://x.com/_kalinz_"
+    ]
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "KALINZ",
+    "url": "https://kalinz.blogspot.com",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://blogger.googleusercontent.com/img/a/AVvXsEiA60iqO3_Ix7HJgSdZuCU4pIJO9Fgbu4I622jL65PVabLz0WF6rDLZ8D8RRNoiRSjkFe5gVIllCNVt0DQ69y_eF54sx-EGO7j6-TkB_r-ivcijlU9Kudo2LkZMSIzlJrjjlzek2cqzzuoT_jd4mGgZkrwVw8W5U1nm01ywxxEtVgNuhqrnbO2T4sD8Yq8=w1600"
+    }
+  },
+  "datePublished": "2026-07-06T07:37:00+07:00",
+  "dateModified": "2026-07-06T07:37:00+07:00",
+  "inLanguage": "id",
+  "keywords": [
+    "Lagu Nias",
+    "Mowöi Dawa Hörögu",
+    "Tice Halawa",
+    "Lirik Lagu Nias",
+    "Terjemahan Bahasa Indonesia",
+    "Li Niha",
+    "Kamus Bahasa Nias",
+    "Patah Hati"
+  ],
+  "articleSection": ["Lagu Nias", "Terjemahan Lagu", "Budaya Nias"],
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://kalinz.blogspot.com/2026/07/lirik-lagu-nias-mowoi-dawa-horogu-tice.html"
+  },
+  "about": {
+    "@type": "MusicRecording",
+    "name": "Mowöi Dawa Hörögu",
+    "byArtist": {
+      "@type": "Person",
+      "name": "Tice Halawa"
+    },
+    "inLanguage": "nia",
+    "genre": "Pop Nias",
+    "description": "Lagu Pop Nias yang menceritakan kesedihan akibat cinta yang berubah, air mata karena pengkhianatan perasaan, dan luka hati yang ditinggalkan oleh orang tercinta.",
+    "datePublished": "2010",
+    "recordingOf": {
+      "@type": "MusicComposition",
+      "name": "Mowöi Dawa Hörögu",
+      "lyricist": {
+        "@type": "Person",
+        "name": "Joeny S. Ndraha"
+      }
+    }
+  }
+}
+  </script>
+
+</article>
