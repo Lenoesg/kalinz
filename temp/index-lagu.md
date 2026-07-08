@@ -51,6 +51,6 @@
 - [Ha Wa'ifuli Afökhö](https://kalinz.blogspot.com/2026/07/lirik-lagu-nias-ha-waifuli-afokho-tice.html)
 - [Köfa Sihombo](https://kalinz.blogspot.com/2026/07/lirik-lagu-nias-kofa-sihombo-tice.html)
 - [I.n.a (Ina)](https://kalinz.blogspot.com/2026/07/lirik-lagu-nias-ina-ina-tice-halawa.html)
-- [Usofu Ba Madala](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjxIhqVsafOKCdMJ2XAorZoxJzz1i7dclgRjlUHKeYNpjPwzgYW8mxEA84qYC_AiD7jUuYn67TsrpNd3CPiAxOXHFpRscvm9Ql50rpfxsfPm67cpfwRxeC3_NiaOMXXSwUZ9MDblpP1L91cwDYLGvAOA9QPmb5eUol95AS_Qj2JrWp3wYDEDayl4EyY-gc/w400-h400/usofu_ba_madala%20-%20tice_halawa.webp)
-- [Ba Wangifi](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg0urfa441DkGPua3nW-U8WeSfWR0mKJpBgdGMT7uojK5MZdBA_XEoe4Axu-Sdj7esjRv8s3pTVKxYjX8ESYBPtHU5O6i4qcBt7gchVWmg-4tSlYbGZdIPXru0v44KVem_8R05DZ7q5hQSrtDumZgdoamCtqkFt7C-owvhbn2mL9JObDyEiVaO2Ce0S31Q/w400-h400/ba_wangifi%20-%20tice_halawa.webp)
+- [Usofu Ba Madala](https://kalinz.blogspot.com/2026/07/lirik-lagu-nias-usofu-ba-madala-tice.html)
+- [Ba Wangifi](https://kalinz.blogspot.com/2026/07/lirik-lagu-nias-ba-wangifi-tice-halawa.html)
 - [Hana](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgXiJD-vlNBfhx6_Tp1P7Lhjnd6uQLAA4-iM0zjylq2hBMy5jPz5Orq-s9YnfWclqSYdNnkPP-uPy-Qd6LS7YJ45laX693v4vpUoJ7w_R3KNMhkBzziKq7IadlM5AY8HYCdo3A4qDwpPKwZARGZ0JVpiyW6nf-mvVyAKnzPPehUX3BdfF1On7ZJlJiiNCc/w400-h400/hana%20-%20tice_halawa.webp)
