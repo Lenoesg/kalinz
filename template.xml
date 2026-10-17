@@ -641,7 +641,7 @@ Variable end */
                         if (entries[i].link[j].rel === 'alternate') { url = entries[i].link[j].href; break; }
                     }
                     if (url === currentUrl) continue;
-                    html += '<li><a href="' + url + '">' + entries[i].title.$t + '</a></li>';
+                    html += '<li><a href="' + url + '">' + escapeHTML(entries[i].title.$t) + '</a></li>';
                     count++;
                 }
                 if (count > 0) {
@@ -730,7 +730,7 @@ Variable end */
                                 <span>
                                     <data:label.name/>
                                 </span>
-                                <b:if cond='data:label.isLast != &quot;true&quot;'/>
+                                <b:if cond='not data:label.isLast'>, </b:if>
                             </b:loop>
                         </div>
                     </b:loop>
@@ -811,6 +811,18 @@ Variable end */
                 optionLinkMagz(a);
                 if (!a.relatedPosts || typeof postLabels === 'undefined' || !postLabels.length) return;
                 var label = (postLabels[1] || postLabels[0]).replace(/&amp;/g, '&');
+				function escapeHTML(str) {
+                    return (str || '').replace(/[&<>'"]/g, function(tag) {
+                        var chars = {
+                            '&': '&amp;',
+                            '<': '&lt;',
+                            '>': '&gt;',
+                            "'": '&#39;',
+                            '"': '&quot;'
+                        };
+                        return chars[tag] || tag;
+                    });
+                }
                 window.msRelatedPosts = function(json) {
                     if (!json.feed || !json.feed.entry) return;
                     var entries = json.feed.entry;
@@ -825,7 +837,7 @@ Variable end */
                             if (entries[i].link[j].rel === 'alternate') { entryUrl = entries[i].link[j].href; break; }
                         }
                         if (entryUrl === e.postUrl) continue;
-                        html += '<li><div class="related-title-outer"><a href="' + entryUrl + '">' + entries[i].title.$t + '</a></div></li>';
+                        html += '<li><div class="related-title-outer"><a href="' + entryUrl + '">' + escapeHTML(entries[i].title.$t) + '</a></div></li>';
                         count++;
                     }
                     html += '</ul>';
@@ -863,6 +875,21 @@ Variable end */
                 <b:includable id='allJavaScripts'>
                     <script>
             //<![CDATA[
+            function copyShareLink(element) {
+                var url = element.getAttribute('data-url');
+
+                if (!url) return false;
+
+                if (navigator.clipboard && window.isSecureContext) {
+                    navigator.clipboard.writeText(url).catch(function () {
+                        window.prompt('Copy link:', url);
+                    });
+                } else {
+                    window.prompt('Copy link:', url);
+                }
+
+                return false;
+            }
             /*! smooth-scroll js from Chris Ferdinandi (http://github.com/cferdinandi/smooth-scroll) */
             !function(){var e="undefined"!=typeof global?global:"undefined"!=typeof window?window:this,t=function(E){"use strict";function b(){var n={};return Array.prototype.forEach.call(arguments,function(e){for(var t in e){if(!e.hasOwnProperty(t))return;n[t]=e[t]}}),n}function i(e){"#"===e.charAt(0)&&(e=e.substr(1));for(var t,n=String(e),o=n.length,a=-1,r="",i=n.charCodeAt(0);++a<o;){if(0===(t=n.charCodeAt(a)))throw new InvalidCharacterError("Invalid character: the input contains U+0000.");r+=1<=t&&t<=31||127==t||0===a&&48<=t&&t<=57||1===a&&48<=t&&t<=57&&45===i?"\\"+t.toString(16)+" ":128<=t||45===t||95===t||48<=t&&t<=57||65<=t&&t<=90||97<=t&&t<=122?n.charAt(a):"\\"+n.charAt(a)}return"#"+r}function O(){return Math.max(document.body.scrollHeight,document.documentElement.scrollHeight,document.body.offsetHeight,document.documentElement.offsetHeight,document.body.clientHeight,document.documentElement.clientHeight)}function I(e,t,n,o){t.emitEvents&&"function"==typeof E.CustomEvent&&(t=new CustomEvent(e,{bubbles:!0,detail:{anchor:n,toggle:o}}),document.dispatchEvent(t))}var M={ignore:"[data-scroll-ignore]",header:null,topOnEmptyHash:!0,speed:500,speedAsDuration:!1,durationMax:null,durationMin:null,clip:!0,offset:0,easing:"easeInOutCubic",customEasing:null,updateURL:!0,popstate:!0,emitEvents:!0};return function(a,e){function t(e){if(!e.defaultPrevented&&!(0!==e.button||e.metaKey||e.ctrlKey||e.shiftKey)&&"closest"in e.target&&(r=e.target.closest(a))&&"a"===r.tagName.toLowerCase()&&!e.target.closest(y.ignore)&&r.hostname===E.location.hostname&&r.pathname===E.location.pathname&&/#/.test(r.href)){var t;try{n=i(decodeURIComponent(r.hash))}catch(e){n=i(r.hash)}if("#"===n){if(!y.topOnEmptyHash)return;t=document.documentElement}else t=document.querySelector(n);(t=t||"#top"!==n?t:document.documentElement)&&(e.preventDefault(),n=y,history.replaceState&&n.updateURL&&!history.state&&(o=(o=E.location.hash)||"",history.replaceState({smoothScroll:JSON.stringify(n),anchor:o||E.pageYOffset},document.title,o||E.location.href)),v.animateScroll(t,r))}var n,o}function n(e){var t;null===history.state||!history.state.smoothScroll||history.state.smoothScroll!==JSON.stringify(y)||"string"==typeof(t=history.state.anchor)&&t&&!(t=document.querySelector(i(history.state.anchor)))||v.animateScroll(t,null,{updateURL:!1})}var y,r,o,S,v={cancelScroll:function(e){cancelAnimationFrame(S),S=null,e||I("scrollCancel",y)},animateScroll:function(a,r,e){v.cancelScroll();var i,s,c,u,l,d,f,m,h,t,p=b(y||M,e||{}),g="[object Number]"===Object.prototype.toString.call(a),e=g||!a.tagName?null:a;(g||e)&&(i=E.pageYOffset,p.header&&!o&&(o=document.querySelector(p.header)),t=(t=o)?parseInt(E.getComputedStyle(t).height,10)+t.offsetTop:0,u=g?a:function(e,t,n,o){var a=0;if(e.offsetParent)for(;a+=e.offsetTop,e=e.offsetParent;);return a=Math.max(a-t-n,0),a=o?Math.min(a,O()-E.innerHeight):a}(e,t,parseInt("function"==typeof p.offset?p.offset(a,r):p.offset,10),p.clip),l=u-i,d=O(),f=0,t=(e=p).speedAsDuration?e.speed:Math.abs(l/1e3*e.speed),m=e.durationMax&&t>e.durationMax?e.durationMax:e.durationMin&&t<e.durationMin?e.durationMin:parseInt(t,10),h=function(e){var t,n,o;f+=e-(s=s||e),c=i+l*(o=1<(c=0===m?0:f/m)?1:c,"easeInQuad"===p.easing&&(t=o*o),"easeOutQuad"===p.easing&&(t=o*(2-o)),"easeInOutQuad"===p.easing&&(t=o<.5?2*o*o:(4-2*o)*o-1),"easeInCubic"===p.easing&&(t=o*o*o),"easeOutCubic"===p.easing&&(t=--o*o*o+1),"easeInOutCubic"===p.easing&&(t=o<.5?4*o*o*o:(o-1)*(2*o-2)*(2*o-2)+1),"easeInQuart"===p.easing&&(t=o*o*o*o),"easeOutQuart"===p.easing&&(t=1- --o*o*o*o),"easeInOutQuart"===p.easing&&(t=o<.5?8*o*o*o*o:1-8*--o*o*o*o),"easeInQuint"===p.easing&&(t=o*o*o*o*o),"easeOutQuint"===p.easing&&(t=1+--o*o*o*o*o),"easeInOutQuint"===p.easing&&(t=o<.5?16*o*o*o*o*o:1+16*--o*o*o*o*o),(t=p.customEasing?p.customEasing(o):t)||o),E.scrollTo(0,Math.floor(c)),t=u,o=E.pageYOffset,(!(c==t||o==t||(i<t&&E.innerHeight+o)>=d)||(v.cancelScroll(!0),o=t,t=g,0===(n=a)&&document.body.focus(),t||(n.focus(),document.activeElement!==n&&(n.setAttribute("tabindex","-1"),n.focus(),n.style.outline="none"),E.scrollTo(0,o)),I("scrollStop",p,a,r),S=s=null))&&(S=E.requestAnimationFrame(h),s=e)},0===E.pageYOffset&&E.scrollTo(0,0),e=a,g||history.pushState&&p.updateURL&&history.pushState({smoothScroll:JSON.stringify(p),anchor:e.id},document.title,e===document.documentElement?"#top":"#"+e.id),"matchMedia"in E&&E.matchMedia("(prefers-reduced-motion)").matches?E.scrollTo(0,Math.floor(u)):(I("scrollStart",p,a,r),v.cancelScroll(!0),E.requestAnimationFrame(h)))}};if(v.destroy=function(){y&&(document.removeEventListener("click",t,!1),E.removeEventListener("popstate",n,!1),v.cancelScroll(),S=o=r=y=null)},"querySelector"in document&&"addEventListener"in E&&"requestAnimationFrame"in E&&"closest"in E.Element.prototype)return v.destroy(),y=b(M,e||{}),o=y.header?document.querySelector(y.header):null,document.addEventListener("click",t,!1),y.updateURL&&y.popstate&&E.addEventListener("popstate",n,!1),v;throw"Smooth Scroll: This browser does not support the required JavaScript methods and browser APIs."}};"function"==typeof define&&define.amd?define([],function(){return t(e)}):"object"==typeof exports?module.exports=t(e):e.SmoothScroll=t(e)}();
             !function(){var t,n,e,i,o,r,s,c,l={menuSticky:!0};if(optionLinkMagz(l),1==l.menuSticky){t=document.querySelector("#header-outer").getBoundingClientRect().height,n=document.querySelector("#navmenu-wrap-sticky"),l=document.querySelector(".nav-copy"),e=document.querySelector(".nav-original"),i=document.querySelector(".sidebar-sticky"),o="navsticky-show",r="navsticky-hide",s=0,null!=e&&(l.innerHTML=e.innerHTML),(c=document.querySelector("#header .widget a"))&&l&&((c=c.cloneNode(!0)).classList.add("sticky-logo-link"),l.insertBefore(c,l.firstChild)),null!=e&&(window.addEventListener("resize",function(){t=document.querySelector("#header-outer").getBoundingClientRect().height}),window.addEventListener("scroll",function(){var e=Math.round(window.pageYOffset);t<=e?e<s?(n.classList.remove(r),n.classList.add(o)):(n.classList.remove(o),n.classList.add(r)):(n.classList.remove(o),n.classList.remove(r)),s=e},{passive:!0})),null!=i&&(i.style.top="88px");for(var a=document.querySelectorAll(".menu-sticky a"),d=0;d<a.length;d++)a[d].setAttribute("tabindex","-1")}}();
@@ -1054,8 +1081,6 @@ Variable end */
                                         <img class='image lazyload' data-src='//1.bp.blogspot.com/-sLMytth04W8/XtoBMx9lUjI/AAAAAAAAHmM/zK-toM5XTacePvBHnpIO_tfzjg63BD3ZgCK4BGAsYHg/w400-h400-n-k-no-nu/nomage%2B%25281%2529.png' expr:alt='data:post.title' expr:title='data:post.title' height='400' src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAJCAYAAAA7KqwyAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAD6AAAA+gBtXtSawAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAAYSURBVCiRY0xISOBgoAAwUaJ51IBhYwAAuQABOsYCprwAAAAASUVORK5CYII=' srcset='//1.bp.blogspot.com/-sLMytth04W8/XtoBMx9lUjI/AAAAAAAAHmM/zK-toM5XTacePvBHnpIO_tfzjg63BD3ZgCK4BGAsYHg/w400-h400-n-k-no-nu/nomage%2B%25281%2529.png 1x, //1.bp.blogspot.com/-sLMytth04W8/XtoBMx9lUjI/AAAAAAAAHmM/zK-toM5XTacePvBHnpIO_tfzjg63BD3ZgCK4BGAsYHg/w800-h800-n-k-no-nu/nomage%2B%25281%2529.png 2x' width='400'/>
                                         <div class='lazy-loading'/>
                                     </a>
-                                </b:if>
-                                <b:if cond='data:postDisplay.showTitle and data:postDisplay.showFeaturedImage'>
                                 </b:if>
                             </div>
                         </div>
@@ -1779,12 +1804,9 @@ Variable end */
                 <b:includable id='content'>
                     <div class='widget-content'>
                         <div class='follow-by-email-inner'>
-                            <form action='https://feedburner.google.com/fb/a/mailverify' expr:onsubmit='&quot;window.open(\&quot;https://feedburner.google.com/fb/a/mailverify?uri=&quot; + data:feedPath + &quot;\&quot;, \&quot;popupwindow\&quot;, \&quot;scrollbars=yes,width=550,height=520\&quot;); return true&quot;' method='post' target='popupwindow'>
-                                <input aria-label='follow by email' autocomplete='off' class='follow-by-email-address' expr:placeholder='data:messages.emailAddress' name='email' type='email'/>
-                                <input class='follow-by-email-submit' expr:value='data:messages.subscribe' type='submit'/>
-                                <input expr:value='data:feedPath' name='uri' type='hidden'/>
-                                <input name='loc' type='hidden' value='en_US'/>
-                            </form>
+                            <p style='text-align:center; font-size:0.9rem; color:#666;'>
+                                Fitur langganan email sedang dinonaktifkan. Silakan ikuti saluran WhatsApp atau media sosial kami untuk mendapatkan pembaruan artikel terbaru.
+                            </p>
                         </div>
                     </div>
                 </b:includable>
@@ -1807,7 +1829,7 @@ Variable end */
                     <b:loop values='data:labels' var='label'>
                         <span class='label-size'>
                             <b:class expr:name='&quot;label-size-&quot; + data:label.cssSize'/>
-                            <a class='label-name' expr:href='data:label.url + &quot;?&amp;max-results=6&quot;'>
+                            <a class='label-name' expr:href='data:label.url.canonical + &quot;?&amp;max-results=6&quot;'>
                                 <data:label.name/>
                                 <b:if cond='data:this.showFreqNumbers'>
                                     <span class='label-count'>(<data:label.count/>)</span>
@@ -1827,7 +1849,7 @@ Variable end */
                     <ul>
                         <b:loop values='data:labels' var='label'>
                             <li>
-                                <a class='label-name' expr:href='data:label.url + &quot;?&amp;max-results=6&quot;'>
+                                <a class='label-name' expr:href='data:label.url.canonical + &quot;?&amp;max-results=6&quot;'>
                                     <data:label.name/>
                                     <b:if cond='data:this.showFreqNumbers'>
                                         <span class='label-count'>(<data:label.count/>)</span>
@@ -1887,7 +1909,9 @@ Variable end */
                     </div>
                 </b:includable>
                 <b:includable id='overflowButton'>
-                    <b:include name='verticalMoreIcon'/>
+                    <svg class='svg-icon' height='24' viewBox='0 0 24 24' width='24'>
+                        <path d='M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z'/>
+                    </svg>
                 </b:includable>
                 <b:includable id='overflowablePageList'>
                     <div class='overflowable-container'>
@@ -2031,7 +2055,7 @@ Variable end */
                             <b:include name='profileImage'/>
                         </div>
                         <span class='profile-name'>
-                            <data:display-name/>
+                            <data:displayname/>
                         </span>
                     </a>
                 </b:includable>
@@ -2192,7 +2216,7 @@ Variable end */
         &quot;inLanguage&quot;: &quot;id&quot;,
         &quot;potentialAction&quot;: {
           &quot;@type&quot;: &quot;SearchAction&quot;,
-          &quot;target&quot;: &quot;https://kalinz.blogspot.com/search?q={search_term_string}&amp;m=1&quot;,
+          &quot;target&quot;: &quot;https://kalinz.blogspot.com/search?q={search_term_string}&quot;,
           &quot;query-input&quot;: &quot;required name=search_term_string&quot;
         },
         &quot;about&quot;: {
@@ -2618,9 +2642,7 @@ var linkMagzSetting = {
         </b:comment>
 
         <main id='wrapper'>
-            <section id='content-wrap'>
-
-                <b:attr cond='data:view.isPage' name='id' value='content-wrap-page'/>
+            <section expr:id='data:view.isPage ? &quot;content-wrap-page&quot; : &quot;content-wrap&quot;'>
 
                 <b:section class='top-widget' id='top-widget' maxwidgets='1' showaddelement='no'>
                   <b:widget id='HTML73' locked='true' title='Widget HTML #1' type='HTML' version='2' visible='false'>
@@ -2674,7 +2696,7 @@ var linkMagzSetting = {
     <span class="kalinz-cat-label">Budaya Nias</span>
     <small>Tradisi, adat, dan kebudayaan Nias</small>
   </a>
-  <a href="/search/label/Lagu%20Nias" class="kalinz-cat-item kalinz-cat-all" style="--cat-color:#555;">
+  <a href="/search" class="kalinz-cat-item kalinz-cat-all" style="--cat-color:#555;">
     <span class="kalinz-cat-label">Semua Konten →</span>
     <small>Jelajahi seluruh arsip Kalinz</small>
   </a>
@@ -2850,8 +2872,7 @@ var linkMagzSetting = {
                                 </b:loop>
                             </b:if>
                         </b:includable>
-                    <b:includable id='googlePlusShare'>
-                        </b:includable>
+                    <b:includable id='googlePlusShare'/>
                     <b:includable id='headerByline'>
                             <b:if cond='data:widgets.Blog.first.headerByline'>
                                 <div class='post-header'>
@@ -2864,10 +2885,10 @@ var linkMagzSetting = {
                             </b:if>
                         </b:includable>
                     <b:includable id='linkShare'>
-                            <b:with value='&quot;window.prompt(\&quot;Copy to clipboard: Ctrl+C, Enter\&quot;, \&quot;&quot; + data:originalUrl + &quot;\&quot;); return false;&quot;' var='onclick'>
-                                <b:include name='platformShare'/>
-                            </b:with>
-                        </b:includable>
+                                <b:with value='&quot;return copyShareLink(this);&quot;' var='onclick'>
+                                    <b:include name='platformShare'/>
+                                </b:with>
+                            </b:includable>
                     <b:includable id='otherSharingButton'>
                             <span class='sharing-platform-button sharing-element-other' expr:aria-label='data:messages.shareToOtherApps.escaped' expr:data-url='data:originalUrl' expr:title='data:messages.shareToOtherApps.escaped' role='menuitem' tabindex='-1'>
                                 <b:with value='{key: &quot;sharingOther&quot;}' var='platform'>
@@ -3612,8 +3633,7 @@ var linkMagzSetting = {
                                 </b:loop>
                             </b:if>
                         </b:includable>
-                    <b:includable id='googlePlusShare'>
-                        </b:includable>
+                    <b:includable id='googlePlusShare'/>
                     <b:includable id='headerByline'>
                             <b:if cond='data:widgets.Blog.first.headerByline'>
                                 <div class='post-header'>
@@ -3657,10 +3677,10 @@ var linkMagzSetting = {
                             </b:if>
                         </b:includable>
                     <b:includable id='linkShare'>
-                            <b:with value='&quot;window.prompt(\&quot;Copy to clipboard: Ctrl+C, Enter\&quot;, \&quot;&quot; + data:originalUrl + &quot;\&quot;); return false;&quot;' var='onclick'>
-                                <b:include name='platformShare'/>
-                            </b:with>
-                        </b:includable>
+                                <b:with value='&quot;return copyShareLink(this);&quot;' var='onclick'>
+                                    <b:include name='platformShare'/>
+                                </b:with>
+                            </b:includable>
                     <b:includable id='newerPostTitle'>
                             <data:messages.newerPosts/>
                         </b:includable>
@@ -3776,7 +3796,7 @@ var linkMagzSetting = {
                             <b:if cond='data:post.author.aboutMe and data:view.isPost'>
                                 <div class='author-profile'>
                                     <b:if cond='data:post.author.authorPhoto.url'>
-                                        <img class='author-image' expr:src='data:post.author.authorPhoto.url' width='50px'/>
+                                        <img class='author-image' expr:alt='data:post.author.name' expr:src='data:post.author.authorPhoto.url' height='50' width='50'/>
                                         <div class='author-about'>
                                             <b:include data='post' name='aboutPostAuthor'/>
                                         </div>
@@ -4192,10 +4212,67 @@ var linkMagzSetting = {
 
                 <b:if cond='data:view.isPost'>
                     <script>//<![CDATA[
-        !function(e){var n=e.querySelector(".post-body"),l=n.querySelectorAll("div > br, span > br, div > p, span > p"),t=Math.ceil(.2*l.length),r=Math.ceil(.7*l.length),i=e.querySelector("#iklan-tengah1 .widget-content"),o=e.querySelector("#iklan-tengah2 .widget-content"),a=e.querySelector("#iklan-atas .widget-content"),u=e.querySelector("#iklan-bawah .widget-content"),c=n.querySelector("#iklan1"),d=n.querySelector("#iklan2");null!=a&&"\n"!=a.innerHTML&&n.insertBefore(a,n.childNodes[0]),null!=u&&"\n"!=u.innerHTML&&n.appendChild(u);var g=function(n,t,r){var i,o;l.length>1?(null!=n&&"\n"!=n.innerHTML&&(i=n,void 0!==(o=null!==t?t:l[r])&&o.parentNode.insertBefore(i,o.nextSibling)),function(){for(var n,l=e.querySelectorAll(".post-body-artikel .kode-iklan-tengah"),t=0;t<l.length;t++)null!==(n=l[t].previousElementSibling)&&"BR"===n.tagName&&(n.style.display="none")}()):null!=n&&null!=n.parentNode&&n.parentNode.removeChild(n)};g(i,c,t),g(o,d,r)}(document);
-        !function(){var e,n,t;t={iklanMatched:!0},optionLinkMagz(t),e=document.querySelector("#ms-matched-content"),n=document.querySelector("#matched-content .widget-content"),null!=e?1==t.iklanMatched&&null!=n&&"\n"!=n.innerHTML&&e.appendChild(n):null!=n&&null!=n.parentNode&&n.parentNode.removeChild(n)}();
-        //]]>
-        </script>
+                      !function(e) {
+                          var n = e.querySelector(".post-body");
+
+                          if (!n) return;
+
+                          var l = n.querySelectorAll("div > br, span > br, div > p, span > p"),
+                              t = Math.ceil(.2 * l.length),
+                              r = Math.ceil(.7 * l.length),
+                              i = e.querySelector("#iklan-tengah1 .widget-content"),
+                              o = e.querySelector("#iklan-tengah2 .widget-content"),
+                              a = e.querySelector("#iklan-atas .widget-content"),
+                              u = e.querySelector("#iklan-bawah .widget-content"),
+                              c = n.querySelector("#iklan1"),
+                              d = n.querySelector("#iklan2");
+
+                          if (null != a && "\n" != a.innerHTML) n.insertBefore(a, n.childNodes[0]);
+                          if (null != u && "\n" != u.innerHTML) n.appendChild(u);
+
+                          var g = function(n, t, r) {
+                              var i, o;
+                              if (l.length > 1) {
+                                  if (null != n && "\n" != n.innerHTML) {
+                                      i = n;
+                                      if (void 0 !== (o = null !== t ? t : l[r])) {
+                                          o.parentNode.insertBefore(i, o.nextSibling);
+                                      }
+                                  }
+                                  !function() {
+                                      for (var n, l = e.querySelectorAll(".post-body-artikel .kode-iklan-tengah"), t = 0; t < l.length; t++) {
+                                          if (null !== (n = l[t].previousElementSibling) && "BR" === n.tagName) {
+                                              n.style.display = "none";
+                                          }
+                                      }
+                                  }();
+                              } else {
+                                  if (null != n && null != n.parentNode) n.parentNode.removeChild(n);
+                              }
+                          };
+
+                          g(i, c, t);
+                          g(o, d, r);
+                      }(document);
+
+                      !function() {
+                          var e, n, t;
+                          t = { iklanMatched: !0 };
+                          if (typeof optionLinkMagz === "function") {
+                              optionLinkMagz(t);
+                          }
+                          e = document.querySelector("#ms-matched-content");
+                          n = document.querySelector("#matched-content .widget-content");
+                          if (null != e) {
+                              if (1 == t.iklanMatched && null != n && "\n" != n.innerHTML) {
+                                  e.appendChild(n);
+                              }
+                          } else {
+                              if (null != n && null != n.parentNode) n.parentNode.removeChild(n);
+                          }
+                      }();
+                      //]]>
+                  </script>
                     <b:elseif cond='data:view.isHomepage'/>
                     <script>//<![CDATA[
         !function(){var e,n,t,l,o,a;a={IklanInFeed:!0,lokasiIklanInFeed:3},optionLinkMagz(a),null!=(t=document.querySelector(".content"))&&(l=t.querySelectorAll(".post-outer")[a.lokasiIklanInFeed-1],o=document.querySelector("#iklan-infeed .widget-content"),e=document.createElement("article"),n=document.createElement("div"),e.setAttribute("class","post-outer infeedads"),n.setAttribute("class","post-content"),e.appendChild(n),1==a.IklanInFeed&&null!=o&&"\n"!=o.innerHTML&&null!=l&&(n.appendChild(o),t.insertBefore(e,l)))}();
@@ -4282,34 +4359,9 @@ var linkMagzSetting = {
                                         </div>
                                     </div>
                                 </b:includable>
-                            <b:includable id='blogThisShare'>
-                                    <b:with value='&quot;window.open(this.href, \&quot;_blank\&quot;, \&quot;height=270,width=475\&quot;); return false;&quot;' var='onclick'>
-                                        <b:include name='platformShare'/>
-                                    </b:with>
-                                </b:includable>
-                            <b:includable id='bylineByName' var='byline'>
-                                    <b:switch var='data:byline.name'>
-                                        <b:case value='share'/>
-                                        <b:include cond='data:post.shareUrl' name='postShareButtons'/>
-                                        <b:case value='comments'/>
-                                        <b:include cond='data:post.allowComments' name='postCommentsLink'/>
-                                        <b:case value='location'/>
-                                        <b:include cond='data:post.location' name='postLocation'/>
-                                        <b:case value='timestamp'/>
-                                        <b:include cond='not data:view.isPage' name='postTimestamp'/>
-                                        <b:case value='author'/>
-                                        <b:include name='postAuthor'/>
-                                        <b:case value='labels'/>
-                                        <b:include cond='data:post.labels' name='postLabels'/>
-                                        <b:case value='icons'/>
-                                        <b:include cond='data:post.emailPostUrl' name='emailPostIcon'/>
-                                    </b:switch>
-                                </b:includable>
-                            <b:includable id='bylineRegion' var='regionItems'>
-                                    <b:loop values='data:regionItems' var='byline'>
-                                        <b:include data='byline' name='bylineByName'/>
-                                    </b:loop>
-                                </b:includable>
+                            <b:includable id='blogThisShare'/>
+                            <b:includable id='bylineByName' var='byline'/>
+                            <b:includable id='bylineRegion' var='regionItems'/>
                             <b:includable id='commentsLink'>
                                     <a class='comment-link' expr:href='data:post.commentsUrl' expr:onclick='data:post.commentsUrlOnclick'>
                                         <b:if cond='data:post.numberOfComments &gt; 0'>
@@ -4321,56 +4373,17 @@ var linkMagzSetting = {
                                         </b:if>
                                     </a>
                                 </b:includable>
-                            <b:includable id='commentsLinkIframe'>
-                                    <!-- G+ comments, no longer available. The includable is
-                                    retained for backwards-compatibility. -->
-                                </b:includable>
-                            <b:includable id='emailPostIcon'>
-                                    <span class='byline post-icons'>
-                                        <!-- email post links -->
-                                        <span class='item-action'>
-                                            <a expr:href='data:post.emailPostUrl' expr:title='data:messages.emailPost'>
-                                                <b:include data='{ iconClass: &quot;touch-icon sharing-icon&quot; }' name='emailIcon'/>
-                                            </a>
-                                        </span>
-                                    </span>
-                                </b:includable>
-                            <b:includable id='facebookShare'>
-                                    <b:with value='&quot;window.open(this.href, \&quot;_blank\&quot;, \&quot;height=430,width=640\&quot;); return false;&quot;' var='onclick'>
-                                        <b:include name='platformShare'/>
-                                    </b:with>
-                                </b:includable>
-                            <b:includable id='footerBylines'>
-                                    <b:if cond='data:widgets.Blog.first.footerBylines'>
-                                        <b:loop index='i' values='data:widgets.Blog.first.footerBylines' var='region'>
-                                            <b:if cond='not data:region.items.empty'>
-                                                <div expr:class='&quot;post-footer-line post-footer-line-&quot; + (data:i + 1)'>
-                                                    <b:with value='&quot;footer-&quot; + (data:i + 1)' var='regionName'>
-                                                        <b:include data='region.items' name='bylineRegion'/>
-                                                    </b:with>
-                                                </div>
-                                            </b:if>
-                                        </b:loop>
-                                    </b:if>
-                                </b:includable>
-                            <b:includable id='googlePlusShare'>
-                                </b:includable>
-                            <b:includable id='headerByline'>
-                                    <b:if cond='data:widgets.Blog.first.headerByline'>
-                                        <div class='post-header'>
-                                            <div class='post-header-line-1'>
-                                                <b:with value='&quot;header-1&quot;' var='regionName'>
-                                                    <b:include data='data:widgets.Blog.first.headerByline.items' name='bylineRegion'/>
-                                                </b:with>
-                                            </div>
-                                        </div>
-                                    </b:if>
-                                </b:includable>
+                            <b:includable id='commentsLinkIframe'/>
+                            <b:includable id='emailPostIcon'/>
+                            <b:includable id='facebookShare'/>
+                            <b:includable id='footerBylines'/>
+                            <b:includable id='googlePlusShare'/>
+                            <b:includable id='headerByline'/>
                             <b:includable id='linkShare'>
-                                    <b:with value='&quot;window.prompt(\&quot;Copy to clipboard: Ctrl+C, Enter\&quot;, \&quot;&quot; + data:originalUrl + &quot;\&quot;); return false;&quot;' var='onclick'>
-                                        <b:include name='platformShare'/>
-                                    </b:with>
-                                </b:includable>
+                                <b:with value='&quot;return copyShareLink(this);&quot;' var='onclick'>
+                                    <b:include name='platformShare'/>
+                                </b:with>
+                            </b:includable>
                             <b:includable id='otherSharingButton'>
                                     <span class='sharing-platform-button sharing-element-other' expr:aria-label='data:messages.shareToOtherApps.escaped' expr:data-url='data:originalUrl' expr:title='data:messages.shareToOtherApps.escaped' role='menuitem' tabindex='-1'>
                                         <b:with value='{key: &quot;sharingOther&quot;}' var='platform'>
@@ -4423,63 +4436,12 @@ var linkMagzSetting = {
                                         </a>
                                     </p>
                                 </b:includable>
-                            <b:includable id='postAuthor'>
-                                    <span class='byline post-author vcard'>
-                                        <span class='post-author-label'>
-                                            <data:byline.label/>
-                                        </span>
-                                        <span class='fn'>
-                                            <b:if cond='data:post.author.profileUrl'>
-                                                <meta expr:content='data:post.author.profileUrl'/>
-                                                <a class='g-profile' expr:href='data:post.author.profileUrl' rel='author' title='author profile'>
-                                                    <span>
-                                                        <data:post.author.name/>
-                                                    </span>
-                                                </a>
-                                                <b:else/>
-                                                <span>
-                                                    <data:post.author.name/>
-                                                </span>
-                                            </b:if>
-                                        </span>
-                                    </span>
-                                </b:includable>
-                            <b:includable id='postCommentsLink'>
-                                    <span class='byline post-comment-link container'>
-                                        <b:include cond='data:post.commentSource != 1' name='commentsLink'/>
-                                    </span>
-                                </b:includable>
-                            <b:includable id='postJumpLink' var='post'>
-                                    <div class='jump-link flat-button'>
-                                        <a expr:href='data:post.url fragment &quot;more&quot;' expr:title='data:post.title'>
-                                            <b:eval expr='data:blog.jumpLinkMessage'/>
-                                        </a>
-                                    </div>
-                                </b:includable>
-                            <b:includable id='postLabels'>
-                                    <span class='byline post-labels'>
-                                        <span class='byline-label'>
-                                            <data:byline.label/>
-                                        </span>
-                                        <b:loop index='i' values='data:post.labels' var='label'>
-                                            <a expr:href='data:label.url' rel='tag'>
-                                                <data:label.name/>
-                                            </a>
-                                        </b:loop>
-                                    </span>
-                                </b:includable>
-                            <b:includable id='postLocation'>
-                                    <span class='byline post-location'>
-                                        <data:byline.label/>
-                                        <a expr:href='data:post.location.mapsUrl' target='_blank'>
-                                            <data:post.location.name/>
-                                        </a>
-                                    </span>
-                                </b:includable>
-                            <b:includable id='postReactions'>
-                                    <!-- Reaction feature no longer available. The includable is
-                                    retained for backwards-compatibility. -->
-                                </b:includable>
+                            <b:includable id='postAuthor'/>
+                            <b:includable id='postCommentsLink'/>
+                            <b:includable id='postJumpLink' var='post'/>
+                            <b:includable id='postLabels'/>
+                            <b:includable id='postLocation'/>
+                            <b:includable id='postReactions'/>
                             <b:includable id='postShareButtons'>
                                     <div class='byline post-share-buttons goog-inline-block'>
                                         <b:with value='data:sharingId ?: ((data:widget.instanceId ?: &quot;sharing&quot;) + &quot;-&quot; + (data:regionName ?: &quot;byline&quot;) + &quot;-&quot; + data:post.id)' var='sharingId'>
@@ -4489,19 +4451,7 @@ var linkMagzSetting = {
                                         </b:with>
                                     </div>
                                 </b:includable>
-                            <b:includable id='postTimestamp'>
-                                    <span class='byline post-timestamp'>
-                                        <data:byline.label/>
-                                        <b:if cond='data:post.url'>
-                                            <meta expr:content='data:post.url.canonical'/>
-                                            <a class='timestamp-link' expr:href='data:post.url' rel='bookmark' title='permanent link'>
-                                                <time class='published' expr:datetime='data:post.date.iso8601' expr:title='data:post.date.iso8601'>
-                                                    <data:post.date/>
-                                                </time>
-                                            </a>
-                                        </b:if>
-                                    </span>
-                                </b:includable>
+                            <b:includable id='postTimestamp'/>
                             <b:includable id='sharingButton'>
                                     <span expr:aria-label='data:platform.shareMessage' expr:class='&quot;sharing-platform-button sharing-element-&quot; + data:platform.key' expr:data-href='data:shareUrl + &quot;&amp;target=&quot; + data:platform.target' expr:data-url='data:originalUrl' expr:title='data:platform.shareMessage' role='menuitem' tabindex='-1'>
                                         <b:include name='sharingPlatformIcon'/>
@@ -4540,53 +4490,11 @@ var linkMagzSetting = {
                             <b:includable id='sharingPlatformIcon'>
                                     <b:include data='{ iconClass: (&quot;touch-icon sharing-&quot; + data:platform.key) }' expr:name='data:platform.key + &quot;Icon&quot;'/>
                                 </b:includable>
-                            <b:includable id='snippetedPostByline'>
-                                    <b:with value='(data:widgets first (w =&gt; w.type == &quot;Blog&quot;)).allBylineItems' var='blogBylines'>
-                                        <div class='item-byline'>
-                                            <b:with value='data:blogBylines first (i =&gt; i.name == &quot;author&quot;)' var='byline'>
-                                                <b:include cond='data:byline and data:this.postDisplay.showAuthor' data='post' name='postAuthor'/>
-                                            </b:with>
-                                            <b:with value='data:blogBylines first (i =&gt; i.name == &quot;timestamp&quot;)' var='byline'>
-                                                <b:include cond='data:byline and data:this.postDisplay.showDate' data='post' name='postTimestamp'/>
-                                            </b:with>
-                                        </div>
-                                    </b:with>
-                                </b:includable>
-                            <b:includable id='snippetedPostContent'>
-                                    <div class='post-content'>
-                                        <b:include cond='data:this.postDisplay.showTitle' name='snippetedPostTitle'/>
-                                        <b:include cond='data:this.postDisplay.showDate or data:this.postDisplay.showAuthor' name='snippetedPostByline'/>
-                                        <b:include cond='data:this.postDisplay.showSnippet' data='post' name='postSnippet'/>
-                                        <b:include cond='data:this.postDisplay.showFeaturedImage and data:post.featuredImage' name='snippetedPostThumbnail'/>
-                                    </div>
-                                </b:includable>
-                            <b:includable id='snippetedPostThumbnail'>
-                                    <div class='item-thumbnail'>
-                                        <a expr:href='data:post.url'>
-                                            <b:include data='{                         image: data:post.featuredImage,                         imageSizes: [72, 144],                         imageRatio: &quot;1:1&quot;,                         sourceSizes: &quot;72px&quot;                        }' name='responsiveImage'/>
-                                        </a>
-                                    </div>
-                                </b:includable>
-                            <b:includable id='snippetedPostTitle'>
-                                    <b:if cond='data:post.title != &quot;&quot;'>
-                                        <h3 class='post-title'>
-                                            <a expr:href='data:post.url'>
-                                                <data:post.title/>
-                                            </a>
-                                        </h3>
-                                    </b:if>
-                                </b:includable>
-                            <b:includable id='snippetedPosts'>
-                                    <div role='feed'>
-                                        <!-- Don't render the post that we're currently already
-                                        looking at. -->
-                                        <b:loop values='data:posts filter (p =&gt; p.id != data:view.postId)' var='post'>
-                                            <article class='post' role='article'>
-                                                <b:include name='snippetedPostContent'/>
-                                            </article>
-                                        </b:loop>
-                                    </div>
-                                </b:includable>
+                            <b:includable id='snippetedPostByline'/>
+                            <b:includable id='snippetedPostContent'/>
+                            <b:includable id='snippetedPostThumbnail'/>
+                            <b:includable id='snippetedPostTitle'/>
+                            <b:includable id='snippetedPosts'/>
                           </b:widget>
                           <b:widget id='HTML1' locked='false' title='Tentang Kalinz' type='HTML' visible='true'>
                             <b:widget-settings>
@@ -4750,8 +4658,10 @@ var linkMagzSetting = {
                             </div>
                         </b:includable>
                     <b:includable id='overflowButton'>
-                            <b:include name='verticalMoreIcon'/>
-                        </b:includable>
+                        <svg class='svg-icon' height='24' viewBox='0 0 24 24' width='24'>
+                            <path d='M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z'/>
+                        </svg>
+                    </b:includable>
                     <b:includable id='overflowablePageList'>
                             <div class='overflowable-container'>
                                 <div class='overflowable-contents'>
@@ -4806,7 +4716,6 @@ var linkMagzSetting = {
                         </b:includable>
                   </b:widget>
                 </b:section>
-
                 <b:section class='navbarrr' id='navbarrr' maxwidgets='1' showaddelement='no'>
                   <b:widget id='Navbar1' locked='true' title='Navbar' type='Navbar' version='2' visible='false'>
                     <b:includable id='main'>&lt;script type=&quot;text/javascript&quot;&gt;
@@ -4844,7 +4753,6 @@ head.appendChild(script);
 </b:includable>
                   </b:widget>
                 </b:section>
-
             </div>
         </footer>
         <b:comment><!-- #footer-outer -->
