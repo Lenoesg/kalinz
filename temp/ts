@@ -1,3 +1,6 @@
+tips: powershell -Command "Compress-Archive -Path (Get-ChildItem -Path 'E:\kalinz' -Exclude 'archive', 'temp') -DestinationPath 'E:\kalinz\kalinz.zip' -Force"
+
+
 Judul Lagu		: RAYA BA BINAKA
 Penulis Lagu		: Daniel Folala Zalukhu
 Dipopulerkan Oleh	: Daniel Folala Zalukhu
