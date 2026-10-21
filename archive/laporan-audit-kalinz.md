@@ -232,7 +232,7 @@ Penambahan yang aman dan berguna (opsional): `content-visibility:auto` dengan `c
 ### 2.5 Dampak ke LCP (di luar CLS, tetapi satu metrik Core Web Vitals)
 
 - Seluruh gambar template memakai `class="lazyload"` + `data-src` + placeholder, dan dimuat oleh `Defer.dom("img.lazyload",100,"loaded",null,{rootMargin:"1px"})` (baris 913). Pustaka defer.js menjalankannya setelah event `load` atau saat interaksi pertama, dengan jeda 100 ms, dan `rootMargin:1px` berarti tidak ada pramuat sebelum gambar masuk viewport. Gambar Featured Post dan kartu pertama di beranda hampir pasti menjadi kandidat LCP, sehingga LCP tertunda sampai setelah load.
-- Di postingan, gambar unggulan di isi artikel memakai `<img>` biasa dan `fetchpriority="high"` pada 25 dari 35 postingan yang punya atribut. Konsisten dan baik; 10 postingan lain tidak memilikinya (daftar di bagian 4).
+- Di postingan, gambar unggulan di isi artikel memakai `<img>` biasa dan `fetchpriority="high"` pada 25 dari 44 postingan. 19 postingan lain tidak memilikinya: 9 yang juga tanpa dimensi gambar (K1) dan 10 yang punya dimensi tetapi tanpa `fetchpriority` (daftar di bagian 4.1).
 - Saran: untuk gambar Featured Post (satu gambar di atas lipatan di beranda) gunakan `src` langsung + `fetchpriority="high"` + tanpa `lazyload`; untuk sisanya gunakan `loading="lazy"` bawaan browser. Ini perubahan perilaku, jadi uji di beranda.
 
 ---
@@ -524,7 +524,7 @@ Contoh hasil pada `erickijo-sowokhi.html`:
 +<img height="400" width="400" class="post-featured-image" src="https://blogger.googleusercontent.com/.../w400-h400/Sowokhi%20-%20Erick_Ijo.png" alt="..." title="...">
 ```
 
-Langkah manual tambahan: beri `fetchpriority="high"` pada gambar unggulan 10 postingan yang belum memilikinya (`_mengenal-lagu-nias`, `_sejarah-pulau-nias`, 6 `bjbtrio-*` selain `pekanbaru`... lihat daftar di bagian 4.1) dan, untuk `_mengenal-lagu-nias`, samakan atribut `width="800"` dengan sumber (`w400-h266` -> `width="400" height="266"`, atau ganti URL ke `w800-h533`). Skrip di atas sudah menyetel 400x266 untuk file ini.
+Langkah manual tambahan: beri `fetchpriority="high"` pada gambar unggulan 19 postingan yang belum memilikinya (daftar di bagian 4.1) dan, untuk `_mengenal-lagu-nias`, samakan atribut `width="800"` dengan sumber (`w400-h266` -> `width="400" height="266"`, atau ganti URL ke `w800-h533`). Skrip di atas sudah menyetel 400x266 untuk file ini.
 
 ### 3.11 Postingan - JSON-LD tidak valid dan cacat HTML (S4, S12)
 
@@ -635,12 +635,12 @@ Hasil parsing otomatis:
 | Tag tidak seimbang | 2 file bermasalah: `bjbtrio-no-nifiliu.html` (2 `<td>` tidak tertutup di baris 346), `tice-hato-fee-khogu.html` (`</em>` liar di baris 374). Sisanya 42 file bersih. Tidak ada tag yang merusak pembungkus utama `.post-kalinz` |
 | Pembungkus utama | Struktur `.post-kalinz` konsisten; kontainer dikunci dengan `box-sizing`, `overflow-wrap:anywhere`, dan `max-width:740px` |
 | `<style>` inline | 43 dari 44 postingan menyalin blok yang sama: varian `bjbtrio` dan `tice` 4.639 byte (19 `!important`), varian `erickijo`/`gauswaruwu` 4.429 byte (11 `!important`), `_mengenal-lagu-nias` 4.163 byte (13 `!important`). Total 192,5 KB yang berulang di database Blogger, ikut terkirim di feed dan di respons JSONP |
-| Gambar | Tepat 1 `<img>` per postingan, semua dari `blogger.googleusercontent.com`. 25 file memakai `fetchpriority="high"`; 10 tidak (`_mengenal-lagu-nias`, `_sejarah-pulau-nias`, 6 `bjbtrio-*` selain `pekanbaru`... lihat catatan di bawah, dan `tice-faomasigu-yaugo`) |
+| Gambar | Tepat 1 `<img>` per postingan, semua dari `blogger.googleusercontent.com`. 25 file memakai `fetchpriority="high"`; 19 tidak (9 tanpa dimensi gambar, ditambah 10 ini: `_mengenal-lagu-nias`, `_sejarah-pulau-nias`, tujuh `bjbtrio-*`, `tice-faomasigu-yaugo`) |
 | Iframe/skrip eksternal | Tidak ada iframe maupun skrip eksternal di isi postingan |
 | JSON-LD | 43 postingan punya `Article` (semua memuat field wajib: headline, description, image, author, publisher, datePublished, dateModified, mainEntityOfPage); 1 file (`bjbtrio-onomatua-sibarisi`) tidak valid; `_sejarah-pulau-nias` memakai microdata `FAQPage` |
 | Penanda `kalinz-custom-schema` | 26 file bertanda; 17 file punya JSON-LD tanpa penanda (menghasilkan skema ganda, lihat 3.7) |
 
-Catatan: untuk daftar tepat 10 postingan tanpa `fetchpriority`, gunakan pencarian `grep -L 'fetchpriority' postingan/*.html`.
+Catatan: untuk daftar lengkap 19 postingan tanpa `fetchpriority`, gunakan `grep -L 'fetchpriority' postingan/*.html`.
 
 Daftar 17 postingan dengan JSON-LD sendiri tetapi tanpa penanda:
 `_mengenal-lagu-nias`, `bjbtrio-boi-aetu-waomasi`, `bjbtrio-laua-nakhi`, `bjbtrio-na-uangeraigo-todo`, `bjbtrio-no-nifiliu`, `bjbtrio-no-nilau-dododa`, `bjbtrio-onomatua-sibarisi`, `erickijo-bagofa-ama-eta`, `erickijo-bowo-melati`, `erickijo-faomasida`, `erickijo-mekhe-mekhe`, `erickijo-saohagolo`, `erickijo-sowokhi`, `erickijo-yaugo-ufili`, `erickijo_hulo_batu`, `gauswaruwu-lo-ubinio`, `tice-faomasigu-yaugo`.

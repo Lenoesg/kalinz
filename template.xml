@@ -778,16 +778,26 @@ Variable end */
                 </b:includable>
 
                 <b:includable id='relatedPost'>
-                    <div id='ms-related-post'/>
-                    <script>
-                        var postLabels = [<b:if cond='data:post.labels'><b:loop values='data:post.labels' var='label'>&quot;<data:label.name.jsonEscaped/>&quot;<b:if cond='data:label.isLast != &quot;true&quot;'>, </b:if></b:loop></b:if>];
-                        var relatedConfig = {
-                            postUrl: &quot;<data:post.url.canonical.jsonEscaped/>&quot;,
-                            homePageUrl: &quot;<data:blog.canonicalHomepageUrl.jsonEscaped/>&quot;,
-                            relatedTitleText: &quot;Artikel Terkait&quot;,
-                        }; 
-                    </script> 
-        <!-- related posts end -->
+                <div id='ms-related-post'/>
+                
+                <script type='text/javascript'>
+                    //<![CDATA[
+                    var postLabels = [
+                    <b:if cond='data:post.labels'>
+                        <b:loop values='data:post.labels' var='label'>
+                        &quot;<data:label.name.jsonEscaped/>&quot;<b:if cond='data:label.isLast != &quot;true&quot;'>, </b:if>
+                        </b:loop>
+                    </b:if>
+                    ];
+
+                    var relatedConfig = {
+                    postUrl: &quot;<data:post.url.canonical.jsonEscaped/>&quot;,
+                    homePageUrl: &quot;<data:blog.canonicalHomepageUrl.jsonEscaped/>&quot;,
+                    relatedTitleText: &quot;Artikel Terkait&quot;
+                    };
+                    //]]>
+                </script>
+                <!-- related posts end -->
                 </b:includable>
 
                 <b:includable id='relatedPostScript'>
