@@ -620,40 +620,6 @@ Variable end */
                     <div class='post-body post-body-artikel' expr:id='&quot;post-body-&quot; + data:post.id'>
                         <data:post.body/>
                     </div>
-                    <div id='baca-juga'/>
-                    <script>
-            //<![CDATA[
-            // Baca Juga — hanya definisi fungsi, request dilakukan di relatedPostScript
-            function showBacaJuga(json) {
-                if (!json.feed || !json.feed.entry) return;
-                var cfg = { bacaJuga: true, jumlahBacaJuga: 3, judulBacaJuga: 'Baca Juga' };
-                optionLinkMagz(cfg);
-                if (!cfg.bacaJuga) return;
-                var currentUrl = '<data:post.url/>';
-                var entries = json.feed.entry;
-                var html = '', count = 0;
-                for (var i = 0; i < entries.length && count < cfg.jumlahBacaJuga; i++) {
-                    var url = '#';
-                    for (var j = 0; j < entries[i].link.length; j++) {
-                        if (entries[i].link[j].rel === 'alternate') { url = entries[i].link[j].href; break; }
-                    }
-                    if (url === currentUrl) continue;
-                    html += '<li><a href="' + url + '">' + escapeHTML(entries[i].title.$t) + '</a></li>';
-                    count++;
-                }
-                if (count > 0) {
-                    var wrap = document.createElement('div');
-                    wrap.className = 'baca-juga-wrap';
-                    wrap.innerHTML = '<strong>' + cfg.judulBacaJuga + '</strong><ul>' + html + '</ul>';
-                    var body = document.querySelector('.post-body-artikel');
-                    if (!body) return;
-                    var elems = body.querySelectorAll('div > br, span > br, div > p, span > p');
-                    var idx = Math.ceil(elems.length * 0.5);
-                    if (elems[idx]) elems[idx].parentNode.insertBefore(wrap, elems[idx].nextSibling);
-                }
-            }
-            //]]>
-                    </script>
                 </b:includable>
 
                 <b:includable id='postReadMore'>
@@ -803,62 +769,7 @@ Variable end */
                 <b:includable id='relatedPostScript'>
                     <script>
             //<![CDATA[
-            // Related Post — simplified, 1 request, label pertama
-            !function(){
-                var e = {
-                    relatedTitleOuterOpen: '<div class="related-title"><p class="ms-title">',
-                    relatedTitleOuterClose: '</p></div>',
-                    relatedTitleText: 'Artikel Terkait',
-                    relatedOuter: 'ms-related-post'
-                };
-                for (var t in relatedConfig) {
-                    if (typeof relatedConfig[t] !== 'undefined') e[t] = relatedConfig[t];
-                }
-                var a = { relatedPosts: true, jumlahRelatedPosts: 3, judulRelatedPosts: e.relatedTitleText };
-                optionLinkMagz(a);
-                if (!a.relatedPosts || typeof postLabels === 'undefined' || !postLabels.length) return;
-                var label = (postLabels[1] || postLabels[0]).replace(/&amp;/g, '&');
-				function escapeHTML(str) {
-                    return (str || '').replace(/[&<>'"]/g, function(tag) {
-                        var chars = {
-                            '&': '&amp;',
-                            '<': '&lt;',
-                            '>': '&gt;',
-                            "'": '&#39;',
-                            '"': '&quot;'
-                        };
-                        return chars[tag] || tag;
-                    });
-                }
-                window.msRelatedPosts = function(json) {
-                    if (!json.feed || !json.feed.entry) return;
-                    var entries = json.feed.entry;
-                    var container = document.getElementById(e.relatedOuter);
-                    if (!container) return;
-                    var html = e.relatedTitleOuterOpen + a.judulRelatedPosts + e.relatedTitleOuterClose;
-                    html += '<ul class="ms-related-nothumb">';
-                    var count = 0;
-                    for (var i = 0; i < entries.length && count < a.jumlahRelatedPosts; i++) {
-                        var entryUrl = '#';
-                        for (var j = 0; j < entries[i].link.length; j++) {
-                            if (entries[i].link[j].rel === 'alternate') { entryUrl = entries[i].link[j].href; break; }
-                        }
-                        if (entryUrl === e.postUrl) continue;
-                        html += '<li><div class="related-title-outer"><a href="' + entryUrl + '">' + escapeHTML(entries[i].title.$t) + '</a></div></li>';
-                        count++;
-                    }
-                    html += '</ul>';
-                    if (count > 0) container.innerHTML = html;
-                };
-                var s = document.createElement('script');
-                s.src = e.homePageUrl.replace(/\/$/, '') + '/feeds/posts/default/-/'
-                    + encodeURIComponent(label)
-                    + '?alt=json-in-script&orderby=updated&max-results=' + (a.jumlahRelatedPosts + 1)
-                    + '&callback=msRelatedPosts';
-                document.head.appendChild(s);
-            }();
-
-            // fullwidthImage — dipertahankan
+            !function(){var e={relatedTitleOuterOpen:'<div class="related-title"><p class="ms-title">',relatedTitleOuterClose:"</p></div>",relatedTitleText:"Artikel Terkait",relatedOuter:"ms-related-post"};for(var t in relatedConfig)void 0!==relatedConfig[t]&&(e[t]=relatedConfig[t]);var l={relatedPosts:!0,jumlahRelatedPosts:3,judulRelatedPosts:e.relatedTitleText};if(optionLinkMagz(l),l.relatedPosts&&"undefined"!=typeof postLabels&&postLabels.length){var r=(postLabels[1]||postLabels[0]).replace(/&amp;/g,"&");window.msRelatedPosts=function(t){if(t.feed&&t.feed.entry){var r=t.feed.entry,a=document.getElementById(e.relatedOuter);if(a){var n=e.relatedTitleOuterOpen+l.judulRelatedPosts+e.relatedTitleOuterClose;n+='<ul class="ms-related-nothumb">';for(var s=0,o=0;o<r.length&&s<l.jumlahRelatedPosts;o++){for(var i="#",u=0;u<r[o].link.length;u++)if("alternate"===r[o].link[u].rel){i=r[o].link[u].href;break}i!==e.postUrl&&(n+='<li><div class="related-title-outer"><a href="'+i+'">'+d(r[o].title.$t)+"</a></div></li>",s++)}n+="</ul>",s>0&&(a.innerHTML=n)}}};var a=function(){var t=document.createElement("script");t.async=!0,t.src=e.homePageUrl.replace(/\/$/,"")+"/feeds/posts/default/-/"+encodeURIComponent(r)+"?alt=json-in-script&orderby=updated&max-results="+(l.jumlahRelatedPosts+1)+"&callback=msRelatedPosts",document.head.appendChild(t)},n=document.getElementById(e.relatedOuter);if(n&&"IntersectionObserver"in window){var s=new IntersectionObserver(function(e){e[0].isIntersecting&&(s.disconnect(),a())},{rootMargin:"600px 0px"});s.observe(n)}else a()}function d(e){return(e||"").replace(/[&<>'"]/g,function(e){return{"&":"&amp;","<":"&lt;",">":"&gt;","'":"&#39;",'"':"&quot;"}[e]||e})}}();
             !function(){var t,o,d;d={fullwidthImage:!0},optionLinkMagz(d),1==d.fullwidthImage&&(t=document.querySelector(".post-body img"),(o=document.querySelector(".post-body > .tr-caption-container"))?o.classList.add("fullwidth"):t&&t.classList.add("fullwidth"))}();
             //]]>
         </script>
@@ -867,21 +778,7 @@ Variable end */
                 <b:includable id='allJavaScripts'>
                     <script>
             //<![CDATA[
-            function copyShareLink(element) {
-                var url = element.getAttribute('data-url');
-
-                if (!url) return false;
-
-                if (navigator.clipboard && window.isSecureContext) {
-                    navigator.clipboard.writeText(url).catch(function () {
-                        window.prompt('Copy link:', url);
-                    });
-                } else {
-                    window.prompt('Copy link:', url);
-                }
-
-                return false;
-            }
+            function copyShareLink(t){var i=t.getAttribute("data-url");return!!i&&(navigator.clipboard&&window.isSecureContext?navigator.clipboard.writeText(i).catch(function(){window.prompt("Copy link:",i)}):window.prompt("Copy link:",i),!1)}
             /*! smooth-scroll js from Chris Ferdinandi (http://github.com/cferdinandi/smooth-scroll) */
             !function(){var e="undefined"!=typeof global?global:"undefined"!=typeof window?window:this,t=function(E){"use strict";function b(){var n={};return Array.prototype.forEach.call(arguments,function(e){for(var t in e){if(!e.hasOwnProperty(t))return;n[t]=e[t]}}),n}function i(e){"#"===e.charAt(0)&&(e=e.substr(1));for(var t,n=String(e),o=n.length,a=-1,r="",i=n.charCodeAt(0);++a<o;){if(0===(t=n.charCodeAt(a)))throw new InvalidCharacterError("Invalid character: the input contains U+0000.");r+=1<=t&&t<=31||127==t||0===a&&48<=t&&t<=57||1===a&&48<=t&&t<=57&&45===i?"\\"+t.toString(16)+" ":128<=t||45===t||95===t||48<=t&&t<=57||65<=t&&t<=90||97<=t&&t<=122?n.charAt(a):"\\"+n.charAt(a)}return"#"+r}function O(){return Math.max(document.body.scrollHeight,document.documentElement.scrollHeight,document.body.offsetHeight,document.documentElement.offsetHeight,document.body.clientHeight,document.documentElement.clientHeight)}function I(e,t,n,o){t.emitEvents&&"function"==typeof E.CustomEvent&&(t=new CustomEvent(e,{bubbles:!0,detail:{anchor:n,toggle:o}}),document.dispatchEvent(t))}var M={ignore:"[data-scroll-ignore]",header:null,topOnEmptyHash:!0,speed:500,speedAsDuration:!1,durationMax:null,durationMin:null,clip:!0,offset:0,easing:"easeInOutCubic",customEasing:null,updateURL:!0,popstate:!0,emitEvents:!0};return function(a,e){function t(e){if(!e.defaultPrevented&&!(0!==e.button||e.metaKey||e.ctrlKey||e.shiftKey)&&"closest"in e.target&&(r=e.target.closest(a))&&"a"===r.tagName.toLowerCase()&&!e.target.closest(y.ignore)&&r.hostname===E.location.hostname&&r.pathname===E.location.pathname&&/#/.test(r.href)){var t;try{n=i(decodeURIComponent(r.hash))}catch(e){n=i(r.hash)}if("#"===n){if(!y.topOnEmptyHash)return;t=document.documentElement}else t=document.querySelector(n);(t=t||"#top"!==n?t:document.documentElement)&&(e.preventDefault(),n=y,history.replaceState&&n.updateURL&&!history.state&&(o=(o=E.location.hash)||"",history.replaceState({smoothScroll:JSON.stringify(n),anchor:o||E.pageYOffset},document.title,o||E.location.href)),v.animateScroll(t,r))}var n,o}function n(e){var t;null===history.state||!history.state.smoothScroll||history.state.smoothScroll!==JSON.stringify(y)||"string"==typeof(t=history.state.anchor)&&t&&!(t=document.querySelector(i(history.state.anchor)))||v.animateScroll(t,null,{updateURL:!1})}var y,r,o,S,v={cancelScroll:function(e){cancelAnimationFrame(S),S=null,e||I("scrollCancel",y)},animateScroll:function(a,r,e){v.cancelScroll();var i,s,c,u,l,d,f,m,h,t,p=b(y||M,e||{}),g="[object Number]"===Object.prototype.toString.call(a),e=g||!a.tagName?null:a;(g||e)&&(i=E.pageYOffset,p.header&&!o&&(o=document.querySelector(p.header)),t=(t=o)?parseInt(E.getComputedStyle(t).height,10)+t.offsetTop:0,u=g?a:function(e,t,n,o){var a=0;if(e.offsetParent)for(;a+=e.offsetTop,e=e.offsetParent;);return a=Math.max(a-t-n,0),a=o?Math.min(a,O()-E.innerHeight):a}(e,t,parseInt("function"==typeof p.offset?p.offset(a,r):p.offset,10),p.clip),l=u-i,d=O(),f=0,t=(e=p).speedAsDuration?e.speed:Math.abs(l/1e3*e.speed),m=e.durationMax&&t>e.durationMax?e.durationMax:e.durationMin&&t<e.durationMin?e.durationMin:parseInt(t,10),h=function(e){var t,n,o;f+=e-(s=s||e),c=i+l*(o=1<(c=0===m?0:f/m)?1:c,"easeInQuad"===p.easing&&(t=o*o),"easeOutQuad"===p.easing&&(t=o*(2-o)),"easeInOutQuad"===p.easing&&(t=o<.5?2*o*o:(4-2*o)*o-1),"easeInCubic"===p.easing&&(t=o*o*o),"easeOutCubic"===p.easing&&(t=--o*o*o+1),"easeInOutCubic"===p.easing&&(t=o<.5?4*o*o*o:(o-1)*(2*o-2)*(2*o-2)+1),"easeInQuart"===p.easing&&(t=o*o*o*o),"easeOutQuart"===p.easing&&(t=1- --o*o*o*o),"easeInOutQuart"===p.easing&&(t=o<.5?8*o*o*o*o:1-8*--o*o*o*o),"easeInQuint"===p.easing&&(t=o*o*o*o*o),"easeOutQuint"===p.easing&&(t=1+--o*o*o*o*o),"easeInOutQuint"===p.easing&&(t=o<.5?16*o*o*o*o*o:1+16*--o*o*o*o*o),(t=p.customEasing?p.customEasing(o):t)||o),E.scrollTo(0,Math.floor(c)),t=u,o=E.pageYOffset,(!(c==t||o==t||(i<t&&E.innerHeight+o)>=d)||(v.cancelScroll(!0),o=t,t=g,0===(n=a)&&document.body.focus(),t||(n.focus(),document.activeElement!==n&&(n.setAttribute("tabindex","-1"),n.focus(),n.style.outline="none"),E.scrollTo(0,o)),I("scrollStop",p,a,r),S=s=null))&&(S=E.requestAnimationFrame(h),s=e)},0===E.pageYOffset&&E.scrollTo(0,0),e=a,g||history.pushState&&p.updateURL&&history.pushState({smoothScroll:JSON.stringify(p),anchor:e.id},document.title,e===document.documentElement?"#top":"#"+e.id),"matchMedia"in E&&E.matchMedia("(prefers-reduced-motion)").matches?E.scrollTo(0,Math.floor(u)):(I("scrollStart",p,a,r),v.cancelScroll(!0),E.requestAnimationFrame(h)))}};if(v.destroy=function(){y&&(document.removeEventListener("click",t,!1),E.removeEventListener("popstate",n,!1),v.cancelScroll(),S=o=r=y=null)},"querySelector"in document&&"addEventListener"in E&&"requestAnimationFrame"in E&&"closest"in E.Element.prototype)return v.destroy(),y=b(M,e||{}),o=y.header?document.querySelector(y.header):null,document.addEventListener("click",t,!1),y.updateURL&&y.popstate&&E.addEventListener("popstate",n,!1),v;throw"Smooth Scroll: This browser does not support the required JavaScript methods and browser APIs."}};"function"==typeof define&&define.amd?define([],function(){return t(e)}):"object"==typeof exports?module.exports=t(e):e.SmoothScroll=t(e)}();
             !function(){var t,n,e,i,o,r,s,c,l={menuSticky:!0};if(optionLinkMagz(l),1==l.menuSticky){t=document.querySelector("#header-outer").getBoundingClientRect().height,n=document.querySelector("#navmenu-wrap-sticky"),l=document.querySelector(".nav-copy"),e=document.querySelector(".nav-original"),i=document.querySelector(".sidebar-sticky"),o="navsticky-show",r="navsticky-hide",s=0,null!=e&&(l.innerHTML=e.innerHTML),(c=document.querySelector("#header .widget a"))&&l&&((c=c.cloneNode(!0)).classList.add("sticky-logo-link"),l.insertBefore(c,l.firstChild)),null!=e&&(window.addEventListener("resize",function(){t=document.querySelector("#header-outer").getBoundingClientRect().height}),window.addEventListener("scroll",function(){var e=Math.round(window.pageYOffset);t<=e?e<s?(n.classList.remove(r),n.classList.add(o)):(n.classList.remove(o),n.classList.add(r)):(n.classList.remove(o),n.classList.remove(r)),s=e},{passive:!0})),null!=i&&(i.style.top="88px");for(var a=document.querySelectorAll(".menu-sticky a"),d=0;d<a.length;d++)a[d].setAttribute("tabindex","-1")}}();
@@ -2253,8 +2150,8 @@ var linkMagzSetting = {
         <b:section class='custom-css' id='custom-css' maxwidgets='1' showaddelement='no'>
           <b:widget id='HTML82' locked='true' title='Custom CSS' type='HTML' version='2' visible='true'>
             <b:widget-settings>
-              <b:widget-setting name='content'>/* ----------------------------------------------------------
-   1. FOOTER &#8212; Social Icons
+              <b:widget-setting name='content'><![CDATA[/* ----------------------------------------------------------
+   1. FOOTER — Social Icons
    ---------------------------------------------------------- */
 .footer-sosmed-wrap {
   display: flex;
@@ -2300,7 +2197,7 @@ var linkMagzSetting = {
 
 
 /* ----------------------------------------------------------
-   2. HOMEPAGE &#8212; Intro Text
+   2. HOMEPAGE — Intro Text
    ---------------------------------------------------------- */
 .kalinz-home-intro {
   max-width: 620px;
@@ -2316,7 +2213,7 @@ var linkMagzSetting = {
 
 
 /* ----------------------------------------------------------
-   3. HOMEPAGE &#8212; Category Grid
+   3. HOMEPAGE — Category Grid
    ---------------------------------------------------------- */
 .kalinz-cat-grid {
   display: grid;
@@ -2368,7 +2265,7 @@ var linkMagzSetting = {
 
 
 /* ----------------------------------------------------------
-   4. SIDEBAR &#8212; Tentang Kalinz + Profil Penulis
+   4. SIDEBAR — Tentang Kalinz + Profil Penulis
    ---------------------------------------------------------- */
 .kalinz-about {
   font-size: .875rem;
@@ -2420,7 +2317,7 @@ var linkMagzSetting = {
 
 
 /* ----------------------------------------------------------
-   5. SIDEBAR &#8212; Artis Populer
+   5. SIDEBAR — Artis Populer
    ---------------------------------------------------------- */
 .kalinz-artist-list {
   list-style: none;
@@ -2449,7 +2346,7 @@ var linkMagzSetting = {
 
 
 /* ----------------------------------------------------------
-   6. SIDEBAR STICKY &#8212; Jelajahi
+   6. SIDEBAR STICKY — Jelajahi
    ---------------------------------------------------------- */
 .kalinz-sticky-nav {
   display: flex;
@@ -2476,7 +2373,7 @@ var linkMagzSetting = {
 
 
 /* ----------------------------------------------------------
-   7. POST BODY &#8212; Reserved Space Slot Iklan
+   7. POST BODY — Reserved Space Slot Iklan
    ---------------------------------------------------------- */
 .post-body .widget-content.kode-iklan-atas,
 .post-body .widget-content.kode-iklan-bawah {
@@ -2500,7 +2397,7 @@ var linkMagzSetting = {
 }
 #iklan-tengah1 .widget-content {
   min-height: 250px;
-}</b:widget-setting>
+}]]></b:widget-setting>
             </b:widget-settings>
             <b:includable id='main'>
                     <b:if cond='data:content != &quot;&quot;'>
@@ -4183,65 +4080,8 @@ var linkMagzSetting = {
 
                 <b:if cond='data:view.isPost'>
                     <script>//<![CDATA[
-                      !function(e) {
-                          var n = e.querySelector(".post-body");
-
-                          if (!n) return;
-
-                          var l = n.querySelectorAll("div > br, span > br, div > p, span > p"),
-                              t = Math.ceil(.2 * l.length),
-                              r = Math.ceil(.7 * l.length),
-                              i = e.querySelector("#iklan-tengah1 .widget-content"),
-                              o = e.querySelector("#iklan-tengah2 .widget-content"),
-                              a = e.querySelector("#iklan-atas .widget-content"),
-                              u = e.querySelector("#iklan-bawah .widget-content"),
-                              c = n.querySelector("#iklan1"),
-                              d = n.querySelector("#iklan2");
-
-                          if (null != a && "\n" != a.innerHTML) n.insertBefore(a, n.childNodes[0]);
-                          if (null != u && "\n" != u.innerHTML) n.appendChild(u);
-
-                          var g = function(n, t, r) {
-                              var i, o;
-                              if (l.length > 1) {
-                                  if (null != n && "\n" != n.innerHTML) {
-                                      i = n;
-                                      if (void 0 !== (o = null !== t ? t : l[r])) {
-                                          o.parentNode.insertBefore(i, o.nextSibling);
-                                      }
-                                  }
-                                  !function() {
-                                      for (var n, l = e.querySelectorAll(".post-body-artikel .kode-iklan-tengah"), t = 0; t < l.length; t++) {
-                                          if (null !== (n = l[t].previousElementSibling) && "BR" === n.tagName) {
-                                              n.style.display = "none";
-                                          }
-                                      }
-                                  }();
-                              } else {
-                                  if (null != n && null != n.parentNode) n.parentNode.removeChild(n);
-                              }
-                          };
-
-                          g(i, c, t);
-                          g(o, d, r);
-                      }(document);
-
-                      !function() {
-                          var e, n, t;
-                          t = { iklanMatched: !0 };
-                          if (typeof optionLinkMagz === "function") {
-                              optionLinkMagz(t);
-                          }
-                          e = document.querySelector("#ms-matched-content");
-                          n = document.querySelector("#matched-content .widget-content");
-                          if (null != e) {
-                              if (1 == t.iklanMatched && null != n && "\n" != n.innerHTML) {
-                                  e.appendChild(n);
-                              }
-                          } else {
-                              if (null != n && null != n.parentNode) n.parentNode.removeChild(n);
-                          }
-                      }();
+                      !function(e){var n=e.querySelector(".post-body");if(n){for(var l,t=null,r=0;r<n.children.length;r++)if("ARTICLE"===n.children[r].tagName){t=n.children[r];break}if(t){l=[];for(var i=0;i<t.children.length;i++){var a=t.children[i];!/^(P|UL|OL|TABLE|BLOCKQUOTE|FIGURE|SECTION|DIV|H2|H3)$/.test(a.tagName)||a.classList.contains("widget-content")||a.classList.contains("iklan-wrapper")||l.push(a)}}else l=n.querySelectorAll("div > br, span > br, div > p, span > p");var o=t?5:2,c=Math.min(Math.ceil(.2*l.length),l.length-1),d=Math.min(Math.ceil(.7*l.length),l.length-1),h=e.querySelector("#iklan-tengah1 .widget-content"),u=e.querySelector("#iklan-tengah2 .widget-content"),s=e.querySelector("#iklan-atas .widget-content"),g=e.querySelector("#iklan-bawah .widget-content"),p=n.querySelector("#iklan1"),v=n.querySelector("#iklan2");null!=s&&"\n"!=s.innerHTML&&n.insertBefore(s,n.childNodes[0]),null!=g&&"\n"!=g.innerHTML&&n.appendChild(g);var y=function(n,t,r){var i,a;l.length>=o?(null!=n&&"\n"!=n.innerHTML&&(i=n,void 0!==(a=null!==t?t:l[r])&&a.parentNode.insertBefore(i,a.nextSibling)),function(){for(var n,l=e.querySelectorAll(".post-body-artikel .kode-iklan-tengah"),t=0;t<l.length;t++)null!==(n=l[t].previousElementSibling)&&"BR"===n.tagName&&(n.style.display="none")}()):null!=n&&null!=n.parentNode&&n.parentNode.removeChild(n)};y(h,p,c),y(u,v,d)}}(document);
+                      !function(){var n,e,t;t={iklanMatched:!0},"function"==typeof optionLinkMagz&&optionLinkMagz(t),n=document.querySelector("#ms-matched-content"),e=document.querySelector("#matched-content .widget-content"),null!=n?1==t.iklanMatched&&null!=e&&"\n"!=e.innerHTML&&n.appendChild(e):null!=e&&null!=e.parentNode&&e.parentNode.removeChild(e)}();
                       //]]>
                   </script>
                     <b:elseif cond='data:view.isHomepage'/>
