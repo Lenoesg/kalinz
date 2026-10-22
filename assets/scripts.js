@@ -175,53 +175,11 @@ function optionLinkMagz(i) {
 })();
 
 /* INI ADALAH POTONGAN KODE JAVASCRIPT DALAM BLOK <b:includable id='blogPostBody'> (baris ke 626 - 654) */
-// Baca Juga — hanya definisi fungsi, request dilakukan di relatedPostScript
-function showBacaJuga(json) {
-  if (!json.feed || !json.feed.entry) {
-    return;
-  }
-  var cfg = {
-    bacaJuga: true,
-    jumlahBacaJuga: 3,
-    judulBacaJuga: "Baca Juga"
-  };
-  optionLinkMagz(cfg);
-  if (!cfg.bacaJuga) {
-    return;
-  }
-  var currentUrl = "<data:post.url/>";
-  var entries = json.feed.entry;
-  var html = "";
-  var count = 0;
-  for (var i = 0; i < entries.length && count < cfg.jumlahBacaJuga; i++) {
-    var url = "#";
-    for (var j = 0; j < entries[i].link.length; j++) {
-      if (entries[i].link[j].rel === "alternate") {
-        url = entries[i].link[j].href;
-        break;
-      }
-    }
-    if (url === currentUrl) {
-      continue;
-    }
-    html += "<li><a href=\"" + url + "\">" + escapeHTML(entries[i].title.$t) + "</a></li>";
-    count++;
-  }
-  if (count > 0) {
-    var wrap = document.createElement("div");
-    wrap.className = "baca-juga-wrap";
-    wrap.innerHTML = "<strong>" + cfg.judulBacaJuga + "</strong><ul>" + html + "</ul>";
-    var body = document.querySelector(".post-body-artikel");
-    if (!body) {
-      return;
-    }
-    var elems = body.querySelectorAll("div > br, span > br, div > p, span > p");
-    var idx = Math.ceil(elems.length * 0.5);
-    if (elems[idx]) {
-      elems[idx].parentNode.insertBefore(wrap, elems[idx].nextSibling);
-    }
-  }
-}
+/* v2: DIHAPUS. Fungsi showBacaJuga() tidak pernah dipanggil (tidak ada
+   &callback=showBacaJuga di template) dan memanggil escapeHTML() yang hanya
+   terdefinisi di dalam IIFE relatedPostScript, jadi akan ReferenceError jika
+   suatu saat dipanggil. Hapus juga blok ini dari template.xml. Pengaturan
+   bacaJuga/jumlahBacaJuga/judulBacaJuga di linkMagzSetting tidak dipakai. */
 
 /* INI ADALAH POTONGAN KODE JAVASCRIPT DALAM BLOK <b:includable id='relatedPostScript'> (baris ke 806 - 862) */
 // Related Post — simplified, 1 request, label pertama
@@ -290,9 +248,28 @@ function showBacaJuga(json) {
       container.innerHTML = html;
     }
   };
-  var s = document.createElement("script");
-  s.src = e.homePageUrl.replace(/\/$/, "") + "/feeds/posts/default/-/" + encodeURIComponent(label) + "?alt=json-in-script&orderby=updated&max-results=" + (a.jumlahRelatedPosts + 1) + "&callback=msRelatedPosts";
-  document.head.appendChild(s);
+  // v2: feed dimuat ketika #ms-related-post mendekati layar (600px lebih awal),
+  // sehingga hasil JSONP tidak menyisipkan konten di dalam viewport.
+  var loadFeed = function () {
+    var s = document.createElement("script");
+    s.async = true;
+    s.src = e.homePageUrl.replace(/\/$/, "") + "/feeds/posts/default/-/" + encodeURIComponent(label) + "?alt=json-in-script&orderby=updated&max-results=" + (a.jumlahRelatedPosts + 1) + "&callback=msRelatedPosts";
+    document.head.appendChild(s);
+  };
+  var box = document.getElementById(e.relatedOuter);
+  if (box && "IntersectionObserver" in window) {
+    var io = new IntersectionObserver(function (entries) {
+      if (entries[0].isIntersecting) {
+        io.disconnect();
+        loadFeed();
+      }
+    }, {
+      rootMargin: "600px 0px"
+    });
+    io.observe(box);
+  } else {
+    loadFeed();
+  }
 })(); // fullwidthImage — dipertahankan
 (function () {
   var t;
@@ -955,9 +932,32 @@ Defer(function () {
   if (!n) {
     return;
   }
-  var l = n.querySelectorAll("div > br, span > br, div > p, span > p");
-  var t = Math.ceil(l.length * 0.2);
-  var r = Math.ceil(l.length * 0.7);
+  // v2: format postingan baru memakai <article> dengan <p>/<h2>/<div> sebagai anak
+  // langsung. Selektor lama ("div > br, span > br, div > p, span > p") hanya cocok
+  // dengan markup Blogger klasik, sehingga iklan tengah jatuh di tempat yang salah
+  // atau dihapus. Sekarang: jika ada <article>, titik sisip = blok anak langsungnya.
+  var art = null;
+  for (var k = 0; k < n.children.length; k++) {
+    if (n.children[k].tagName === "ARTICLE") {
+      art = n.children[k];
+      break;
+    }
+  }
+  var l;
+  if (art) {
+    l = [];
+    for (var m = 0; m < art.children.length; m++) {
+      var ch = art.children[m];
+      if (/^(P|UL|OL|TABLE|BLOCKQUOTE|FIGURE|SECTION|DIV|H2|H3)$/.test(ch.tagName) && !ch.classList.contains("widget-content") && !ch.classList.contains("iklan-wrapper")) {
+        l.push(ch);
+      }
+    }
+  } else {
+    l = n.querySelectorAll("div > br, span > br, div > p, span > p");
+  }
+  var minBlok = art ? 5 : 2; // jumlah minimum titik sisip agar iklan tengah ditampilkan
+  var t = Math.min(Math.ceil(l.length * 0.2), l.length - 1);
+  var r = Math.min(Math.ceil(l.length * 0.7), l.length - 1);
   var i = e.querySelector("#iklan-tengah1 .widget-content");
   var o = e.querySelector("#iklan-tengah2 .widget-content");
   var a = e.querySelector("#iklan-atas .widget-content");
@@ -973,7 +973,7 @@ Defer(function () {
   var g = function (n, t, r) {
     var i;
     var o;
-    if (l.length > 1) {
+    if (l.length >= minBlok) {
       if (n != null && n.innerHTML != "\n") {
         i = n;
         if ((o = t !== null ? t : l[r]) !== undefined) {
@@ -1048,8 +1048,10 @@ Defer(function () {
 
 /* INI ADALAH POTONGAN KODE JAVASCRIPT DALAM BLOK <script type='text/javascript'> (baris ke 4735 - 4749) */
 var lazyadsense = false;
-window.addEventListener("scroll", function () {
-  if (document.documentElement.scrollTop != 0 && lazyadsense === false || document.body.scrollTop != 0 && lazyadsense === false) {
+function loadAdsenseOnScroll() {
+  if (lazyadsense === false && (document.documentElement.scrollTop != 0 || document.body.scrollTop != 0)) {
+    lazyadsense = true;
+    window.removeEventListener("scroll", loadAdsenseOnScroll, true); // v2: tidak dipanggil lagi
     (function () {
       var ad = document.createElement("script");
       ad.setAttribute("data-ad-client", "ca-pub-8813103182865992");
@@ -1059,8 +1061,64 @@ window.addEventListener("scroll", function () {
       var sc = document.getElementsByTagName("script")[0] || document.getElementsByTagName("head")[0];
       sc.parentNode.insertBefore(ad, sc);
     })();
-    lazyadsense = true;
   }
-}, true);
+}
+window.addEventListener("scroll", loadAdsenseOnScroll, {
+  capture: true,
+  passive: true
+});
 
 
+/* v2 BLOK PENGGANTI untuk kode di template.xml baris ke 923 (di dalam includable allJavaScripts):
+     Defer.dom("img.lazyload",100,"loaded",null,{rootMargin:"1px"}),"undefined"!=typeof infinite_scroll&&infinite_scroll.on("load",function(){Defer.dom(...)}),new SmoothScroll(...)
+   Alasan: Defer.dom baru memuat gambar setelah event load + jeda, dan .lazyload memakai opacity:0
+   sehingga thumbnail (kandidat LCP beranda) tertahan. Versi ini langsung memasang src dan
+   menyerahkan penundaan ke browser lewat loading="lazy". Gambar pertama yang sudah berada di
+   layar dimuat eager + fetchpriority=high. Kelas "loaded" ditambahkan saat gambar selesai dimuat. */
+function kalinzLazyImages() {
+  var imgs = document.querySelectorAll("img.lazyload:not(.loaded)");
+  var firstDone = false;
+  for (var i = 0; i < imgs.length; i++) {
+    (function (img) {
+      var src = img.getAttribute("data-src");
+      var srcset = img.getAttribute("data-srcset");
+      if (!src && !srcset) {
+        img.classList.add("loaded");
+        return;
+      }
+      var done = function () {
+        img.classList.add("loaded");
+      };
+      img.addEventListener("load", done, {
+        once: true
+      });
+      img.addEventListener("error", done, {
+        once: true
+      });
+      var rect = img.getBoundingClientRect();
+      if (!firstDone && rect.top < window.innerHeight && rect.bottom > 0) {
+        firstDone = true;
+        img.loading = "eager";
+        img.setAttribute("fetchpriority", "high");
+      } else {
+        img.loading = "lazy";
+      }
+      img.decoding = "async";
+      if (srcset) {
+        img.setAttribute("srcset", srcset);
+      }
+      if (src) {
+        img.setAttribute("src", src);
+      }
+    })(imgs[i]);
+  }
+}
+kalinzLazyImages();
+if (typeof infinite_scroll !== "undefined") {
+  infinite_scroll.on("load", kalinzLazyImages);
+}
+new SmoothScroll('a[href*="#"]', {
+  speed: 600,
+  speedAsDuration: true,
+  easing: "easeInOutCubic"
+});

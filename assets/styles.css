@@ -4165,17 +4165,6 @@ span.blog-admin {
     outline-offset: 2px
 }
 
-#share a i {
-    display: block;
-    font-style: normal
-}
-
-#share a i::before {
-    display: block;
-    font-family: linkmagzfont;
-    font-weight: 400
-}
-
 .facebook {
     background: #3b5998
 }
@@ -4731,4 +4720,76 @@ span.blog-admin {
     display: block !important;
     width: 100% !important;
     margin: 0 auto
+}
+
+.iconsearch-label {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 48px;
+    min-height: 48px
+}
+
+#navmenu-sidebar-closebtn .closebtn {
+    box-sizing: border-box;
+    width: 48px;
+    height: 48px;
+    padding: 0;
+    line-height: 48px
+}
+
+#navmenu-sidebar-body ul li .ms-submenu-button,
+#navmenu-sidebar-body ul li li .ms-submenu-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    width: 48px;
+    height: 48px;
+    padding: 0
+}
+
+#navmenu-sidebar-body ul li .ms-submenu-button::after,
+#navmenu-sidebar-body ul li .ms-submenu-button.ms-submenu-shown::after,
+#navmenu-sidebar-body ul li li .ms-submenu-button::after,
+#navmenu-sidebar-body ul li li .ms-submenu-button.ms-submenu-shown::after {
+    margin: 0;
+    flex: 0 0 auto
+}
+
+.blog-pager a.blog-pager-newer-link,
+.blog-pager a.blog-pager-older-link,
+.blog-pager .js-load,
+.blog-pager .js-loaded,
+.blog-pager .js-loading {
+    min-height: 48px;
+    box-sizing: border-box;
+    display: inline-flex;
+    align-items: center
+}
+
+.breadcrumbs a,
+.post-info a {
+    display: inline-block;
+    padding: 17px 0;
+    margin: -17px 0
+}
+
+.toc button {
+    padding: 15px 6px;
+    margin: -15px -2px
+}
+
+#footer-outer #footer-content .PageList ul li {
+    margin-bottom: 0
+}
+
+#footer-outer #footer-content .PageList ul li a {
+    display: inline-block;
+    padding: 15px 4px
+}
+
+#sidebar-wrap .widget-content ul li a {
+    display: inline-block;
+    padding: 13px 0
 }
