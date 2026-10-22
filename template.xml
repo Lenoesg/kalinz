@@ -4585,21 +4585,7 @@ head.appendChild(script);
         </b:section>
       <script type='text/javascript'>
       //<![CDATA[
-      var lazyadsense = false;
-      window.addEventListener("scroll", function(){
-          if ((document.documentElement.scrollTop != 0 && lazyadsense === false) || (document.body.scrollTop != 0 && lazyadsense === false)) {
-              (function() { 
-                  var ad = document.createElement('script'); 
-                  ad.setAttribute('data-ad-client','ca-pub-8813103182865992');
-                  ad.setAttribute('crossorigin','anonymous');
-                  ad.async = true; 
-                  ad.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js'; 
-                  var sc = document.getElementsByTagName('script')[0] || document.getElementsByTagName('head')[0]; 
-                  sc.parentNode.insertBefore(ad, sc); 
-              })();
-              lazyadsense = true;
-          }
-      }, true);
+      var lazyadsense=!1;function loadAdsenseOnScroll(){!1!==lazyadsense||0==document.documentElement.scrollTop&&0==document.body.scrollTop||(lazyadsense=!0,window.removeEventListener("scroll",loadAdsenseOnScroll,!0),function(){var e=document.createElement("script");e.setAttribute("data-ad-client","ca-pub-8813103182865992"),e.setAttribute("crossorigin","anonymous"),e.async=!0,e.src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js";var n=document.getElementsByTagName("script")[0]||document.getElementsByTagName("head")[0];n.parentNode.insertBefore(e,n)}())}window.addEventListener("scroll",loadAdsenseOnScroll,{capture:!0,passive:!0});
       //]]>
       </script>
 
