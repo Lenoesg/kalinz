@@ -747,7 +747,6 @@ Variable end */
                 <div id='ms-related-post'/>
                 
                 <script type='text/javascript'>
-                    //<![CDATA[
                     var postLabels = [
                     <b:if cond='data:post.labels'>
                         <b:loop values='data:post.labels' var='label'>
@@ -761,7 +760,6 @@ Variable end */
                     homePageUrl: &quot;<data:blog.canonicalHomepageUrl.jsonEscaped/>&quot;,
                     relatedTitleText: &quot;Artikel Terkait&quot;
                     };
-                    //]]>
                 </script>
                 <!-- related posts end -->
                 </b:includable>
@@ -4080,7 +4078,7 @@ var linkMagzSetting = {
 
                 <b:if cond='data:view.isPost'>
                     <script>//<![CDATA[
-                      !function(e){var n=e.querySelector(".post-body");if(n){for(var l,t=null,r=0;r<n.children.length;r++)if("ARTICLE"===n.children[r].tagName){t=n.children[r];break}if(t){l=[];for(var i=0;i<t.children.length;i++){var a=t.children[i];!/^(P|UL|OL|TABLE|BLOCKQUOTE|FIGURE|SECTION|DIV|H2|H3)$/.test(a.tagName)||a.classList.contains("widget-content")||a.classList.contains("iklan-wrapper")||l.push(a)}}else l=n.querySelectorAll("div > br, span > br, div > p, span > p");var o=t?5:2,c=Math.min(Math.ceil(.2*l.length),l.length-1),d=Math.min(Math.ceil(.7*l.length),l.length-1),h=e.querySelector("#iklan-tengah1 .widget-content"),u=e.querySelector("#iklan-tengah2 .widget-content"),s=e.querySelector("#iklan-atas .widget-content"),g=e.querySelector("#iklan-bawah .widget-content"),p=n.querySelector("#iklan1"),v=n.querySelector("#iklan2");null!=s&&"\n"!=s.innerHTML&&n.insertBefore(s,n.childNodes[0]),null!=g&&"\n"!=g.innerHTML&&n.appendChild(g);var y=function(n,t,r){var i,a;l.length>=o?(null!=n&&"\n"!=n.innerHTML&&(i=n,void 0!==(a=null!==t?t:l[r])&&a.parentNode.insertBefore(i,a.nextSibling)),function(){for(var n,l=e.querySelectorAll(".post-body-artikel .kode-iklan-tengah"),t=0;t<l.length;t++)null!==(n=l[t].previousElementSibling)&&"BR"===n.tagName&&(n.style.display="none")}()):null!=n&&null!=n.parentNode&&n.parentNode.removeChild(n)};y(h,p,c),y(u,v,d)}}(document);
+                      !function(e){var n=e.querySelector(".post-body");if(n){for(var l,t=null,r=0;r<n.children.length;r++)if("ARTICLE"===n.children[r].tagName){t=n.children[r];break}if(t){l=[];for(var i=0;i<t.children.length;i++){var a=t.children[i];!/^(P|UL|OL|TABLE|BLOCKQUOTE|FIGURE|SECTION|DIV|H2|H3)$/.test(a.tagName)||a.classList.contains("widget-content")||a.classList.contains("iklan-wrapper")||l.push(a)}}else l=n.querySelectorAll("div > br, span > br, div > p, span > p");var o=t?5:2,c=Math.min(Math.ceil(.2*l.length),l.length-1),d=Math.min(Math.ceil(.7*l.length),l.length-1),h=e.querySelector("#iklan-tengah1 .widget-content"),u=e.querySelector("#iklan-tengah2 .widget-content"),s=e.querySelector("#iklan-atas .widget-content"),g=e.querySelector("#iklan-bawah .widget-content"),p=n.querySelector("#iklan1"),v=n.querySelector("#iklan2");var y=function(n,t,r){var i,a;l.length>=o?(null!=n&&"\n"!=n.innerHTML&&(i=n,void 0!==(a=null!==t?t:l[r])&&a.parentNode.insertBefore(i,a.nextSibling)),function(){for(var n,l=e.querySelectorAll(".post-body-artikel .kode-iklan-tengah"),t=0;t<l.length;t++)null!==(n=l[t].previousElementSibling)&&"BR"===n.tagName&&(n.style.display="none")}()):null!=n&&null!=n.parentNode&&n.parentNode.removeChild(n)};y(h,p,c),y(u,v,d)}}(document);
                       !function(){var n,e,t;t={iklanMatched:!0},"function"==typeof optionLinkMagz&&optionLinkMagz(t),n=document.querySelector("#ms-matched-content"),e=document.querySelector("#matched-content .widget-content"),null!=n?1==t.iklanMatched&&null!=e&&"\n"!=e.innerHTML&&n.appendChild(e):null!=e&&null!=e.parentNode&&e.parentNode.removeChild(e)}();
                       //]]>
                   </script>
