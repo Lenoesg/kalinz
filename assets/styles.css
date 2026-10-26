@@ -5078,9 +5078,9 @@ span.blog-admin {
 
 @media only screen and (max-width: 480px) {
 
-    .post-body .widget-content.kode-iklan-atas,
-    .post-body .widget-content.kode-iklan-bawah {
-        min-height: 280px;
+    .post-body>.widget-content.kode-iklan-atas {
+        display: grid;
+        grid-template-rows: minmax(280px, 100vw);
     }
 }
 
