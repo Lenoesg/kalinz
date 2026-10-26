@@ -1,4 +1,4 @@
-/* INI ADALAH POTONGAN KODE JAVASCRIPT DALAM BLOK <head> (baris ke 135 - 138) */
+/* INI ADALAH POTONGAN KODE JAVASCRIPT DALAM BLOK <head> (template.xml baris ke 135 - 138) */
 /* template option */
 var linkMagzSetting;
 function optionLinkMagz(i) {
@@ -174,14 +174,8 @@ function optionLinkMagz(i) {
   })(this, "Defer");
 })();
 
-/* INI ADALAH POTONGAN KODE JAVASCRIPT DALAM BLOK <b:includable id='blogPostBody'> (baris ke 626 - 654) */
-/* v2: DIHAPUS. Fungsi showBacaJuga() tidak pernah dipanggil (tidak ada
-   &callback=showBacaJuga di template) dan memanggil escapeHTML() yang hanya
-   terdefinisi di dalam IIFE relatedPostScript, jadi akan ReferenceError jika
-   suatu saat dipanggil. Hapus juga blok ini dari template.xml. Pengaturan
-   bacaJuga/jumlahBacaJuga/judulBacaJuga di linkMagzSetting tidak dipakai. */
 
-/* INI ADALAH POTONGAN KODE JAVASCRIPT DALAM BLOK <b:includable id='relatedPostScript'> (baris ke 806 - 862) */
+/* INI ADALAH POTONGAN KODE JAVASCRIPT DALAM BLOK <b:includable id='relatedPostScript'> (template.xml baris ke 770 - 771) */
 // Related Post — simplified, 1 request, label pertama
 (function () {
   var e = {
@@ -191,86 +185,78 @@ function optionLinkMagz(i) {
     relatedOuter: "ms-related-post"
   };
   for (var t in relatedConfig) {
-    if (typeof relatedConfig[t] !== "undefined") {
+    if (relatedConfig[t] !== undefined) {
       e[t] = relatedConfig[t];
     }
   }
-  var a = {
+  var l = {
     relatedPosts: true,
     jumlahRelatedPosts: 3,
     judulRelatedPosts: e.relatedTitleText
   };
-  optionLinkMagz(a);
-  if (!a.relatedPosts || typeof postLabels === "undefined" || !postLabels.length) {
-    return;
+  optionLinkMagz(l);
+  if (l.relatedPosts && typeof postLabels != "undefined" && postLabels.length) {
+    var r = (postLabels[1] || postLabels[0]).replace(/&amp;/g, "&");
+    window.msRelatedPosts = function (t) {
+      if (t.feed && t.feed.entry) {
+        var r = t.feed.entry;
+        var a = document.getElementById(e.relatedOuter);
+        if (a) {
+          var n = e.relatedTitleOuterOpen + l.judulRelatedPosts + e.relatedTitleOuterClose;
+          n += "<ul class=\"ms-related-nothumb\">";
+          for (var s = 0, o = 0; o < r.length && s < l.jumlahRelatedPosts; o++) {
+            var i = "#";
+            for (var u = 0; u < r[o].link.length; u++) {
+              if (r[o].link[u].rel === "alternate") {
+                i = r[o].link[u].href;
+                break;
+              }
+            }
+            if (i !== e.postUrl) {
+              n += "<li><div class=\"related-title-outer\"><a href=\"" + i + "\">" + d(r[o].title.$t) + "</a></div></li>";
+              s++;
+            }
+          }
+          n += "</ul>";
+          if (s > 0) {
+            a.innerHTML = n;
+          }
+        }
+      }
+    };
+    var a = function () {
+      var t = document.createElement("script");
+      t.async = true;
+      t.src = e.homePageUrl.replace(/\/$/, "") + "/feeds/posts/default/-/" + encodeURIComponent(r) + "?alt=json-in-script&orderby=updated&max-results=" + (l.jumlahRelatedPosts + 1) + "&callback=msRelatedPosts";
+      document.head.appendChild(t);
+    };
+    var n = document.getElementById(e.relatedOuter);
+    if (n && "IntersectionObserver" in window) {
+      var s = new IntersectionObserver(function (e) {
+        if (e[0].isIntersecting) {
+          s.disconnect();
+          a();
+        }
+      }, {
+        rootMargin: "600px 0px"
+      });
+      s.observe(n);
+    } else {
+      a();
+    }
   }
-  var label = (postLabels[1] || postLabels[0]).replace(/&amp;/g, "&");
-  function escapeHTML(str) {
-    return (str || "").replace(/[&<>'"]/g, function (tag) {
-      var chars = {
+  function d(e) {
+    return (e || "").replace(/[&<>'"]/g, function (e) {
+      return {
         "&": "&amp;",
         "<": "&lt;",
         ">": "&gt;",
         "'": "&#39;",
         "\"": "&quot;"
-      };
-      return chars[tag] || tag;
+      }[e] || e;
     });
   }
-  window.msRelatedPosts = function (json) {
-    if (!json.feed || !json.feed.entry) {
-      return;
-    }
-    var entries = json.feed.entry;
-    var container = document.getElementById(e.relatedOuter);
-    if (!container) {
-      return;
-    }
-    var html = e.relatedTitleOuterOpen + a.judulRelatedPosts + e.relatedTitleOuterClose;
-    html += "<ul class=\"ms-related-nothumb\">";
-    var count = 0;
-    for (var i = 0; i < entries.length && count < a.jumlahRelatedPosts; i++) {
-      var entryUrl = "#";
-      for (var j = 0; j < entries[i].link.length; j++) {
-        if (entries[i].link[j].rel === "alternate") {
-          entryUrl = entries[i].link[j].href;
-          break;
-        }
-      }
-      if (entryUrl === e.postUrl) {
-        continue;
-      }
-      html += "<li><div class=\"related-title-outer\"><a href=\"" + entryUrl + "\">" + escapeHTML(entries[i].title.$t) + "</a></div></li>";
-      count++;
-    }
-    html += "</ul>";
-    if (count > 0) {
-      container.innerHTML = html;
-    }
-  };
-  // v2: feed dimuat ketika #ms-related-post mendekati layar (600px lebih awal),
-  // sehingga hasil JSONP tidak menyisipkan konten di dalam viewport.
-  var loadFeed = function () {
-    var s = document.createElement("script");
-    s.async = true;
-    s.src = e.homePageUrl.replace(/\/$/, "") + "/feeds/posts/default/-/" + encodeURIComponent(label) + "?alt=json-in-script&orderby=updated&max-results=" + (a.jumlahRelatedPosts + 1) + "&callback=msRelatedPosts";
-    document.head.appendChild(s);
-  };
-  var box = document.getElementById(e.relatedOuter);
-  if (box && "IntersectionObserver" in window) {
-    var io = new IntersectionObserver(function (entries) {
-      if (entries[0].isIntersecting) {
-        io.disconnect();
-        loadFeed();
-      }
-    }, {
-      rootMargin: "600px 0px"
-    });
-    io.observe(box);
-  } else {
-    loadFeed();
-  }
-})(); // fullwidthImage — dipertahankan
+})();
 (function () {
   var t;
   var o;
@@ -290,20 +276,12 @@ function optionLinkMagz(i) {
 })();
 
 
-/* INI ADALAH POTONGAN KODE JAVASCRIPT DALAM BLOK <b:includable id='allJavaScripts'> (baris ke 870 - 891) */
-function copyShareLink(element) {
-  var url = element.getAttribute("data-url");
-  if (!url) {
-    return false;
-  }
-  if (navigator.clipboard && window.isSecureContext) {
-    navigator.clipboard.writeText(url).catch(function () {
-      window.prompt("Copy link:", url);
-    });
-  } else {
-    window.prompt("Copy link:", url);
-  }
-  return false;
+/* INI ADALAH POTONGAN KODE JAVASCRIPT DALAM BLOK <b:includable id='allJavaScripts'> (template.xml baris ke 779 - 786) */
+function copyShareLink(t) {
+  var i = t.getAttribute("data-url");
+  return !!i && (navigator.clipboard && window.isSecureContext ? navigator.clipboard.writeText(i).catch(function () {
+    window.prompt("Copy link:", i);
+  }) : window.prompt("Copy link:", i), false);
 }
 /*! smooth-scroll js from Chris Ferdinandi (http://github.com/cferdinandi/smooth-scroll) */
 (function () {
@@ -718,7 +696,7 @@ Defer(function () {
 }, 0, true);
 
 
-/* INI ADALAH POTONGAN KODE JAVASCRIPT DALAM BLOK <b:if cond='data:view.isHomepage'> (baris ke 895 - 896) */
+/* INI ADALAH POTONGAN KODE JAVASCRIPT DALAM BLOK <b:if cond='data:view.isHomepage'> (template.xml baris ke 790 - 791) */
 /*! Simple AJAX infinite scroll from dte.web.id */
 (function () {
   var t;
@@ -925,99 +903,262 @@ Defer(function () {
   }
 })();
 
-
-/* INI ADALAH POTONGAN KODE JAVASCRIPT DALAM BLOK <b:if cond='data:view.isPost'> (baris ke 4173 - 4231) */
-(function (e) {
-  var n = e.querySelector(".post-body");
-  if (!n) {
-    return;
-  }
-  // v2: format postingan baru memakai <article> dengan <p>/<h2>/<div> sebagai anak
-  // langsung. Selektor lama ("div > br, span > br, div > p, span > p") hanya cocok
-  // dengan markup Blogger klasik, sehingga iklan tengah jatuh di tempat yang salah
-  // atau dihapus. Sekarang: jika ada <article>, titik sisip = blok anak langsungnya.
-  var art = null;
-  for (var k = 0; k < n.children.length; k++) {
-    if (n.children[k].tagName === "ARTICLE") {
-      art = n.children[k];
-      break;
-    }
-  }
-  var l;
-  if (art) {
-    l = [];
-    for (var m = 0; m < art.children.length; m++) {
-      var ch = art.children[m];
-      if (/^(P|UL|OL|TABLE|BLOCKQUOTE|FIGURE|SECTION|DIV|H2|H3)$/.test(ch.tagName) && !ch.classList.contains("widget-content") && !ch.classList.contains("iklan-wrapper")) {
-        l.push(ch);
+/* INI ADALAH POTONGAN KODE JAVASCRIPT DALAM BLOK <b:if cond='data:view.isPost or data:view.isPage'> (template.xml baris ke 813 - 814) */
+/* TOC js from www.cssscript.com/generating-a-table-of-contents-with-pure-javascript-toc */
+(function () {
+  (function (e) {
+    var t = function (e) {
+      if (typeof e != "string") {
+        return 0;
       }
-    }
-  } else {
-    l = n.querySelectorAll("div > br, span > br, div > p, span > p");
-  }
-  var minBlok = art ? 5 : 2; // jumlah minimum titik sisip agar iklan tengah ditampilkan
-  var t = Math.min(Math.ceil(l.length * 0.2), l.length - 1);
-  var r = Math.min(Math.ceil(l.length * 0.7), l.length - 1);
-  var i = e.querySelector("#iklan-tengah1 .widget-content");
-  var o = e.querySelector("#iklan-tengah2 .widget-content");
-  var a = e.querySelector("#iklan-atas .widget-content");
-  var u = e.querySelector("#iklan-bawah .widget-content");
-  var c = n.querySelector("#iklan1");
-  var d = n.querySelector("#iklan2");
-  if (a != null && a.innerHTML != "\n") {
-    n.insertBefore(a, n.childNodes[0]);
-  }
-  if (u != null && u.innerHTML != "\n") {
-    n.appendChild(u);
-  }
-  var g = function (n, t, r) {
-    var i;
-    var o;
-    if (l.length >= minBlok) {
-      if (n != null && n.innerHTML != "\n") {
-        i = n;
-        if ((o = t !== null ? t : l[r]) !== undefined) {
-          o.parentNode.insertBefore(i, o.nextSibling);
-        }
+      var t = e.match(/\d/g);
+      if (t) {
+        return Math.min.apply(null, t);
+      } else {
+        return 1;
       }
-      (function () {
-        var n;
-        for (var l = e.querySelectorAll(".post-body-artikel .kode-iklan-tengah"), t = 0; t < l.length; t++) {
-          if ((n = l[t].previousElementSibling) !== null && n.tagName === "BR") {
-            n.style.display = "none";
+    };
+    var n = function (e, t) {
+      if (t < 0) {
+        return n(e.parentElement, t + 1);
+      } else if (t > 0) {
+        return function (e, t) {
+          while (t--) {
+            var n = document.createElement("ol");
+            e.appendChild(n);
+            e = n;
+          }
+          return e;
+        }(e, t);
+      } else {
+        return e.parentElement;
+      }
+    };
+    var o = function (e) {
+      var o = (e = function (e, t) {
+        for (var n in t) {
+          if (t.hasOwnProperty(n) && t[n]) {
+            e[n] = t[n];
           }
         }
-      })();
-    } else if (n != null && n.parentNode != null) {
-      n.parentNode.removeChild(n);
+        return e;
+      }({
+        selector: "h1, h2, h3, h4, h5, h6",
+        scope: "body",
+        overwrite: false,
+        prefix: "toc"
+      }, e)).selector;
+      if (typeof o != "string") {
+        throw new TypeError("selector must be a string");
+      }
+      if (!o.match(/^(?:h[1-6],?\s*)*$/g)) {
+        throw new TypeError("selector must contains only h1-6");
+      }
+      var r = location.hash;
+      if (r) {
+        setTimeout(function () {
+          location.hash = "";
+          location.hash = r;
+        }, 0);
+      }
+      return function (e) {
+        var o;
+        var r;
+        var i = e.selector;
+        var c = e.scope;
+        var l = document.createElement("ol");
+        var a = l;
+        o = e.overwrite;
+        r = e.prefix;
+        var u = function (e, t, n) {
+          e.textContent;
+          var i = r + "-" + n;
+          t.textContent = e.textContent;
+          var c = o ? i : e.id || i;
+          c = encodeURIComponent(c);
+          e.id = c;
+          t.href = "#" + c;
+        };
+        (function (e, t) {
+          var n = [];
+          var o = document.querySelectorAll(t);
+          Array.prototype.forEach.call(o, function (t) {
+            var o = t.querySelectorAll(e);
+            n = n.concat(Array.prototype.slice.call(o));
+          });
+          return n;
+        })(i, c).reduce(function (e, o, r) {
+          var i = t(o.tagName);
+          var c = n(a, i - e) || l;
+          var h = document.createElement("li");
+          var d = document.createElement("a");
+          u(o, d, r);
+          c.appendChild(h).appendChild(d);
+          a = h;
+          return i;
+        }, t(i));
+        return l;
+      }(e);
+    };
+    if (typeof define == "function" && define.amd) {
+      define("toc", [], function () {
+        return o;
+      });
+    } else {
+      e.initTOC = o;
     }
-  };
-  g(i, c, t);
-  g(o, d, r);
+  })(window);
+  var e;
+  var t;
+  var n = document.getElementById("toc");
+  var o = initTOC({
+    selector: "h2, h3",
+    scope: ".post-body"
+  });
+  if (n != null) {
+    n.appendChild(o);
+    e = document.querySelector(".toc");
+    t = {
+      judulTOC: "Daftar Isi",
+      showHideTOC: true
+    };
+    optionLinkMagz(t);
+    if (e != null) {
+      e.innerHTML = t.judulTOC;
+    }
+    (function () {
+      var e = {
+        tocHide: true,
+        showText: "(show)",
+        hideText: "(hide)"
+      };
+      optionLinkMagz(e);
+      var t = document.querySelector(".toc");
+      var n = document.createElement("button");
+      var o = document.querySelector("#toc ol");
+      t.appendChild(n);
+      o.style.height = "0";
+      o.style.overflow = "hidden";
+      n.innerHTML = e.showText;
+      n.addEventListener("click", function () {
+        var t = o.scrollHeight;
+        if (o.clientHeight) {
+          o.style.height = "0";
+          n.innerHTML = e.showText;
+        } else {
+          o.style.height = t + "px";
+          n.innerHTML = e.hideText;
+        }
+      });
+    })();
+  }
+})();
+
+/* INI ADALAH POTONGAN KODE JAVASCRIPT SETELAH BLOK <b:if cond='data:view.isPost or data:view.isPage'> ... </b:if> (template.xml baris ke 818) */
+Defer.dom("img.lazyload", 100, "loaded", null, {
+  rootMargin: "1px"
+});
+if (typeof infinite_scroll != "undefined") {
+  infinite_scroll.on("load", function () {
+    Defer.dom("img.lazyload", 100, "loaded", null, {
+      rootMargin: "1px"
+    });
+  });
+}
+new SmoothScroll("a[href*=\"#\"]", {
+  speed: 600,
+  speedAsDuration: true,
+  easing: "easeInOutCubic"
+});
+
+
+/* INI ADALAH POTONGAN KODE JAVASCRIPT DALAM BLOK <b:if cond='data:view.isPost'> (template.xml baris ke 4081 - 4082) */
+(function (e) {
+  var n = e.querySelector(".post-body");
+  if (n) {
+    var l;
+    var t = null;
+    for (var r = 0; r < n.children.length; r++) {
+      if (n.children[r].tagName === "ARTICLE") {
+        t = n.children[r];
+        break;
+      }
+    }
+    if (t) {
+      l = [];
+      for (var i = 0; i < t.children.length; i++) {
+        var a = t.children[i];
+        if (!!/^(P|UL|OL|TABLE|BLOCKQUOTE|FIGURE|SECTION|DIV|H2|H3)$/.test(a.tagName) && !a.classList.contains("widget-content") && !a.classList.contains("iklan-wrapper")) {
+          l.push(a);
+        }
+      }
+    } else {
+      l = n.querySelectorAll("div > br, span > br, div > p, span > p");
+    }
+    var o = t ? 5 : 2;
+    var c = Math.min(Math.ceil(l.length * 0.2), l.length - 1);
+    var d = Math.min(Math.ceil(l.length * 0.7), l.length - 1);
+    var h = e.querySelector("#iklan-tengah1 .widget-content");
+    var u = e.querySelector("#iklan-tengah2 .widget-content");
+    var s = e.querySelector("#iklan-atas .widget-content");
+    var g = e.querySelector("#iklan-bawah .widget-content");
+    var p = n.querySelector("#iklan1");
+    var v = n.querySelector("#iklan2");
+    if (s != null && s.innerHTML != "\n") {
+      n.insertBefore(s, n.childNodes[0]);
+    }
+    if (g != null && g.innerHTML != "\n") {
+      n.appendChild(g);
+    }
+    var y = function (n, t, r) {
+      var i;
+      var a;
+      if (l.length >= o) {
+        if (n != null && n.innerHTML != "\n") {
+          i = n;
+          if ((a = t !== null ? t : l[r]) !== undefined) {
+            a.parentNode.insertBefore(i, a.nextSibling);
+          }
+        }
+        (function () {
+          var n;
+          for (var l = e.querySelectorAll(".post-body-artikel .kode-iklan-tengah"), t = 0; t < l.length; t++) {
+            if ((n = l[t].previousElementSibling) !== null && n.tagName === "BR") {
+              n.style.display = "none";
+            }
+          }
+        })();
+      } else if (n != null && n.parentNode != null) {
+        n.parentNode.removeChild(n);
+      }
+    };
+    y(h, p, c);
+    y(u, v, d);
+  }
 })(document);
 (function () {
-  var e;
   var n;
+  var e;
   var t;
   t = {
     iklanMatched: true
   };
-  if (typeof optionLinkMagz === "function") {
+  if (typeof optionLinkMagz == "function") {
     optionLinkMagz(t);
   }
-  e = document.querySelector("#ms-matched-content");
-  n = document.querySelector("#matched-content .widget-content");
-  if (e != null) {
-    if (t.iklanMatched == 1 && n != null && n.innerHTML != "\n") {
-      e.appendChild(n);
+  n = document.querySelector("#ms-matched-content");
+  e = document.querySelector("#matched-content .widget-content");
+  if (n != null) {
+    if (t.iklanMatched == 1 && e != null && e.innerHTML != "\n") {
+      n.appendChild(e);
     }
-  } else if (n != null && n.parentNode != null) {
-    n.parentNode.removeChild(n);
+  } else if (e != null && e.parentNode != null) {
+    e.parentNode.removeChild(e);
   }
 })();
 
 
-/* INI ADALAH POTONGAN KODE JAVASCRIPT DALAM BLOK <b:elseif cond='data:view.isHomepage'/> (baris ke 4236) */
+/* INI ADALAH POTONGAN KODE JAVASCRIPT DALAM BLOK <b:elseif cond='data:view.isHomepage'/> (template.xml baris ke 4087) */
 (function () {
   var e;
   var n;
@@ -1046,79 +1187,24 @@ Defer(function () {
 })();
 
 
-/* INI ADALAH POTONGAN KODE JAVASCRIPT DALAM BLOK <script type='text/javascript'> (baris ke 4735 - 4749) */
+/* INI ADALAH POTONGAN KODE JAVASCRIPT DALAM BLOK <script type='text/javascript'> (template.xml baris ke 4586) */
 var lazyadsense = false;
 function loadAdsenseOnScroll() {
   if (lazyadsense === false && (document.documentElement.scrollTop != 0 || document.body.scrollTop != 0)) {
     lazyadsense = true;
-    window.removeEventListener("scroll", loadAdsenseOnScroll, true); // v2: tidak dipanggil lagi
+    window.removeEventListener("scroll", loadAdsenseOnScroll, true);
     (function () {
-      var ad = document.createElement("script");
-      ad.setAttribute("data-ad-client", "ca-pub-8813103182865992");
-      ad.setAttribute("crossorigin", "anonymous");
-      ad.async = true;
-      ad.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js";
-      var sc = document.getElementsByTagName("script")[0] || document.getElementsByTagName("head")[0];
-      sc.parentNode.insertBefore(ad, sc);
+      var e = document.createElement("script");
+      e.setAttribute("data-ad-client", "ca-pub-8813103182865992");
+      e.setAttribute("crossorigin", "anonymous");
+      e.async = true;
+      e.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js";
+      var n = document.getElementsByTagName("script")[0] || document.getElementsByTagName("head")[0];
+      n.parentNode.insertBefore(e, n);
     })();
   }
 }
 window.addEventListener("scroll", loadAdsenseOnScroll, {
   capture: true,
   passive: true
-});
-
-
-/* v2 BLOK PENGGANTI untuk kode di template.xml baris ke 923 (di dalam includable allJavaScripts):
-     Defer.dom("img.lazyload",100,"loaded",null,{rootMargin:"1px"}),"undefined"!=typeof infinite_scroll&&infinite_scroll.on("load",function(){Defer.dom(...)}),new SmoothScroll(...)
-   Alasan: Defer.dom baru memuat gambar setelah event load + jeda, dan .lazyload memakai opacity:0
-   sehingga thumbnail (kandidat LCP beranda) tertahan. Versi ini langsung memasang src dan
-   menyerahkan penundaan ke browser lewat loading="lazy". Gambar pertama yang sudah berada di
-   layar dimuat eager + fetchpriority=high. Kelas "loaded" ditambahkan saat gambar selesai dimuat. */
-function kalinzLazyImages() {
-  var imgs = document.querySelectorAll("img.lazyload:not(.loaded)");
-  var firstDone = false;
-  for (var i = 0; i < imgs.length; i++) {
-    (function (img) {
-      var src = img.getAttribute("data-src");
-      var srcset = img.getAttribute("data-srcset");
-      if (!src && !srcset) {
-        img.classList.add("loaded");
-        return;
-      }
-      var done = function () {
-        img.classList.add("loaded");
-      };
-      img.addEventListener("load", done, {
-        once: true
-      });
-      img.addEventListener("error", done, {
-        once: true
-      });
-      var rect = img.getBoundingClientRect();
-      if (!firstDone && rect.top < window.innerHeight && rect.bottom > 0) {
-        firstDone = true;
-        img.loading = "eager";
-        img.setAttribute("fetchpriority", "high");
-      } else {
-        img.loading = "lazy";
-      }
-      img.decoding = "async";
-      if (srcset) {
-        img.setAttribute("srcset", srcset);
-      }
-      if (src) {
-        img.setAttribute("src", src);
-      }
-    })(imgs[i]);
-  }
-}
-kalinzLazyImages();
-if (typeof infinite_scroll !== "undefined") {
-  infinite_scroll.on("load", kalinzLazyImages);
-}
-new SmoothScroll('a[href*="#"]', {
-  speed: 600,
-  speedAsDuration: true,
-  easing: "easeInOutCubic"
 });
