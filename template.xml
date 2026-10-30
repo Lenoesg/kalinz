@@ -2378,7 +2378,6 @@ var linkMagzSetting = {
  min-height: 250px;
 }
 @media only screen and (max-width: 480px) {
-
     .post-body>.widget-content.kode-iklan-atas {
         display: grid;
         grid-template-rows: minmax(280px, 100vw);
@@ -3949,19 +3948,9 @@ var linkMagzSetting = {
 
                 <b:if cond='data:view.isLayoutMode or data:view.isPost'>
                     <b:section class='iklan-atas' id='iklan-atas' maxwidgets='1' showaddelement='no'>
-                      <b:widget id='HTML76' locked='true' title='Kode Iklan Atas' type='HTML' version='2' visible='true'>
+                      <b:widget id='HTML76' locked='true' title='Kode Iklan Atas' type='HTML' version='2' visible='false'>
                         <b:widget-settings>
-                          <b:widget-setting name='content'><![CDATA[<div class="iklan-wrapper">
-    <ins class="adsbygoogle"
-         style="display:block"
-         data-ad-client="ca-pub-8813103182865992"
-         data-ad-slot="6024242557"
-         data-ad-format="auto"
-         data-full-width-responsive="true"></ins>
-</div>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>]]></b:widget-setting>
+                          <b:widget-setting name='content'/>
                         </b:widget-settings>
                         <b:includable id='main'>
                                 <div class='widget-content kode-iklan-atas'>
@@ -4005,19 +3994,9 @@ var linkMagzSetting = {
                       </b:widget>
                     </b:section>
                     <b:section class='iklan-bawah' id='iklan-bawah' maxwidgets='1' showaddelement='no'>
-                      <b:widget id='HTML79' locked='true' title='Kode Iklan Bawah' type='HTML' version='2' visible='true'>
+                      <b:widget id='HTML79' locked='true' title='Kode Iklan Bawah' type='HTML' version='2' visible='false'>
                         <b:widget-settings>
-                          <b:widget-setting name='content'><![CDATA[<div class="iklan-wrapper">
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-8813103182865992"
-     data-ad-slot="1605651243"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-</div>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>]]></b:widget-setting>
+                          <b:widget-setting name='content'/>
                         </b:widget-settings>
                         <b:includable id='main'>
                                 <div class='widget-content kode-iklan-bawah'>
@@ -4030,18 +4009,9 @@ var linkMagzSetting = {
 
                 <b:if cond='data:view.isLayoutMode or data:view.isPost'>
                     <b:section class='matched-content' id='matched-content' maxwidgets='1' showaddelement='no'>
-                      <b:widget id='HTML939' locked='true' title='Iklan Matched Content' type='HTML' version='2' visible='true'>
+                      <b:widget id='HTML939' locked='true' title='Iklan Matched Content' type='HTML' version='2' visible='false'>
                         <b:widget-settings>
-                          <b:widget-setting name='content'><![CDATA[<div class="iklan-wrapper">
-    <ins class="adsbygoogle"
-         style="display:block"
-         data-ad-format="autorelaxed"
-         data-ad-client="ca-pub-8813103182865992"
-         data-ad-slot="3124529310"></ins>
-</div>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>]]></b:widget-setting>
+                          <b:widget-setting name='content'/>
                         </b:widget-settings>
                         <b:includable id='main'>
                                 <div class='widget-content kode-matched-content'>
@@ -4054,19 +4024,9 @@ var linkMagzSetting = {
 
                 <b:if cond='data:view.isLayoutMode or data:view.isHomepage'>
                     <b:section class='iklan-infeed' id='iklan-infeed' maxwidgets='1' showaddelement='no'>
-                      <b:widget id='HTML83' locked='true' title='Kode Iklan In-Feed (homepage)' type='HTML' version='2' visible='true'>
+                      <b:widget id='HTML83' locked='true' title='Kode Iklan In-Feed (homepage)' type='HTML' version='2' visible='false'>
                         <b:widget-settings>
-                          <b:widget-setting name='content'><![CDATA[<div class="iklan-wrapper">
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-format="fluid"
-     data-ad-layout-key="-5o+c2-h-3b+jx"
-     data-ad-client="ca-pub-8813103182865992"
-     data-ad-slot="7849437876"></ins>
-</div>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>]]></b:widget-setting>
+                          <b:widget-setting name='content'/>
                         </b:widget-settings>
                         <b:includable id='main'>
                                 <div class='widget-content kode-iklan-infeed'>
