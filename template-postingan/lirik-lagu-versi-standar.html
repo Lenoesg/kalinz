@@ -1,52 +1,62 @@
 <!--
 TEMPLATE POSTINGAN LIRIK LAGU — VERSI STANDAR
 
-Salin isi HTML ini ke editor Blogger dalam mode HTML, lalu ganti
-semua teks [PLACEHOLDER]. Hapus bagian opsional yang tidak dipakai.
+Salin isi HTML ke editor Blogger dalam mode HTML, lalu ganti semua
+teks [PLACEHOLDER]. Hapus baris metadata opsional jika datanya tidak ada.
 
-Catatan:
-- Judul postingan diisi pada kolom Judul Blogger; jangan tambahkan H1 di isi artikel.
-- Isi width dan height gambar sesuai rasio gambar sebenarnya untuk membantu mencegah CLS.
-- Gunakan sumber gambar langsung yang stabil; jangan gunakan URL halaman album/video.
-- Template Blogger sudah mengatur iklan dan structured data. Jangan tempel kode iklan,
-  CSS, JavaScript, atau JSON-LD tambahan ke isi artikel.
+- Gunakan judul postingan Blogger sebagai H1; jangan menambah H1 di sini.
+- Wrapper dan class .post-kalinz memakai CSS global di assets/styles.css.
+- Sesuaikan width dan height gambar dengan rasio aslinya untuk mencegah CLS.
+- Jangan menambahkan CSS, JavaScript, kode AdSense, atau JSON-LD ke isi artikel.
 -->
 
-<p>[PENGANTAR: 2–3 kalimat tentang judul lagu, penyanyi, dan tema lagu berdasarkan sumber yang dapat dipercaya.]</p>
-
-<figure>
+<article class="post-kalinz">
   <img
+    class="post-featured-image"
     src="[URL_GAMBAR]"
-    alt="[Deskripsi gambar yang menjelaskan lagu atau penyanyi]"
-    title="[Judul lagu — nama penyanyi]"
-    width="800"
-    height="450"
+    alt="[Deskripsi gambar yang relevan dengan lagu atau penyanyi]"
+    title="[JUDUL LAGU] — [NAMA PENYANYI]"
+    width="400"
+    height="400"
   />
-  <figcaption>[Keterangan singkat gambar, jika diperlukan]</figcaption>
-</figure>
 
-<h2>Lirik Lagu [JUDUL LAGU] — [NAMA PENYANYI]</h2>
+  <p class="post-hook">[PENGANTAR: 2–3 kalimat tentang judul lagu, penyanyi, bahasa, dan tema berdasarkan sumber yang dapat dipercaya.]</p>
 
-<blockquote>
-  <p>[BAIT 1 — masukkan lirik yang telah diverifikasi.]</p>
-  <p>[BAIT 2]</p>
-  <p>[REFF]</p>
-</blockquote>
+  <div class="post-box song-meta">
+    <table>
+      <tbody>
+        <tr><td>Judul Lagu</td><td>[JUDUL LAGU]</td></tr>
+        <tr><td>Dipopulerkan oleh</td><td>[NAMA PENYANYI / GRUP]</td></tr>
+        <tr><td>Bahasa</td><td>[BAHASA LAGU]</td></tr>
+        <tr><td>Penulis Lagu</td><td>[NAMA PENULIS — hapus baris jika tidak diketahui]</td></tr>
+        <tr><td>Tahun Rilis</td><td>[TAHUN — hapus baris jika tidak diketahui]</td></tr>
+      </tbody>
+    </table>
+  </div>
 
-<h2>Terjemahan Lagu [JUDUL LAGU] dalam Bahasa Indonesia</h2>
+  <hr class="post-divider" />
 
-<blockquote>
-  <p>[TERJEMAHAN BAIT 1]</p>
-  <p>[TERJEMAHAN BAIT 2]</p>
-  <p>[TERJEMAHAN REFF]</p>
-</blockquote>
+  <h2>Lirik Lagu [JUDUL LAGU] — [NAMA PENYANYI]</h2>
+  <div class="post-lyric-box">[BAIT 1 — masukkan lirik yang sudah diverifikasi.]
 
-<h2>Makna Lagu [JUDUL LAGU]</h2>
+[BAIT 2]
 
-<p>[Jelaskan makna lagu berdasarkan lirik dan terjemahan. Bedakan penafsiran dari fakta yang diketahui.]</p>
+[REFF]</div>
 
-<h2>Tentang [NAMA PENYANYI / GRUP]</h2>
+  <h2>Terjemahan Lagu [JUDUL LAGU] dalam Bahasa Indonesia</h2>
+  <div class="post-lyric-translation"><em>[TERJEMAHAN BAIT 1.]
 
-<p>[Tulis informasi singkat tentang penyanyi atau grup yang sudah terverifikasi. Jika informasinya terbatas, jangan menambahkan detail biografi yang belum dipastikan.]</p>
+[TERJEMAHAN BAIT 2.]
 
-<p>[PENUTUP: Ucapkan terima kasih dan arahkan pembaca yang ingin memberi koreksi ke <a href="https://kalinz.blogspot.com/p/hubungi-kam.html">halaman Kontak</a>.]</p>
+[TERJEMAHAN REFF.]</em></div>
+
+  <hr class="post-divider" />
+
+  <h2>Makna Lagu [JUDUL LAGU]</h2>
+  <p>[Jelaskan makna lagu berdasarkan lirik dan terjemahan. Bedakan penafsiran dari fakta yang diketahui.]</p>
+
+  <h2>Tentang [NAMA PENYANYI / GRUP]</h2>
+  <p>[Tulis informasi singkat yang sudah terverifikasi tentang penyanyi atau grup. Jangan mengarang detail biografi.]</p>
+
+  <p>[PENUTUP: Rangkum artikel dan arahkan pembaca yang ingin menyampaikan koreksi ke <a href="https://kalinz.blogspot.com/p/hubungi-kam.html">halaman Kontak</a>.]</p>
+</article>

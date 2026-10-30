@@ -1,131 +1,122 @@
 <!--
 TEMPLATE POSTINGAN LIRIK LAGU — VERSI LENGKAP
 
-Salin isi HTML ini ke editor Blogger dalam mode HTML, lalu ganti
-semua teks [PLACEHOLDER]. Hapus baris metadata atau bagian opsional
-jika datanya tidak tersedia.
+Salin isi HTML ke editor Blogger dalam mode HTML, lalu ganti semua
+teks [PLACEHOLDER]. Hapus baris metadata atau bagian opsional jika datanya
+tidak tersedia.
 
-Catatan:
-- Judul postingan diisi pada kolom Judul Blogger; jangan tambahkan H1 di isi artikel.
-- Isi width dan height gambar sesuai rasio gambar sebenarnya untuk membantu mencegah CLS.
-- Gunakan sumber gambar langsung yang stabil; jangan gunakan URL halaman album/video.
-- Template Blogger sudah mengatur iklan dan structured data. Jangan tempel kode iklan,
-  CSS, JavaScript, atau JSON-LD tambahan ke isi artikel.
+- Gunakan judul postingan Blogger sebagai H1; jangan menambah H1 di sini.
+- Wrapper dan class .post-kalinz memakai CSS global di assets/styles.css.
+- Sesuaikan width dan height gambar dengan rasio aslinya untuk mencegah CLS.
+- Jangan menambahkan CSS, JavaScript, kode AdSense, atau JSON-LD ke isi artikel.
 - Pastikan lirik dan terjemahan sudah diperiksa sebelum dipublikasikan.
 -->
 
-<p>[PENGANTAR: 2–3 kalimat yang menyebut judul lagu, penyanyi, bahasa, dan tema berdasarkan sumber yang dapat dipercaya.]</p>
-
-<figure>
+<article class="post-kalinz">
   <img
+    class="post-featured-image"
     src="[URL_GAMBAR]"
-    alt="[Deskripsi gambar yang menjelaskan lagu atau penyanyi]"
-    title="[Judul lagu — nama penyanyi]"
-    width="800"
-    height="450"
+    alt="[Deskripsi gambar yang relevan dengan lagu atau penyanyi]"
+    title="[JUDUL LAGU] — [NAMA PENYANYI]"
+    width="400"
+    height="400"
   />
-  <figcaption>[Keterangan singkat gambar, jika diperlukan]</figcaption>
-</figure>
 
-<h2>Informasi Lagu [JUDUL LAGU]</h2>
+  <p class="post-hook">[PENGANTAR: 2–3 kalimat yang menyebut judul lagu, penyanyi, bahasa, dan tema berdasarkan sumber yang dapat dipercaya.]</p>
 
-<table border="1">
-  <tbody>
-    <tr>
-      <th scope="row">Judul</th>
-      <td>[JUDUL LAGU]</td>
-    </tr>
-    <tr>
-      <th scope="row">Penyanyi / Grup</th>
-      <td>[NAMA PENYANYI / GRUP]</td>
-    </tr>
-    <tr>
-      <th scope="row">Bahasa</th>
-      <td>[BAHASA LAGU]</td>
-    </tr>
-    <tr>
-      <th scope="row">Genre</th>
-      <td>[GENRE, JIKA DIKETAHUI]</td>
-    </tr>
-    <tr>
-      <th scope="row">Penulis lagu</th>
-      <td>[NAMA PENULIS, JIKA DIKETAHUI]</td>
-    </tr>
-    <tr>
-      <th scope="row">Tahun rilis</th>
-      <td>[TAHUN, JIKA DIKETAHUI]</td>
-    </tr>
-  </tbody>
-</table>
+  <div class="post-box song-meta">
+    <table>
+      <tbody>
+        <tr><td>Judul Lagu</td><td>[JUDUL LAGU]</td></tr>
+        <tr><td>Dipopulerkan oleh</td><td>[NAMA PENYANYI / GRUP]</td></tr>
+        <tr><td>Bahasa</td><td>[BAHASA LAGU]</td></tr>
+        <tr><td>Genre</td><td>[GENRE — hapus baris jika tidak diketahui]</td></tr>
+        <tr><td>Penulis Lagu</td><td>[NAMA PENULIS — hapus baris jika tidak diketahui]</td></tr>
+        <tr><td>Tahun Rilis</td><td>[TAHUN — hapus baris jika tidak diketahui]</td></tr>
+      </tbody>
+    </table>
+  </div>
 
-<h2>Lirik Lagu [JUDUL LAGU] — [NAMA PENYANYI]</h2>
+  <hr class="post-divider" />
 
-<blockquote>
-  <p>[BAIT 1 — masukkan lirik yang telah diverifikasi.]</p>
-  <p>[BAIT 2]</p>
-  <p>[REFF]</p>
-  <p>[BAIT BERIKUTNYA]</p>
-</blockquote>
+  <h2>Lirik Lagu [JUDUL LAGU] — [NAMA PENYANYI]</h2>
+  <div class="post-lyric-box">[BAIT 1 — masukkan lirik yang sudah diverifikasi.]
 
-<h2>Terjemahan Lagu [JUDUL LAGU] dalam Bahasa Indonesia</h2>
+[BAIT 2]
 
-<blockquote>
-  <p>[TERJEMAHAN BAIT 1]</p>
-  <p>[TERJEMAHAN BAIT 2]</p>
-  <p>[TERJEMAHAN REFF]</p>
-  <p>[TERJEMAHAN BAIT BERIKUTNYA]</p>
-</blockquote>
+[REFF]
 
-<h2>Makna Lagu [JUDUL LAGU]</h2>
+[BAIT BERIKUTNYA]</div>
 
-<p>[Jelaskan gagasan utama lagu berdasarkan lirik dan terjemahan.]</p>
+  <h2>Terjemahan Lagu [JUDUL LAGU] dalam Bahasa Indonesia</h2>
+  <div class="post-lyric-translation"><em>[TERJEMAHAN BAIT 1.]
 
-<p>[Tambahkan konteks budaya atau sosial yang relevan hanya jika didukung sumber. Tandai penafsiran sebagai penafsiran, bukan fakta tentang maksud pencipta.]</p>
+[TERJEMAHAN BAIT 2.]
 
-<h2>Kosakata Bahasa [NAMA BAHASA] dalam Lagu</h2>
+[TERJEMAHAN REFF.]
 
-<p>[Kalimat pengantar kosakata. Hapus bagian ini jika tidak diperlukan.]</p>
+[TERJEMAHAN BAIT BERIKUTNYA.]</em></div>
 
-<table border="1">
-  <thead>
-    <tr>
-      <th scope="col">Kata / frasa</th>
-      <th scope="col">Arti</th>
-      <th scope="col">Catatan</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>[KATA ATAU FRASA]</td>
-      <td>[ARTI DALAM BAHASA INDONESIA]</td>
-      <td>[KONTEKS / CATATAN, JIKA DIPERLUKAN]</td>
-    </tr>
-    <tr>
-      <td>[KATA ATAU FRASA]</td>
-      <td>[ARTI DALAM BAHASA INDONESIA]</td>
-      <td>[KONTEKS / CATATAN, JIKA DIPERLUKAN]</td>
-    </tr>
-  </tbody>
-</table>
+  <hr class="post-divider" />
 
-<h2>Tentang [NAMA PENYANYI / GRUP]</h2>
+  <h2>Makna Lagu [JUDUL LAGU]</h2>
+  <p>[Jelaskan makna utama berdasarkan lirik dan terjemahan.]</p>
+  <p>[Tambahkan konteks budaya atau sosial hanya jika didukung sumber. Tandai penafsiran sebagai penafsiran, bukan fakta tentang maksud pencipta.]</p>
 
-<p>[Tulis informasi singkat tentang penyanyi atau grup berdasarkan sumber yang dapat dipercaya. Jelaskan hubungannya dengan lagu ini; jangan mengarang biografi atau klaim yang tidak terverifikasi.]</p>
+  <h2>Kosakata Bahasa [NAMA BAHASA] dalam Lagu</h2>
+  <p>[Kalimat pengantar kosakata. Hapus bagian ini jika tidak diperlukan.]</p>
+  <div class="post-box dictionary-table">
+    <table>
+      <thead>
+        <tr>
+          <th scope="col">Kata / frasa</th>
+          <th scope="col">Arti</th>
+          <th scope="col">Catatan</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>[KATA ATAU FRASA]</td>
+          <td>[ARTI DALAM BAHASA INDONESIA]</td>
+          <td>[KONTEKS / CATATAN, JIKA DIPERLUKAN]</td>
+        </tr>
+        <tr>
+          <td>[KATA ATAU FRASA]</td>
+          <td>[ARTI DALAM BAHASA INDONESIA]</td>
+          <td>[KONTEKS / CATATAN, JIKA DIPERLUKAN]</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 
-<h2>Pertanyaan tentang Lagu [JUDUL LAGU]</h2>
+  <h2>Tentang [NAMA PENYANYI / GRUP]</h2>
+  <p>[Tulis informasi yang sudah terverifikasi dan jelaskan hubungannya dengan lagu. Jangan mengarang detail biografi.]</p>
 
-<h3>Apa arti judul lagu [JUDUL LAGU]?</h3>
-<p>[Jawab secara langsung berdasarkan bahasa dan konteks yang diketahui.]</p>
+  <h2>Pertanyaan tentang Lagu [JUDUL LAGU]</h2>
+  <div class="post-faq">
+    <div class="post-faq-item">
+      <p class="post-faq-q">Apa arti judul lagu [JUDUL LAGU]?</p>
+      <p class="post-faq-a">[Jawab berdasarkan bahasa dan konteks yang diketahui.]</p>
+    </div>
+    <div class="post-faq-item">
+      <p class="post-faq-q">Siapa yang menyanyikan lagu [JUDUL LAGU]?</p>
+      <p class="post-faq-a">[Nama penyanyi atau grup; sebutkan kolaborator hanya jika terverifikasi.]</p>
+    </div>
+    <div class="post-faq-item">
+      <p class="post-faq-q">Apa tema utama lagu [JUDUL LAGU]?</p>
+      <p class="post-faq-a">[Ringkas tema berdasarkan lirik dan terjemahan.]</p>
+    </div>
+    <div class="post-faq-item">
+      <p class="post-faq-q">Bahasa apa yang digunakan dalam lagu [JUDUL LAGU]?</p>
+      <p class="post-faq-a">[Sebutkan bahasa atau dialek jika diketahui.]</p>
+    </div>
+  </div>
 
-<h3>Siapa yang menyanyikan lagu [JUDUL LAGU]?</h3>
-<p>[Nama penyanyi atau grup dan informasi kolaborator jika sudah terverifikasi.]</p>
+  <h2>Penutup</h2>
+  <p>[Rangkum isi artikel dan arahkan pembaca yang ingin menyampaikan koreksi ke <a href="https://kalinz.blogspot.com/p/hubungi-kam.html">halaman Kontak</a>.]</p>
 
-<h3>Apa tema utama lagu [JUDUL LAGU]?</h3>
-<p>[Ringkas tema berdasarkan isi lirik dan terjemahan.]</p>
-
-<h3>Bahasa apa yang digunakan dalam lagu [JUDUL LAGU]?</h3>
-<p>[Sebutkan bahasa atau dialek jika diketahui.]</p>
-
-<h2>Penutup</h2>
-
-<p>[Rangkum isi artikel secara singkat. Arahkan pembaca yang ingin menyampaikan koreksi lirik atau informasi tambahan ke <a href="https://kalinz.blogspot.com/p/hubungi-kam.html">halaman Kontak</a>.]</p>
+  <div class="post-tag-list">
+    <a class="post-tag" href="https://kalinz.blogspot.com/search/label/Lagu%20Nias" rel="tag">Lagu Nias</a>
+    <a class="post-tag" href="[URL_LABEL_ARTIS]" rel="tag">[NAMA PENYANYI / GRUP]</a>
+  </div>
+</article>
